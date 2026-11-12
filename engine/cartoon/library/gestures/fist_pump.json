@@ -1,0 +1,118 @@
+{
+  "id": "fist_pump",
+  "about": "energetic right-arm victory fist pump pulling down from high to chest level",
+  "group": "arms",
+  "seconds": 0.9,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    },
+    {
+      "u": 0.3,
+      "arms": {
+        "R": {
+          "elbow": [
+            21.7,
+            -23.8,
+            1.1
+          ],
+          "wrist": [
+            14,
+            -8,
+            24
+          ],
+          "hand": [
+            13.8,
+            2.2,
+            30.7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    },
+    {
+      "u": 0.65,
+      "arms": {
+        "R": {
+          "elbow": [
+            28.4,
+            10.1,
+            11.3
+          ],
+          "wrist": [
+            16,
+            36,
+            14
+          ],
+          "hand": [
+            16,
+            48,
+            16.4
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            25.2,
+            -17.6,
+            9.7
+          ],
+          "wrist": [
+            14,
+            6,
+            22
+          ],
+          "hand": [
+            14,
+            17.6,
+            25.9
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    }
+  ]
+}

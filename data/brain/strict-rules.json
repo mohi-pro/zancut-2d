@@ -1,0 +1,78 @@
+{
+ "version": 1,
+ "rules": [
+  {
+   "id": "calm-talk",
+   "kind": "never",
+   "head": "action",
+   "values": [
+    "HIGH_ENERGY"
+   ],
+   "when": {
+    "talking": true
+   },
+   "text": "কথা বলার সময় কখনো হাত পা ছুঁড়বে না, শান্তভাবে কথা বলবে (When talking → never jump, dance, wild-wave or run — unless the sentence itself says so)",
+   "active": true,
+   "builtin": true,
+   "at": "2026-11-08T20:44:27.229Z"
+  },
+  {
+   "id": "indoor-broll",
+   "kind": "never",
+   "head": "broll",
+   "values": [
+    "OUTDOOR_BROLL"
+   ],
+   "when": {
+    "places": [
+     "bedroom",
+     "classroom",
+     "living_room",
+     "kitchen",
+     "office_room",
+     "hospital_clinic",
+     "restaurant_cafe",
+     "courthouse_hall"
+    ]
+   },
+   "text": "When the place is indoors (bedroom, classroom…) → never an outdoor b-roll",
+   "active": true,
+   "builtin": true,
+   "at": "2026-11-08T20:44:27.229Z"
+  },
+  {
+   "id": "money-graphic",
+   "kind": "always",
+   "head": "graphic",
+   "notNone": true,
+   "when": {
+    "words": [
+     "টাকা",
+     "দাম",
+     "খরচ",
+     "price",
+     "cost",
+     "taka"
+    ],
+    "numbers": "any"
+   },
+   "text": "যখন টাকা / দাম / খরচের কথা আর সংখ্যা থাকবে → graphic কখনো none থাকবে না",
+   "active": true,
+   "builtin": true,
+   "at": "2026-11-08T20:44:27.229Z"
+  },
+  {
+   "id": "compare-chart",
+   "kind": "always",
+   "head": "graphic",
+   "value": "dynamic_comparison_chart",
+   "when": {
+    "numbers": "compare"
+   },
+   "text": "যখনই সংখ্যার তুলনা থাকবে তখন dynamic_comparison_chart দেখাবে",
+   "active": true,
+   "builtin": true,
+   "at": "2026-11-08T20:44:27.229Z"
+  }
+ ]
+}

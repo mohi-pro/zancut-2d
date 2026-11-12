@@ -1,0 +1,30 @@
+{"storyId":"bn-ticket","scene":1,"lang":"bn","text":"শহরের বাসস্টপে তন্বী নিজের যাত্রার টিকিটটি খুঁজতে লাগল।","place":"bus_stop","action":"idle","face":"neutral","broll":"none","graphic":"none"}
+{"storyId":"bn-ticket","scene":2,"lang":"bn","text":"ব্যাগের খালি খোপ দেখে তন্বীর মুখে উৎকণ্ঠা ফুটে উঠল।","place":"bus_stop","action":"idle","face":"worried","broll":"none","graphic":"none"}
+{"storyId":"bn-ticket","scene":3,"lang":"bn","text":"পাশের বেঞ্চে টিকিটটা পড়ে থাকতে দেখে তন্বী বিস্ময়ে তাকাল।","place":"bus_stop","action":"idle","face":"surprised","broll":"none","graphic":"none"}
+{"storyId":"bn-ticket","scene":4,"lang":"bn","text":"সেটি হাতে ফিরতেই তন্বীর ভ্রু শিথিল হলো, মুখে হাসি এলো।","place":"bus_stop","action":"idle","face":"happy","broll":"none","graphic":"none"}
+{"storyId":"bn-ticket","scene":5,"lang":"bn","text":"দূরের পরিচিত যাত্রীটির দিকে তন্বী আনন্দে হাত তুলে নাড়ল।","place":"bus_stop","action":"wave","face":"happy","broll":"none","graphic":"none"}
+{"storyId":"bn-memento","scene":1,"lang":"bn","text":"বসার ঘরের আলমারি থেকে পিউ একটি স্মৃতির খাতা বের করল।","place":"living_room","action":"idle","face":"neutral","broll":"none","graphic":"none"}
+{"storyId":"bn-memento","scene":2,"lang":"bn","text":"হারিয়ে যাওয়া পোষা পাখিটির ছবি দেখে পিউর চোখ ভরে এলো।","place":"living_room","action":"idle","face":"sad","broll":"none","graphic":"none"}
+{"storyId":"bn-memento","scene":3,"lang":"bn","text":"ছবিতে সবাই হাসছে, অথচ পিউ এখন বিষণ্ণ চোখে চুপ করে আছে।","place":"living_room","action":"idle","face":"sad","broll":"none","graphic":"none"}
+{"storyId":"bn-memento","scene":4,"lang":"bn","text":"পুরোনো ছবির দিনটির কথা পিউ ধীরে ধীরে বোনকে বোঝাল।","place":"living_room","action":"talk_explain","face":"neutral","broll":"none","graphic":"none"}
+{"storyId":"bn-memento","scene":5,"lang":"bn","text":"নতুন ছবির জন্য পিউ খাতাটি বোনের হাতে এগিয়ে দিল।","place":"living_room","action":"offer_give","face":"neutral","broll":"none","graphic":"none"}
+{"storyId":"bn-tea-talk","scene":1,"lang":"bn","text":"চায়ের দোকানের বেঞ্চে শাওন দুপুরের অতিথির সঙ্গে বসেছিল।","place":"tea_stall","action":"sit","face":"neutral","broll":"none","graphic":"none"}
+{"storyId":"bn-tea-talk","scene":2,"lang":"bn","text":"অতিথির দুর্ভাবনার কথা শাওন স্থির মুখে মন দিয়ে শুনল।","place":"tea_stall","action":"idle","face":"neutral","broll":"none","graphic":"none"}
+{"storyId":"bn-tea-talk","scene":3,"lang":"bn","text":"নিজের জরুরি কাজের সময় ভুলে গেছে বুঝে শাওন চিন্তিত হলো।","place":"tea_stall","action":"idle","face":"worried","broll":"none","graphic":"none"}
+{"storyId":"bn-tea-talk","scene":4,"lang":"bn","text":"সে কবজি ঘুরিয়ে ঘড়ির কাঁটার সঙ্গে সময় মিলিয়ে দেখল।","place":"tea_stall","action":"check_watch","face":"worried","broll":"none","graphic":"none"}
+{"storyId":"bn-tea-talk","scene":5,"lang":"bn","text":"এখনো যথেষ্ট সময় আছে জেনে শাওন নিশ্চিন্ত হয়ে হাসল।","place":"tea_stall","action":"idle","face":"happy","broll":"none","graphic":"none"}
+{"storyId":"en-gallery","scene":1,"lang":"en","text":"In the classroom, Bina placed her finished paper sculpture on a desk.","place":"classroom","action":"idle","face":"neutral","broll":"none","graphic":"none"}
+{"storyId":"en-gallery","scene":2,"lang":"en","text":"A torn corner made Bina lower her eyes in disappointment.","place":"classroom","action":"idle","face":"sad","broll":"none","graphic":"none"}
+{"storyId":"en-gallery","scene":3,"lang":"en","text":"Bina explained the repair to her friend without moving from the desk.","place":"classroom","action":"talk_explain","face":"neutral","broll":"none","graphic":"none"}
+{"storyId":"en-gallery","scene":4,"lang":"en","text":"The hidden decoration unfolded unexpectedly, making Bina stare in amazement.","place":"classroom","action":"idle","face":"surprised","broll":"none","graphic":"none"}
+{"storyId":"en-gallery","scene":5,"lang":"en","text":"Bina smiled with pride when her friend applauded the repaired sculpture.","place":"classroom","action":"idle","face":"happy","broll":"none","graphic":"none"}
+{"storyId":"en-tiny-garden","scene":1,"lang":"en","text":"On the rooftop, Asha inspected a tray of newly sprouted plants.","place":"rooftop","action":"idle","face":"neutral","broll":"none","graphic":"none"}
+{"storyId":"en-tiny-garden","scene":2,"lang":"en","text":"An empty corner of the tray left Asha visibly anxious.","place":"rooftop","action":"idle","face":"worried","broll":"none","graphic":"none"}
+{"storyId":"en-tiny-garden","scene":3,"lang":"en","text":"Her sister described yesterday's panic, while Asha listened with a composed face.","place":"rooftop","action":"idle","face":"neutral","broll":"none","graphic":"none"}
+{"storyId":"en-tiny-garden","scene":4,"lang":"en","text":"Discovering the missing pot behind the tray made Asha raise her eyebrows.","place":"rooftop","action":"idle","face":"surprised","broll":"none","graphic":"none"}
+{"storyId":"en-tiny-garden","scene":5,"lang":"en","text":"Asha beamed and offered the little pot to her sister.","place":"rooftop","action":"offer_give","face":"happy","broll":"none","graphic":"none"}
+{"storyId":"en-returning-friend","scene":1,"lang":"en","text":"Beside the market stalls, Yusuf stopped to greet an old friend.","place":"market_bazaar","action":"idle","face":"neutral","broll":"none","graphic":"none"}
+{"storyId":"en-returning-friend","scene":2,"lang":"en","text":"Yusuf waved enthusiastically as his friend came into view.","place":"market_bazaar","action":"wave","face":"happy","broll":"none","graphic":"none"}
+{"storyId":"en-returning-friend","scene":3,"lang":"en","text":"He recalled a difficult winter with a cheerful smile on his face today.","place":"market_bazaar","action":"talk_explain","face":"happy","broll":"none","graphic":"none"}
+{"storyId":"en-returning-friend","scene":4,"lang":"en","text":"His friend's unexpected announcement left Yusuf looking astonished.","place":"market_bazaar","action":"idle","face":"surprised","broll":"none","graphic":"none"}
+{"storyId":"en-returning-friend","scene":5,"lang":"en","text":"Yusuf clapped with delight when he understood the good news.","place":"market_bazaar","action":"clap","face":"happy","broll":"none","graphic":"none"}

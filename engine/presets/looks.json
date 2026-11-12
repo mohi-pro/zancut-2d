@@ -1,0 +1,48 @@
+{
+  "_doc": "Colour looks (ffmpeg filters) applied after the automatic correction (exposure + white balance). job.json \"grade\": a look name below, \"none\", or a raw filter string. \"house\" = signature-style.json grade. Skin stays natural in every look: keep changes to shadows/highlights, never push mids far. Skin check: every look is rendered on a test face (engine/reel/engine/color.mjs --still); no look may turn skin orange.",
+  "natural": {
+    "label": "Natural",
+    "use": "true-to-life; tutorials, interviews, already well-lit footage",
+    "filters": "eq=contrast=1.03:saturation=1.04,unsharp=5:5:0.3"
+  },
+  "house": {
+    "label": "House",
+    "use": "Zancut default for dark looks: teal shadows, cool highlights, gentle S-curve, natural skin",
+    "filters": "@signature"
+  },
+  "golden": {
+    "label": "Golden",
+    "use": "light, bright, warm; light look and lifestyle",
+    "filters": "hqdn3d=1.5:1.5:4:4,eq=contrast=1.06:brightness=0.02:saturation=1.06:gamma=1.02,colorbalance=rs=0.008:gs=0.0:bs=-0.015:rm=0.018:gm=0.005:bm=-0.02:rh=0.01:gh=0.005:bh=-0.01,vibrance=intensity=0.08,unsharp=5:5:0.6:5:5:0.0"
+  },
+  "warm": {
+    "label": "Warm",
+    "use": "cosy, personal stories, evening light",
+    "filters": "colorbalance=rs=0.03:bs=-0.03:rm=0.02:bm=-0.02:rh=0.02:bh=-0.03,eq=contrast=1.04:saturation=1.03,unsharp=5:5:0.35"
+  },
+  "cool": {
+    "label": "Cool",
+    "use": "tech, finance, calm and clinical",
+    "filters": "colorbalance=rs=-0.03:bs=0.04:rm=-0.01:bm=0.02:rh=-0.02:bh=0.03,eq=contrast=1.05:saturation=0.98,unsharp=5:5:0.35"
+  },
+  "cinematic": {
+    "label": "Cinematic",
+    "use": "story, drama, premium: teal shadows, deeper contrast, calm skin",
+    "filters": "colorbalance=rs=-0.07:gs=-0.01:bs=0.07:rm=0.005:bm=-0.005:rh=0.01:bh=-0.015,curves=master='0/0.03 0.25/0.19 0.5/0.5 0.78/0.83 1/0.95',eq=saturation=0.93,unsharp=5:5:0.4"
+  },
+  "vivid": {
+    "label": "Vivid",
+    "use": "energetic shorts, products, travel",
+    "filters": "eq=contrast=1.07:saturation=1.07,curves=master='0/0.01 0.25/0.21 0.75/0.8 1/0.99',unsharp=5:5:0.5"
+  },
+  "soft": {
+    "label": "Soft pastel",
+    "use": "light look, beauty, calm creators",
+    "filters": "eq=contrast=0.95:brightness=0.03:saturation=0.92:gamma=1.04,colorbalance=rh=0.01:bh=0.01,curves=master='0/0.05 1/0.97'"
+  },
+  "mono": {
+    "label": "Black and white",
+    "use": "emphasis, serious or retro moments",
+    "filters": "hue=s=0,eq=contrast=1.12,curves=master='0/0.02 0.5/0.48 1/0.97',unsharp=5:5:0.4"
+  }
+}

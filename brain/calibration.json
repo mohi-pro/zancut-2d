@@ -1,0 +1,44 @@
+{
+ "place": {
+  "T": 0.4,
+  "n": 2956,
+  "source": "generated validation + separately authored teaching validation; never protected tests",
+  "eceBefore": 0.1467626425389299,
+  "eceAfter": 0.009297084790353502
+ },
+ "action": {
+  "T": 0.6,
+  "n": 2952,
+  "source": "generated validation + separately authored teaching validation; never protected tests",
+  "eceBefore": 0.15734407454427307,
+  "eceAfter": 0.03154326182139032
+ },
+ "face": {
+  "T": 1.35,
+  "n": 2972,
+  "source": "generated validation + separately authored teaching validation; never protected tests",
+  "eceBefore": 0.02452936900477064,
+  "eceAfter": 0.01877764483364421
+ },
+ "broll": {
+  "T": 1,
+  "n": 2960,
+  "source": "generated validation + separately authored teaching validation; never protected tests",
+  "eceBefore": 0.05369785210533795,
+  "eceAfter": 0.05369785210533795
+ },
+ "graphic": {
+  "T": 1.1,
+  "n": 2960,
+  "source": "generated validation + separately authored teaching validation; never protected tests",
+  "eceBefore": 0.05113202203097105,
+  "eceAfter": 0.03645166759592704
+ },
+ "cameraMove": {
+  "T": 1,
+  "n": 2952,
+  "source": "generated validation + separately authored teaching validation; never protected tests",
+  "eceBefore": 0.02540353457012426,
+  "eceAfter": 0.02540353457012426
+ }
+}

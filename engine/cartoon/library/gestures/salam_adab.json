@@ -1,0 +1,118 @@
+{
+  "id": "salam_adab",
+  "about": "the right hand rises gracefully toward the forehead in the Bangladeshi Salam / Adab greeting",
+  "group": "arms",
+  "seconds": 1.1,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    },
+    {
+      "u": 0.35,
+      "arms": {
+        "R": {
+          "elbow": [
+            23.1,
+            -20.9,
+            8.1
+          ],
+          "wrist": [
+            6,
+            -6,
+            26
+          ],
+          "hand": [
+            1.9,
+            4.2,
+            31.3
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "salamHand"
+      ]
+    },
+    {
+      "u": 0.7,
+      "arms": {
+        "R": {
+          "elbow": [
+            18.8,
+            6.2,
+            25.4
+          ],
+          "wrist": [
+            -6,
+            20,
+            20
+          ],
+          "hand": [
+            -13.6,
+            29.5,
+            20.7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "salamHand"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            18.9,
+            5.5,
+            25.5
+          ],
+          "wrist": [
+            -6,
+            19,
+            20
+          ],
+          "hand": [
+            -13.7,
+            28.4,
+            20.7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "salamHand"
+      ]
+    }
+  ]
+}

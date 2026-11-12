@@ -1,0 +1,118 @@
+{
+  "id": "handshake_offer",
+  "about": "right hand extends forward at waist-chest height to offer a polite handshake",
+  "group": "arms",
+  "seconds": 0.8,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    },
+    {
+      "u": 0.45,
+      "arms": {
+        "R": {
+          "elbow": [
+            20,
+            -25.2,
+            0.8
+          ],
+          "wrist": [
+            6,
+            -24,
+            26
+          ],
+          "hand": [
+            5.2,
+            -25,
+            38.1
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "openSide"
+      ]
+    },
+    {
+      "u": 0.8,
+      "arms": {
+        "R": {
+          "elbow": [
+            15.5,
+            -24.8,
+            13.4
+          ],
+          "wrist": [
+            2,
+            -18,
+            38
+          ],
+          "hand": [
+            1,
+            -17.5,
+            50.2
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "openSide"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            16,
+            -25,
+            12.5
+          ],
+          "wrist": [
+            2,
+            -19,
+            37
+          ],
+          "hand": [
+            0.9,
+            -18.5,
+            49.1
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "openSide"
+      ]
+    }
+  ]
+}

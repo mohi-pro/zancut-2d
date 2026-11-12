@@ -1,0 +1,185 @@
+{
+  "id": "hands_folded_qiyam",
+  "about": "both hands folded respectfully over the lower chest / navel in standing prayer (Qiyam), right hand over left",
+  "group": "arms",
+  "seconds": 1,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "L": {
+          "elbow": [
+            -3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            -2,
+            -60,
+            5
+          ],
+          "hand": [
+            -1,
+            -72,
+            7
+          ]
+        },
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    },
+    {
+      "u": 0.45,
+      "arms": {
+        "L": {
+          "elbow": [
+            -15.9,
+            -26.5,
+            9
+          ],
+          "wrist": [
+            10,
+            -20,
+            20
+          ],
+          "hand": [
+            18.4,
+            -17.2,
+            28.4
+          ]
+        },
+        "R": {
+          "elbow": [
+            15,
+            -26.6,
+            10.3
+          ],
+          "wrist": [
+            -10,
+            -18,
+            22
+          ],
+          "hand": [
+            -18.4,
+            -15.2,
+            30.4
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "relaxed"
+      ]
+    },
+    {
+      "u": 0.8,
+      "arms": {
+        "L": {
+          "elbow": [
+            -8.3,
+            -28.9,
+            11.4
+          ],
+          "wrist": [
+            18,
+            -18,
+            16
+          ],
+          "hand": [
+            28.7,
+            -15.3,
+            21.3
+          ]
+        },
+        "R": {
+          "elbow": [
+            7.5,
+            -28.6,
+            12.8
+          ],
+          "wrist": [
+            -18,
+            -16,
+            18
+          ],
+          "hand": [
+            -28.7,
+            -13.3,
+            23.3
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "relaxed"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "L": {
+          "elbow": [
+            -8.7,
+            -28.9,
+            11.1
+          ],
+          "wrist": [
+            18,
+            -19,
+            16
+          ],
+          "hand": [
+            28.7,
+            -16.3,
+            21.3
+          ]
+        },
+        "R": {
+          "elbow": [
+            7.8,
+            -28.6,
+            12.4
+          ],
+          "wrist": [
+            -18,
+            -17,
+            18
+          ],
+          "hand": [
+            -28.7,
+            -14.3,
+            23.3
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "relaxed"
+      ]
+    }
+  ]
+}

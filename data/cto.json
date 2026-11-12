@@ -1,0 +1,44 @@
+{
+ "items": [
+  {
+   "id": "cmw59xco5kofu",
+   "tag": "critical",
+   "key": "job:other:storyboard",
+   "title": "A \"storyboard\" job failed",
+   "detail": "Shot 2: The script does not run: missing ) after argument list Something went wrong on our side. Your files are safe. Please press Retry; if it happens again, contact support.",
+   "action": "left for the customer to retry",
+   "ok": false,
+   "status": "open",
+   "count": 2,
+   "firstAt": 1793987648357,
+   "at": 1793987667348,
+   "where": {
+    "os": "darwin 27.0.0 arm64",
+    "app": "0.1.0",
+    "mode": "web",
+    "host": "Ahnafs-MacBook-Air.local"
+   },
+   "projectId": "f249rknpa3"
+  },
+  {
+   "id": "cmw52rd7axwdd",
+   "tag": "critical",
+   "key": "job:claude-limit:storyboard",
+   "title": "Claude's usage limit stopped a job",
+   "detail": "Your Claude 5-hour limit is reached (97% used). New AI steps pause here, before a new step starts; the window resets at 8:50 PM. Something went wrong on our side. Your files are safe. Please press Retry; if it happens again, contact support.",
+   "action": "left for the customer to retry",
+   "ok": false,
+   "status": "open",
+   "count": 1,
+   "firstAt": 1793975611798,
+   "at": 1793975611798,
+   "where": {
+    "os": "darwin 27.0.0 arm64",
+    "app": "0.1.0",
+    "mode": "web",
+    "host": "Ahnafs-MacBook-Air.local"
+   },
+   "projectId": "vqsnc2sgyd"
+  }
+ ]
+}

@@ -1,0 +1,4378 @@
+{
+  "about": "The library's search words (server/parts.mjs): aliases per part (English, Bangla, common words), word synonyms, and places = the things that usually go together. A new delivery adds its parts here; a miss in scripts/parts-test.mjs is fixed here, never in a prompt. phrases = [pattern, meaning] pairs read before the words (\"lifts his head\" means look up, not lift a box); patterns are case-insensitive regular expressions.",
+  "aliases": {
+    "airportFront": [
+      "airport",
+      "terminal building",
+      "flight",
+      "বিমানবন্দর"
+    ],
+    "apartmentRow": [
+      "apartment",
+      "flats",
+      "residential building",
+      "city houses",
+      "ফ্ল্যাট",
+      "এপার্টমেন্ট"
+    ],
+    "almirah": [
+      "wardrobe",
+      "cupboard",
+      "steel almirah",
+      "closet",
+      "আলমারি"
+    ],
+    "ambulance": [
+      "emergency vehicle",
+      "hospital van",
+      "siren",
+      "অ্যাম্বুলেন্স"
+    ],
+    "aquarium": [
+      "fish tank",
+      "fish bowl",
+      "অ্যাকুরিয়াম"
+    ],
+    "bambooBridge": [
+      "sako",
+      "shako",
+      "bamboo footbridge",
+      "village bridge over canal",
+      "সাঁকো",
+      "বাঁশের সাঁকো"
+    ],
+    "armchair": [
+      "easy chair",
+      "cushioned chair",
+      "আরাম কেদারা"
+    ],
+    "balcony": [
+      "veranda",
+      "terrace",
+      "বারান্দা",
+      "ব্যালকনি"
+    ],
+    "bambooClump": [
+      "bamboo bush",
+      "bamboo grove",
+      "বাঁশঝাড়"
+    ],
+    "bankFront": [
+      "bank",
+      "atm",
+      "বাংক",
+      "ব্যাংক"
+    ],
+    "bambooFence": [
+      "bera",
+      "village fence",
+      "বেড়া",
+      "বাঁশের বেড়া"
+    ],
+    "bananaPlant": [
+      "banana tree",
+      "kola gach",
+      "কলাগাছ"
+    ],
+    "banyanTree": [
+      "bot gach",
+      "huge tree",
+      "shade tree",
+      "বটগাছ"
+    ],
+    "bedsideTable": [
+      "night stand",
+      "side table",
+      "bedside"
+    ],
+    "bathroomTap": [
+      "tap",
+      "faucet",
+      "water tap",
+      "কল"
+    ],
+    "bazaarShed": [
+      "haat",
+      "market shed",
+      "village market",
+      "হাট",
+      "বাজার"
+    ],
+    "bicycle": [
+      "cycle",
+      "bike",
+      "সাইকেল"
+    ],
+    "boat": [
+      "nouka",
+      "country boat",
+      "sail boat",
+      "নৌকা"
+    ],
+    "billboard": [
+      "hoarding",
+      "advert board",
+      "big sign"
+    ],
+    "blackboard": [
+      "chalkboard",
+      "board",
+      "class board",
+      "ব্ল্যাকবোর্ড"
+    ],
+    "bookshelf": [
+      "book shelf",
+      "books",
+      "বইয়ের তাক"
+    ],
+    "bookshelfFull": [
+      "library shelf",
+      "full bookshelf",
+      "books",
+      "লাইব্রেরি"
+    ],
+    "brickKiln": [
+      "brick field",
+      "itbhata",
+      "ইটভাটা"
+    ],
+    "boundaryWall": [
+      "compound wall",
+      "wall",
+      "দেয়াল"
+    ],
+    "bridge": [
+      "road bridge",
+      "flyover",
+      "সেতু",
+      "ব্রিজ"
+    ],
+    "bullockCart": [
+      "gorur gari",
+      "ox cart",
+      "cow cart",
+      "গরুর গাড়ি"
+    ],
+    "busTerminal": [
+      "bus station",
+      "bus stand",
+      "terminal",
+      "বাস টার্মিনাল"
+    ],
+    "busStop": [
+      "bus shelter",
+      "waiting shed",
+      "বাস স্টপ"
+    ],
+    "bushRow": [
+      "bushes",
+      "hedge",
+      "shrubs",
+      "ঝোপ"
+    ],
+    "cactus": [
+      "desert plant"
+    ],
+    "ceilingLamp": [
+      "pendant lamp",
+      "hanging light",
+      "bulb",
+      "বাতি"
+    ],
+    "ceilingFan": [
+      "fan",
+      "ceiling fan",
+      "ফ্যান",
+      "পাখা"
+    ],
+    "ceilingProjector": [
+      "projector",
+      "presentation"
+    ],
+    "chula": [
+      "clay stove",
+      "mud oven",
+      "village kitchen fire",
+      "cooking fire",
+      "চুলা",
+      "মাটির চুলা"
+    ],
+    "cinemaHall": [
+      "cinema",
+      "movie theatre",
+      "সিনেমা হল"
+    ],
+    "church": [
+      "chapel",
+      "গির্জা"
+    ],
+    "classroomShelf": [
+      "class shelf",
+      "school shelf"
+    ],
+    "clinicFront": [
+      "clinic",
+      "doctor chamber",
+      "health center",
+      "ক্লিনিক"
+    ],
+    "cngAuto": [
+      "cng",
+      "auto rickshaw",
+      "baby taxi",
+      "three wheeler",
+      "tuk tuk",
+      "সিএনজি"
+    ],
+    "clayPots": [
+      "matir hari",
+      "earthen pots",
+      "kolshi",
+      "pottery",
+      "মাটির হাঁড়ি",
+      "কলসি"
+    ],
+    "cityPark": [
+      "park",
+      "park bench",
+      "fountain",
+      "পার্ক"
+    ],
+    "collegeFront": [
+      "college",
+      "কলেজ"
+    ],
+    "clothesLine": [
+      "laundry line",
+      "drying clothes",
+      "dori",
+      "কাপড় শুকানো"
+    ],
+    "computerScreen": [
+      "computer",
+      "monitor",
+      "desktop pc",
+      "কম্পিউটার"
+    ],
+    "curtains": [
+      "curtain",
+      "porda",
+      "পর্দা"
+    ],
+    "drain": [
+      "gutter",
+      "nala",
+      "ড্রেন"
+    ],
+    "fireTruck": [
+      "fire engine",
+      "fire service",
+      "ফায়ার সার্ভিস"
+    ],
+    "coconutPalm": [
+      "coconut tree",
+      "narikel gach",
+      "palm tree",
+      "নারকেল গাছ"
+    ],
+    "constructionSite": [
+      "building under construction",
+      "scaffolding",
+      "construction"
+    ],
+    "courtFront": [
+      "court",
+      "courthouse",
+      "judge",
+      "আদালত"
+    ],
+    "courtyard": [
+      "uthan",
+      "village yard",
+      "home yard",
+      "উঠান"
+    ],
+    "dripStand": [
+      "saline stand",
+      "iv drip",
+      "saline",
+      "স্যালাইন"
+    ],
+    "fridge": [
+      "refrigerator",
+      "ফ্রিজ"
+    ],
+    "diningTable": [
+      "dining",
+      "dinner table",
+      "eating table",
+      "খাবার টেবিল"
+    ],
+    "door": [
+      "doorway",
+      "entrance",
+      "দরজা"
+    ],
+    "fog": [
+      "mist",
+      "kuasha",
+      "winter morning",
+      "কুয়াশা"
+    ],
+    "gate": [
+      "main gate",
+      "iron gate",
+      "গেট"
+    ],
+    "dustbin": [
+      "trash can",
+      "garbage bin",
+      "waste bin",
+      "ডাস্টবিন"
+    ],
+    "embankment": [
+      "dam",
+      "river bank",
+      "bund",
+      "বাঁধ",
+      "riverbank"
+    ],
+    "fruitPile": [
+      "fruits",
+      "fruit stall",
+      "ফল"
+    ],
+    "fishTray": [
+      "fish",
+      "fish market",
+      "মাছ"
+    ],
+    "hospitalBed": [
+      "patient bed",
+      "ward bed",
+      "হাসপাতালের বেড"
+    ],
+    "fishingNet": [
+      "jal",
+      "net",
+      "জাল"
+    ],
+    "grassTuft": [
+      "grass",
+      "ঘাস"
+    ],
+    "footpath": [
+      "sidewalk",
+      "pavement",
+      "ফুটপাত"
+    ],
+    "footBridge": [
+      "overpass",
+      "foot over bridge",
+      "ফুট ওভারব্রিজ"
+    ],
+    "jetty": [
+      "ghat",
+      "pier",
+      "landing",
+      "ঘাট"
+    ],
+    "kutchaRoad": [
+      "dirt road",
+      "village road",
+      "mud road",
+      "কাঁচা রাস্তা"
+    ],
+    "hospitalFront": [
+      "hospital",
+      "medical college",
+      "হাসপাতাল"
+    ],
+    "gasStove": [
+      "stove",
+      "burner",
+      "kitchen stove",
+      "গ্যাসের চুলা"
+    ],
+    "garmentFactory": [
+      "factory",
+      "garments",
+      "mill",
+      "গার্মেন্টস",
+      "কারখানা"
+    ],
+    "lift": [
+      "elevator",
+      "লিফট"
+    ],
+    "helicopter": [
+      "chopper",
+      "হেলিকপ্টার"
+    ],
+    "kitchenShelf": [
+      "kitchen rack",
+      "spice shelf",
+      "রান্নাঘর"
+    ],
+    "hillRange": [
+      "hills",
+      "hill tracts",
+      "পাহাড়"
+    ],
+    "mangoTree": [
+      "aam gach",
+      "আমগাছ"
+    ],
+    "hotelFront": [
+      "hotel",
+      "হোটেল"
+    ],
+    "jackfruitTree": [
+      "kathal gach",
+      "কাঁঠাল গাছ"
+    ],
+    "metroPillar": [
+      "metro rail pillar",
+      "elevated rail"
+    ],
+    "labBench": [
+      "laboratory",
+      "science lab",
+      "lab",
+      "ল্যাব"
+    ],
+    "kitchenSink": [
+      "sink",
+      "wash dishes",
+      "সিংক"
+    ],
+    "krishnachura": [
+      "flame tree",
+      "gulmohar",
+      "red flower tree",
+      "কৃষ্ণচূড়া"
+    ],
+    "mosquitoNet": [
+      "mosari",
+      "net over bed",
+      "মশারি"
+    ],
+    "lightning": [
+      "thunder",
+      "storm",
+      "বজ্রপাত",
+      "বিদ্যুৎ চমকানো"
+    ],
+    "launch": [
+      "river launch",
+      "ferry",
+      "steamer",
+      "লঞ্চ"
+    ],
+    "leguna": [
+      "human hauler",
+      "tempo",
+      "লেগুনা"
+    ],
+    "mudPath": [
+      "village path",
+      "trail",
+      "আল",
+      "মেঠো পথ"
+    ],
+    "localBus": [
+      "bus",
+      "city bus",
+      "বাস"
+    ],
+    "mangroveForest": [
+      "sundarbans",
+      "mangrove",
+      "সুন্দরবন"
+    ],
+    "marketStreet": [
+      "market",
+      "street shops",
+      "bazar street",
+      "বাজার"
+    ],
+    "mirror": [
+      "looking glass",
+      "আয়না"
+    ],
+    "logPile": [
+      "wood pile",
+      "firewood",
+      "logs",
+      "লাকড়ি"
+    ],
+    "metroCoach": [
+      "metro rail",
+      "metro train",
+      "মেট্রো রেল"
+    ],
+    "officeTower": [
+      "office building",
+      "corporate building",
+      "অফিস"
+    ],
+    "microbus": [
+      "minibus",
+      "hiace",
+      "van",
+      "মাইক্রোবাস"
+    ],
+    "motorbike": [
+      "motorcycle",
+      "bike",
+      "মোটরসাইকেল"
+    ],
+    "pharmacyFront": [
+      "pharmacy",
+      "medicine shop",
+      "drug store",
+      "ফার্মেসি",
+      "ওষুধের দোকান"
+    ],
+    "mosqueMinaret": [
+      "minaret",
+      "mosque tower",
+      "মিনার"
+    ],
+    "mountainRange": [
+      "mountains",
+      "পর্বত"
+    ],
+    "mudirDokan": [
+      "grocery shop",
+      "mudi shop",
+      "village shop",
+      "মুদির দোকান"
+    ],
+    "plane": [
+      "aeroplane",
+      "airplane",
+      "flight",
+      "বিমান",
+      "প্লেন"
+    ],
+    "mudHouse": [
+      "village house",
+      "kacha house",
+      "hut",
+      "মাটির ঘর",
+      "বাড়ি"
+    ],
+    "mustardField": [
+      "sorisha field",
+      "yellow field",
+      "সরিষা ক্ষেত"
+    ],
+    "paddyField": [
+      "rice field",
+      "dhan khet",
+      "crop field",
+      "ধান ক্ষেত"
+    ],
+    "pond": [
+      "pukur",
+      "pool",
+      "পুকুর"
+    ],
+    "officeDesk": [
+      "desk",
+      "work desk",
+      "office table",
+      "ডেস্ক"
+    ],
+    "paddyStack": [
+      "haystack",
+      "dhan stack",
+      "খড়ের গাদা"
+    ],
+    "petrolPump": [
+      "gas station",
+      "fuel station",
+      "filling station",
+      "পেট্রোল পাম্প"
+    ],
+    "photoFrame": [
+      "picture frame",
+      "family photo",
+      "ছবি"
+    ],
+    "publicToilet": [
+      "public restroom",
+      "washroom"
+    ],
+    "rainbow": [
+      "রংধনু"
+    ],
+    "pickupVan": [
+      "pickup",
+      "pickup truck",
+      "পিকআপ"
+    ],
+    "pineTree": [
+      "pine",
+      "fir tree"
+    ],
+    "riceMill": [
+      "mill",
+      "chaler mill",
+      "চালের মিল"
+    ],
+    "playgroundSlide": [
+      "slide",
+      "playground",
+      "খেলার মাঠ"
+    ],
+    "roadDivider": [
+      "divider",
+      "median"
+    ],
+    "policeCar": [
+      "police vehicle",
+      "patrol car",
+      "পুলিশের গাড়ি"
+    ],
+    "policeStation": [
+      "thana",
+      "police",
+      "থানা"
+    ],
+    "prayerMat": [
+      "jaynamaz",
+      "musalla",
+      "prayer rug",
+      "জায়নামাজ"
+    ],
+    "schoolFront": [
+      "school",
+      "school building",
+      "স্কুল"
+    ],
+    "pressureCooker": [
+      "cooker",
+      "pressure cooker",
+      "প্রেশার কুকার"
+    ],
+    "shopCounter": [
+      "counter",
+      "cash counter",
+      "shop",
+      "দোকান"
+    ],
+    "privateCar": [
+      "car",
+      "sedan",
+      "গাড়ি",
+      "প্রাইভেট কার"
+    ],
+    "rackOfClothes": [
+      "clothes shop",
+      "garment rack",
+      "কাপড়ের দোকান"
+    ],
+    "railStation": [
+      "railway station",
+      "train station",
+      "platform",
+      "রেলস্টেশন"
+    ],
+    "shrine": [
+      "mazar",
+      "dargah",
+      "মাজার"
+    ],
+    "railTrack": [
+      "railway line",
+      "rail line",
+      "রেললাইন"
+    ],
+    "rainfall": [
+      "rain",
+      "rainy",
+      "monsoon",
+      "brishti",
+      "বৃষ্টি"
+    ],
+    "restaurantFront": [
+      "restaurant",
+      "hotel restaurant",
+      "রেস্টুরেন্ট"
+    ],
+    "splitAC": [
+      "ac",
+      "air conditioner",
+      "এসি"
+    ],
+    "riceSacks": [
+      "sacks",
+      "rice bags",
+      "bosta",
+      "বস্তা"
+    ],
+    "restaurantTable": [
+      "cafe table",
+      "restaurant table",
+      "biriyani table",
+      "eating table"
+    ],
+    "rickshawVan": [
+      "van",
+      "cargo rickshaw",
+      "ভ্যান"
+    ],
+    "strawStack": [
+      "kher",
+      "hay",
+      "খড়"
+    ],
+    "rock": [
+      "stone",
+      "boulder",
+      "পাথর"
+    ],
+    "river": [
+      "nodi",
+      "canal",
+      "water",
+      "নদী"
+    ],
+    "sandDune": [
+      "desert",
+      "sand",
+      "বালু"
+    ],
+    "teaCart": [
+      "tea trolley",
+      "tea van",
+      "চায়ের ভ্যান"
+    ],
+    "schoolDesk": [
+      "bench desk",
+      "student desk",
+      "class desk",
+      "বেঞ্চ"
+    ],
+    "schoolTin": [
+      "village school",
+      "primary school",
+      "tin school",
+      "প্রাইমারি স্কুল"
+    ],
+    "seaWaves": [
+      "sea",
+      "ocean",
+      "beach",
+      "cox's bazar",
+      "সমুদ্র",
+      "সাগর"
+    ],
+    "shoppingMall": [
+      "mall",
+      "shopping center",
+      "শপিং মল"
+    ],
+    "temple": [
+      "mandir",
+      "মন্দির"
+    ],
+    "ship": [
+      "cargo ship",
+      "vessel",
+      "জাহাজ"
+    ],
+    "trafficLight": [
+      "signal",
+      "traffic signal",
+      "সিগন্যাল"
+    ],
+    "stadium": [
+      "cricket ground",
+      "football ground",
+      "স্টেডিয়াম"
+    ],
+    "shower": [
+      "bath",
+      "bathroom shower",
+      "গোসল"
+    ],
+    "sofaSet": [
+      "sofa",
+      "couch",
+      "drawing room",
+      "সোফা"
+    ],
+    "streetLamp": [
+      "street light",
+      "lamp post",
+      "ল্যাম্পপোস্ট"
+    ],
+    "tubewell": [
+      "chapakol",
+      "hand pump",
+      "nolkup",
+      "টিউবওয়েল",
+      "চাপকল"
+    ],
+    "staircase": [
+      "stairs",
+      "steps",
+      "সিঁড়ি"
+    ],
+    "solarPanel": [
+      "solar",
+      "সোলার"
+    ],
+    "teaGardenRows": [
+      "tea garden",
+      "sylhet",
+      "চা বাগান"
+    ],
+    "vegetableBasket": [
+      "vegetables",
+      "sobji",
+      "basket",
+      "সবজি",
+      "ঝুড়ি"
+    ],
+    "streetVendor": [
+      "hawker",
+      "fruit cart",
+      "vendor",
+      "ফেরিওয়ালা"
+    ],
+    "tinHouse": [
+      "tin shed house",
+      "tin roof house",
+      "টিনের ঘর"
+    ],
+    "stars": [
+      "night sky",
+      "তারা"
+    ],
+    "wallSwitchboard": [
+      "switch",
+      "switchboard",
+      "সুইচ"
+    ],
+    "teaStall": [
+      "tong",
+      "cha dokan",
+      "roadside tea",
+      "চায়ের দোকান",
+      "টং"
+    ],
+    "toilet": [
+      "commode",
+      "latrine",
+      "টয়লেট"
+    ],
+    "waterTank": [
+      "rooftop tank",
+      "পানির ট্যাংক"
+    ],
+    "swingSet": [
+      "swing",
+      "দোলনা"
+    ],
+    "zebraCrossing": [
+      "crosswalk",
+      "road crossing",
+      "জেব্রা ক্রসিং"
+    ],
+    "truck": [
+      "lorry",
+      "ট্রাক"
+    ],
+    "teacherTable": [
+      "teacher desk",
+      "স্যারের টেবিল"
+    ],
+    "tower": [
+      "mobile tower",
+      "transmission tower",
+      "টাওয়ার"
+    ],
+    "universityCampus": [
+      "university",
+      "campus",
+      "বিশ্ববিদ্যালয়"
+    ],
+    "tvStand": [
+      "tv",
+      "television",
+      "টিভি"
+    ],
+    "tubeLight": [
+      "light",
+      "tube light",
+      "লাইট"
+    ],
+    "wallCalendar": [
+      "calendar",
+      "date",
+      "ক্যালেন্ডার"
+    ],
+    "utilityPole": [
+      "electric pole",
+      "wires",
+      "বিদ্যুতের খুঁটি"
+    ],
+    "trainCoach": [
+      "train",
+      "rail coach",
+      "ট্রেন"
+    ],
+    "wallClock": [
+      "clock",
+      "time",
+      "ঘড়ি"
+    ],
+    "villageMosque": [
+      "mosque",
+      "masjid",
+      "মসজিদ"
+    ],
+    "washingMachine": [
+      "washer",
+      "laundry machine"
+    ],
+    "washBasin": [
+      "basin",
+      "hand wash",
+      "বেসিন"
+    ],
+    "waterFilter": [
+      "filter",
+      "drinking water",
+      "ফিল্টার"
+    ],
+    "wheelchairRamp": [
+      "ramp",
+      "accessible ramp"
+    ],
+    "waterfall": [
+      "jhorna",
+      "ঝর্ণা"
+    ],
+    "window": [
+      "jalana",
+      "জানালা"
+    ],
+    "cycleRickshaw": [
+      "rickshaw",
+      "cycle rickshaw",
+      "রিকশা"
+    ],
+    "skyscraper": [
+      "high rise",
+      "tall building",
+      "tower block"
+    ],
+    "sky": [
+      "sky",
+      "আকাশ"
+    ],
+    "floor": [
+      "ground",
+      "floor",
+      "মেঝে"
+    ],
+    "road": [
+      "road",
+      "street",
+      "রাস্তা"
+    ],
+    "wall": [
+      "room wall"
+    ],
+    "cloud": [
+      "clouds",
+      "মেঘ"
+    ],
+    "sun": [
+      "sunny",
+      "সূর্য"
+    ],
+    "moon": [
+      "night",
+      "চাঁদ"
+    ],
+    "hill": [
+      "small hill"
+    ],
+    "tree": [
+      "tree",
+      "গাছ"
+    ],
+    "palm": [
+      "palm"
+    ],
+    "bush": [
+      "shrub"
+    ],
+    "house": [
+      "home",
+      "বাসা"
+    ],
+    "building": [
+      "city building"
+    ],
+    "shop": [
+      "store",
+      "দোকান"
+    ],
+    "sign": [
+      "signboard",
+      "সাইনবোর্ড"
+    ],
+    "pole": [
+      "post"
+    ],
+    "lamp": [
+      "table lamp"
+    ],
+    "fence": [
+      "railing"
+    ],
+    "rickshaw": [
+      "রিকশা"
+    ],
+    "car": [
+      "car",
+      "গাড়ি"
+    ],
+    "bench": [
+      "bench",
+      "park bench",
+      "বেঞ্চ"
+    ],
+    "chair": [
+      "chair",
+      "চেয়ার"
+    ],
+    "table": [
+      "table",
+      "টেবিল"
+    ],
+    "bed": [
+      "bed",
+      "খাট",
+      "বিছানা"
+    ],
+    "sofa": [
+      "sofa",
+      "সোফা"
+    ],
+    "shelf": [
+      "rack",
+      "তাক"
+    ],
+    "plant": [
+      "potted plant",
+      "টব"
+    ],
+    "rug": [
+      "carpet",
+      "mat"
+    ],
+    "kettle": [
+      "tea kettle",
+      "কেটলি"
+    ],
+    "cup": [
+      "cup",
+      "glass",
+      "tea cup",
+      "কাপ"
+    ],
+    "book": [
+      "book",
+      "বই"
+    ],
+    "paper": [
+      "paper",
+      "letter",
+      "report card",
+      "কাগজ",
+      "bill",
+      "receipt",
+      "the bill",
+      "বিল",
+      "রসিদ"
+    ],
+    "phone": [
+      "mobile",
+      "phone",
+      "ফোন"
+    ],
+    "laptop": [
+      "laptop",
+      "ল্যাপটপ"
+    ],
+    "jars": [
+      "jars",
+      "বয়াম"
+    ],
+    "faint": [
+      "collapse",
+      "passes out",
+      "falls unconscious",
+      "অজ্ঞান"
+    ],
+    "cry_sob": [
+      "cry",
+      "weep",
+      "tears",
+      "কান্না"
+    ],
+    "laugh_big": [
+      "laugh",
+      "হাসি"
+    ],
+    "angry_stomp": [
+      "angry",
+      "rage",
+      "রাগ"
+    ],
+    "shrug": [
+      "dont know",
+      "জানি না"
+    ],
+    "touch_feet_respect": [
+      "salam to elders",
+      "kadam bosi",
+      "pronam",
+      "সালাম করা",
+      "কদমবুসি"
+    ],
+    "bless_head_a": [
+      "blessing",
+      "doa",
+      "দোয়া",
+      "blesses",
+      "hand on head",
+      "মাথায় হাত"
+    ],
+    "walk_cane": [
+      "walking stick",
+      "lathi",
+      "লাঠি"
+    ],
+    "pump_tubewell": [
+      "chapakol",
+      "tubewell",
+      "draw water",
+      "চাপকল"
+    ],
+    "carry_water_pot": [
+      "kolshi",
+      "water pot",
+      "কলসি"
+    ],
+    "squat_adda": [
+      "adda",
+      "chat squatting",
+      "আড্ডা"
+    ],
+    "row_boat": [
+      "boat",
+      "boatman",
+      "majhi",
+      "মাঝি"
+    ],
+    "pedal_cycle": [
+      "cycle",
+      "bicycle",
+      "rickshaw puller",
+      "রিকশাওয়ালা"
+    ],
+    "rickshaw_pull_stand": [
+      "rickshaw puller",
+      "uphill rickshaw"
+    ],
+    "sweep_floor": [
+      "broom",
+      "jharu",
+      "ঝাড়ু"
+    ],
+    "harvest_paddy": [
+      "harvest",
+      "sickle",
+      "kaste",
+      "ধান কাটা"
+    ],
+    "plant_seedling": [
+      "rice planting",
+      "chara",
+      "ধান লাগানো"
+    ],
+    "hoe_field": [
+      "kodal",
+      "dig",
+      "farmer",
+      "কোদাল",
+      "কৃষক"
+    ],
+    "wash_clothes": [
+      "laundry",
+      "washing clothes",
+      "কাপড় ধোয়া"
+    ],
+    "pray_congregation": [
+      "jamaat",
+      "congregation",
+      "জামাত"
+    ],
+    "sajdah_down": [
+      "sajda",
+      "prostrate",
+      "সিজদা"
+    ],
+    "ruku_down": [
+      "ruku",
+      "রুকু"
+    ],
+    "takbir_start": [
+      "namaz start",
+      "salah",
+      "prayer",
+      "নামাজ"
+    ],
+    "munajat": [
+      "dua",
+      "pray hands",
+      "মোনাজাত"
+    ],
+    "salam_adab": [
+      "salam",
+      "adab",
+      "greet",
+      "সালাম",
+      "আদাব"
+    ],
+    "eat_with_hand": [
+      "eat rice",
+      "eating",
+      "bhat",
+      "খাওয়া",
+      "ভাত"
+    ],
+    "drink_tea_tong": [
+      "tea",
+      "cha",
+      "চা"
+    ],
+    "count_tasbih": [
+      "tasbih",
+      "beads",
+      "তাসবিহ"
+    ],
+    "fan_hand": [
+      "hand fan",
+      "talpata",
+      "hot",
+      "গরম",
+      "পাখা"
+    ],
+    "phone_call": [
+      "call",
+      "talks on phone",
+      "ফোন করা"
+    ],
+    "look_at_phone": [
+      "scroll phone",
+      "texting",
+      "reading phone",
+      "look at phone",
+      "stare at phone"
+    ],
+    "offer_give": [
+      "give",
+      "hand over",
+      "dey",
+      "দেওয়া"
+    ],
+    "receive_take": [
+      "take",
+      "receive",
+      "নেওয়া"
+    ],
+    "give_a": [
+      "give",
+      "hand over",
+      "দেওয়া"
+    ],
+    "take_b": [
+      "take",
+      "receive",
+      "নেওয়া"
+    ],
+    "handshake_a": [
+      "shake hands",
+      "shakes hands",
+      "handshake",
+      "হাত মেলানো"
+    ],
+    "handshake_b": [
+      "shake hands",
+      "shakes hands",
+      "handshake",
+      "হাত মেলানো"
+    ],
+    "handshake_offer": [
+      "offers a handshake"
+    ],
+    "hug_a": [
+      "embrace",
+      "জড়িয়ে ধরা"
+    ],
+    "hug_b": [
+      "embrace",
+      "জড়িয়ে ধরা"
+    ],
+    "wave_hello": [
+      "hi",
+      "greet",
+      "হাত নাড়া"
+    ],
+    "wave_bye": [
+      "bye",
+      "goodbye",
+      "বিদায়"
+    ],
+    "chin_think": [
+      "think",
+      "wonder",
+      "ভাবা"
+    ],
+    "scratch_head": [
+      "confused",
+      "puzzled"
+    ],
+    "facepalm": [
+      "oh no",
+      "mistake"
+    ],
+    "cover_mouth_shock": [
+      "shocked",
+      "gasp",
+      "অবাক"
+    ],
+    "wipe_tears": [
+      "sad",
+      "tears"
+    ],
+    "wipe_sweat": [
+      "hot",
+      "tired",
+      "sweat",
+      "ঘাম"
+    ],
+    "talk_explain": [
+      "explain",
+      "speak",
+      "says",
+      "talks",
+      "বলা"
+    ],
+    "talk_argue": [
+      "argue",
+      "fight",
+      "ঝগড়া"
+    ],
+    "stop_palm": [
+      "stop",
+      "wait",
+      "থামো"
+    ],
+    "raise_hand": [
+      "question",
+      "volunteer",
+      "class answer"
+    ],
+    "type_laptop": [
+      "typing",
+      "computer work"
+    ],
+    "write_desk": [
+      "write",
+      "study",
+      "homework",
+      "লেখা",
+      "পড়া"
+    ],
+    "read_book": [
+      "read",
+      "study",
+      "পড়া"
+    ],
+    "hold_umbrella": [
+      "umbrella",
+      "ছাতা"
+    ],
+    "sit_down": [
+      "sits",
+      "takes a seat",
+      "বসা"
+    ],
+    "stand_up": [
+      "stands",
+      "gets up",
+      "rises",
+      "ওঠা"
+    ],
+    "sit_floor_down": [
+      "sit on floor",
+      "মাটিতে বসা"
+    ],
+    "lie_down": [
+      "sleep",
+      "lies in bed",
+      "ঘুমানো",
+      "শোয়া"
+    ],
+    "walk_happy": [
+      "walks happily",
+      "cheerful walk"
+    ],
+    "walk_sad": [
+      "walks sadly"
+    ],
+    "walk_slow": [
+      "walks",
+      "strolls",
+      "হাঁটা"
+    ],
+    "run_jog": [
+      "runs",
+      "jogging",
+      "দৌড়"
+    ],
+    "run_sprint": [
+      "sprint",
+      "rush",
+      "races"
+    ],
+    "jump_joy": [
+      "jumps for joy",
+      "celebrates",
+      "খুশি"
+    ],
+    "celebrate_dance": [
+      "dance",
+      "celebration",
+      "নাচ"
+    ],
+    "kick_ball": [
+      "football",
+      "ফুটবল"
+    ],
+    "cricket_bat_swing": [
+      "batting",
+      "cricket",
+      "ক্রিকেট"
+    ],
+    "fly_kite": [
+      "kite",
+      "ঘুড়ি"
+    ],
+    "arms_crossed": [
+      "fold arms",
+      "arms folded",
+      "হাত ভাঁজ"
+    ],
+    "badminton_smash": [
+      "badminton",
+      "ব্যাডমিন্টন"
+    ],
+    "bless_head_b": [
+      "receives blessing",
+      "bows head for doa",
+      "দোয়া নেওয়া"
+    ],
+    "bow_greeting": [
+      "bow",
+      "bows politely",
+      "মাথা নোয়ানো"
+    ],
+    "carry_box": [
+      "carries a box",
+      "carton",
+      "বাক্স বহন"
+    ],
+    "carry_child_a": [
+      "carries a child on hip",
+      "holds baby",
+      "কোলে নেওয়া"
+    ],
+    "carry_child_b": [
+      "child in arms",
+      "carried child",
+      "কোলে বাচ্চা"
+    ],
+    "catch_ball": [
+      "catch",
+      "catches the ball",
+      "ক্যাচ"
+    ],
+    "climb_ladder": [
+      "ladder",
+      "climbs up",
+      "মই"
+    ],
+    "cook_stir": [
+      "cook",
+      "cooking",
+      "রান্না"
+    ],
+    "cricket_bowl": [
+      "bowling",
+      "bowler",
+      "বল করা"
+    ],
+    "crowd_cheer": [
+      "crowd cheers",
+      "fans cheer",
+      "উল্লাস"
+    ],
+    "crowd_clap": [
+      "audience claps",
+      "applause",
+      "হাততালি"
+    ],
+    "crowd_dance": [
+      "group dance",
+      "people dance",
+      "নাচ"
+    ],
+    "crowd_watch": [
+      "onlookers",
+      "crowd watches",
+      "ভিড়"
+    ],
+    "dejected_kneel": [
+      "falls to knees in despair",
+      "defeated",
+      "হতাশ"
+    ],
+    "fish_cast": [
+      "fishing rod",
+      "angler",
+      "বড়শি",
+      "মাছ ধরা"
+    ],
+    "football_header": [
+      "header",
+      "heads the ball"
+    ],
+    "get_up_after_fall": [
+      "gets up after falling",
+      "recovers"
+    ],
+    "get_up_bed": [
+      "wakes up",
+      "gets out of bed",
+      "ঘুম থেকে ওঠা"
+    ],
+    "grind_spices": [
+      "shil pata",
+      "grinds spices",
+      "বাটা",
+      "শিলপাটা"
+    ],
+    "hammer": [
+      "hammering",
+      "nail",
+      "হাতুড়ি"
+    ],
+    "hands_behind_back": [
+      "hands behind",
+      "waits calmly",
+      "teacher stance"
+    ],
+    "hands_on_hips": [
+      "akimbo",
+      "hands on waist",
+      "কোমরে হাত"
+    ],
+    "hang_clothes": [
+      "hangs laundry",
+      "কাপড় মেলা",
+      "hangs clothes",
+      "clothes on the line",
+      "dries clothes",
+      "hang washing",
+      "কাপড় শুকাতে দেওয়া"
+    ],
+    "help_up_a": [
+      "helps up",
+      "lends a hand",
+      "সাহায্য"
+    ],
+    "help_up_b": [
+      "is helped up",
+      "gets helped up"
+    ],
+    "hop_one_leg": [
+      "hops",
+      "hopscotch",
+      "এক পায়ে লাফ"
+    ],
+    "idle_breathe": [
+      "stands",
+      "stands still",
+      "waiting",
+      "দাঁড়িয়ে থাকা"
+    ],
+    "idle_weight_shift": [
+      "stands relaxed",
+      "shifts weight"
+    ],
+    "jalsa": [
+      "sitting in prayer",
+      "between sajda"
+    ],
+    "jump_rope": [
+      "skipping rope",
+      "দড়ি লাফ"
+    ],
+    "jump_scare": [
+      "startled jump",
+      "jumps in fright",
+      "চমকে ওঠা"
+    ],
+    "kneel_down": [
+      "kneels",
+      "on knees",
+      "হাঁটু গেড়ে বসা"
+    ],
+    "kneel_one_knee": [
+      "one knee",
+      "proposes",
+      "kneels on one knee"
+    ],
+    "lean_on_wall": [
+      "leans",
+      "leaning against wall",
+      "হেলান"
+    ],
+    "lift_box": [
+      "lifts",
+      "picks up box",
+      "তোলা"
+    ],
+    "limp": [
+      "limps",
+      "injured leg",
+      "খোঁড়ানো"
+    ],
+    "look_around": [
+      "looks around",
+      "searches",
+      "এদিক ওদিক তাকানো"
+    ],
+    "march_protest": [
+      "protest",
+      "rally",
+      "michil",
+      "মিছিল"
+    ],
+    "market_browse": [
+      "shopping",
+      "browses stall",
+      "বাজার করা"
+    ],
+    "milk_cow": [
+      "milks the cow",
+      "dudh",
+      "দুধ দোয়ানো"
+    ],
+    "paint_wall": [
+      "paints",
+      "painter",
+      "রং করা"
+    ],
+    "peek_around": [
+      "peeks",
+      "peeps",
+      "উঁকি"
+    ],
+    "pick_fruit": [
+      "plucks fruit",
+      "picks mango",
+      "ফল পাড়া"
+    ],
+    "proud_chest": [
+      "proud",
+      "confident",
+      "গর্বিত"
+    ],
+    "pull_rope": [
+      "tug of war",
+      "pulls rope",
+      "দড়ি টানা"
+    ],
+    "push_cart": [
+      "pushes cart",
+      "thela",
+      "ঠেলাগাড়ি"
+    ],
+    "push_wheelchair_a": [
+      "pushes wheelchair",
+      "হুইলচেয়ার ঠেলা"
+    ],
+    "queue_wait": [
+      "line",
+      "waits in line",
+      "লাইনে দাঁড়ানো"
+    ],
+    "relief_sigh": [
+      "relieved",
+      "sigh of relief",
+      "স্বস্তি"
+    ],
+    "run_and_jump": [
+      "long jump",
+      "leaps"
+    ],
+    "run_bouncy": [
+      "child runs",
+      "kid runs",
+      "বাচ্চা দৌড়"
+    ],
+    "run_scared": [
+      "flees",
+      "runs away",
+      "পালানো"
+    ],
+    "salam_turn": [
+      "ends prayer",
+      "salam to sides",
+      "সালাম ফেরানো"
+    ],
+    "saw_wood": [
+      "saw",
+      "carpenter",
+      "করাত"
+    ],
+    "scared_flinch": [
+      "flinch",
+      "startled",
+      "ভয় পাওয়া"
+    ],
+    "shiver_cold": [
+      "cold",
+      "winter",
+      "shivers",
+      "শীত"
+    ],
+    "shy_sway": [
+      "shy",
+      "bashful",
+      "লজ্জা"
+    ],
+    "sit_audience": [
+      "audience",
+      "watches seated",
+      "দর্শক"
+    ],
+    "sit_cross_legged": [
+      "sits cross legged",
+      "floor sitting",
+      "আসন পেতে বসা"
+    ],
+    "sit_down_slow": [
+      "old person sits",
+      "sits slowly",
+      "বয়স্ক বসা"
+    ],
+    "sit_idle": [
+      "sitting",
+      "seated",
+      "বসে থাকা"
+    ],
+    "sit_lean_back": [
+      "relaxes in chair",
+      "leans back",
+      "lean back",
+      "leaning back"
+    ],
+    "sit_lean_forward": [
+      "listens closely",
+      "leans forward"
+    ],
+    "sit_on_heels": [
+      "kneeling sit",
+      "sits on heels"
+    ],
+    "sit_rocking_worry": [
+      "worried",
+      "anxious",
+      "দুশ্চিন্তা"
+    ],
+    "sit_slumped": [
+      "slumped",
+      "depressed",
+      "hopeless",
+      "ভেঙে পড়া"
+    ],
+    "sit_wheelchair_b": [
+      "in a wheelchair",
+      "হুইলচেয়ার"
+    ],
+    "skip": [
+      "skips",
+      "child skipping"
+    ],
+    "squat_down": [
+      "crouches",
+      "picks up from floor",
+      "বসে পড়া"
+    ],
+    "stairs_down": [
+      "goes downstairs",
+      "descends",
+      "নামা"
+    ],
+    "stairs_up": [
+      "goes upstairs",
+      "climbs stairs",
+      "সিঁড়ি দিয়ে ওঠা"
+    ],
+    "stand_up_floor": [
+      "gets up from floor",
+      "মাটি থেকে ওঠা"
+    ],
+    "stand_up_slow": [
+      "old person stands up",
+      "rises slowly"
+    ],
+    "stretch_yawn": [
+      "yawns",
+      "stretches",
+      "morning",
+      "হাই তোলা"
+    ],
+    "swim_breaststroke": [
+      "swims",
+      "swimming",
+      "সাঁতার"
+    ],
+    "swing_legs_seat": [
+      "swings legs",
+      "child sits"
+    ],
+    "swing_on_swing": [
+      "on a swing",
+      "দোলনায় দোলা"
+    ],
+    "tantrum": [
+      "throws a tantrum",
+      "জেদ"
+    ],
+    "throw_ball": [
+      "throws",
+      "ছোঁড়া"
+    ],
+    "trip_fall": [
+      "falls",
+      "stumbles",
+      "পড়ে যাওয়া"
+    ],
+    "wait_impatient": [
+      "impatient",
+      "tapping foot",
+      "অধৈর্য"
+    ],
+    "walk_backwards": [
+      "backs away",
+      "steps back",
+      "পিছিয়ে যাওয়া"
+    ],
+    "walk_brisk": [
+      "hurries",
+      "walks fast",
+      "দ্রুত হাঁটা"
+    ],
+    "walk_carry_heavy": [
+      "carries heavy load",
+      "bojha",
+      "বোঝা"
+    ],
+    "walk_head_load": [
+      "carries on head",
+      "head load",
+      "মাথায় বোঝা"
+    ],
+    "walk_sneak": [
+      "sneaks",
+      "tiptoe",
+      "চুপিচুপি"
+    ],
+    "walk_start": [
+      "starts walking",
+      "sets off"
+    ],
+    "walk_stop": [
+      "stops walking",
+      "halts",
+      "থেমে যাওয়া"
+    ],
+    "walk_tired": [
+      "tired walk",
+      "exhausted walk",
+      "ক্লান্ত"
+    ],
+    "walk_together_a": [
+      "walk hand in hand",
+      "walk together",
+      "একসাথে হাঁটা"
+    ],
+    "walk_together_b": [
+      "walk hand in hand",
+      "walk together",
+      "একসাথে হাঁটা"
+    ],
+    "adjust_dupatta_sari": [
+      "orna",
+      "anchol",
+      "dupatta",
+      "sari",
+      "ওড়না",
+      "আঁচল"
+    ],
+    "ask_what_why": [
+      "what",
+      "why",
+      "asks",
+      "কী",
+      "কেন"
+    ],
+    "beckon": [
+      "come here",
+      "calls over",
+      "ডাকা"
+    ],
+    "both_hands_up": [
+      "surrender",
+      "hands up",
+      "হাত তোলা",
+      "lifts up high",
+      "holds up with both hands"
+    ],
+    "carry_bag_strap": [
+      "school bag",
+      "shoulder bag",
+      "ব্যাগ"
+    ],
+    "catch_both_hands": [
+      "catches"
+    ],
+    "check_watch": [
+      "checks time",
+      "late",
+      "wrist watch",
+      "সময় দেখা"
+    ],
+    "clap": [
+      "claps",
+      "applause",
+      "হাততালি"
+    ],
+    "count_fingers": [
+      "counts",
+      "numbers",
+      "গোনা"
+    ],
+    "cover_ears": [
+      "loud noise",
+      "covers ears",
+      "কান চাপা"
+    ],
+    "dismiss_wave": [
+      "never mind",
+      "dismisses"
+    ],
+    "drink_cup": [
+      "drinks water",
+      "drinks",
+      "পান করা",
+      "পানি"
+    ],
+    "fist_pump": [
+      "yes",
+      "victory",
+      "win",
+      "জয়",
+      "raises the trophy",
+      "lifts the cup",
+      "holds up the prize",
+      "ট্রফি তোলা"
+    ],
+    "fix_glasses": [
+      "glasses",
+      "spectacles",
+      "চশমা"
+    ],
+    "hand_on_chest": [
+      "sincere",
+      "promise",
+      "thank you",
+      "বুকে হাত"
+    ],
+    "hands_folded_qiyam": [
+      "qiyam",
+      "standing in prayer",
+      "নামাজে দাঁড়ানো"
+    ],
+    "hands_to_cheeks": [
+      "amazed",
+      "oh my",
+      "গালে হাত"
+    ],
+    "hug_open_arms": [
+      "open arms",
+      "welcome",
+      "কোলাকুলি"
+    ],
+    "knock_door": [
+      "knocks",
+      "দরজায় টোকা"
+    ],
+    "point_at": [
+      "points",
+      "shows",
+      "দেখানো"
+    ],
+    "pour_tea": [
+      "pours",
+      "serves tea",
+      "চা ঢালা"
+    ],
+    "push_door": [
+      "opens door",
+      "pushes door",
+      "দরজা খোলা"
+    ],
+    "rub_hands": [
+      "rubs hands",
+      "cold hands",
+      "eager"
+    ],
+    "shake_fist": [
+      "threatens",
+      "angry fist",
+      "ঘুষি দেখানো"
+    ],
+    "shh": [
+      "quiet",
+      "silence",
+      "চুপ"
+    ],
+    "stir_pot": [
+      "stirs",
+      "নাড়া"
+    ],
+    "takbir": [
+      "allahu akbar",
+      "তাকবীর"
+    ],
+    "take_photo": [
+      "photo",
+      "camera",
+      "selfie",
+      "ছবি তোলা"
+    ],
+    "throw_overarm": [
+      "throws far",
+      "hurls"
+    ],
+    "thumbs_up": [
+      "good",
+      "ok",
+      "like",
+      "ভালো"
+    ],
+    "tie_hair": [
+      "ties hair",
+      "চুল বাঁধা"
+    ],
+    "fishTrap": [
+      "bamboo fish trap",
+      "polo",
+      "চাই",
+      "মাছ ধরার ফাঁদ"
+    ],
+    "flowerBed": [
+      "flowers",
+      "garden",
+      "ফুলের বাগান",
+      "ফুল"
+    ],
+    "showcase": [
+      "display cabinet",
+      "glass cabinet",
+      "শোকেস"
+    ],
+    "bee": [
+      "honeybee",
+      "মৌমাছি"
+    ],
+    "buffalo": [
+      "water buffalo",
+      "mohish",
+      "মহিষ"
+    ],
+    "butterfly": [
+      "প্রজাপতি"
+    ],
+    "camel": [
+      "উট"
+    ],
+    "cat": [
+      "kitten",
+      "biral",
+      "বিড়াল"
+    ],
+    "chick": [
+      "chicks",
+      "baby chicken",
+      "মুরগির ছানা"
+    ],
+    "cobra": [
+      "snake",
+      "sap",
+      "সাপ",
+      "গোখরা"
+    ],
+    "cow": [
+      "cattle",
+      "goru",
+      "গরু",
+      "গাভী"
+    ],
+    "crab": [
+      "kakra",
+      "কাঁকড়া"
+    ],
+    "crocodile": [
+      "kumir",
+      "কুমির"
+    ],
+    "crow": [
+      "kak",
+      "কাক"
+    ],
+    "crowFlock": [
+      "crows on a wire",
+      "many crows",
+      "কাকের ঝাঁক"
+    ],
+    "cuckoo": [
+      "koel",
+      "kokil",
+      "কোকিল"
+    ],
+    "deer": [
+      "spotted deer",
+      "horin",
+      "হরিণ"
+    ],
+    "doel": [
+      "magpie robin",
+      "national bird",
+      "দোয়েল"
+    ],
+    "dolphin": [
+      "river dolphin",
+      "shushuk",
+      "শুশুক",
+      "ডলফিন"
+    ],
+    "dragonfly": [
+      "foring",
+      "ফড়িং"
+    ],
+    "duck": [
+      "hash",
+      "হাঁস"
+    ],
+    "egret": [
+      "heron",
+      "bok",
+      "বক"
+    ],
+    "elephant": [
+      "hati",
+      "হাতি"
+    ],
+    "fireflies": [
+      "firefly",
+      "jonaki",
+      "জোনাকি"
+    ],
+    "fishInPond": [
+      "fish jumps",
+      "rui fish",
+      "মাছ লাফানো"
+    ],
+    "flockOfBirds": [
+      "birds flying",
+      "flock",
+      "পাখির ঝাঁক"
+    ],
+    "frog": [
+      "bang",
+      "ব্যাঙ"
+    ],
+    "goat": [
+      "chagol",
+      "ছাগল"
+    ],
+    "hen": [
+      "chicken",
+      "rooster",
+      "murgi",
+      "মুরগি",
+      "মোরগ"
+    ],
+    "horse": [
+      "ghora",
+      "ঘোড়া"
+    ],
+    "jackal": [
+      "fox",
+      "shial",
+      "শিয়াল"
+    ],
+    "kingfisher": [
+      "machranga",
+      "মাছরাঙা"
+    ],
+    "lion": [
+      "sinho",
+      "সিংহ"
+    ],
+    "monkey": [
+      "banor",
+      "বানর"
+    ],
+    "myna": [
+      "shalik",
+      "শালিক"
+    ],
+    "owl": [
+      "pecha",
+      "পেঁচা"
+    ],
+    "parrot": [
+      "tota",
+      "টিয়া"
+    ],
+    "peacock": [
+      "moyur",
+      "ময়ূর"
+    ],
+    "pigeon": [
+      "kobutor",
+      "কবুতর"
+    ],
+    "rabbit": [
+      "khorgosh",
+      "খরগোশ"
+    ],
+    "royalBengalTiger": [
+      "tiger",
+      "bagh",
+      "বাঘ",
+      "রয়েল বেঙ্গল টাইগার"
+    ],
+    "sheep": [
+      "vera",
+      "ভেড়া"
+    ],
+    "sparrow": [
+      "chorui",
+      "চড়ুই"
+    ],
+    "squirrel": [
+      "kathbirali",
+      "কাঠবিড়ালি"
+    ],
+    "streetDog": [
+      "dog",
+      "kukur",
+      "কুকুর"
+    ],
+    "turtle": [
+      "tortoise",
+      "kochchop",
+      "কচ্ছপ"
+    ],
+    "bookHeld": [
+      "book",
+      "textbook",
+      "reads",
+      "বই"
+    ],
+    "kettleHeld": [
+      "kettle",
+      "tea kettle",
+      "কেটলি"
+    ],
+    "mobilePhone": [
+      "phone",
+      "mobile",
+      "smartphone",
+      "ফোন",
+      "মোবাইল"
+    ],
+    "fishingNetHeld": [
+      "casting net",
+      "jal",
+      "জাল ফেলা"
+    ],
+    "babyBottle": [
+      "feeding bottle",
+      "ফিডার"
+    ],
+    "badmintonRacket": [
+      "racket",
+      "ব্যাডমিন্টন র‍্যাকেট"
+    ],
+    "balloon": [
+      "balloons",
+      "বেলুন"
+    ],
+    "bambooFlute": [
+      "flute",
+      "bashi",
+      "বাঁশি"
+    ],
+    "basketOnHead": [
+      "head basket",
+      "carries on head",
+      "মাথায় ঝুড়ি"
+    ],
+    "boatOar": [
+      "oar",
+      "boitha",
+      "বৈঠা"
+    ],
+    "breadOrRuti": [
+      "ruti",
+      "roti",
+      "bread",
+      "রুটি"
+    ],
+    "broom": [
+      "jharu",
+      "ঝাড়ু"
+    ],
+    "bucket": [
+      "balti",
+      "pail",
+      "বালতি"
+    ],
+    "camera": [
+      "photo camera",
+      "ক্যামেরা"
+    ],
+    "certificate": [
+      "award",
+      "sonod",
+      "সনদ",
+      "সার্টিফিকেট"
+    ],
+    "clayBank": [
+      "piggy bank",
+      "matir bank",
+      "মাটির ব্যাংক"
+    ],
+    "clipboard": [
+      "clip board",
+      "form"
+    ],
+    "coin": [
+      "coins",
+      "poisa",
+      "কয়েন"
+    ],
+    "cricketBall": [
+      "ball",
+      "ক্রিকেট বল"
+    ],
+    "cricketBat": [
+      "bat",
+      "ব্যাট"
+    ],
+    "doll": [
+      "putul",
+      "toy doll",
+      "পুতুল"
+    ],
+    "ektara": [
+      "baul instrument",
+      "একতারা"
+    ],
+    "examPaper": [
+      "exam",
+      "answer sheet",
+      "পরীক্ষার খাতা"
+    ],
+    "fishingRod": [
+      "borshi",
+      "rod",
+      "বড়শি"
+    ],
+    "flag": [
+      "bangladesh flag",
+      "national flag",
+      "পতাকা"
+    ],
+    "flowerBouquet": [
+      "flowers",
+      "bouquet",
+      "ফুলের তোড়া"
+    ],
+    "football": [
+      "ball",
+      "ফুটবল"
+    ],
+    "fruit": [
+      "mango",
+      "banana",
+      "fruit",
+      "ফল",
+      "আম"
+    ],
+    "giftBox": [
+      "gift",
+      "present",
+      "উপহার"
+    ],
+    "glasses": [
+      "spectacles",
+      "chosma",
+      "চশমা"
+    ],
+    "guitar": [
+      "গিটার"
+    ],
+    "handFan": [
+      "talpata pakha",
+      "hand fan",
+      "হাতপাখা"
+    ],
+    "harmonium": [
+      "হারমোনিয়াম"
+    ],
+    "hoe": [
+      "kodal",
+      "কোদাল"
+    ],
+    "idCard": [
+      "id",
+      "badge",
+      "আইডি কার্ড"
+    ],
+    "key": [
+      "keys",
+      "chabi",
+      "চাবি"
+    ],
+    "kite": [
+      "ghuri",
+      "ঘুড়ি"
+    ],
+    "kolshi": [
+      "water pot",
+      "কলসি"
+    ],
+    "lantern": [
+      "hurricane lamp",
+      "harikane",
+      "হারিকেন"
+    ],
+    "laptopHeld": [
+      "laptop",
+      "ল্যাপটপ"
+    ],
+    "letter": [
+      "envelope",
+      "chithi",
+      "চিঠি"
+    ],
+    "marbles": [
+      "marble",
+      "guli",
+      "মার্বেল"
+    ],
+    "medal": [
+      "মেডেল"
+    ],
+    "medicineStrip": [
+      "medicine",
+      "tablets",
+      "pills",
+      "ওষুধ"
+    ],
+    "megaphone": [
+      "loudspeaker",
+      "mic announcement",
+      "মাইক"
+    ],
+    "microphone": [
+      "mic",
+      "মাইক্রোফোন"
+    ],
+    "newspaper": [
+      "paper",
+      "potrika",
+      "পত্রিকা",
+      "খবরের কাগজ"
+    ],
+    "notebook": [
+      "khata",
+      "copy",
+      "খাতা"
+    ],
+    "paintBrush": [
+      "brush",
+      "তুলি"
+    ],
+    "pen": [
+      "kolom",
+      "কলম"
+    ],
+    "pencil": [
+      "পেন্সিল"
+    ],
+    "placard": [
+      "sign",
+      "protest sign",
+      "প্ল্যাকার্ড"
+    ],
+    "plateOfRice": [
+      "plate",
+      "bhat",
+      "rice",
+      "ভাত",
+      "থালা",
+      "biriyani",
+      "biryani",
+      "plate of biriyani",
+      "বিরিয়ানি"
+    ],
+    "prayerCap": [
+      "tupi",
+      "টুপি"
+    ],
+    "remote": [
+      "tv remote",
+      "রিমোট"
+    ],
+    "reportCard": [
+      "result",
+      "marksheet",
+      "রেজাল্ট কার্ড"
+    ],
+    "schoolBagHeld": [
+      "school bag",
+      "backpack",
+      "ব্যাগ"
+    ],
+    "shoppingBag": [
+      "bag",
+      "bazar bag",
+      "বাজারের ব্যাগ"
+    ],
+    "shuttlecock": [
+      "shuttle",
+      "কর্ক"
+    ],
+    "sickle": [
+      "kaste",
+      "কাস্তে"
+    ],
+    "spade": [
+      "shovel",
+      "বেলচা"
+    ],
+    "stethoscope": [
+      "doctor",
+      "স্টেথোস্কোপ"
+    ],
+    "suitcase": [
+      "luggage",
+      "travel bag",
+      "স্যুটকেস"
+    ],
+    "sweetBox": [
+      "mishti",
+      "sweets",
+      "মিষ্টি"
+    ],
+    "syringe": [
+      "injection",
+      "ইনজেকশন"
+    ],
+    "takaNotes": [
+      "money",
+      "taka",
+      "cash",
+      "টাকা"
+    ],
+    "tasbih": [
+      "prayer beads",
+      "তাসবিহ"
+    ],
+    "teaCup": [
+      "cup",
+      "cup of tea",
+      "চায়ের কাপ",
+      "mug",
+      "tea mug",
+      "মগ"
+    ],
+    "teaGlass": [
+      "glass of tea",
+      "tong tea",
+      "চা"
+    ],
+    "thermometer": [
+      "fever",
+      "থার্মোমিটার"
+    ],
+    "ticket": [
+      "bus ticket",
+      "train ticket",
+      "টিকিট"
+    ],
+    "tiffinCarrier": [
+      "tiffin",
+      "lunch box",
+      "টিফিন"
+    ],
+    "toolBox": [
+      "tools",
+      "যন্ত্রপাতি"
+    ],
+    "torch": [
+      "flashlight",
+      "টর্চ"
+    ],
+    "toyCar": [
+      "toy",
+      "খেলনা গাড়ি"
+    ],
+    "trophy": [
+      "cup",
+      "prize",
+      "ট্রফি"
+    ],
+    "umbrella": [
+      "chhata",
+      "ছাতা"
+    ],
+    "walkingStick": [
+      "cane",
+      "lathi",
+      "লাঠি"
+    ],
+    "walletHeld": [
+      "wallet",
+      "purse",
+      "মানিব্যাগ"
+    ],
+    "waterGlass": [
+      "glass of water",
+      "পানির গ্লাস"
+    ],
+    "waterJug": [
+      "jug",
+      "jog",
+      "জগ"
+    ],
+    "rest_wait": [
+      "wait",
+      "waits",
+      "he waits",
+      "waiting calmly",
+      "অপেক্ষা"
+    ],
+    "hold_in_front": [
+      "hold in front",
+      "holds it up",
+      "show it"
+    ],
+    "noticeBoard": [
+      "notice board",
+      "bulletin board",
+      "cork board",
+      "pin board",
+      "sticky notes board",
+      "নোটিশ বোর্ড",
+      "pinboard"
+    ],
+    "whiteboard": [
+      "white board",
+      "marker board",
+      "হোয়াইটবোর্ড"
+    ],
+    "meetingTable": [
+      "conference table",
+      "boardroom table",
+      "interview table",
+      "meeting desk",
+      "long table",
+      "panel table",
+      "মিটিং টেবিল"
+    ],
+    "laptopSide": [
+      "laptop from the side",
+      "side view laptop",
+      "open laptop on a table",
+      "laptop side on",
+      "laptop on the table",
+      "ল্যাপটপ"
+    ],
+    "weightBench": [
+      "bench press",
+      "gym bench",
+      "barbell",
+      "weights",
+      "gym equipment"
+    ],
+    "dumbbellRack": [
+      "dumbbells",
+      "dumbbell stand",
+      "gym weights",
+      "gym rack",
+      "ডাম্বেল"
+    ],
+    "salonChair": [
+      "barber chair",
+      "hair salon chair",
+      "parlour chair",
+      "saloon chair",
+      "সেলুন চেয়ার"
+    ],
+    "bakeryShelf": [
+      "bread shelf",
+      "bakery display",
+      "bakery rack",
+      "cake shelf",
+      "pastry shelf",
+      "বেকারি"
+    ],
+    "cartonStack": [
+      "cardboard boxes",
+      "stack of boxes",
+      "cartons",
+      "packing boxes",
+      "parcels",
+      "কার্টন"
+    ],
+    "metalRack": [
+      "warehouse rack",
+      "storage rack",
+      "steel shelf",
+      "metal shelf",
+      "store room rack",
+      "garage shelf",
+      "তাক"
+    ],
+    "podium": [
+      "lectern",
+      "speech stand",
+      "stage podium",
+      "speaker stand",
+      "পোডিয়াম"
+    ],
+    "studyLamp": [
+      "desk lamp",
+      "table lamp",
+      "reading lamp"
+    ],
+    "laptopFront": [
+      "laptop from the front",
+      "front view laptop",
+      "laptop facing us"
+    ],
+    "windowPlain": [
+      "plain window",
+      "window with a view",
+      "clear window",
+      "glass window"
+    ],
+    "tableTopView": [
+      "table from above",
+      "top down table",
+      "overhead table",
+      "table seen from above"
+    ],
+    "officePrinter": [
+      "printer",
+      "desk printer",
+      "প্রিন্টার"
+    ],
+    "chairBackView": [
+      "chair from behind",
+      "back of a chair"
+    ],
+    "nearLeavesSoft": [
+      "foreground leaves",
+      "leaves in front",
+      "near leaves"
+    ],
+    "computerMouse": [
+      "mouse",
+      "computer mouse",
+      "মাউস"
+    ],
+    "fileFolderOpen": [
+      "file folder",
+      "open file",
+      "open folder",
+      "ফাইল"
+    ],
+    "rubberStamp": [
+      "stamp",
+      "rubber stamp",
+      "hand stamp",
+      "সিল"
+    ],
+    "sit_laugh_big": [
+      "laughs big seated",
+      "laughing loudly at a table",
+      "laughs loudly",
+      "big laugh sitting"
+    ],
+    "sit_laugh_head_down": [
+      "laughs with head down",
+      "head down laughing"
+    ],
+    "sit_take_paper_a": [
+      "gives a paper",
+      "hands over a paper",
+      "passes a paper across a table"
+    ],
+    "sit_take_paper_b": [
+      "takes a paper",
+      "receives a paper",
+      "takes the paper across a table"
+    ],
+    "sit_pick_up_paper": [
+      "picks up a paper",
+      "picks a paper up from the table"
+    ],
+    "sit_hands_behind_head": [
+      "hands behind head",
+      "sits back relaxed",
+      "leans back relaxed"
+    ],
+    "sit_lean_peek": [
+      "leans over to look",
+      "peeks at the table",
+      "leans in to look"
+    ],
+    "sit_open_laptop": [
+      "opens a laptop",
+      "opens a laptop lid"
+    ],
+    "sit_close_laptop": [
+      "closes a laptop",
+      "closes a laptop lid",
+      "half closes a laptop"
+    ],
+    "sit_tick_with_pen": [
+      "ticks a paper",
+      "ticks with a pen",
+      "marks a paper with a pen"
+    ],
+    "sit_nod_happy": [
+      "nods happily",
+      "happy nod seated"
+    ],
+    "finger_wag": [
+      "wagging a finger",
+      "wags a raised finger",
+      "finger wag no"
+    ],
+    "hand_on_trackpad": [
+      "hand on a trackpad",
+      "moves a trackpad",
+      "hand on a laptop trackpad"
+    ]
+  },
+  "words": {
+    "sits": "sit",
+    "seated": "sit",
+    "sitting": "sit",
+    "sat": "sit",
+    "seat": "sit",
+    "stands": "stand",
+    "standing": "stand",
+    "stood": "stand",
+    "rises": "stand",
+    "gets": "get",
+    "walks": "walk",
+    "walking": "walk",
+    "strolls": "walk",
+    "steps": "walk",
+    "enters": "walk",
+    "arrives": "walk",
+    "comes": "walk",
+    "goes": "walk",
+    "runs": "run",
+    "running": "run",
+    "rushes": "run",
+    "dashes": "run",
+    "hurries": "run",
+    "gives": "give",
+    "giving": "give",
+    "passes": "give",
+    "offers": "offer",
+    "takes": "take",
+    "receives": "receive",
+    "accepts": "receive",
+    "grabs": "take",
+    "talks": "talk",
+    "speaks": "talk",
+    "says": "talk",
+    "tells": "talk",
+    "explains": "explain",
+    "chats": "talk",
+    "cries": "cry",
+    "crying": "cry",
+    "weeps": "cry",
+    "sobs": "cry",
+    "tears": "cry",
+    "laughs": "laugh",
+    "laughing": "laugh",
+    "giggles": "laugh",
+    "angry": "angry",
+    "furious": "angry",
+    "mad": "angry",
+    "scared": "scared",
+    "afraid": "scared",
+    "frightened": "scared",
+    "fear": "scared",
+    "happy": "happy",
+    "glad": "happy",
+    "joyful": "joy",
+    "excited": "joy",
+    "cheerful": "happy",
+    "sad": "sad",
+    "upset": "sad",
+    "unhappy": "sad",
+    "gloomy": "sad",
+    "tired": "tired",
+    "exhausted": "tired",
+    "weary": "tired",
+    "thinks": "think",
+    "thinking": "think",
+    "wonders": "think",
+    "ponders": "think",
+    "prays": "pray",
+    "praying": "pray",
+    "namaz": "prayer",
+    "salah": "prayer",
+    "eats": "eat",
+    "eating": "eat",
+    "drinks": "drink",
+    "drinking": "drink",
+    "sips": "drink",
+    "cooks": "cook",
+    "cooking": "cook",
+    "stirs": "stir",
+    "reads": "read",
+    "reading": "read",
+    "writes": "write",
+    "writing": "write",
+    "studies": "study",
+    "studying": "study",
+    "waves": "wave",
+    "points": "point",
+    "pointing": "point",
+    "claps": "clap",
+    "clapping": "clap",
+    "hugs": "hug",
+    "hugging": "hug",
+    "embraces": "hug",
+    "jumps": "jump",
+    "jumping": "jump",
+    "dances": "dance",
+    "dancing": "dance",
+    "kicks": "kick",
+    "throws": "throw",
+    "catches": "catch",
+    "carries": "carry",
+    "carrying": "carry",
+    "lifts": "lift",
+    "pushes": "push",
+    "pulls": "pull",
+    "sleeps": "sleep",
+    "sleeping": "sleep",
+    "lies": "lie",
+    "kneels": "kneel",
+    "squats": "squat",
+    "bows": "bow",
+    "shrugs": "shrug",
+    "falls": "fall",
+    "trips": "trip",
+    "stumbles": "trip",
+    "collapses": "faint",
+    "faints": "faint",
+    "calls": "call",
+    "phones": "phone",
+    "mobile": "phone",
+    "cellphone": "phone",
+    "old": "elderly",
+    "grandfather": "elderly",
+    "grandmother": "elderly",
+    "grandpa": "elderly",
+    "grandma": "elderly",
+    "dada": "elderly",
+    "dadu": "elderly",
+    "nana": "elderly",
+    "nanu": "elderly",
+    "dadi": "elderly",
+    "kid": "child",
+    "boy": "child",
+    "girl": "child",
+    "son": "child",
+    "daughter": "child",
+    "student": "child",
+    "classroom": "class",
+    "kitchen": "kitchen",
+    "bedroom": "bedroom",
+    "office": "office",
+    "বসে": "sit",
+    "বসা": "sit",
+    "দাঁড়িয়ে": "stand",
+    "হাঁটে": "walk",
+    "হাঁটছে": "walk",
+    "দৌড়ায়": "run",
+    "দেয়": "give",
+    "নেয়": "take",
+    "কাঁদে": "cry",
+    "হাসে": "laugh",
+    "খায়": "eat",
+    "পড়ে": "read",
+    "লেখে": "write",
+    "নামাজ": "prayer",
+    "ঘুমায়": "sleep",
+    "রাগ": "angry",
+    "ভয়": "scared",
+    "দাদু": "elderly",
+    "দাদা": "elderly",
+    "নানা": "elderly",
+    "নানু": "elderly",
+    "দাদি": "elderly",
+    "নানি": "elderly",
+    "বুড়ো": "elderly",
+    "বাচ্চা": "child",
+    "ছেলে": "child",
+    "মেয়ে": "child",
+    "শিশু": "child",
+    "আছে": "",
+    "এবং": "",
+    "সে": "",
+    "nods": "nod",
+    "nodding": "nod",
+    "nodded": "nod",
+    "laughter": "laugh",
+    "baffled": "shrug",
+    "puzzled": "shrug",
+    "smirk": "",
+    "smirks": "",
+    "smirking": "",
+    "wink": "",
+    "winks": "",
+    "winking": "",
+    "grin": "",
+    "grins": "",
+    "grinning": "",
+    "sly": "",
+    "lazily": "",
+    "proudly": "",
+    "hard": "",
+    "waits": "wait",
+    "waiting": "wait",
+    "stares": "look",
+    "staring": "look",
+    "stared": "look",
+    "pinboards": "pinboard"
+  },
+  "places": {
+    "village home": [
+      "mudHouse",
+      "tinHouse",
+      "courtyard",
+      "chula",
+      "clayPots",
+      "tubewell",
+      "clothesLine",
+      "bananaPlant",
+      "strawStack",
+      "bambooFence",
+      "coconutPalm",
+      "mangoTree",
+      "hen",
+      "chick",
+      "goat",
+      "cow",
+      "cat",
+      "crow"
+    ],
+    "village road": [
+      "kutchaRoad",
+      "mudPath",
+      "paddyField",
+      "bananaPlant",
+      "coconutPalm",
+      "bambooClump",
+      "cycleRickshaw",
+      "rickshawVan",
+      "utilityPole",
+      "teaStall"
+    ],
+    "field farm": [
+      "paddyField",
+      "mustardField",
+      "paddyStack",
+      "strawStack",
+      "mudPath",
+      "banyanTree",
+      "bambooClump",
+      "cow",
+      "buffalo",
+      "goat",
+      "egret",
+      "sparrow"
+    ],
+    "river ghat": [
+      "river",
+      "boat",
+      "jetty",
+      "launch",
+      "embankment",
+      "fishingNet",
+      "fishTrap",
+      "bambooBridge",
+      "duck",
+      "egret",
+      "kingfisher",
+      "fishInPond",
+      "dolphin"
+    ],
+    "pond": [
+      "pond",
+      "banyanTree",
+      "coconutPalm",
+      "bananaPlant",
+      "jetty",
+      "grassTuft",
+      "duck",
+      "frog",
+      "fishInPond",
+      "kingfisher",
+      "dragonfly"
+    ],
+    "village market": [
+      "bazaarShed",
+      "mudirDokan",
+      "teaStall",
+      "vegetableBasket",
+      "fruitPile",
+      "fishTray",
+      "riceSacks",
+      "clayPots",
+      "cycleRickshaw"
+    ],
+    "tea stall": [
+      "teaStall",
+      "teaCart",
+      "bench",
+      "kettle",
+      "cup",
+      "utilityPole"
+    ],
+    "city street": [
+      "apartmentRow",
+      "officeTower",
+      "footpath",
+      "road",
+      "streetLamp",
+      "utilityPole",
+      "cycleRickshaw",
+      "cngAuto",
+      "localBus",
+      "privateCar",
+      "trafficLight",
+      "zebraCrossing",
+      "billboard",
+      "dustbin",
+      "drain",
+      "streetDog",
+      "crowFlock",
+      "pigeon"
+    ],
+    "city market": [
+      "marketStreet",
+      "shoppingMall",
+      "streetVendor",
+      "rackOfClothes",
+      "shopCounter",
+      "showcase",
+      "cycleRickshaw"
+    ],
+    "hospital": [
+      "hospitalFront",
+      "ambulance",
+      "clinicFront",
+      "pharmacyFront",
+      "hospitalBed",
+      "dripStand",
+      "window",
+      "wallClock",
+      "curtains"
+    ],
+    "hospital ward": [
+      "hospitalBed",
+      "dripStand",
+      "curtains",
+      "window",
+      "tubeLight",
+      "ceilingFan",
+      "bedsideTable"
+    ],
+    "school": [
+      "schoolFront",
+      "schoolTin",
+      "boundaryWall",
+      "gate",
+      "playgroundSlide",
+      "swingSet",
+      "krishnachura",
+      "flag"
+    ],
+    "classroom": [
+      "blackboard",
+      "schoolDesk",
+      "teacherTable",
+      "classroomShelf",
+      "window",
+      "ceilingFan",
+      "wallClock",
+      "tubeLight",
+      "whiteboard"
+    ],
+    "university": [
+      "universityCampus",
+      "collegeFront",
+      "krishnachura",
+      "bench",
+      "streetLamp",
+      "bookshelfFull"
+    ],
+    "bedroom": [
+      "bed",
+      "chair",
+      "table",
+      "window",
+      "curtains",
+      "lamp",
+      "ceilingFan",
+      "bookshelf",
+      "laptop",
+      "mosquitoNet",
+      "almirah",
+      "bedsideTable",
+      "splitAC",
+      "wallClock",
+      "photoFrame",
+      "mirror",
+      "noticeBoard"
+    ],
+    "living room": [
+      "sofaSet",
+      "armchair",
+      "tvStand",
+      "rug",
+      "window",
+      "curtains",
+      "ceilingFan",
+      "photoFrame",
+      "wallCalendar",
+      "showcase",
+      "plant"
+    ],
+    "kitchen": [
+      "gasStove",
+      "kitchenShelf",
+      "kitchenSink",
+      "pressureCooker",
+      "fridge",
+      "waterFilter",
+      "vegetableBasket",
+      "jars",
+      "chula"
+    ],
+    "dining room": [
+      "diningTable",
+      "chair",
+      "fridge",
+      "waterFilter",
+      "wallClock",
+      "ceilingLamp"
+    ],
+    "office": [
+      "officeDesk",
+      "computerScreen",
+      "chair",
+      "bookshelf",
+      "window",
+      "splitAC",
+      "wallClock",
+      "wallCalendar",
+      "plant",
+      "lift",
+      "noticeBoard",
+      "whiteboard",
+      "officePrinter"
+    ],
+    "bathroom": [
+      "toilet",
+      "shower",
+      "washBasin",
+      "bathroomTap",
+      "mirror"
+    ],
+    "mosque": [
+      "villageMosque",
+      "mosqueMinaret",
+      "prayerMat",
+      "tubewell"
+    ],
+    "bus station": [
+      "busTerminal",
+      "busStop",
+      "localBus",
+      "microbus",
+      "teaStall",
+      "streetVendor"
+    ],
+    "rail station": [
+      "railStation",
+      "railTrack",
+      "trainCoach",
+      "teaStall",
+      "bench",
+      "streetVendor"
+    ],
+    "highway": [
+      "road",
+      "truck",
+      "localBus",
+      "privateCar",
+      "petrolPump",
+      "roadDivider",
+      "utilityPole",
+      "billboard"
+    ],
+    "police": [
+      "policeStation",
+      "policeCar",
+      "courtFront",
+      "gate"
+    ],
+    "bank": [
+      "bankFront",
+      "officeTower",
+      "streetLamp",
+      "privateCar"
+    ],
+    "factory": [
+      "garmentFactory",
+      "riceMill",
+      "brickKiln",
+      "truck",
+      "pickupVan"
+    ],
+    "park": [
+      "cityPark",
+      "bench",
+      "swingSet",
+      "playgroundSlide",
+      "flowerBed",
+      "krishnachura",
+      "streetLamp",
+      "pigeon",
+      "squirrel",
+      "butterfly",
+      "sparrow"
+    ],
+    "beach": [
+      "seaWaves",
+      "coconutPalm",
+      "sandDune",
+      "ship",
+      "boat"
+    ],
+    "hills": [
+      "hillRange",
+      "mountainRange",
+      "teaGardenRows",
+      "waterfall",
+      "pineTree",
+      "rock",
+      "elephant",
+      "monkey"
+    ],
+    "forest": [
+      "mangroveForest",
+      "banyanTree",
+      "bambooClump",
+      "jackfruitTree",
+      "mangoTree",
+      "river",
+      "royalBengalTiger",
+      "deer",
+      "monkey",
+      "crocodile",
+      "owl"
+    ],
+    "rain": [
+      "rainfall",
+      "lightning",
+      "cloud",
+      "fog"
+    ],
+    "night": [
+      "moon",
+      "stars",
+      "streetLamp",
+      "owl",
+      "fireflies"
+    ],
+    "airport": [
+      "airportFront",
+      "plane",
+      "helicopter"
+    ],
+    "construction": [
+      "constructionSite",
+      "truck",
+      "logPile",
+      "riceSacks"
+    ],
+    "zoo": [
+      "lion",
+      "royalBengalTiger",
+      "elephant",
+      "camel",
+      "peacock",
+      "parrot",
+      "monkey",
+      "deer",
+      "turtle",
+      "crocodile"
+    ],
+    "desert": [
+      "camel",
+      "sandDune",
+      "cactus"
+    ],
+    "garden": [
+      "butterfly",
+      "bee",
+      "flowerBed",
+      "doel",
+      "myna",
+      "squirrel"
+    ],
+    "sundarbans": [
+      "mangroveForest",
+      "royalBengalTiger",
+      "deer",
+      "crocodile",
+      "kingfisher",
+      "river",
+      "boat"
+    ],
+    "study room": [
+      "table",
+      "chair",
+      "bookshelfFull",
+      "bookshelf",
+      "window",
+      "door",
+      "ceilingLamp",
+      "wallClock",
+      "wallCalendar",
+      "curtains",
+      "rug",
+      "plant",
+      "laptop",
+      "notebook",
+      "pen",
+      "lamp",
+      "noticeBoard"
+    ],
+    "plain room": [
+      "table",
+      "chair",
+      "door",
+      "window",
+      "wallClock",
+      "ceilingLamp",
+      "curtains",
+      "plant"
+    ],
+    "interview meeting conference boardroom": [
+      "meetingTable",
+      "whiteboard",
+      "noticeBoard",
+      "chair",
+      "door",
+      "window",
+      "wallClock",
+      "tubeLight",
+      "computerScreen",
+      "plant"
+    ],
+    "waiting reception": [
+      "bench",
+      "chair",
+      "shopCounter",
+      "door",
+      "wallClock",
+      "tubeLight",
+      "plant",
+      "window"
+    ],
+    "cabin": [
+      "officeDesk",
+      "chair",
+      "computerScreen",
+      "bookshelf",
+      "window",
+      "wallClock",
+      "door",
+      "plant",
+      "splitAC",
+      "noticeBoard",
+      "laptopSide",
+      "officePrinter"
+    ],
+    "hostel": [
+      "bed",
+      "table",
+      "chair",
+      "bookshelf",
+      "window",
+      "door",
+      "tubeLight",
+      "almirah",
+      "mosquitoNet"
+    ],
+    "corridor": [
+      "door",
+      "bench",
+      "tubeLight",
+      "wallClock",
+      "wallCalendar",
+      "window",
+      "lift",
+      "staircase"
+    ],
+    "chamber": [
+      "officeDesk",
+      "chair",
+      "bookshelfFull",
+      "door",
+      "window",
+      "wallClock",
+      "curtains",
+      "plant"
+    ],
+    "clinic doctor": [
+      "officeDesk",
+      "chair",
+      "hospitalBed",
+      "stethoscope",
+      "door",
+      "window",
+      "wallClock",
+      "curtains",
+      "washBasin"
+    ],
+    "pharmacy": [
+      "shopCounter",
+      "showcase",
+      "classroomShelf",
+      "door",
+      "tubeLight",
+      "wallClock"
+    ],
+    "shop store grocery": [
+      "shopCounter",
+      "showcase",
+      "classroomShelf",
+      "riceSacks",
+      "vegetableBasket",
+      "door",
+      "tubeLight"
+    ],
+    "restaurant cafe canteen": [
+      "restaurantTable",
+      "chair",
+      "shopCounter",
+      "window",
+      "tubeLight",
+      "plant",
+      "wallClock",
+      "door"
+    ],
+    "lobby": [
+      "shopCounter",
+      "sofaSet",
+      "armchair",
+      "lift",
+      "door",
+      "plant",
+      "wallClock",
+      "ceilingLamp"
+    ],
+    "court": [
+      "teacherTable",
+      "chair",
+      "bench",
+      "door",
+      "window",
+      "wallClock",
+      "bookshelfFull",
+      "tubeLight"
+    ],
+    "lab": [
+      "labBench",
+      "computerScreen",
+      "chair",
+      "window",
+      "wallClock",
+      "tubeLight",
+      "door"
+    ],
+    "drawing": [
+      "sofaSet",
+      "armchair",
+      "tvStand",
+      "rug",
+      "window",
+      "curtains",
+      "ceilingFan",
+      "photoFrame",
+      "wallCalendar",
+      "showcase",
+      "plant"
+    ],
+    "gym": [
+      "weightBench",
+      "dumbbellRack",
+      "mirror",
+      "tubeLight",
+      "wallClock",
+      "door",
+      "window"
+    ],
+    "salon parlour barber": [
+      "salonChair",
+      "mirror",
+      "showcase",
+      "tubeLight",
+      "door",
+      "wallClock",
+      "plant"
+    ],
+    "bakery": [
+      "bakeryShelf",
+      "shopCounter",
+      "showcase",
+      "tubeLight",
+      "door",
+      "wallClock"
+    ],
+    "garage workshop": [
+      "metalRack",
+      "cartonStack",
+      "tubeLight",
+      "door",
+      "privateCar",
+      "motorbike"
+    ],
+    "warehouse godown store room": [
+      "metalRack",
+      "cartonStack",
+      "riceSacks",
+      "tubeLight",
+      "door"
+    ],
+    "auditorium stage": [
+      "podium",
+      "microphone",
+      "curtains",
+      "chair",
+      "ceilingLamp",
+      "tubeLight"
+    ],
+    "seminar": [
+      "podium",
+      "whiteboard",
+      "chair",
+      "microphone",
+      "tubeLight",
+      "door"
+    ],
+    "market bazaar market bazaar market bazaar বাজার হাট": [
+      "bazaarShed",
+      "vegetableBasket",
+      "riceSacks"
+    ],
+    "tea stall tea stall tea shop চায়ের দোকান চায়ের দোকান চা দোকান চায়ের টং": [
+      "teaStall",
+      "teaCart",
+      "bench"
+    ],
+    "office room office room office অফিস কার্যালয়": [
+      "officeDesk",
+      "officePrinter",
+      "bookshelf"
+    ],
+    "hospital clinic hospital clinic hospital clinic হাসপাতাল ক্লিনিক": [
+      "hospitalBed",
+      "washBasin",
+      "wheelchairRamp"
+    ],
+    "river ghat river ghat riverbank river নদীর ঘাট নদী ঘাট": [
+      "river",
+      "boat",
+      "bambooBridge"
+    ],
+    "bus stop bus stop বাস স্টপ বাসস্টপ বাস স্ট্যান্ড": [
+      "busStop",
+      "localBus",
+      "streetLamp"
+    ],
+    "rooftop rooftop roof terrace ছাদ ছাদের": [
+      "waterTank",
+      "boundaryWall",
+      "plant"
+    ],
+    "forest path forest path forest জঙ্গলের পথ জঙ্গল বনপথ": [
+      "banyanTree",
+      "pineTree",
+      "bushRow"
+    ],
+    "restaurant cafe restaurant cafe restaurant cafe রেস্তোরাঁ রেস্টুরেন্ট ক্যাফে": [
+      "restaurantTable",
+      "shopCounter",
+      "chair"
+    ],
+    "courthouse hall courthouse hall courthouse courtroom আদালত কোর্ট": [
+      "teacherTable",
+      "bench",
+      "bookshelfFull"
+    ],
+    "farm field farm field farmland paddy field ধানক্ষেত ধানের ক্ষেত খামার কৃষিক্ষেত": [
+      "paddyField",
+      "paddyStack",
+      "riceSacks"
+    ]
+  },
+  "phrases": [
+    [
+      "\\bhold(?:s|ing)?\\s+(?:up\\s+)?(?:a\\s+|the\\s+|his\\s+|her\\s+|their\\s+)?(?:paper|sheet|cv|document|page|form|letter)\\b(?:\\s+up)?(?:\\s+in front)?",
+      "hold sheet"
+    ],
+    [
+      "\\b(press|presses|pressed|pressing|hands|passes|slips|puts|pushes)\\b(.{0,30}?)\\binto (a |the )?(\\w+ )?(his|her|their|my|your|\\w+'s) hands?\\b",
+      "give $2"
+    ],
+    [
+      "\\b(lift|lifts|lifted|lifting|raise|raises|raised|raising) (his|her|their|the) (head|face|eyes)\\b",
+      "look up"
+    ],
+    [
+      "\\bjaw (falls|falling|fell|drops|dropping|drop|dropped|hangs|hanging)\\b|\\b(falling|dropping|dropped) jaw\\b",
+      "shocked"
+    ],
+    [
+      "\\bjaw set\\b|\\bset jaw\\b",
+      ""
+    ],
+    [
+      "\\b(seal|seals|sealed|sealing|press|presses|pressing|zips?) (his|her|their) lips\\b",
+      "shh"
+    ],
+    [
+      "\\b(press|presses|pressing) (their|his|her) lips (together )?to keep from laughing\\b|\\bto keep from laughing\\b",
+      "cover mouth"
+    ],
+    [
+      "\\b(hides?|hiding) (a |his |her )?(smirk|smile|grin|laugh)\\b",
+      "cover mouth"
+    ],
+    [
+      "\\b(pull|pulls|pulled|pulling|drag|drags|dragged|tug|tugs|tugged) (\\w+ )?(up )?by the (wrist|hand|arm)\\b",
+      "lead by hand"
+    ],
+    [
+      "\\bhands? spread\\b|\\bspreads? (his|her|their) (hands|arms)\\b",
+      "shrug"
+    ],
+    [
+      "\\bturns? (his|her|their) (\\w+ )?face\\b",
+      ""
+    ],
+    [
+      "\\bchest out\\b|\\blike a champion\\b|\\bchest puffed\\b",
+      "proud chest"
+    ],
+    [
+      "\\b(digging|digs|dig) in(to)?\\b",
+      "eat with hand"
+    ],
+    [
+      "\\b(taps?|tapping|tapped) (on )?(the |a )?table\\b",
+      "point at"
+    ],
+    [
+      "\\bwaits? with open arms\\b|\\bwith open arms\\b",
+      "open arms hug"
+    ],
+    [
+      "\\b(explodes?|exploding|burst|bursts|bursting) (with|into) laughter\\b|\\bhowl(s|ing)?( with laughter)?\\b",
+      "laugh"
+    ],
+    [
+      "\\b(up )?to the camera\\b",
+      ""
+    ],
+    [
+      "\\b(starts?|begins?|starting|beginning) to (rise|get up|stand)\\b",
+      "stand up"
+    ],
+    [
+      "\\brests? (his|her|their) chin on (his|her|their) hand\\b|\\bchin on (his|her|their) hand\\b",
+      "chin think"
+    ],
+    [
+      "\\bholds? (the |a |his |her |their )?(\\w+ )?up\\b",
+      "hold in front $2"
+    ],
+    [
+      "\\bleans? in\\b",
+      ""
+    ],
+    [
+      "\\brubbing (his|her|their) fingers\\b|\\brubs? (his|her|their) fingers\\b",
+      "rub hands"
+    ],
+    [
+      "\\b(stares?|staring|stared|gazes?|gazing) (down )?at (the |his |her |a )?(phone|mobile|screen)\\b",
+      "look at phone"
+    ],
+    [
+      "\\bthumbs? up\\b",
+      "thumbs up"
+    ],
+    [
+      "\\b(taps?|tapping|tapped) (on )?it\\b(.{0,20}finger)?",
+      "point at"
+    ],
+    [
+      "\\bclicks? (post|send|publish|upload|the button)\\b",
+      "types on the laptop"
+    ],
+    [
+      "\\bjumps? up from (the |a )?(bench|chair|seat|sofa)\\b",
+      "stand up from the bench"
+    ],
+    [
+      "\\bfrom across the (table|room|desk)\\b|\\bacross the (table|room|desk)\\b",
+      " "
+    ],
+    [
+      "\\b(watches|watching|watch)\\b(?! (a |the )?(tv|television|phone|screen))",
+      "look"
+    ],
+    [
+      "\\b(closes?|closing|shuts?|shutting) (a |the |his |her |their )?(half )?(laptop|lid)\\b",
+      "close laptop"
+    ],
+    [
+      "\\bhalf closes? (a |the |his |her |their )?(laptop|lid)\\b",
+      "close laptop"
+    ],
+    [
+      "\\bchat (box|window|screen|bubble)\\b",
+      "computer screen"
+    ],
+    [
+      "\\b(far|opposite|river|near|other) banks?\\b",
+      "riverbank embankment"
+    ]
+  ],
+  "readyPlaces": {
+    "village_road": {
+      "aliases": [
+        "village road",
+        "গ্রামের রাস্তা"
+      ],
+      "pieces": [
+        "mudPath",
+        "mangoTree"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false
+    },
+    "village_home": {
+      "aliases": [
+        "village home",
+        "বাড়ি",
+        "উঠান"
+      ],
+      "pieces": [
+        "mudHouse",
+        "tubewell"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false
+    },
+    "school_yard": {
+      "aliases": [
+        "school yard",
+        "school",
+        "স্কুল",
+        "বিদ্যালয়"
+      ],
+      "pieces": [
+        "schoolFront",
+        "gate"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false
+    },
+    "classroom": {
+      "aliases": [
+        "classroom",
+        "ক্লাসরুম",
+        "শ্রেণিকক্ষ"
+      ],
+      "pieces": [
+        "blackboard",
+        "schoolDesk"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": true
+    },
+    "bedroom": {
+      "aliases": [
+        "bedroom",
+        "শোবার ঘর"
+      ],
+      "pieces": [
+        "bedsideTable",
+        "bookshelf"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": true
+    },
+    "city_street": {
+      "aliases": [
+        "city street",
+        "শহরের রাস্তা"
+      ],
+      "pieces": [
+        "officeTower",
+        "streetLamp"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false
+    },
+    "park": {
+      "aliases": [
+        "park",
+        "পার্ক"
+      ],
+      "pieces": [
+        "banyanTree",
+        "bench"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false
+    },
+    "living_room": {
+      "aliases": [
+        "living room",
+        "বসার ঘর"
+      ],
+      "pieces": [
+        "sofaSet",
+        "tvStand"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": true
+    },
+    "kitchen": {
+      "aliases": [
+        "kitchen",
+        "রান্নাঘর"
+      ],
+      "pieces": [
+        "gasStove",
+        "kitchenShelf"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": true
+    },
+    "market_bazaar": {
+      "aliases": [
+        "market bazaar",
+        "market",
+        "bazaar",
+        "বাজার",
+        "হাট",
+        "village fair",
+        "funfair",
+        "মেলায়",
+        "মেলার",
+        "মেলাতে গিয়ে",
+        "বৈশাখী মেলা",
+        "গ্রামের মেলা"
+      ],
+      "pieces": [
+        "bazaarShed",
+        "vegetableBasket",
+        "riceSacks"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false,
+      "step3": true
+    },
+    "tea_stall": {
+      "aliases": [
+        "tea stall",
+        "tea shop",
+        "চায়ের দোকান",
+        "চায়ের দোকান",
+        "চা দোকান",
+        "চায়ের টং"
+      ],
+      "pieces": [
+        "teaStall",
+        "teaCart",
+        "bench"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false,
+      "step3": true
+    },
+    "office_room": {
+      "aliases": [
+        "office room",
+        "office",
+        "অফিস",
+        "কার্যালয়"
+      ],
+      "pieces": [
+        "officeDesk",
+        "officePrinter",
+        "bookshelf"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": true,
+      "step3": true
+    },
+    "hospital_clinic": {
+      "aliases": [
+        "hospital clinic",
+        "hospital",
+        "clinic",
+        "হাসপাতাল",
+        "ক্লিনিক"
+      ],
+      "pieces": [
+        "hospitalBed",
+        "washBasin",
+        "wheelchairRamp"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": true,
+      "step3": true
+    },
+    "river_ghat": {
+      "aliases": [
+        "river ghat",
+        "riverbank",
+        "river",
+        "নদীর ঘাট",
+        "নদী",
+        "ঘাট"
+      ],
+      "pieces": [
+        "river",
+        "boat",
+        "bambooBridge"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false,
+      "step3": true
+    },
+    "bus_stop": {
+      "aliases": [
+        "bus stop",
+        "বাস স্টপ",
+        "বাসস্টপ",
+        "বাস স্ট্যান্ড"
+      ],
+      "pieces": [
+        "busStop",
+        "localBus",
+        "streetLamp"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false,
+      "step3": true
+    },
+    "rooftop": {
+      "aliases": [
+        "rooftop",
+        "roof terrace",
+        "ছাদ",
+        "ছাদের"
+      ],
+      "pieces": [
+        "waterTank",
+        "boundaryWall",
+        "plant"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false,
+      "step3": true
+    },
+    "forest_path": {
+      "aliases": [
+        "forest path",
+        "forest",
+        "জঙ্গলের পথ",
+        "জঙ্গল",
+        "বনপথ"
+      ],
+      "pieces": [
+        "banyanTree",
+        "pineTree",
+        "bushRow"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false,
+      "step3": true
+    },
+    "restaurant_cafe": {
+      "aliases": [
+        "restaurant cafe",
+        "restaurant",
+        "cafe",
+        "রেস্তোরাঁ",
+        "রেস্টুরেন্ট",
+        "ক্যাফে"
+      ],
+      "pieces": [
+        "restaurantTable",
+        "shopCounter",
+        "chair"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": true,
+      "step3": true
+    },
+    "courthouse_hall": {
+      "aliases": [
+        "courthouse hall",
+        "courthouse",
+        "courtroom",
+        "আদালত",
+        "কোর্ট"
+      ],
+      "pieces": [
+        "teacherTable",
+        "bench",
+        "bookshelfFull"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": true,
+      "step3": true
+    },
+    "farm_field": {
+      "aliases": [
+        "farm field",
+        "farmland",
+        "paddy field",
+        "ধানক্ষেত",
+        "ধানের ক্ষেত",
+        "খামার",
+        "কৃষিক্ষেত"
+      ],
+      "pieces": [
+        "paddyField",
+        "paddyStack",
+        "riceSacks"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false,
+      "step3": true
+    },
+    "sea_beach": {
+      "aliases": [
+        "sea beach",
+        "sea",
+        "ocean",
+        "beach",
+        "seaside",
+        "coast",
+        "সমুদ্র",
+        "সাগর",
+        "সমুদ্রসৈকত",
+        "সমুদ্র সৈকত",
+        "সৈকত",
+        "ওশেন",
+        "মহাসাগর",
+        "বঙ্গোপসাগর",
+        "কক্সবাজার",
+        "বিচ"
+      ],
+      "pieces": [
+        "seaWaves",
+        "coconutPalm"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false,
+      "step3": true
+    },
+    "mountain_valley": {
+      "aliases": [
+        "mountain valley",
+        "mountain",
+        "mountains",
+        "hills",
+        "hill",
+        "valley",
+        "পাহাড়",
+        "পাহাড়",
+        "পর্বত",
+        "উপত্যকা",
+        "টিলা",
+        "বান্দরবান"
+      ],
+      "pieces": [
+        "pineTree",
+        "bushRow"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false,
+      "step3": true
+    },
+    "desert_dunes": {
+      "aliases": [
+        "desert",
+        "dunes",
+        "sand dunes",
+        "মরুভূমি",
+        "মরু",
+        "বালিয়াড়ি"
+      ],
+      "pieces": [
+        "sun"
+      ],
+      "times": [
+        "day",
+        "night"
+      ],
+      "indoors": false,
+      "step3": true
+    }
+  }
+}

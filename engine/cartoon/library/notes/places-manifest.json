@@ -1,0 +1,2725 @@
+[
+  {
+    "id": "ambulance",
+    "about": "ambulance",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "apartmentRow",
+    "about": "apartment row",
+    "options": {
+      "lit": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "bankFront",
+    "about": "bank front",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "bicycle",
+    "about": "bicycle",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "billboard",
+    "about": "billboard",
+    "options": {
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "cngAuto",
+    "about": "cng auto",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "collegeFront",
+    "about": "college front",
+    "options": {
+      "lit": false,
+      "text": "",
+      "flag": true
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "fireTruck",
+    "about": "fire truck",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "footBridge",
+    "about": "foot bridge",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "footpath",
+    "about": "footpath",
+    "options": {
+      "w": "pixels; default 2.4*h"
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "garmentFactory",
+    "about": "garment factory",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "leguna",
+    "about": "leguna",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "localBus",
+    "about": "local bus",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "marketStreet",
+    "about": "market street",
+    "options": {
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "microbus",
+    "about": "microbus",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "mosqueMinaret",
+    "about": "mosque minaret",
+    "options": {
+      "lit": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "motorbike",
+    "about": "motorbike",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "officeTower",
+    "about": "office tower",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "petrolPump",
+    "about": "petrol pump",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "pickupVan",
+    "about": "pickup van",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "policeCar",
+    "about": "police car",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "policeStation",
+    "about": "police station",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "privateCar",
+    "about": "private car",
+    "options": {
+      "moving": false,
+      "kind": [
+        "sedan",
+        "hatchback",
+        "suv"
+      ]
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "roadDivider",
+    "about": "road divider",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "teaCart",
+    "about": "tea cart",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "trafficLight",
+    "about": "traffic light",
+    "options": {
+      "light": [
+        "red",
+        "yellow",
+        "green"
+      ]
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "truck",
+    "about": "truck",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "universityCampus",
+    "about": "university campus",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "almirah",
+    "about": "almirah",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "blackboard",
+    "about": "blackboard",
+    "options": {
+      "text": ""
+    },
+    "anchor": "wall",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "ceilingFan",
+    "about": "Ceiling fan; anchor at ceiling, drawn downward. h scales the fan, blades rotate when on.",
+    "options": {
+      "on": true
+    },
+    "anchor": "ceiling",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "diningTable",
+    "about": "dining table",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "door",
+    "about": "door",
+    "options": {
+      "open": false
+    },
+    "anchor": "wall",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "fridge",
+    "about": "fridge",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "gasStove",
+    "about": "gas stove",
+    "options": {
+      "on": true
+    },
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "kitchenShelf",
+    "about": "kitchen shelf",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "mosquitoNet",
+    "about": "Translucent mosquito net only; bottom centre ground anchor. Place over a separate bed.",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "prayerMat",
+    "about": "prayer mat",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "schoolDesk",
+    "about": "school desk",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "teacherTable",
+    "about": "teacher table",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "tvStand",
+    "about": "tv stand",
+    "options": {
+      "on": true,
+      "color2": "screen colour"
+    },
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "wallClock",
+    "about": "wall clock",
+    "options": {
+      "hours": 10,
+      "minutes": 10
+    },
+    "anchor": "wall",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "window",
+    "about": "window",
+    "options": {
+      "open": false,
+      "lit": false,
+      "color2": "curtain colour"
+    },
+    "anchor": "wall",
+    "category": "inside",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "bambooClump",
+    "about": "bamboo clump",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "bananaPlant",
+    "about": "banana plant",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "banyanTree",
+    "about": "banyan tree",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "bushRow",
+    "about": "bush row",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "coconutPalm",
+    "about": "coconut palm",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "flowerBed",
+    "about": "flower bed",
+    "options": {
+      "kind": [
+        "marigold",
+        "rose",
+        "shapla"
+      ]
+    },
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "grassTuft",
+    "about": "grass tuft",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "krishnachura",
+    "about": "krishnachura",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "mangoTree",
+    "about": "mango tree",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "mustardField",
+    "about": "mustard field",
+    "options": {
+      "w": "pixels; default 2.2*h"
+    },
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "paddyField",
+    "about": "paddy field",
+    "options": {
+      "w": "pixels; default 2.2*h",
+      "ripe": false
+    },
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "pond",
+    "about": "pond",
+    "options": {
+      "ghat": false
+    },
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "river",
+    "about": "river",
+    "options": {
+      "w": "pixels; river/sea band width"
+    },
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "rock",
+    "about": "rock",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "bambooBridge",
+    "about": "bamboo bridge",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "boat",
+    "about": "boat",
+    "options": {
+      "sail": true,
+      "color2": "sail colour"
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "chula",
+    "about": "chula",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "clothesLine",
+    "about": "clothes line",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P1",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "kutchaRoad",
+    "about": "kutcha road",
+    "options": {
+      "w": "pixels; default 2.4*h"
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "mudHouse",
+    "about": "mud house",
+    "options": {
+      "roof": "hex colour",
+      "lit": false,
+      "open": false
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "strawStack",
+    "about": "straw stack",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "tinHouse",
+    "about": "tin house",
+    "options": {
+      "roof": "hex colour",
+      "lit": false,
+      "open": false
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "tubewell",
+    "about": "tubewell",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "villageMosque",
+    "about": "village mosque",
+    "options": {
+      "lit": false,
+      "color2": "roof / dome colour"
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P1",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "busStop",
+    "about": "bus stop",
+    "options": {
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "busTerminal",
+    "about": "bus terminal",
+    "options": {
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "cinemaHall",
+    "about": "cinema hall",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "cityPark",
+    "about": "One independent park part per draw: bench, lamp or fountain. Never a complete park scene.",
+    "options": {
+      "part": [
+        "bench",
+        "lamp",
+        "fountain"
+      ],
+      "lit": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "constructionSite",
+    "about": "construction site",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "courtFront",
+    "about": "court front",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "hospitalFront",
+    "about": "hospital front",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "hotelFront",
+    "about": "hotel front",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "launch",
+    "about": "launch",
+    "options": {
+      "lit": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "mangroveForest",
+    "about": "mangrove forest",
+    "options": {
+      "far": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "railStation",
+    "about": "rail station",
+    "options": {
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "railTrack",
+    "about": "rail track",
+    "options": {
+      "w": "pixels; default 2.4*h"
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "schoolFront",
+    "about": "school front",
+    "options": {
+      "lit": false,
+      "text": "",
+      "flag": true
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "shoppingMall",
+    "about": "shopping mall",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "shrine",
+    "about": "shrine",
+    "options": {
+      "lit": false,
+      "color2": "roof / dome colour"
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "skyscraper",
+    "about": "skyscraper",
+    "options": {
+      "lit": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "streetVendor",
+    "about": "street vendor",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "trainCoach",
+    "about": "train coach",
+    "options": {
+      "moving": false,
+      "lit": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "zebraCrossing",
+    "about": "zebra crossing",
+    "options": {
+      "w": "pixels; default 2.4*h"
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "bookshelf",
+    "about": "bookshelf",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "ceilingLamp",
+    "about": "Pendant lamp; anchor at ceiling, drawn downward.",
+    "options": {
+      "on": true
+    },
+    "anchor": "ceiling",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "classroomShelf",
+    "about": "classroom shelf",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "computerScreen",
+    "about": "computer screen",
+    "options": {
+      "on": true,
+      "color2": "screen colour"
+    },
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "curtains",
+    "about": "curtains",
+    "options": {
+      "open": false
+    },
+    "anchor": "wall",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "dripStand",
+    "about": "drip stand",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "fishTray",
+    "about": "fish tray",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "fruitPile",
+    "about": "fruit pile",
+    "options": {
+      "kind": [
+        "mango",
+        "banana",
+        "jackfruit",
+        "litchi"
+      ]
+    },
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "hospitalBed",
+    "about": "hospital bed",
+    "options": {
+      "color2": "blanket colour"
+    },
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "kitchenSink",
+    "about": "kitchen sink",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "mirror",
+    "about": "mirror",
+    "options": {},
+    "anchor": "wall",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "officeDesk",
+    "about": "office desk",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "photoFrame",
+    "about": "photo frame",
+    "options": {
+      "picture": false,
+      "color2": "picture fill"
+    },
+    "anchor": "wall",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "pressureCooker",
+    "about": "pressure cooker",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "rackOfClothes",
+    "about": "rack of clothes",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "riceSacks",
+    "about": "rice sacks",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "shopCounter",
+    "about": "shop counter",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "showcase",
+    "about": "showcase",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "splitAC",
+    "about": "split a c",
+    "options": {
+      "on": true
+    },
+    "anchor": "wall",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "tubeLight",
+    "about": "tube light",
+    "options": {
+      "on": true
+    },
+    "anchor": "wall",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "vegetableBasket",
+    "about": "vegetable basket",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "wallCalendar",
+    "about": "wall calendar",
+    "options": {},
+    "anchor": "wall",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "wallSwitchboard",
+    "about": "wall switchboard",
+    "options": {},
+    "anchor": "wall",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "washingMachine",
+    "about": "washing machine",
+    "options": {
+      "on": false
+    },
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "waterFilter",
+    "about": "water filter",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "cactus",
+    "about": "cactus",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "hillRange",
+    "about": "hill range",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "jackfruitTree",
+    "about": "jackfruit tree",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "logPile",
+    "about": "log pile",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "mountainRange",
+    "about": "mountain range",
+    "options": {
+      "snow": true
+    },
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "mudPath",
+    "about": "mud path",
+    "options": {
+      "w": "pixels; default 2.4*h"
+    },
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "pineTree",
+    "about": "pine tree",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "sandDune",
+    "about": "sand dune",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "seaWaves",
+    "about": "sea waves",
+    "options": {
+      "w": "pixels; river/sea band width"
+    },
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "teaGardenRows",
+    "about": "tea garden rows",
+    "options": {
+      "w": "pixels; default 2.2*h"
+    },
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "waterfall",
+    "about": "waterfall",
+    "options": {},
+    "anchor": "ground",
+    "category": "nature",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "bazaarShed",
+    "about": "bazaar shed",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "bullockCart",
+    "about": "bullock cart",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "church",
+    "about": "church",
+    "options": {
+      "lit": false,
+      "color2": "roof / dome colour"
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "clayPots",
+    "about": "clay pots",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "fishTrap",
+    "about": "fish trap",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "mudirDokan",
+    "about": "mudir dokan",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "paddyStack",
+    "about": "paddy stack",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "rickshawVan",
+    "about": "rickshaw van",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "schoolTin",
+    "about": "school tin",
+    "options": {
+      "roof": "hex colour",
+      "lit": false,
+      "open": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "teaStall",
+    "about": "tea stall",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P2",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "temple",
+    "about": "temple",
+    "options": {
+      "lit": false,
+      "color2": "roof / dome colour"
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "P2",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh"
+    ]
+  },
+  {
+    "id": "airportFront",
+    "about": "airport front",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P3",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "bridge",
+    "about": "bridge",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P3",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "helicopter",
+    "about": "helicopter",
+    "options": {},
+    "anchor": "air",
+    "category": "city",
+    "priority": "P3",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "plane",
+    "about": "plane",
+    "options": {},
+    "anchor": "air",
+    "category": "city",
+    "priority": "P3",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "ship",
+    "about": "ship",
+    "options": {
+      "lit": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P3",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "stadium",
+    "about": "stadium",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P3",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "tower",
+    "about": "tower",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "P3",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "city"
+    ]
+  },
+  {
+    "id": "aquarium",
+    "about": "aquarium",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P3",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "bathroomTap",
+    "about": "bathroom tap",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P3",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "bookshelfFull",
+    "about": "bookshelf full",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P3",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "lift",
+    "about": "lift",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P3",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "staircase",
+    "about": "staircase",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "P3",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "inside"
+    ]
+  },
+  {
+    "id": "fog",
+    "about": "fog",
+    "options": {},
+    "anchor": "area",
+    "category": "nature",
+    "priority": "P3",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "lightning",
+    "about": "lightning",
+    "options": {},
+    "anchor": "area",
+    "category": "nature",
+    "priority": "P3",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "rainbow",
+    "about": "rainbow",
+    "options": {},
+    "anchor": "area",
+    "category": "nature",
+    "priority": "P3",
+    "extra": false,
+    "animated": false,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "rainfall",
+    "about": "Rain overlay; anchor is bottom centre; h is overlay height. Falling streaks wrap.",
+    "options": {
+      "w": "not supported; resize via h"
+    },
+    "anchor": "area",
+    "category": "nature",
+    "priority": "P3",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "stars",
+    "about": "stars",
+    "options": {},
+    "anchor": "area",
+    "category": "nature",
+    "priority": "P3",
+    "extra": false,
+    "animated": true,
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "id": "balcony",
+    "about": "balcony",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "boundaryWall",
+    "about": "boundary wall",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "clinicFront",
+    "about": "clinic front",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "drain",
+    "about": "drain",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "dustbin",
+    "about": "dustbin",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "gate",
+    "about": "gate",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "metroCoach",
+    "about": "metro coach",
+    "options": {
+      "moving": false,
+      "lit": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": true,
+    "tags": [
+      "city",
+      "bangladesh",
+      "extra"
+    ]
+  },
+  {
+    "id": "metroPillar",
+    "about": "metro pillar",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "pharmacyFront",
+    "about": "pharmacy front",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "playgroundSlide",
+    "about": "playground slide",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "publicToilet",
+    "about": "public toilet",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "restaurantFront",
+    "about": "restaurant front",
+    "options": {
+      "lit": false,
+      "text": ""
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "solarPanel",
+    "about": "solar panel",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "streetLamp",
+    "about": "street lamp",
+    "options": {
+      "lit": false
+    },
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "swingSet",
+    "about": "swing set",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": true,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "utilityPole",
+    "about": "utility pole",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "waterTank",
+    "about": "water tank",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "wheelchairRamp",
+    "about": "wheelchair ramp",
+    "options": {},
+    "anchor": "ground",
+    "category": "city",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "city",
+      "extra"
+    ]
+  },
+  {
+    "id": "armchair",
+    "about": "armchair",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "inside",
+      "extra"
+    ]
+  },
+  {
+    "id": "bedsideTable",
+    "about": "bedside table",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "inside",
+      "extra"
+    ]
+  },
+  {
+    "id": "ceilingProjector",
+    "about": "Ceiling projector; ceiling anchor, drawn downward.",
+    "options": {
+      "on": false
+    },
+    "anchor": "ceiling",
+    "category": "inside",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "inside",
+      "extra"
+    ]
+  },
+  {
+    "id": "labBench",
+    "about": "lab bench",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "inside",
+      "extra"
+    ]
+  },
+  {
+    "id": "restaurantTable",
+    "about": "restaurant table",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "inside",
+      "extra"
+    ]
+  },
+  {
+    "id": "shower",
+    "about": "shower",
+    "options": {
+      "on": false
+    },
+    "anchor": "wall",
+    "category": "inside",
+    "priority": "Extra",
+    "extra": true,
+    "animated": true,
+    "tags": [
+      "inside",
+      "extra"
+    ]
+  },
+  {
+    "id": "sofaSet",
+    "about": "sofa",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "inside",
+      "extra"
+    ]
+  },
+  {
+    "id": "toilet",
+    "about": "toilet",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "inside",
+      "extra"
+    ]
+  },
+  {
+    "id": "washBasin",
+    "about": "wash basin",
+    "options": {},
+    "anchor": "ground",
+    "category": "inside",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "inside",
+      "extra"
+    ]
+  },
+  {
+    "id": "bambooFence",
+    "about": "bamboo fence",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh",
+      "extra"
+    ]
+  },
+  {
+    "id": "brickKiln",
+    "about": "brick kiln",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "Extra",
+    "extra": true,
+    "animated": true,
+    "tags": [
+      "village",
+      "bangladesh",
+      "extra"
+    ]
+  },
+  {
+    "id": "courtyard",
+    "about": "courtyard",
+    "options": {
+      "w": "pixels; default 2.4*h"
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh",
+      "extra"
+    ]
+  },
+  {
+    "id": "embankment",
+    "about": "embankment",
+    "options": {
+      "w": "pixels; default 2.4*h"
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh",
+      "extra"
+    ]
+  },
+  {
+    "id": "fishingNet",
+    "about": "fishing net",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh",
+      "extra"
+    ]
+  },
+  {
+    "id": "jetty",
+    "about": "jetty",
+    "options": {},
+    "anchor": "ground",
+    "category": "village",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh",
+      "extra"
+    ]
+  },
+  {
+    "id": "riceMill",
+    "about": "rice mill",
+    "options": {
+      "roof": "hex colour",
+      "lit": false,
+      "open": false
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "Extra",
+    "extra": true,
+    "animated": false,
+    "tags": [
+      "village",
+      "bangladesh",
+      "extra"
+    ]
+  },
+  {
+    "id": "cycleRickshaw",
+    "about": "rickshaw",
+    "options": {
+      "moving": false
+    },
+    "anchor": "ground",
+    "category": "village",
+    "priority": "Extra",
+    "extra": true,
+    "animated": true,
+    "tags": [
+      "village",
+      "bangladesh",
+      "extra"
+    ]
+  }
+]

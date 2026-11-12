@@ -1,0 +1,391 @@
+Zancut 2D — সম্পূর্ণ লোকাল AI ট্রেনিং, সেলফ-লার্নিং ইঞ্জিন, ফিজিক্স লজিক, সেন্ট্রাল সিকিউরিটি এবং ভাইব-কোডিং (Vibe-Coding) মাস্টার প্লেবুক
+
+এই মাস্টার প্লেবুকটি আপনার Zancut 2D প্রজেক্টকে কোনো ব্যয়বহুল এক্সটার্নাল AI (যেমন Claude Opus) ছাড়াই ১০০% স্বয়ংসম্পূর্ণ, স্ব-শিক্ষিত (Self-Learning), ফিজিক্স ও লজিক-সমৃদ্ধ এবং আপনার একক কেন্দ্রীয় নিয়ন্ত্রণে (Centralized Control & Anti-Reverse-Engineering Security) চালানোর জন্য তৈরি করা হয়েছে।
+
+আপনি ইতিমধ্যে ধাপ ১ (লিগ্যাসি কোড ক্লিনআপ) এবং ধাপ ২ (৪২টি ভাঙা জেসচার ও ৪৫% স্থিরতা মেরামত) সম্পন্ন করেছেন বা শুরু করেছেন। তাই এই আপডেটেড প্লেবুকে ধাপ ৩ থেকে ধাপ ১২ পর্যন্ত আপনার নতুন সবগুলো চাহিদা—যেমন:
+
+১২টি সেরা ওপেন-সোর্স লাইব্রেরি ইনস্টল করা,
+
+কোনো বাইরের AI ছাড়াই নিজে নিজে "তিন মাথার নীল রাক্ষস" বা নতুন গ্রাফিক্স/চার্ট/B-Roll তৈরি করা (Procedural DNA Assembler),
+
+বাস্তব জগতের ফিজিক্স ও লজিক (Physics & World Sanity Engine) মেনে চলা,
+
+নিজে নিজে ইন্টারনেট (Wikipedia REST API, Wikidata API, Iconify, OpenMoji) সার্চ করে নতুন শব্দের অর্থ ও ভেক্টর গ্রাফিক্স শিখে নেওয়া, এবং
+
+আপনার সেন্ট্রাল কন্ট্রোল, ইউজার ক্রেডেনশিয়াল লক ও AES-256 Anti-Reverse-Engineering সিকিউরিটি—একদম রেডিমেড কপি-পেস্ট প্রম্পট আকারে সাজিয়ে দেওয়া হয়েছে।
+
+পর্ব ১: সহজ ভাষায় পুরো আর্কিটেকচার — আপনার ব্রেইন কীভাবে শেখে, নতুন জিনিস বানায় এবং আপনার নিয়ন্ত্রণে থাকে?
+
+১. আমাদের ব্রেইন অন্য AI ছাড়া নিজে নিজে নতুন জিনিস ("তিন মাথার নীল রাক্ষস" বা নতুন চার্ট) কীভাবে বানাবে?
+
+আগের সাধারণ সিস্টেমে ব্রেইন শুধু লাইব্রেরিতে থাকা রেডিমেড জিনিস খুঁজত। এখন আমরা ব্রেইনের ভেতর "Compositional DNA & Procedural Recipe Assembler" (server/procedural-creator.mjs) যোগ করছি। এটি যেভাবে কাজ করে:
+
+ইউজারের ভয়েস/স্ক্রিপ্ট:
+"হঠাৎ জঙ্গল থেকে তিন মাথার এক বিশাল নীল রাক্ষস আগুনের তলোয়ার হাতে বেরিয়ে এলো!"
+       │
+       ▼
+[১. গ্রামার ও মডিফায়ার পার্সার (Modifier & Attribute Parser)]
+   • সংখ্যা + অঙ্গ (Quantity + Part): "তিন মাথার" → `headCount: 3` (Angles: -25°, 0°, +25°)
+   • আকার (Scale Modifier): "বিশাল" → `scale: 1.55` (সাধারণ মানুষের চেয়ে ১.৫৫ গুণ বড়)
+   • রঙ (Color Modifier): "নীল" → `skinColor: "#1D4ED8"`
+   • চরিত্রের ধরন (Archetype): "রাক্ষস" → `eyes: "glowing_red"`, `teeth: "fangs"`, `horns: true`
+   • হাতের অস্ত্র + ইফেক্ট (Prop + FX): "আগুনের তলোয়ার" → `hand_R: prop("sword") + fx("fire_glow")`
+       │
+       ▼
+[২. ক্যানভাস ও র‍্যাগডল অ্যাসেম্বলার (`anatomy.js` + `Rough.js` + `OpenMoji`)]
+   • আপনার কঙ্কাল (`rig.js`)-এর ঘাড়ের জয়েন্টে ১টির বদলে ৩টি মাথা বসায়, গায়ের রঙ নীল করে,
+     আকার বড় করে এবং ডান হাতে তলোয়ার ও আগুনের পার্টিকেল যোগ করে!
+   • তৈরি হওয়া নতুন চরিত্রটির রেসিপি `data/brain/learned-creations.json`-এ সেভ হয়ে যায়,
+     যাতে পরেরবার আরও দ্রুত ও নিখুঁতভাবে বানাতে পারে!
+
+
+একইভাবে গ্রাফিক্স ও ক্যাপশনের ক্ষেত্রে: স্ক্রিপ্টে যদি বলা হয় "চালের দাম ৪০ টাকা থেকে বেড়ে ৭০ টাকা হলো", ব্রেইন নিজে নিজে D3 Scale এবং Rough.js ব্যবহার করে কার্টুন স্টাইলে একটি তুলনামূলক বার-চার্ট (৪০৳ → ৭০৳) এবং ওপরে একটি আকর্ষণীয় হেডলাইন ক্যাপশন (চালের দাম বৃদ্ধি 📈) বানিয়ে পর্দায় ভাসিয়ে দেবে!
+
+২. লজিক ও ফিজিক্স ইঞ্জিন (server/physics-logic.mjs) — অবাস্তব দৃশ্য কীভাবে ঠেকাবে?
+
+শুধু ছবি জোড়া দিলেই হবে না; দৃশ্যটি যৌক্তিক হতে হবে। আমাদের ফিজিক্স ও লজিক ইঞ্জিন প্রতিটি শটে ৪টি নিয়ম বাধ্যতামূলক করবে:
+
+মাধ্যাকর্ষণ ও মাটির রেখা (Gravity & Ground Plane via Matter.js): মানুষ, চেয়ার, টেবিল, গাড়ি, গাছ কখনোই বাতাসে ভাসবে না—সবসময় ground_y রেখায় পা বা চাকা স্পর্শ করে থাকবে। শুধু পাখি, মেঘ, বিমান বা চিন্তা-বাবল আকাশে (sky_zone) থাকবে।
+
+বাস্তব আকারের অনুপাত (Real-World Meter Scale): মানুষের উচ্চতা 1.7m ধরা হলে চায়ের কাপ হবে 0.12m, বিড়াল 0.30m, গাড়ি 1.5m × 4.0m, আর বাড়ি 4.5m। ফলে কখনোই মানুষ গাড়ির চেয়ে বড় বা কাপ মানুষের সমান হবে না।
+
+ইনডোর বনাম আউটডোর লজিক (Indoor vs. Outdoor Sanity): ঘরের ভেতরের দৃশ্যে (bedroom, classroom, office_room, kitchen) কখনোই বাস, ট্রেন, বড় গাছ বা খোলা আকাশের মেঘ ঢুকবে না। ঘরের ভেতর বৃষ্টির কথা বললে জানালার ফ্রেমের ভেতর দিয়ে বাইরে বৃষ্টি (window_rain_cutout) দেখাবে!
+
+শারীরিক সীমাবদ্ধতা (Anatomical Constraints): মানুষের কনুই বা হাঁটু কখনো উল্টো দিকে বাঁকবে না এবং দুজন মানুষ কথা বলার সময় একে অপরের দিকে মুখ করে (facing each other) দাঁড়াবে, পেছন ফিরে কথা বলবে না।
+
+৩. কোনো AI ছাড়া ইন্টারনেট থেকে নিজে নিজে শেখা (server/web-learner.mjs)
+
+যখনই স্ক্রিপ্টে এমন কোনো শব্দ বা বস্তু আসবে যা আপনার লোকাল ডিকশনারিতে নেই, এবং ফোনে বা কম্পিউটারে ইন্টারনেট চালু থাকবে:
+
+সে সরাসরি ফ্রি Wikidata Action API (wbgetentities) এবং বাংলা ও ইংরেজি Wikipedia REST API-তে সার্চ করবে (এতে কোনো API Key বা টাকা লাগে না)।
+
+সেখান থেকে সে বস্তুটির ক্যাটাগরি (instance of), স্বাভাবিক রঙ (color), আকার/ওজন (mass/height), এবং কোথায় থাকে (habitat/location) জেনে নেবে!
+
+এরপর সে ২,০০,০০০+ ওপেন-সোর্স ভেক্টর ডাটাবেস (Iconify JSON ও OpenMoji) থেকে সেই বস্তুটির 2D SVG ভেক্টর ডাউনলোড করে engine/cartoon/library/learned-props.json-এ সেভ করে নেবে।
+
+৪. আপনার সেন্ট্রাল কন্ট্রোল ও Anti-Reverse Engineering সিকিউরিটি (Zero-GPU Cloud Hub)
+
+আপনি যেন পুরো সিস্টেমের একমাত্র মালিক থাকেন এবং কেউ যেন আপনার মডেল বা অ্যাপ চুরি করতে না পারে, সেজন্য আমাদের Central Control & Security Vault (server/security-vault.mjs) এভাবে কাজ করবে:
+
+সিকিউরিটি ও কন্ট্রোল ফিচার
+
+কীভাবে কাজ করবে এবং কেন খরচ $০ থাকবে?
+
+১. ইউজার লগইন ও রিমোট Kill-Switch
+
+প্রতিটি ইউজারকে আপনার দেওয়া ক্রেডেনশিয়াল দিয়ে লগইন করতে হবে। লগইন করলে আপনার হালকা সার্ভার (Cloudflare Workers Free Plan — দিনে ১ লাখ রিকোয়েস্ট ফ্রি) তাকে একটি ২৪ ঘণ্টার Session Decryption Key দেবে। আপনি অ্যাডমিন প্যানেল থেকে কোনো ইউজারকে বন্ধ করে দিলে তার অ্যাপ সাথে সাথে লক হয়ে যাবে।
+
+২. কাস্টমারদের শেখা ডেটার সেন্ট্রাল ফিল্টার (Admin Quarantine Queue)
+
+কাস্টমার ১ ও ২ সরাসরি নিজেদের মধ্যে ডেটা শেয়ার করতে পারবে না। কাস্টমার ১ নতুন কিছু শেখালে সেই ২ কিলোবাইট JSON যাবে আপনার সার্ভারের Pending Review Queue-তে। আপনি অ্যাডমিন ড্যাশবোর্ডে Approve করলে (অথবা আপনার অটো-ট্রাস্ট ফিল্টার পাস করলে) তবেই সেটি মাস্টার ব্রেইনে যুক্ত হয়ে সব ইউজারের ফোনে যাবে।
+
+৩. ব্রেইন ও লাইব্রেরি এনক্রিপশন (AES-256-GCM)
+
+আপনার ট্রেন করা ব্রেইন (brain-weights.bin) এবং প্রপস লাইব্রেরি স্ট্যান্ডার্ড Web Crypto API (AES-GCM 256-bit) দিয়ে এনক্রিপ্ট করা থাকবে (brain.zancut.enc)। ডিস্কে কখনোই খোলা JSON থাকবে না; শুধু বৈধ লগইন থাকলে ফোনের RAM-এ আনলক হবে। ফলে কেউ APK আনজিপ বা রিভার্স ইঞ্জিনিয়ারিং করলেও কিছুই চুরি করতে পারবে না।
+
+৪. আসল অ্যাপ যাচাই (Play Integrity API)
+
+অ্যান্ড্রয়েড অ্যাপে কেউ যদি Mod APK বানায় বা কোড এডিট করে, তবে Google Play Integrity API তা ধরে ফেলবে এবং সার্ভার তাকে ব্রেইন আনলক করার চাবি দেবে না।
+
+পর্ব ২: ধাপে ধাপে ভাইব-কোডিং মাস্টার প্রম্পট প্লেবুক (ধাপ ১ থেকে ১২)
+
+নির্দেশনা: আপনি ইতিমধ্যে ধাপ ১ এবং ধাপ ২ দিয়ে দিয়েছেন। ধাপ ২-এর টেস্ট (npm test) শেষ হওয়া মাত্রই নিচের ধাপ ৩ থেকে একে একে প্রম্পটগুলো কপি করে আপনার কোডিং এজেন্টকে দেবেন।
+
+ধাপ ১: পুরনো অকেজো কোড পরিষ্কার ও ফোল্ডার সিম্পলিফিকেশন (সম্পন্ন ✅)
+
+(আপনি ইতিমধ্যে এই ধাপটি সম্পন্ন করেছেন।)
+
+ধাপ ২: ৪৫% স্থির ভিডিওর সমস্যা সমাধান — ৪২টি ভাঙা জেসচার মেরামত ও Micro-Motion (চলমান/সম্পন্ন ✅)
+
+(আপনি ইতিমধ্যে এই ধাপের প্রম্পটটি আপনার এজেন্টকে দিয়েছেন। এটি শেষ হলে npm test চালিয়ে নিশ্চিত হয়ে সরাসরি ধাপ ৩-এ চলে যান।)
+
+ধাপ ৩: ১২টি সেরা ওপেন-সোর্স লাইব্রেরি ইনস্টল, ২০টি জায়গা এবং প্রসিডিউরাল ক্রিয়েটর ("তিন মাথার নীল রাক্ষস" ইঞ্জিন)
+
+এই ধাপে কী হবে: আমরা প্রজেক্টে সেরা ওপেন-সোর্স 2D ভেক্টর, ফিজিক্স, অ্যানিমেশন ও NLP লাইব্রেরিগুলো ইনস্টল করব, জায়গার সংখ্যা ৯ থেকে ২০-এ উন্নীত করব, এবং অন্য কোনো AI ছাড়াই রঙ, সংখ্যা, অঙ্গ ও প্রপস জোড়া দিয়ে যেকোনো নতুন চরিত্র বা বস্তু বানানোর ইঞ্জিন (server/procedural-creator.mjs) তৈরি করব।
+
+এজেন্টকে দেওয়ার প্রম্পট (কপি করে পেস্ট করুন):
+
+Now let's execute Step 3: Install Open-Source 2D/NLP Power Libraries, Expand Places from 9 to 20, and Build the Autonomous Procedural Character & Prop Creator (`server/procedural-creator.mjs`).
+
+Tasks:
+1. Install lightweight, offline-capable open-source libraries via npm (`package.json`):
+   - Vector & Cartoon Assets: `openmoji` (4,000+ color vector SVGs), `lucide-static` (clean vector icons), `roughjs` (hand-drawn cartoon style vector rendering)
+   - Physics, Motion & Charts: `matter-js` (2D rigid-body physics), `animejs` (spring/timeline easing), `d3-shape` and `d3-scale` (procedural charts/graphs)
+   - Fast Local NLP: `compromise` and `natural` (POS tagging, noun/verb/number extraction, TF-IDF, phonetics)
+   *(If any package installation is restricted in the current environment, create clean zero-dependency local fallbacks/adapters in `engine/cartoon/vendor/` so tests never fail).*
+
+2. Expand `engine/cartoon/places-kit.js` and `engine/cartoon/library/words.json` from 9 places to 20 places (with Day and Night variants):
+   - Add 11 new places: `market_bazaar`, `tea_stall`, `office_room`, `hospital_clinic`, `river_ghat`, `bus_stop`, `rooftop`, `forest_path`, `restaurant_cafe`, `courthouse_hall`, `farm_field`.
+
+3. Build the **Autonomous Procedural Character & Prop Creator** (`server/procedural-creator.mjs` + `engine/cartoon/custom-assembler.js`):
+   - Enable our local system to invent new characters, creatures, and composite props directly from Bengali/English descriptive phrases WITHOUT needing an external AI (for example: "তিন মাথার নীল রাক্ষস" / "three-headed blue monster", "ডানাওয়ালা সাদা ঘোড়া", "আগুনের তলোয়ার", "ভাঙা লাল গাড়ি").
+   - Implement a **Compositional DNA Parser** that extracts:
+     a) **Quantity + Body Part Modifiers:** e.g., `তিন মাথার` -> `headCount: 3` (mounted on the neck joint at `-25°`, `0°`, `+25°`), `চার হাতের` -> `armCount: 4`.
+     b) **Color Palette Modifiers:** e.g., `নীল`, `লাল`, `কালো`, `সোনালী`, `সবুজ` -> overrides primary/secondary hex colors on the rig or prop.
+     c) **Scale & Archetype Modifiers:** e.g., `বিশাল` / `রাক্ষস` / `দৈত্য` -> `scale: 1.5`, fangs, glowing eyes, horns; `পিচ্চি` / `বামন` -> `scale: 0.65`.
+     d) **Elemental & Attachment FX:** e.g., `আগুনের` (`fire_aura`), `বরফের` (`ice_tint`), `ভাঙা` (`cracked_overlay` via `roughjs`), `উড়ন্ত` (`wings_attachment` + float bobbing).
+   - Automatically save newly assembled custom creations into `data/brain/learned-creations.json` so the engine permanently remembers and reuses them.
+
+4. Write unit tests in `scripts/procedural-creator-test.mjs` testing phrases like `"তিন মাথার নীল রাক্ষস"`, `"আগুনের তলোয়ার হাতে যোদ্ধা"`, and all 20 places. Run `npm test` to verify everything passes.
+
+done===========
+কিভাবে চেক করবেন:
+
+node scripts/procedural-creator-test.mjs এবং npm test চালিয়ে নিশ্চিত হোন যে ২০টি জায়গা এবং নতুন কাস্টম চরিত্র/বস্তু তৈরির টেস্ট পাস করেছে।
+
+ধাপ ৪: ২ডি ফিজিক্স, ওয়ার্ল্ড লজিক ইঞ্জিন (physics-logic.mjs) এবং ডায়নামিক B-Roll কম্পোজার (broll-kit.js)
+
+এই ধাপে কী হবে: কোনো দৃশ্য যেন অবাস্তব বা হাস্যকর না হয় (যেমন মানুষ বাতাসে ভাসা, ঘরের ভেতর বাস ঢুকে যাওয়া বা চায়ের কাপ মানুষের সমান বড় হওয়া), সেজন্য আমরা ফিজিক্স ও লজিক ইঞ্জিন বসাব এবং ২৪৫টি সেট পিস ও ৪,০০০+ OpenMoji ভেক্টর দিয়ে ডায়নামিক B-Roll তৈরির ইঞ্জিন বানাব।
+
+এজেন্টকে দেওয়ার প্রম্পট (কপি করে পেস্ট করুন):
+
+Now let's execute Step 4: Build the World Physics & Logical Sanity Engine (`engine/cartoon/physics-logic.js`) and the Compositional 2D B-Roll Composer (`engine/cartoon/broll-kit.js`).
+
+Tasks:
+1. Create `engine/cartoon/physics-logic.js` to enforce strict physical and logical rules across every shot and B-roll:
+   - **Gravity & Support Zones:** Tag every character, set piece, and prop with a physical zone (`GROUNDED`, `WALL_MOUNTED`, `TABLE_TOP`, `HELD_IN_HAND`, `SKY_FLOATING`). Enforce that `GROUNDED` entities (humans, animals, furniture, vehicles, trees) always rest firmly on the ground plane (`ground_y`) and never float in mid-air.
+   - **Real-World Meter Scaling (`world.js` integration):** Enforce realistic size ratios relative to an adult human (`1.70m`): small hand props (`0.10m–0.30m`), pets/small animals (`0.25m–0.60m`), furniture (`0.75m–1.20m`), vehicles (`1.50m–3.20m`), buildings/trees (`3.50m–6.00m`). Never allow a teacup or mobile phone to scale larger than a character's head.
+   - **Indoor vs. Outdoor Contextual Sanity Matrix:** Tag all 20 places as `INDOOR` or `OUTDOOR`. Block outdoor-only props/events (cars, buses, rain clouds, boats, tall trees) from spawning inside `INDOOR` rooms (`bedroom`, `living_room`, `kitchen`, `classroom`, `office_room`, `hospital_clinic`). If weather/rain is triggered in an indoor scene, render it strictly inside a window frame (`window_weather_view`).
+   - **2D Physics Trajectories (`matter-js` / deterministic kinematics):** Provide helper curves for falling objects (gravity `9.8 m/s²` acceleration + ground bounce restitution), throwing arcs, walking speed vs. leg stride frequency (no moonwalking/sliding feet!), and facing direction (two conversing characters must face each other).
+
+2. Create `engine/cartoon/broll-kit.js` with two capabilities:
+   - **25 Core Animated B-Roll Templates:** (`clock_ticking`, `calendar_pages_flying`, `sunrise_to_sunset`, `heavy_rain_clouds`, `night_stars_moon`, `money_coins_stacking`, `empty_wallet_fly`, `laptop_typing_fast`, `market_price_up`, `phone_ringing_vibrate`, `teacup_steaming`, `fast_running_feet`, etc.).
+   - **Dynamic Recipe B-Roll Composer:** When a sentence describes an action or object not covered by the 25 templates, dynamically compose a custom B-roll scene by combining `[Backdrop Layer] + [1-3 Props from library/OpenMoji] + [Physics Motion Trajectory (zoom/pan/fall/slide/bounce)]`, validated through `physics-logic.js`.
+   - Support both `"cutaway"` (full screen for 1.5s–3s) and `"pip_corner"` (picture-in-picture card) modes in `film.json` and `server/codefilm.mjs`.
+
+3. Write unit tests in `scripts/physics-broll-test.mjs` verifying that indoor/outdoor violations, floating grounded objects, and bad prop scales are automatically corrected, and that B-rolls render cleanly.
+
+
+কিভাবে চেক করবেন:
+
+node scripts/physics-broll-test.mjs চালিয়ে নিশ্চিত হোন ফিজিক্স ও লজিক টেস্ট এবং B-Roll কম্পোজার ১০০% কাজ করছে।
+
+ধাপ ৫: প্রসিডিউরাল মোশন গ্রাফিক্স, অটো চার্ট জেনারেটর এবং স্মার্ট ক্যাপশন রাইটার (graphics-fx.js)
+
+এই ধাপে কী হবে: আপনার ব্রেইন যেন ইউজারের কথা শুনে নিজে নিজে পর্দার ওপর ক্যাপশন লিখতে পারে, সংখ্যার তুলনা থাকলে চার্ট/গ্রাফ আঁকতে পারে এবং কমিক ইফেক্ট ও সাবটাইটেল যোগ করতে পারে।
+
+এজেন্টকে দেওয়ার প্রম্পট (কপি করে পেস্ট করুন):
+
+Now let's execute Step 5: Build the Procedural Motion Graphics Generator, Auto Data-Chart Drawer, and Smart Headline Caption Writer (`engine/cartoon/graphics-fx.js` and `server/caption-writer.mjs`).
+
+Tasks:
+1. Create `server/caption-writer.mjs` (Smart Bangla & English Caption & Callout Generator — 100% local):
+   - Analyze each sentence in the transcript and generate two layers of text:
+     a) **Word-Synced Bottom Subtitles:** Clean karaoke/reels-style word-by-word highlighted subtitles in Bengali & English.
+     b) **Smart Punchline / Callout Headline (`headlineCaption`):** Automatically distills a long spoken sentence into a punchy 2-to-5 word on-screen visual title banner (e.g., if speech is *"আমাদের শরীর সুস্থ রাখার জন্য প্রতিদিন সকালে অন্তত ৩০ মিনিট হাঁটা অত্যন্ত জরুরি"*, extract `"প্রতিদিন ৩০ মিনিট হাঁটুন!"`; if speech mentions a rule or step like *"প্রথম নিয়ম হলো..."*, extract `"নিয়ম #১: ..."`).
+
+2. Create `engine/cartoon/graphics-fx.js` (using Canvas + `roughjs` + `d3-scale`/`d3-shape` + `animejs` easing curves) so the brain can dynamically generate new visual graphics from speech data:
+   - `dynamic_comparison_chart`: When a sentence contains two or more numbers/prices/years (e.g., *"৪০ টাকা থেকে বেড়ে ৭০ টাকা"* or *"২০২০ সালে ১০% আর ২০২৬ সালে ৮০%"*), automatically generate an animated 2D bar chart or rising trend line with labeled bars and a rising/falling arrow!
+   - `percentage_progress_ring`: When speech mentions a percentage (`৮৫%`, `100%`, `অর্ধেক`), animate a circular gauge/ring filling up to that exact value.
+   - `number_badge_pop`: Spring-animated callout badge for single amounts, dates, or durations (`৫০০ টাকা`, `১০ বছর`).
+   - `step_list_card`: Animated numbered checklist card when the speaker lists points (`১, ২, ৩` or `প্রথমত, দ্বিতীয়ত`).
+   - `thought_cloud`: Procedural cartoon cloud bubble above the speaker's head displaying a dynamically chosen prop/icon + short text.
+   - `comic_emotion_fx`: Radial shock lines, angry steam puffs, sweat drops, question mark pops, or idea lightbulb glow around the character.
+   - `cameraMove` integration in `engine/cartoon/camera.js`: `slow_push_in`, `slow_pull_out`, `gentle_pan`, `impact_shake`, and `over_the_shoulder` framing.
+
+3. Write tests in `scripts/graphics-caption-test.mjs` verifying that sentences with comparisons, percentages, and key points automatically produce headlines, charts, and overlays.
+
+
+কিভাবে চেক করবেন:
+
+node scripts/graphics-caption-test.mjs চালিয়ে দেখুন কথা থেকে অটো ক্যাপশন এবং সংখ্যার তুলনা থেকে অটো চার্ট তৈরি হচ্ছে কি না।
+
+ধাপ ৬: AI-মুক্ত সেলফ-লার্নিং ওয়েব এক্সপ্লোরার (server/web-learner.mjs) এবং বাংলা নাম/সর্বনাম শনাক্তকরণ
+
+এই ধাপে কী হবে: কোনো অন্য AI ছাড়াই আপনার সিস্টেম যেন ইন্টারনেট থাকলে নিজে নিজে Wikipedia REST API, Wikidata API এবং ওপেন-সোর্স ভেক্টর রিপোজিটরি সার্চ করে অপরিচিত শব্দের অর্থ, আকার, রঙ ও 2D SVG ছবি শিখে ডিস্কে স্টোর করে নিতে পারে!
+
+এজেন্টকে দেওয়ার প্রম্পট (কপি করে পেস্ট করুন):
+
+Now let's execute Step 6: Build the AI-Free Self-Learning Web Knowledge & Vector Explorer (`server/web-learner.mjs`) and the Bengali Name/Pronoun & Semantic Concept Engine (`server/entity-resolver.mjs`).
+
+Tasks:
+1. Build `server/web-learner.mjs` so our system can autonomously research unknown words, concepts, and 2D vector props from free open internet APIs WITHOUT needing any paid LLM:
+   - When the planner encounters an unknown noun/topic in a Bengali or English script that isn't in `words.json` or `learned-knowledge.json`:
+   - **Step A (Offline Open-Source Lookup First):** Search installed local packages (`openmoji`, `lucide-static`, `natural` WordNet, and our local dictionaries).
+   - **Step B (Zero-AI Internet Knowledge Lookup when online):** Query public, key-free APIs (`https://bn.wikipedia.org/api/rest_v1/page/summary/...`, `https://en.wikipedia.org/api/rest_v1/page/summary/...`, and Wikidata `wbsearchentities` / `wbgetentities`) to extract:
+     * Semantic Category (`person`, `animal`, `vehicle`, `building`, `food`, `tool`, `nature`, `finance`, `abstract_concept`)
+     * Physical properties if available (typical color, indoor/outdoor, grounded vs. flying, approximate scale)
+     * Related keywords and synonyms
+   - **Step C (Zero-AI Vector Icon Fetch):** Query the public Iconify API (`https://api.iconify.design/search?query=...`) or OpenMoji SVG endpoints to fetch a clean 2D vector SVG path for the new object, normalize its bounding box, and convert it into a valid Zancut 2D prop!
+   - **Step D (Permanent Local Memory Storage):** Save the learned concept into `data/brain/learned-knowledge.json` and the new vector prop into `engine/cartoon/library/learned-props.json` so the system permanently knows it offline forever!
+
+2. Build `server/entity-resolver.mjs` & `engine/cartoon/library/semantic-clusters.json`:
+   - 500+ Bengali & English names + morphological suffix stripping (`-কে`, `-এর`, `-রা`, `-দের`) + verb-subject detection (`বলল`, `দেখল`, `ভাবল`) so any Bengali character name is recognized and keeps a consistent `people.js` appearance across all shots.
+   - Pronoun Coreference Resolution (`সে`, `তার`, `তাকে`, `তিনি`, `তারা` -> resolves to active character).
+   - 60 Semantic Concept Clusters mapping 1,500+ Bengali/English synonyms and idioms to core meaning tokens (`#CONCEPT_MONEY`, `#CONCEPT_STORM`, `#CONCEPT_PRICE_RISE`, `#CONCEPT_SADNESS`, `#CONCEPT_IDEA`, etc.).
+
+3. Write unit tests in `scripts/web-learner-test.mjs` (testing both live/cached lookup and offline fallback) and verify with `npm test`.
+
+
+কিভাবে চেক করবেন:
+
+node scripts/web-learner-test.mjs চালিয়ে দেখুন অপরিচিত শব্দ দিলে সে কীভাবে নিজে নিজে অর্থ ও ভেক্টর খুঁজে learned-knowledge.json এবং learned-props.json-এ সেভ করে নিচ্ছে।
+
+ধাপ ৭: আমাদের নিজস্ব নিউরাল ব্রেইন আপগ্রেড (server/brain.mjs v2 — Context-Aware Multi-Head MLP)
+
+এই ধাপে কী হবে: আমরা আপনার brain.mjs-কে সাধারণ একক-বাক্য রিগ্রেশন থেকে আপগ্রেড করে আগের ও পরের বাক্য মনে রাখা (Sequence Context Memory) এবং ৭টি আউটপুট (place, action, face, roles, broll, graphic, cameraMove) + Confidence Score দেওয়ার উপযোগী মাল্টি-হেড নিউরাল ক্লাসিফায়ারে রূপান্তর করব।
+
+এজেন্টকে দেওয়ার প্রম্পট (কপি করে পেস্ট করুন):
+
+Now let's execute Step 7: Upgrade `server/brain.mjs` into Brain v2 — a Context-Aware Multi-Head Neural Classifier (Pure JS `Float32Array` SGD + Softmax) with Continuous Incremental Learning.
+
+Tasks:
+1. Upgrade Feature Extraction in `server/brain.mjs`:
+   - Combine word unigrams, bigrams, character 3–5 n-grams, Semantic Cluster tokens (`#CONCEPT_*` from `semantic-clusters.json`), learned web knowledge tokens (`learned-knowledge.json`), and structural signals (numbers, comparisons, currency, questions, exclamations).
+   - **Sequence Context Window:** Accept `{ prevText, currentText, nextText, prevPlace }` so the brain sees the previous sentence (`PREV_*` features weighted at 0.35x) and next sentence (`NEXT_*` features weighted at 0.20x) plus `prevPlace`. This gives our local brain true story-continuity memory.
+
+2. Upgrade the Mathematical Architecture in `server/brain.mjs`:
+   - Implement regularized Multi-Class Logistic Regression / 2-Layer MLP using fast `Float32Array` typed arrays in pure JavaScript.
+   - Predict 7 heads simultaneously with calibrated Softmax probability / confidence scores (`0.0` to `1.0`):
+     1. `place` (20 places + scene persistence)
+     2. `action` (all 63 safe gestures + actions)
+     3. `face` (facial expressions)
+     4. `roles` (character archetypes)
+     5. `broll` (`none`, one of the 25 core B-rolls, or `compose_custom_recipe`)
+     6. `graphic` (`none`, `dynamic_comparison_chart`, `percentage_progress_ring`, `number_badge_pop`, `step_list_card`, `thought_cloud`, `comic_emotion_fx`)
+     7. `cameraMove` (`slow_push_in`, `slow_pull_out`, `gentle_pan`, `impact_shake`, `steady`)
+
+3. Implement **Instant Incremental Learning (`brain.learnRule()` & `data/brain/feedback.jsonl`)**:
+   - Allow teaching the brain either by editing a shot in UI OR by passing a natural rule/example via CLI (`npm run learn -- "যখন স্ক্রিপ্টে শেয়ার বাজারের কথা থাকবে তখন place হবে office_room আর graphic হবে dynamic_comparison_chart"`).
+   - Weight owner/admin feedback at 5x priority so the brain adapts in <3 seconds.
+
+4. Run `npm test` to verify `brain.mjs` v2 compiles, trains in under 5 seconds, and outputs calibrated confidence scores.
+
+
+কিভাবে চেক করবেন:
+
+npm test চালিয়ে নিশ্চিত হোন নতুন ব্রেইন আগের ও পরের বাক্য মিলিয়ে ৭টি আউটপুট এবং Confidence % দিচ্ছে।
+
+ধাপ ৮: ১২,০০০+ বাক্যের ডিস্টিলড ডেটাসেট তৈরি ও ব্রেইন ট্রেনিং (npm run brain)
+
+এই ধাপে কী হবে: আপনার বর্তমান ২,৪০০ বাক্যকে বাড়িয়ে ১২,০০০+ প্রাকৃতিক ও রূপক বাংলা এবং ইংরেজি বাক্যে উন্নীত করে ব্রেইনকে ট্রেন করা হবে এবং ২০০+ বাক্যের আলাদা টেস্ট সেটে পরীক্ষা নেওয়া হবে।
+
+এজেন্টকে দেওয়ার প্রম্পট (কপি করে পেস্ট করুন):
+
+Now let's execute Step 8: Build the 12,000+ Sentence Distilled Training Dataset (`brain/seed.jsonl`) and 200-Sentence Holdout Benchmark (`brain/real-test.jsonl`), and Train Brain v2 to >90% Accuracy.
+
+Tasks:
+1. Upgrade `scripts/build-brain-data.mjs` to generate 12,000+ rich, realistic Bengali (70%) and English (30%) story sentences across all 7 prediction heads:
+   - Include conversational dialogue, emotional metaphors, idioms, financial/number comparisons (triggering `dynamic_comparison_chart` and `percentage_progress_ring`), weather/time transitions (triggering `broll`), and custom character/prop descriptions (triggering `procedural-creator.mjs`).
+   - Include multi-sentence story sequences so the brain trains on `prevText` and `prevPlace` continuity.
+2. Expand `brain/real-test.jsonl` from 34 sentences to 200 diverse, unseen Bengali & English story sentences with strict zero-overlap verification against `brain/seed.jsonl`.
+3. Run `npm run brain` to train the model and output a comprehensive evaluation report in `docs/MODEL_EVAL.md` showing Top-1 and Top-2 accuracy across all 7 heads (`place`, `action`, `face`, `roles`, `broll`, `graphic`, `cameraMove`).
+
+
+কিভাবে চেক করবেন:
+
+npm run brain চালিয়ে টার্মিনালে ৭টি হেডের Accuracy % দেখুন (প্রতিটি ৮৫%–৯৫%+ হচ্ছে কি না)।
+
+ধাপ ৯: স্বয়ংক্রিয় ভুল সংশোধনকারী ফিজিক্স ও লজিক QA ইঞ্জিন (server/qa.mjs v2)
+
+এই ধাপে কী হবে: রেন্ডার হওয়ার আগে qa.mjs পুরো ফিল্মটি চেক করে ১২ ধরনের ফিজিক্স, লজিক, গ্রাফিক্স এবং অ্যানিমেশন ভুল নিজে নিজে ঠিক করবে।
+
+এজেন্টকে দেওয়ার প্রম্পট (কপি করে পেস্ট করুন):
+
+Now let's execute Step 9: Upgrade `server/qa.mjs` into a 12-Rule Self-Healing Director, Physics & Visual Sanity QA Engine.
+
+Tasks:
+1. Upgrade `server/qa.mjs` so every generated `film.json` is inspected and auto-repaired across 12 rules before rendering:
+   - **Rule 1 (Closed-World & Procedural Fallback):** If a shot references an unknown prop/character, route it through `procedural-creator.mjs` or `web-learner.mjs` instead of failing.
+   - **Rule 2 (Physics Grounding Check):** Verify via `physics-logic.js` that no grounded character or furniture is floating above `ground_y`, and no outdoor prop/weather is placed inside an indoor room.
+   - **Rule 3 (Real-World Scale Check):** Clamp any prop or custom creation whose bounding box violates human scale ratios.
+   - **Rule 4 (Character Collision & Facing Direction):** Separate overlapping characters and ensure conversing characters face each other.
+   - **Rule 5 (Viewport Safe-Zone Framing):** Keep all active speakers and text callouts inside the 16:9 or 9:16 safe title/action margin (no text or head cut off at screen edges).
+   - **Rule 6 (Shot Pacing & Anti-Monotony):** Split shots longer than 6.5s into two camera angles or insert a 2s B-roll cutaway; merge shots shorter than 1.2s.
+   - **Rule 7 (Zero-Static Guarantee):** Ensure every shot has active micro-motion (breathing/blinking) plus a smooth `cameraMove` if character locomotion is minimal.
+   - **Rule 8 (B-Roll Spacing):** Prevent consecutive full-screen B-roll cutaways from hiding the main characters for too long.
+   - **Rule 9 (Chart & Caption Readability):** Verify `dynamic_comparison_chart` and `headlineCaption` text contrast, font size, and non-overlap with character faces.
+   - **Rule 10 (Lip-Sync & Camera Focus):** Match `talking: true` to the character in focus.
+   - **Rule 11 (Pose Transition Smoothing):** Insert blend frames between shots with large limb angle changes.
+   - **Rule 12 (Audio Mix & SFX Sync):** Attach subtle whoosh/pop SFX (`engine/sfx/`) to graphic pop-ups and B-roll transitions while ducking background music under speech.
+2. Expand `scripts/qa-test.mjs` to inject all 12 defect types (including floating characters, indoor rain clouds, giant teacups, and overlapping text) and verify `qa.mjs` repairs 100% of them.
+
+
+কিভাবে চেক করবেন:
+
+node scripts/qa-test.mjs চালিয়ে নিশ্চিত হোন ১২টি ভুলই স্বয়ংক্রিয়ভাবে ধরা পড়ছে এবং ঠিক হয়ে যাচ্ছে।
+
+ধাপ ১০: আপনার সেন্ট্রাল কন্ট্রোল, ইউজার লক, Quarantine সিঙ্ক এবং Anti-Reverse Engineering সিকিউরিটি (server/security-vault.mjs)
+
+এই ধাপে কী হবে: এটি আপনার মালিকানা ও সিকিউরিটির সবচেয়ে গুরুত্বপূর্ণ ধাপ! এখানে আমরা তৈরি করব:
+১. Central Credential & Kill-Switch: আপনার দেওয়া ইউজার আইডি/টোকেন ছাড়া ইঞ্জিন চলবে না এবং আপনি যেকোনো ইউজারকে দূর থেকে বন্ধ করতে পারবেন।
+২. AES-256-GCM Encrypted Model Vault: আপনার ট্রেন করা ব্রেইন ও লাইব্রেরি এনক্রিপ্ট (brain.zancut.enc) হয়ে থাকবে যেন কেউ APK বা ফাইল খুলে রিভার্স ইঞ্জিনিয়ারিং করতে না পারে।
+৩. Admin Quarantine Sync Queue: কাস্টমারদের ফোনে শেখা নতুন নিয়ম সরাসরি অন্যদের ফোনে না গিয়ে আপনার Admin Quarantine Queue-তে জমা হবে; আপনি অনুমোদন (Approve) করলেই কেবল তা সবার কাছে সিঙ্ক হবে!
+
+এজেন্টকে দেওয়ার প্রম্পট (কপি করে পেস্ট করুন):
+
+Now let's execute Step 10: Build the Owner Central Control Hub, Admin Quarantine Sync Queue, and AES-256-GCM Anti-Reverse-Engineering Security Vault (`server/security-vault.mjs` and `server/central-hub.mjs`).
+
+Tasks:
+1. Build `server/security-vault.mjs` (Model & Library IP Protection):
+   - Use Node/Web Crypto (`AES-256-GCM` authenticated encryption with PBKDF2/HKDF key derivation and HMAC-SHA256 integrity signing) to compile and encrypt our trained brain weights (`data/brain/`), semantic clusters, and custom library packs into an encrypted binary vault file: `data/brain/brain.zancut.enc`.
+   - Never ship plain-text training weights in client/mobile distribution builds: the client engine decrypts `brain.zancut.enc` strictly in volatile RAM upon receiving a valid signed session key from the Owner Central Hub.
+   - Add a build script (`npm run lock-brain`) that packages and encrypts the brain + obfuscates/bundles client core scripts for safe distribution.
+
+2. Build `server/central-hub.mjs` (Owner Remote Control & Federated Quarantine Sync — Zero Cloud GPU Cost):
+   - **User Credential & Kill-Switch Gate:** Maintain an owner-controlled user registry (`data/hub/users.json` + JWT/HMAC session tokens, ready to deploy on a free Cloudflare Worker or our Express server). Each user account has `status: "active" | "suspended"`, `deviceLimit`, and `expiresAt`. If the owner sets a user to `"suspended"`, their session key is revoked immediately.
+   - **Quarantine Learning Queue (`data/hub/quarantine-queue.jsonl`):** When any client device learns a new word/prop/feedback rule, it uploads a tiny signed JSON delta (<5 KB) to `/api/hub/submit-learning`.
+   - **Auto-Sanity Filter + Owner Approval:** Incoming client learnings NEVER go directly to other users! They sit in `quarantine-queue.jsonl`, get scored by `physics-logic.js` and `qa.mjs`, and wait for the Owner to click **"Approve to Global Brain"** (or pass a multi-user consensus threshold).
+   - Once approved by the Owner, the hub merges the rule, increments the global brain version, re-encrypts `brain.zancut.enc`, and serves the tiny encrypted delta to active authenticated clients via `/api/hub/pull-updates`.
+
+3. Add Optional Low-Cost Gemini Flash-Lite Fallback (`server/cloud-assist.mjs`) behind the Owner's policy flag (disabled by default via `no-ai.mjs`, only used if local confidence < 0.35 and explicitly enabled, caching its output into the quarantine queue so it never repeats API calls).
+
+4. Write comprehensive security & sync tests in `scripts/security-hub-test.mjs` verifying:
+   - Tampered or unauthenticated clients cannot decrypt `brain.zancut.enc`.
+   - Suspended users are immediately blocked.
+   - Customer 1's learned item stays in quarantine until Owner approval, and only then syncs to Customer 2.
+
+
+কিভাবে চেক করবেন:
+
+node scripts/security-hub-test.mjs চালিয়ে নিশ্চিত হোন যে এনক্রিপশন, ইউজার লক/কিল-সুইচ এবং অ্যাডমিন কোয়ারেন্টাইন কিউ ১০০% কাজ করছে।
+
+ধাপ ১১: ব্রাউজার স্টুডিও UI (ui/index.html) আপগ্রেড — ওয়ান-ক্লিক লার্নিং এবং Owner Admin Control Panel
+
+এই ধাপে কী হবে: আপনার ব্রাউজার এডিটরে (http://127.0.0.1:4500) নতুন সব ফিচার (B-Roll, অটো চার্ট/গ্রাফিক্স, ক্যাপশন, প্রসিডিউরাল ক্রিয়েটর, ওয়েব লার্নার) এবং আপনার নিজস্ব Owner Central Control Panel (ইউজার তৈরি/ব্লক করা এবং কাস্টমারদের শেখানো জিনিস Approve/Reject করা) যুক্ত হবে।
+
+এজেন্টকে দেওয়ার প্রম্পট (কপি করে পেস্ট করুন):
+
+Now let's execute Step 11: Upgrade the Browser Studio UI (`ui/index.html` and `server/index.mjs`) with the Creative AI Studio Controls, Interactive "Teach & Create" Bar, and Owner Central Admin Dashboard.
+
+Tasks:
+1. Upgrade the **Storyboard & Creative Controls** in `ui/index.html`:
+   - On each Shot Card, allow viewing and editing: `Place` (20 places), `Characters & Custom Creations`, `Action & Face`, `B-Roll` (template or custom recipe + cutaway/PiP), `Motion Graphics / Auto Chart`, `Headline Caption`, `Camera Move`, and `Brain Confidence %` badge.
+   - Add a **"Create New / Teach Brain" Command Bar** where the user can type natural instructions (e.g., *"তিন মাথার নীল রাক্ষস বানাও"* or *"যখনই দাম বাড়ার কথা থাকবে তখন চার্ট দেখাবা"*) or click **"Auto-Learn Unknown Words from Web"** to trigger `web-learner.mjs` and `procedural-creator.mjs` with live visual preview.
+
+2. Add an **Owner Central Admin Tab (`Admin Hub`)** in `ui/index.html`:
+   - **User Management:** Create user credentials, view active devices, and toggle the instant **Kill-Switch (`Active` / `Suspended`)**.
+   - **Quarantine Learning Review Queue:** View new words, props, and shot corrections submitted by users, preview them on canvas, and click **Approve & Merge into Encrypted Master Brain** or **Reject**.
+   - **Security Vault Status:** Button to trigger `Lock & Encrypt Brain (AES-256)` and view the current model version and accuracy metrics.
+
+3. Add a responsive **"Mobile App Preview Toggle"** so we can test the exact touch layout that our Android app users will see.
+4. Test all UI endpoints and run `npm test`.
+
+
+কিভাবে চেক করবেন:
+
+npm start দিয়ে ব্রাউজারে (http://127.0.0.1:4500) গিয়ে নতুন Admin Hub ট্যাব, Teach Brain বার এবং স্টোরিবোর্ড কার্ডগুলো চালিয়ে দেখুন।
+
+ধাপ ১২: ফাইনাল এন্ড-টু-এন্ড বেঞ্চমার্ক টেস্ট (৯৪ সেকেন্ডের বাংলা ভয়েস + ফিজিক্স + গ্রাফিক্স + সিকিউরিটি চেক)
+
+এই ধাপে কী হবে: আপনার প্রজেক্টের ৯৪ সেকেন্ডের আসল বাংলা ভয়েস দিয়ে পুরো নতুন পাইপলাইনটি চালানো হবে এবং আগের আউটপুটের সাথে তুলনা করে দেখা হবে স্থির অংশ ৪৫% থেকে কমে কততে নামল এবং কতগুলো B-Roll, গ্রাফিক্স ও ক্যাপশন স্বয়ংক্রিয়ভাবে তৈরি হলো।
+
+এজেন্টকে দেওয়ার প্রম্পট (কপি করে পেস্ট করুন):
+
+Now let's execute Final Step 12: Full End-to-End Voice-to-MP4 Benchmark, Physics/Security Verification, and Final Status Report.
+
+Tasks:
+1. Run the complete upgraded local pipeline on our Bengali voice test (`owner-voice-bn-94s.mp4` / `sports-day-9x16.mp4` inputs) plus a new test story containing custom procedural creations, numeric comparisons (auto-charts), and unseen concepts.
+2. Run `server/qa.mjs`, `engine/cartoon/check-body.mjs`, and `server/videoqa.mjs` on the rendered MP4 output.
+3. Verify and log the final metrics in `docs/STATUS.md` and `docs/TEST_RESULTS.md`:
+   - Static frame ratio (verify drop from old 45% to <8%)
+   - Number of auto-generated B-Rolls, Dynamic Charts/Graphics, and Headline Captions
+   - Brain v2 accuracy across all 7 heads on `brain/real-test.jsonl`
+   - Physics & Logic gate pass rate (100%)
+   - AES-256-GCM Brain Vault encryption & Owner Central Hub test status (100% pass)
+4. Print a complete Before vs. After comparison table in the terminal.
+
+
+কিভাবে চেক করবেন:
+
+টার্মিনালে Before vs. After টেবিলটি দেখুন এবং নতুন রেন্ডার হওয়া MP4 ভিডিওটি চালিয়ে দেখুন! সবগুলো চেক পাস করলেই আপনার নিজস্ব লোকাল AI ইঞ্জিন শতভাগ তৈরি—এরপর আপনি যখনই চাইবেন, এটিকে সরাসরি অ্যান্ড্রয়েড APK-তে মুড়িয়ে কাস্টমারদের লগইন ক্রেডেনশিয়াল দেওয়া শুরু করতে পারবেন।

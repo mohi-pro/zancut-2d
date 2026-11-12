@@ -1,0 +1,118 @@
+{
+  "id": "thumbs_up",
+  "about": "right hand comes up in front of the chest with a crisp thumbs-up (hands kept within 16 units forward of the body so they never point at the camera: body gate A1)",
+  "group": "arms",
+  "seconds": 0.8,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            1.8
+          ],
+          "hand": [
+            1,
+            -72,
+            2.5
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    },
+    {
+      "u": 0.4,
+      "arms": {
+        "R": {
+          "elbow": [
+            20.3,
+            -25,
+            -1.2
+          ],
+          "wrist": [
+            12,
+            -20,
+            9.3
+          ],
+          "hand": [
+            12,
+            -15,
+            13.4
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "R": {
+          "elbow": [
+            20.4,
+            -22.3,
+            11.2
+          ],
+          "wrist": [
+            10,
+            -8,
+            12.2
+          ],
+          "hand": [
+            10,
+            -1.8,
+            16
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "thumbsUp"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            20.6,
+            -22.7,
+            9.9
+          ],
+          "wrist": [
+            10,
+            -9,
+            11.9
+          ],
+          "hand": [
+            10,
+            -2.8,
+            15.6
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "thumbsUp"
+      ]
+    }
+  ]
+}

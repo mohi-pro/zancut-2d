@@ -1,0 +1,13 @@
+{
+  "title": "Rafi and the old man",
+  "cast": {
+    "rafi": { "gender": "male", "age": "child", "skin": 3, "hair": { "style": "crop", "color": "black" }, "outfit": { "type": "tshirt", "color": "#e0862b" } },
+    "baba": { "gender": "male", "age": "elderly", "skin": 4, "build": "thin", "hair": { "style": "cap", "color": "white" }, "outfit": { "type": "punjabi", "color": "#efe9da" }, "extras": ["beard", "glasses"] }
+  },
+  "shots": [
+    { "at": 0, "place": "village_home", "view": "wide", "people": [ { "who": "rafi", "x": -1, "dz": 1, "do": "idle", "face": "happy" } ] },
+    { "at": 2.5, "place": "village_road", "view": "wide", "people": [ { "who": "rafi", "x": -2.5, "dz": 1, "do": "walk", "to": 2.2, "face": "happy" } ] },
+    { "at": 5.5, "place": "village_road", "view": "wide", "people": [ { "who": "rafi", "x": -1.2, "dz": 1, "do": "idle", "face": "happy" }, { "who": "baba", "x": 1.2, "dz": 1, "do": "idle", "facing": -1, "face": "worried" } ] },
+    { "at": 8, "place": "village_road", "view": "wide", "people": [ { "who": "rafi", "x": -1.2, "dz": 1, "do": "wave", "face": "happy" }, { "who": "baba", "x": 1.2, "dz": 1, "do": "idle", "facing": -1, "face": "happy" } ] }
+  ]
+}

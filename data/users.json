@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "id": "yfiz3tiwtfsp",
+      "email": "local@zancut2d.app",
+      "name": "Zancut 2D",
+      "phone": "",
+      "password": "eea6e66ece2c3aa229e2cfe4dff81d74:d6592d177f5d20888bd6e7246bf374c0445286eaf99c7ae6b45a607e97eafd78fba240019436f526224e91ed2560fc50a29aba59567e8717c61877e55c708c5e",
+      "plan": "monthly",
+      "role": "admin",
+      "test": false,
+      "notes": "",
+      "disabled": false,
+      "createdAt": 1793975020765,
+      "expiresAt": null,
+      "first": true,
+      "usage": {
+        "month": "2026-11",
+        "edits": 0,
+        "credits": 0,
+        "tokensIn": 0,
+        "tokensOut": 0,
+        "costUsd": 0
+      },
+      "totals": {
+        "edits": 0,
+        "credits": 0,
+        "tokensIn": 0,
+        "tokensOut": 0,
+        "costUsd": 0
+      },
+      "payments": [],
+      "jobs": [],
+      "grants": [],
+      "credits": {
+        "plan": 0,
+        "extra": 0
+      },
+      "trial": {
+        "projectId": null,
+        "done": false,
+        "used": 0
+      }
+    }
+  ],
+  "sessions": {},
+  "desktopTokens": {}
+}

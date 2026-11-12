@@ -1,0 +1,141 @@
+{
+  "changed": [
+    {
+      "file": "engine/cartoon/anatomy.js",
+      "before": "9d6708998cd7c4065b08b91638a6424840af83796cb7d84cb77a75cb064dcf4f",
+      "after": "80999cd17f0c4c5c40805fce212faadecadac6d4877f6cbafb1a472b4449d09f"
+    },
+    {
+      "file": "engine/cartoon/rig.js",
+      "before": "beb7f007c763461fa9bda3ad92f504c4101c9dd6aa0fab1b117dafe10dd12b01",
+      "after": "eec8f974afd544c6136300bbacdd03632a88d2e9cf6f8a705849230af76c28e5"
+    },
+    {
+      "file": "engine/cartoon/check-body.mjs",
+      "before": "07ee7ff92bf9ef94b7c8c4b738bd2165bf894f33cbc3d6bce1096268cf812b1c",
+      "after": "fd348fe0e6153fa69932286baa2d59f1b7c603027970d3b7867dbed9e9193c77"
+    },
+    {
+      "file": "engine/cartoon/body.js",
+      "before": "bf9a9192b87e5fa3d440767c4b0698bdf423c3b8f7d3deee094a7e566088f8c4",
+      "after": "2c3587dc30d107636017a1051242508504a327fe5a68fa13c6fbef058bc1a25a"
+    },
+    {
+      "file": "engine/cartoon/set.js",
+      "before": "271b286ff697c2acff3fdbcc6ad8f5c1bdc22e211b835484ef129e8d5979d3f7",
+      "after": "2582b0a86e072b4e48383bd4310e6f4075ec0e106d753261715bb965ea3bfeb3"
+    },
+    {
+      "file": "engine/cartoon/shot.js",
+      "before": "1c593e2183410b140e3b0fb36b07a5799180d32900ab77063d2d1ba9cab6609c",
+      "after": "c6706e5d5bf67944084ff8011487136317a325e792f9006e5c5594043f1ef1cd"
+    },
+    {
+      "file": "engine/cartoon/zc.js",
+      "before": "82936aec96cc8394d7a183fc91ff27ac958c3713b79ec141dbc255ed7532c533",
+      "after": "cd16164485d1a9429192e2f08e4e131bb36af85e2ba6b58ff0fda483751fe302"
+    },
+    {
+      "file": "server/codefilm.mjs",
+      "before": "f16c2ff8ea3bfd91c91b093da2532fa51f76279b29fa0362954e407b7b6d065b",
+      "after": "471b823512dcce465da1576c8fd900ae36b81d17937d8d119f2505d437f418fc"
+    },
+    {
+      "file": "scripts/codefilm-test.mjs",
+      "before": "9fbb2c911b3a0cd990072a5a53feaa359bfbc5318f96c40f8c65082f75341253",
+      "after": "2dc1e5081235417863a4e2e187c42607c498f4b774b0138c6bef993e14efe106"
+    },
+    {
+      "file": "scripts/cleanup-test.mjs",
+      "before": "e434f2cc64d604b9e5edbbbd163f60d1b7aa9fb369169bc2069ca8cedd56cd6b",
+      "after": "f34159cf12afd65d0498cdc356412f088f5094636cce443ad67d97f593cfc55b"
+    },
+    {
+      "file": "scripts/gesture-sweep.mjs",
+      "before": "15081af88793f0f9112c5f949a763d886cbdf3efff654958f690617b056356a4",
+      "after": "07ca0414431542fb60d3bd7f79dee1abb7b881ab188da75cc8a3bcb29d16b982"
+    },
+    {
+      "file": "scripts/cartoon-test.mjs",
+      "before": "7227adf53289ad47f6670d19e295bc5b408ab8b594c8b5ccbe7e44067da43466",
+      "after": "97ecfcc46c83656b2b90eb46530012b5592ad6621c01b5dc53db44a78f64d6d4"
+    },
+    {
+      "file": "skills/2d-animation/human-anatomy-rigging.md",
+      "before": "2d4150005e80a67829772c53097c086f9c8d4cc87975ef66e45ff3c95b68ed6d",
+      "after": "2cfb0c2b2f6d4979424397d3b311940b3d67d2cd2b75d88151d8db18abdb63f9"
+    },
+    {
+      "file": "skills/2d-animation/core-graphic.md",
+      "before": "aab499cbf1c0a7c99b50f8cae0514ee67b8fca028a8399b730f39061a55ed787",
+      "after": "34975b547c5d8aac80964b3c28a8d48d2216f2a0300997c0093d3a90788cde11"
+    },
+    {
+      "file": "brain/gestures-gate.json",
+      "before": "a684d4307586e43ba9e657618eda954e687d2e57c63fd8c35d39342f7e3a0313",
+      "after": "d480e28c9c25cef00141f42c2e3e13f9d4d56bcfde3ae3226cb310ff8db0e1fb"
+    },
+    {
+      "file": "package.json",
+      "before": "4a49f1b07598dabbf881c9fcc116ac8f1ca4ad14d05598506401118b8d96a402",
+      "after": "76758d41801d98801b0d257e58482ddb26109ce24220502f03246ff5e9e66cc1"
+    },
+    {
+      "file": "docs/STATUS.md",
+      "before": "709fe786f0dbbeb14101cbc66d665be943093499aa843f91fbda8b31d1178400",
+      "after": "bf927570895f813e53a42022e1d356e1cd1a4b6738d28645db6f00ccc9da0f3d"
+    },
+    {
+      "file": "docs/REFERENCE_STUDY.md",
+      "before": "e0903518c418877e688d75968f19f2734ab51316d7590111ac0eaa507d475d1a",
+      "after": "e6bdc5cd19d852036b64259716f040a43c4aa441453fbbeff31c7653032e1654"
+    }
+  ],
+  "added": [
+    {
+      "file": "server/motionqa.mjs",
+      "after": "92bc8941d5bb708e34272fbe32f19f2ba5ff6e7fd64a917937a356434d007ee9"
+    },
+    {
+      "file": "scripts/motion-benchmark.mjs",
+      "after": "5cdbd090efddc1b2b45153a25e722f6a5abd5fa2869e88619e477b0e9a208737"
+    },
+    {
+      "file": "scripts/rig-motion-test.mjs",
+      "after": "0fda4567ecc7c74900ae3731ad347e142a5d6fa61353f3a5d1a37edba15efc09"
+    }
+  ],
+  "protectedUnchanged": [
+    "brain/real-test.jsonl",
+    "brain/seed.jsonl",
+    "examples/.DS_Store",
+    "examples/rafi.film.json",
+    "examples/YTDown.com_YouTube_Media_BuWDY30bRuw_\u09a6\u09c1\u0987-\u09ac\u09cb\u09a8-Dui-Bon-Bangla-Cartoon-Thakurmar-Jhuli-Fairy-Tales-Golpo_001_1080p.mp4",
+    "examples/YTDown.com_YouTube_Media_OOBN04TQUSs_Sonsari-Bou-Bangla-Cartoon-Rupkothar-Golpo-Bengali-Fairy-Tales-Bangla-Golpo_001_1080p.mp4",
+    "examples/YTDown.com_YouTube_Media_Zec3tFD9OrM_Iron-And-Gold-Stories-for-Teenagers-EnglishFairyTales_001_1080p.mp4",
+    "examples/YTDown.com_YouTube_Media_Sg-XQj8HkWY_Bouer-Chakor-\u09ac\u0989\u09af\u09bc\u09c7\u09b0-\u099a\u09be\u0995\u09b0-Bangla-Golpo-Thakurmar-Jhuli-newstory-banglagolpo_001_1080p.mp4",
+    "examples/YTDown.com_YouTube_Media_cmrnUXxamWc_Plastic-Bottle-Recycle-\u09aa\u09cd\u09b2\u09be\u09b8\u09cd\u099f\u09bf\u0995\u09c7\u09b0-\u09ac\u09cb\u09a4\u09b2-\u09b0\u09bf\u09b8\u09be\u0987\u0995\u09c7\u09b2-Bangla-Golpo-bangla-Video_001_1080p.mp4",
+    "examples/out/shot3.jpg",
+    "examples/out/shot2.jpg",
+    "examples/out/old-qwen-test-REMOVED-model-strip.jpg",
+    "examples/out/shot1.jpg",
+    "examples/out/.DS_Store",
+    "examples/out/shot4.jpg",
+    "examples/out/sports-day-9x16-strip.jpg",
+    "examples/out/owner-voice-93s-en-wrong-language.mp4",
+    "examples/out/autopilot-rafi-auto.mp4",
+    "examples/out/sports-day-9x16.mp4",
+    "examples/out/old-qwen-test-REMOVED-model.mp4",
+    "examples/out/sports-day-v2.mp4",
+    "examples/out/bangla-plan-test.mp4",
+    "examples/out/rafi-no-ai.mp4",
+    "examples/out/render-strip.jpg",
+    "examples/out/owner-voice-bn-94s.mp4",
+    "server/brain.mjs",
+    "server/brainplan.mjs",
+    "server/scriptplan.mjs",
+    "server/qa.mjs",
+    "server/autopilot.mjs",
+    "server/no-ai.mjs"
+  ]
+}

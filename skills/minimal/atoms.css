@@ -1,0 +1,41 @@
+/* Minimal's ready parts: the recipes of core-graphic.md as classes, for both themes (the page's tokens hold the colours).
+   Put them on your elements and add your own gx- class for size, place and motion (your class wins where they differ).
+   The page marks itself .style-minimal and .theme-dark / .theme-light. */
+
+/* the ceramic card (white on light, graphite on dark) */
+.style-minimal .zk-card {
+  background: var(--zk-glass); border: 1px solid var(--zk-line); border-radius: 26px; color: var(--zk-ink);
+  box-shadow: 0 20px 50px rgba(11,11,15,.08), 0 4px 12px rgba(11,11,15,.04);
+}
+.theme-dark.style-minimal .zk-card { box-shadow: 0 24px 60px rgba(0,0,0,.55); }
+
+/* the contrast hero card and the inverted label bar: the ink as the surface, the ground as the text */
+.style-minimal .zk-contrast { background: var(--zk-ink); color: var(--zk-bg-deep); border-color: transparent; }
+.style-minimal .zk-bar {
+  display: inline-flex; align-items: center; padding: 10px 26px; border-radius: 10px; font-family: var(--zk-font); font-weight: 700;
+  background: var(--zk-ink); color: var(--zk-bg-deep);
+}
+.style-minimal .zk-bar.zk-accent { background: var(--zk-a); color: #FFFFFF; }
+/* text inside the inverse polarity takes its colour */
+.style-minimal .zk-contrast .zk-title, .style-minimal .zk-contrast .zk-num, .style-minimal .zk-bar .zk-title { color: inherit; }
+.style-minimal .zk-contrast .zk-lead { color: inherit; opacity: .72; }
+
+/* the 3-tier type: muted lead line, giant hero word or metric */
+.style-minimal .zk-lead { font-family: var(--zk-font); font-weight: 500; color: var(--zk-mute); }
+.style-minimal .zk-title { font-family: var(--zk-font); font-weight: 850; letter-spacing: -0.03em; line-height: 1.02; color: var(--zk-ink); font-variant-numeric: tabular-nums; }
+.style-minimal .zk-num { font-family: var(--zk-display); font-weight: 800; font-variant-numeric: tabular-nums; color: var(--zk-ink); }
+
+/* a pill, an app tile and a ceramic logo coin */
+.style-minimal .zk-pill {
+  display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 999px; white-space: nowrap; font-family: var(--zk-font);
+  background: var(--zk-glass); border: 1px solid var(--zk-line); color: var(--zk-ink); box-shadow: 0 8px 20px rgba(11,11,15,.06);
+}
+.style-minimal .zk-tile {
+  display: grid; place-items: center; border-radius: 24%; color: var(--zk-ink);
+  background: var(--zk-glass); border: 1px solid var(--zk-line); box-shadow: 0 12px 28px rgba(11,11,15,.10);
+}
+.style-minimal .zk-coin {
+  display: grid; place-items: center; border-radius: 50%; color: var(--zk-ink); font-family: var(--zk-font);
+  background: var(--zk-glass); border: 1px solid var(--zk-line); box-shadow: 0 10px 24px rgba(11,11,15,.10), inset 0 1px 0 rgba(255,255,255,.8);
+}
+.theme-dark.style-minimal .zk-pill, .theme-dark.style-minimal .zk-tile, .theme-dark.style-minimal .zk-coin { box-shadow: 0 14px 32px rgba(0,0,0,.45); }

@@ -1,0 +1,25 @@
+{
+  "about": "How much body a move uses. CONVERSATIONAL_SAFE: small upper-body moves for anyone who talks or listens (feet planted, played at a damped amount). EXPRESSIVE: a reaction the words or the face ask for, once, never on a loop. HIGH_ENERGY_LOCOMOTION: only when the sentence itself says it (one of its trigger words) and the brain is sure (> 0.80); otherwise the planner replaces it with a calm move. Used by server/codefilm.mjs (acting), server/brainplan.mjs (planning) and server/strict-rules.mjs.",
+  "talkAmount": 0.35,
+  "listenAmount": 0.3,
+  "minConfidence": 0.8,
+  "CONVERSATIONAL_SAFE": ["idle", "talk_explain", "ask_what_why", "hand_on_chest", "chin_think", "count_fingers", "rub_hands", "fix_glasses", "scratch_head", "point_at", "point", "whisper_aside", "check_watch", "eid_salam_chest", "salam_adab", "stop_palm", "finger_wag", "shh", "look_at_phone", "phone_call", "read_book", "offer_give", "receive_take", "handshake_offer", "count_tasbih", "munajat", "hands_folded_qiyam", "takbir", "drink_cup", "drink_tea_tong", "eat_with_hand", "type_laptop", "hand_on_trackpad", "write_desk", "pour_tea", "stir_pot", "carry_bag_strap", "adjust_dupatta_sari", "tie_hair", "hold_umbrella", "take_photo", "knock_door", "push_door", "fan_hand", "fan_with_pakha", "sit", "walk"],
+  "EXPRESSIVE": ["hands_to_cheeks", "cover_mouth_shock", "facepalm", "wipe_tears", "wipe_sweat", "thumbs_up", "beckon", "dismiss_wave", "cover_ears", "hold_nose_smell", "raise_hand", "talk_argue", "catch_both_hands"],
+  "HIGH_ENERGY_LOCOMOTION": {
+    "run": ["দৌড়", "দৌড়", "পালাল", "পালিয়ে", "ছুট", "run", "ran", "rush", "sprint", "flee", "fled"],
+    "jump": ["লাফ", "jump", "leap", "hop"],
+    "dance": ["নাচ", "dance", "danced"],
+    "fight": ["মারামারি", "মারল", "ঘুষি", "লড়াই", "fight", "fought", "punch", "hit"],
+    "shake_fist": ["রাগে", "ঘুষি", "মারামারি", "angry", "furious", "shake"],
+    "throw_overarm": ["ছুঁড়", "ছুড়", "throw", "threw", "toss"],
+    "wave": ["হাত নাড়", "হাত নেড়ে", "বিদায়", "wave", "waved", "hello", "bye", "goodbye"],
+    "wave_hello": ["হাত নাড়", "হাত নেড়ে", "হ্যালো", "wave", "waved", "hello"],
+    "wave_bye": ["বিদায়", "হাত নাড়", "হাত নেড়ে", "bye", "goodbye", "farewell", "wave"],
+    "cheer": ["উল্লাস", "জিতে", "জয়", "আনন্দে", "হুররে", "cheer", "won", "win", "hooray", "celebrate"],
+    "fist_pump": ["জিতে", "জয়", "সফল", "won", "win", "yes!", "success"],
+    "both_hands_up": ["জিতে", "জয়", "আত্মসমর্পণ", "won", "win", "surrender", "hooray"],
+    "clap": ["হাততালি", "তালি", "clap", "applause", "applaud"],
+    "hug_open_arms": ["জড়িয়ে", "জড়িয়ে", "আলিঙ্গন", "hug", "embrace"],
+    "point_sky_high": ["আকাশে", "ওই যে", "উপরে দেখ", "sky", "up there", "look up"]
+  }
+}

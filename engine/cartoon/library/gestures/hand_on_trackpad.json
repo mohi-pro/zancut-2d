@@ -1,0 +1,152 @@
+{
+  "id": "hand_on_trackpad",
+  "about": "the right hand rests forward at desk height and glides in small smooth movements over a laptop trackpad",
+  "group": "arms",
+  "aliases": [
+    "use trackpad",
+    "touchpad",
+    "move cursor",
+    "ল্যাপটপ চালানো",
+    "ট্র্যাকপ্যাড"
+  ],
+  "seconds": 1.2,
+  "loop": true,
+  "ease": "linear",
+  "on": [
+    "sit",
+    "stand",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            4.2,
+            -30.02,
+            10.88
+          ],
+          "wrist": [
+            -10,
+            -29,
+            36
+          ],
+          "hand": [
+            -12.43,
+            -29.97,
+            47.92
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "clickMouse"
+      ]
+    },
+    {
+      "u": 0.25,
+      "arms": {
+        "R": {
+          "elbow": [
+            5.36,
+            -29.61,
+            11.46
+          ],
+          "wrist": [
+            -6,
+            -29,
+            38
+          ],
+          "hand": [
+            -7.46,
+            -29.98,
+            50.08
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "clickMouse"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "R": {
+          "elbow": [
+            3.38,
+            -28.85,
+            13.91
+          ],
+          "wrist": [
+            -9,
+            -29,
+            40
+          ],
+          "hand": [
+            -11.2,
+            -29.98,
+            51.97
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "clickMouse"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "R": {
+          "elbow": [
+            2.09,
+            -29.65,
+            12.39
+          ],
+          "wrist": [
+            -13,
+            -29,
+            37
+          ],
+          "hand": [
+            -16.07,
+            -29.98,
+            48.77
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "clickMouse"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            4.2,
+            -30.02,
+            10.88
+          ],
+          "wrist": [
+            -10,
+            -29,
+            36
+          ],
+          "hand": [
+            -12.43,
+            -29.97,
+            47.92
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "clickMouse"
+      ]
+    }
+  ]
+}

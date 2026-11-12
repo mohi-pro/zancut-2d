@@ -1,0 +1,9 @@
+# Zancut 2D — rules for the engineer
+**Never use any pretrained AI model (Claude, Qwen, Ollama, APIs…) to make animation.** Only exception (owner's decision): local WhisperX may listen to the voice (words + times), nothing else. Intelligence = our own brain (`server/brain.mjs`, trained from scratch on `brain/seed.jsonl` + the owner's corrections) + deterministic rules. Keep adding data, places, actions, checks. `server/no-ai.mjs` blocks AI calls. Zancut Studio is never touched.
+Run `npm start` (http://127.0.0.1:4500). Tests (no AI): `node scripts/cartoon-test.mjs`, `film-kit-test.mjs`, `parts-test.mjs`, `qa-test.mjs`, `codefilm-test.mjs [film.json] [outdir]`; brain: `node scripts/brain-seed.mjs` then `node scripts/brain-train.mjs` (writes docs/MODEL_EVAL.md, brain/calibration.json); teach a rule: `npm run learn -- "যখন … তখন place হবে …"`.
+Flow: script → `brainplan.mjs` → scene file → `qa.mjs` → `codefilm.mjs` → engine → `videoqa.mjs`. Add a place in `engine/cartoon/places-kit.js`.
+Honesty: report real measured numbers; keep the real-sentence test set (brain/real-test.jsonl) out of training and never copy its sentences into the seed. Resume: read docs/STATUS.md first.
+
+Always-on worker = the app's Autopilot (`server/autopilot.mjs`, inbox/ → outbox/), not Claude. The Claude Code agent `.claude/agents/zancut-builder.md` only runs while a session is open.
+
+Cleanup boundary: read `docs/CODEBASE_AUDIT.md`. Studio-only AI/editor/accounts/billing/desktop/CTO code is compressed history in `archives/`, never an active import or a feature implementation guide. Pure authoring metadata is in `server/animation-guidance.mjs`; scene assembly remains in `server/director.mjs`. Run all active local tests with `npm run test:all`. Keep `server/no-ai.mjs` unchanged; no model opt-in flag exists.

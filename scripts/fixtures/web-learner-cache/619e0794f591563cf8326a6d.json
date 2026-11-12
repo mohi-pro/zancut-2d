@@ -1,0 +1,39 @@
+{
+ "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q158218|Q6636777|Q1243306&props=labels&languages=en&format=json",
+ "at": "2026-11-08T17:03:39.399Z",
+ "body": {
+  "entities": {
+   "Q158218": {
+    "type": "item",
+    "id": "Q158218",
+    "labels": {
+     "en": {
+      "language": "en",
+      "value": "truss bridge"
+     }
+    }
+   },
+   "Q6636777": {
+    "type": "item",
+    "id": "Q6636777",
+    "labels": {
+     "en": {
+      "language": "en",
+      "value": "road-rail bridge"
+     }
+    }
+   },
+   "Q1243306": {
+    "type": "item",
+    "id": "Q1243306",
+    "labels": {
+     "en": {
+      "language": "en",
+      "value": "multi-level bridge"
+     }
+    }
+   }
+  },
+  "success": 1
+ }
+}

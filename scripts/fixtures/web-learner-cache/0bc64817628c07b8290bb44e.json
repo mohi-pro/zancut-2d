@@ -1,0 +1,53 @@
+{
+ "url": "https://bn.wikipedia.org/api/rest_v1/page/summary/%E0%A6%87%E0%A6%B2%E0%A6%BF%E0%A6%B6",
+ "at": "2026-11-08T17:03:31.554Z",
+ "body": {
+  "type": "standard",
+  "title": "ইলিশ",
+  "displaytitle": "<span lang=\"bn\" dir=\"ltr\"><span class=\"mw-page-title-main\">ইলিশ</span></span>",
+  "namespace": {
+   "id": 0,
+   "text": ""
+  },
+  "wikibase_item": "Q1709642",
+  "titles": {
+   "canonical": "ইলিশ",
+   "normalized": "ইলিশ",
+   "display": "<span lang=\"bn\" dir=\"ltr\"><span class=\"mw-page-title-main\">ইলিশ</span></span>"
+  },
+  "pageid": 2685,
+  "thumbnail": {
+   "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Hilsa_Fish_in_Dhaka-9_%28cropped%29.jpg/330px-Hilsa_Fish_in_Dhaka-9_%28cropped%29.jpg?utm_source=bn.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "width": 330,
+   "height": 276
+  },
+  "originalimage": {
+   "source": "https://upload.wikimedia.org/wikipedia/commons/7/75/Hilsa_Fish_in_Dhaka-9_%28cropped%29.jpg?utm_source=bn.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "width": 2475,
+   "height": 2068
+  },
+  "lang": "bn",
+  "dir": "ltr",
+  "revision": "9234670",
+  "tid": "3d969f34-d9cd-11f1-bf49-67139a0c983c",
+  "timestamp": "2026-11-06T10:31:35Z",
+  "description": "মাছের প্রজাতি",
+  "description_source": "central",
+  "content_urls": {
+   "desktop": {
+    "page": "https://bn.wikipedia.org/wiki/%E0%A6%87%E0%A6%B2%E0%A6%BF%E0%A6%B6",
+    "revisions": "https://bn.wikipedia.org/wiki/%E0%A6%87%E0%A6%B2%E0%A6%BF%E0%A6%B6?action=history",
+    "edit": "https://bn.wikipedia.org/wiki/%E0%A6%87%E0%A6%B2%E0%A6%BF%E0%A6%B6?action=edit",
+    "talk": "https://bn.wikipedia.org/wiki/%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%AA:%E0%A6%87%E0%A6%B2%E0%A6%BF%E0%A6%B6"
+   },
+   "mobile": {
+    "page": "https://bn.wikipedia.org/wiki/%E0%A6%87%E0%A6%B2%E0%A6%BF%E0%A6%B6",
+    "revisions": "https://bn.wikipedia.org/wiki/Special:History/%E0%A6%87%E0%A6%B2%E0%A6%BF%E0%A6%B6",
+    "edit": "https://bn.wikipedia.org/wiki/%E0%A6%87%E0%A6%B2%E0%A6%BF%E0%A6%B6?action=edit",
+    "talk": "https://bn.wikipedia.org/wiki/%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%AA:%E0%A6%87%E0%A6%B2%E0%A6%BF%E0%A6%B6"
+   }
+  },
+  "extract": "ইলিশ বাংলাদেশের জাতীয় মাছ। এটি একটি সামুদ্রিক মাছ, যা ডিম পাড়ার জন্য বাংলাদেশ ও পূর্ব ভারতের নদীতে আগমন করে। বাঙালিদের কাছে ইলিশ খুব জনপ্রিয়। এ ছাড়াও ইলিশ ভারতের বিভিন্ন এলাকা যেমন পশ্চিমবঙ্গ, উড়িষ্যা, ত্রিপুরা ও আসামে অত্যন্ত জনপ্রিয় একটি মাছ। ২০১৭ সালে বাংলাদেশ সরকার বাংলাদেশের ইলিশ মাছকে ভৌগোলিক নির্দেশক বা জিআই পণ্য হিসেবে স্বীকৃতি দিয়েছে।",
+  "extract_html": "<p><b>ইলিশ</b> বাংলাদেশের জাতীয় মাছ। এটি একটি সামুদ্রিক মাছ, যা ডিম পাড়ার জন্য বাংলাদেশ ও পূর্ব ভারতের নদীতে আগমন করে। বাঙালিদের কাছে ইলিশ খুব জনপ্রিয়। এ ছাড়াও ইলিশ ভারতের বিভিন্ন এলাকা যেমন পশ্চিমবঙ্গ, উড়িষ্যা, ত্রিপুরা ও আসামে অত্যন্ত জনপ্রিয় একটি মাছ। ২০১৭ সালে বাংলাদেশ সরকার বাংলাদেশের ইলিশ মাছকে ভৌগোলিক নির্দেশক বা জিআই পণ্য হিসেবে স্বীকৃতি দিয়েছে।</p>"
+ }
+}

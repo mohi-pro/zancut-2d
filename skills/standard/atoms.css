@@ -1,0 +1,33 @@
+/* Standard's ready parts: the recipes of core-graphic.md as classes, for both themes (the page's tokens hold the colours).
+   Put them on your elements and add your own gx- class for size, place and motion (your class wins where they differ).
+   The page marks itself .style-standard and .theme-dark / .theme-light. */
+
+/* the solid card (white on light, slate on dark) */
+.style-standard .zk-card {
+  background: var(--zk-glass); border: 1.5px solid var(--zk-line); border-radius: 22px; padding: 24px 28px; color: var(--zk-ink);
+  box-shadow: 0 18px 42px rgba(15,23,42,.08), 0 4px 12px rgba(15,23,42,.04);
+}
+.theme-dark.style-standard .zk-card { box-shadow: 0 22px 50px rgba(0,0,0,.48), 0 4px 14px rgba(0,0,0,.28); }
+
+/* the accent card (winning cards, final steps, offers) and the contrast hero card (metrics, prices, stamps) */
+.style-standard .zk-accent {
+  background: var(--zk-a); color: #FFFFFF; border: 1.5px solid rgba(255,255,255,.22); border-radius: 22px;
+  box-shadow: 0 20px 44px color-mix(in srgb, var(--zk-a) 28%, transparent);
+}
+.style-standard .zk-contrast { background: var(--zk-ink); color: var(--zk-bg-mid); border-color: transparent; }
+/* text inside an accent or contrast card takes its colour */
+.style-standard .zk-accent .zk-title, .style-standard .zk-contrast .zk-title { color: inherit; }
+
+/* the feature pill (icon + label + ✓), the tool squircle, the dark subtitle pill */
+.style-standard .zk-pill {
+  display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 999px; white-space: nowrap; font-family: var(--zk-font);
+  background: #FFFFFF; border: 1.5px solid #E2E8F0; color: #0F172A; box-shadow: 0 10px 24px rgba(15,23,42,.09);
+}
+.theme-dark.style-standard .zk-pill { background: #1E293B; border-color: rgba(255,255,255,.12); color: #F8FAFC; }
+.style-standard .zk-tile { display: grid; place-items: center; border-radius: 18px; background: #111827; color: #FFFFFF; box-shadow: 0 12px 26px rgba(15,23,42,.16); }
+.theme-dark.style-standard .zk-tile { background: #1E293B; }
+.style-standard .zk-label { display: inline-flex; align-items: center; background: #1E293B; color: #FFFFFF; border-radius: 999px; padding: 10px 26px; font-family: var(--zk-font); font-weight: 700; }
+
+/* type: bold display titles and tabular numerals */
+.style-standard .zk-title { font-family: var(--zk-display); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; color: var(--zk-ink); }
+.style-standard .zk-num { font-family: var(--zk-display); font-weight: 800; font-variant-numeric: tabular-nums; }

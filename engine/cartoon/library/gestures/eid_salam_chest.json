@@ -1,0 +1,125 @@
+{
+  "id": "eid_salam_chest",
+  "about": "the right hand touches the forehead in salam and then moves warmly to rest over the heart",
+  "group": "arms",
+  "aliases": [
+    "salam to heart",
+    "warm adab chest",
+    "respectful salam",
+    "সালাম ও বুকে হাত",
+    "আদাব ও শ্রদ্ধা"
+  ],
+  "seconds": 1.6,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            5.22,
+            -31.78,
+            0
+          ],
+          "wrist": [
+            5.4,
+            -56.88,
+            14.27
+          ],
+          "hand": [
+            5.44,
+            -67.02,
+            21.06
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "relaxed"
+      ]
+    },
+    {
+      "u": 0.35,
+      "arms": {
+        "R": {
+          "elbow": [
+            5.22,
+            0.35,
+            31.77
+          ],
+          "wrist": [
+            -16,
+            16,
+            20
+          ],
+          "hand": [
+            -25.06,
+            24.17,
+            19.72
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "openSide"
+      ]
+    },
+    {
+      "u": 0.72,
+      "arms": {
+        "R": {
+          "elbow": [
+            2.88,
+            -26.52,
+            18.04
+          ],
+          "wrist": [
+            -22,
+            -12,
+            16
+          ],
+          "hand": [
+            -31.06,
+            -4.83,
+            19.92
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "open"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            2.88,
+            -26.52,
+            18.04
+          ],
+          "wrist": [
+            -22,
+            -12,
+            16
+          ],
+          "hand": [
+            -31.06,
+            -4.83,
+            19.92
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "open"
+      ]
+    }
+  ]
+}

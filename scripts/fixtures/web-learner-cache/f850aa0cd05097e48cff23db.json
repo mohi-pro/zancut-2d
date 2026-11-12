@@ -1,0 +1,57 @@
+{
+ "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Padma_Bridge",
+ "at": "2026-11-08T17:03:37.931Z",
+ "body": {
+  "type": "standard",
+  "title": "Padma Bridge",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Padma Bridge</span></span>",
+  "namespace": {
+   "id": 0,
+   "text": ""
+  },
+  "wikibase_item": "Q7123825",
+  "titles": {
+   "canonical": "Padma_Bridge",
+   "normalized": "Padma Bridge",
+   "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Padma Bridge</span></span>"
+  },
+  "pageid": 28080510,
+  "thumbnail": {
+   "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/The_padma_bridge_02.jpg/330px-The_padma_bridge_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "width": 330,
+   "height": 247
+  },
+  "originalimage": {
+   "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/The_padma_bridge_02.jpg/3840px-The_padma_bridge_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "width": 5272,
+   "height": 3948
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1375727648",
+  "tid": "f15cc476-b44f-11f1-ac68-b3869d0b340c",
+  "timestamp": "2026-09-19T17:31:27Z",
+  "description": "Longest bridge in Bangladesh",
+  "description_source": "local",
+  "coordinates": {
+   "lat": 23.4443,
+   "lon": 90.261
+  },
+  "content_urls": {
+   "desktop": {
+    "page": "https://en.wikipedia.org/wiki/Padma_Bridge",
+    "revisions": "https://en.wikipedia.org/wiki/Padma_Bridge?action=history",
+    "edit": "https://en.wikipedia.org/wiki/Padma_Bridge?action=edit",
+    "talk": "https://en.wikipedia.org/wiki/Talk:Padma_Bridge"
+   },
+   "mobile": {
+    "page": "https://en.wikipedia.org/wiki/Padma_Bridge",
+    "revisions": "https://en.wikipedia.org/wiki/Special:History/Padma_Bridge",
+    "edit": "https://en.wikipedia.org/wiki/Padma_Bridge?action=edit",
+    "talk": "https://en.wikipedia.org/wiki/Talk:Padma_Bridge"
+   }
+  },
+  "extract": "The Padma Multipurpose Bridge, commonly known as the Padma Bridge, is a two-level road-rail bridge across the Padma River, the main distributary of the Ganges in Bangladesh.",
+  "extract_html": "<p>The <b>Padma Multipurpose Bridge</b>, commonly known as the <b>Padma Bridge</b>, is a two-level road-rail bridge across the Padma River, the main distributary of the Ganges in Bangladesh.</p>"
+ }
+}

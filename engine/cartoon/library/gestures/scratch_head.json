@@ -1,0 +1,118 @@
+{
+  "id": "scratch_head",
+  "about": "right hand raised beside the upper head, scratching in confusion",
+  "group": "arms",
+  "seconds": 0.8,
+  "loop": true,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            30.3,
+            2.2,
+            10.8
+          ],
+          "wrist": [
+            14,
+            26,
+            12
+          ],
+          "hand": [
+            8.7,
+            36.7,
+            14.7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "claw"
+      ]
+    },
+    {
+      "u": 0.25,
+      "arms": {
+        "R": {
+          "elbow": [
+            29.6,
+            6.2,
+            11.2
+          ],
+          "wrist": [
+            12,
+            29,
+            13
+          ],
+          "hand": [
+            5.1,
+            38.7,
+            15.8
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "relaxed"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "R": {
+          "elbow": [
+            30.3,
+            2.2,
+            10.8
+          ],
+          "wrist": [
+            14,
+            26,
+            12
+          ],
+          "hand": [
+            8.7,
+            36.7,
+            14.7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "claw"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "R": {
+          "elbow": [
+            29.4,
+            7,
+            11.2
+          ],
+          "wrist": [
+            12,
+            30,
+            11
+          ],
+          "hand": [
+            5.1,
+            39.7,
+            13.8
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "relaxed"
+      ]
+    }
+  ]
+}

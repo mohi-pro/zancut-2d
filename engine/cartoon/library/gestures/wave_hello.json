@@ -1,0 +1,118 @@
+{
+  "id": "wave_hello",
+  "about": "friendly open-palm wave beside the head, swinging side to side",
+  "group": "arms",
+  "seconds": 0.9,
+  "loop": true,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            29.2,
+            -9.6,
+            9.5
+          ],
+          "wrist": [
+            24,
+            18,
+            16
+          ],
+          "hand": [
+            21.7,
+            29.7,
+            18.3
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 0.25,
+      "arms": {
+        "R": {
+          "elbow": [
+            29.4,
+            -9.1,
+            9.5
+          ],
+          "wrist": [
+            30,
+            19,
+            16
+          ],
+          "hand": [
+            32.9,
+            30.6,
+            18.3
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "R": {
+          "elbow": [
+            29.2,
+            -9.6,
+            9.5
+          ],
+          "wrist": [
+            24,
+            18,
+            16
+          ],
+          "hand": [
+            21.7,
+            29.7,
+            18.3
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "R": {
+          "elbow": [
+            29.2,
+            -7.6,
+            11.3
+          ],
+          "wrist": [
+            19,
+            19,
+            16
+          ],
+          "hand": [
+            15,
+            30.3,
+            18.3
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    }
+  ]
+}

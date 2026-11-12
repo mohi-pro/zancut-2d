@@ -1,0 +1,446 @@
+{
+ "about": "Zancut pro sound kit (sfx-synth.py): whoosh = movement (peak on the fastest frame), texture = an event (on its frame), riser = anticipation (ends on the cut), hit = under a riser's end.",
+ "items": [
+  {
+   "id": "wh-hollow-1",
+   "family": "whoosh",
+   "use": "go-to for a standard slide or pan: text, a card or a picture sliding in",
+   "dur": 0.75,
+   "peak": 0.42,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-hollow-2",
+   "family": "whoosh",
+   "use": "go-to for a standard slide or pan: text, a card or a picture sliding in",
+   "dur": 0.9,
+   "peak": 0.437,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-hollow-3",
+   "family": "whoosh",
+   "use": "go-to for a standard slide or pan: text, a card or a picture sliding in",
+   "dur": 0.65,
+   "peak": 0.391,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-future-1",
+   "family": "whoosh",
+   "use": "a textured sci-fi slide: UI, tech graphics, app cards moving",
+   "dur": 0.8,
+   "peak": 0.426,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-future-2",
+   "family": "whoosh",
+   "use": "a textured sci-fi slide: UI, tech graphics, app cards moving",
+   "dur": 0.7,
+   "peak": 0.364,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-future-3",
+   "family": "whoosh",
+   "use": "a textured sci-fi slide: UI, tech graphics, app cards moving",
+   "dur": 0.95,
+   "peak": 0.574,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-deep-1",
+   "family": "whoosh",
+   "use": "the default when unsure: a deep textured sweep that fits most animations",
+   "dur": 0.85,
+   "peak": 0.467,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-deep-2",
+   "family": "whoosh",
+   "use": "the default when unsure: a deep textured sweep that fits most animations",
+   "dur": 1.0,
+   "peak": 0.5,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-deep-3",
+   "family": "whoosh",
+   "use": "the default when unsure: a deep textured sweep that fits most animations",
+   "dur": 0.75,
+   "peak": 0.447,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-wind-1",
+   "family": "whoosh",
+   "use": "slow, gentle movement: a soft drift, a slow camera push, a calm fade-slide",
+   "dur": 1.3,
+   "peak": 0.647,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-wind-2",
+   "family": "whoosh",
+   "use": "slow, gentle movement: a soft drift, a slow camera push, a calm fade-slide",
+   "dur": 1.6,
+   "peak": 0.912,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-wind-3",
+   "family": "whoosh",
+   "use": "slow, gentle movement: a soft drift, a slow camera push, a calm fade-slide",
+   "dur": 1.2,
+   "peak": 0.541,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-long-1",
+   "family": "whoosh",
+   "use": "half riser, half whoosh: builds slowly into a quick transition",
+   "dur": 1.9,
+   "peak": 1.544,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-long-2",
+   "family": "whoosh",
+   "use": "half riser, half whoosh: builds slowly into a quick transition",
+   "dur": 2.4,
+   "peak": 2.033,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-short-1",
+   "family": "whoosh",
+   "use": "rare: a very quick, small movement",
+   "dur": 0.28,
+   "peak": 0.132,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-short-2",
+   "family": "whoosh",
+   "use": "rare: a very quick, small movement",
+   "dur": 0.34,
+   "peak": 0.149,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-trans-1",
+   "family": "whoosh",
+   "use": "scene-to-scene transition with a sci-fi edge (synthetic / spacey)",
+   "dur": 1.0,
+   "peak": 0.588,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-trans-2",
+   "family": "whoosh",
+   "use": "scene-to-scene transition with a sci-fi edge (synthetic / spacey)",
+   "dur": 1.2,
+   "peak": 0.658,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "wh-trans-3",
+   "family": "whoosh",
+   "use": "scene-to-scene transition with a sci-fi edge (synthetic / spacey)",
+   "dur": 0.9,
+   "peak": 0.586,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-pop-1",
+   "family": "texture",
+   "use": "text pops up as a whole element (clean, cartoon pop)",
+   "dur": 0.12,
+   "peak": 0.012,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-pop-2",
+   "family": "texture",
+   "use": "text pops up as a whole element (clean, cartoon pop)",
+   "dur": 0.12,
+   "peak": 0.012,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-pop-3",
+   "family": "texture",
+   "use": "text pops up as a whole element (clean, cartoon pop)",
+   "dur": 0.12,
+   "peak": 0.012,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-ui-1",
+   "family": "texture",
+   "use": "a UI element pops up, a button press",
+   "dur": 0.05,
+   "peak": 0.01,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-ui-2",
+   "family": "texture",
+   "use": "a UI element pops up, a button press",
+   "dur": 0.05,
+   "peak": 0.011,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-ui-3",
+   "family": "texture",
+   "use": "a UI element pops up, a button press",
+   "dur": 0.05,
+   "peak": 0.01,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-scifi-click-1",
+   "family": "texture",
+   "use": "a click or a change inside an animation (a UI changes colour, a toggle flips)",
+   "dur": 0.11,
+   "peak": 0.012,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-scifi-click-2",
+   "family": "texture",
+   "use": "a click or a change inside an animation (a UI changes colour, a toggle flips)",
+   "dur": 0.11,
+   "peak": 0.012,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-scifi-click-3",
+   "family": "texture",
+   "use": "a click or a change inside an animation (a UI changes colour, a toggle flips)",
+   "dur": 0.11,
+   "peak": 0.012,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-gears-1",
+   "family": "texture",
+   "use": "letter-by-letter write-outs, typewriter pops, anything mechanical",
+   "dur": 0.6,
+   "peak": 0.111,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-gears-2",
+   "family": "texture",
+   "use": "letter-by-letter write-outs, typewriter pops, anything mechanical",
+   "dur": 0.9,
+   "peak": 0.684,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-gears-3",
+   "family": "texture",
+   "use": "letter-by-letter write-outs, typewriter pops, anything mechanical",
+   "dur": 0.45,
+   "peak": 0.28,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-scan-1",
+   "family": "texture",
+   "use": "a single image or object pops up and needs emphasis (video scan)",
+   "dur": 0.45,
+   "peak": 0.14,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-scan-2",
+   "family": "texture",
+   "use": "a single image or object pops up and needs emphasis (video scan)",
+   "dur": 0.7,
+   "peak": 0.254,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-impact-1",
+   "family": "texture",
+   "use": "a new UI, object or screen is REVEALED entering the scene (sci-fi impact); also a scene change",
+   "dur": 0.9,
+   "peak": 0.018,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-impact-2",
+   "family": "texture",
+   "use": "a new UI, object or screen is REVEALED entering the scene (sci-fi impact); also a scene change",
+   "dur": 1.1,
+   "peak": 0.012,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-impact-3",
+   "family": "texture",
+   "use": "a new UI, object or screen is REVEALED entering the scene (sci-fi impact); also a scene change",
+   "dur": 0.8,
+   "peak": 0.02,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-energy-1",
+   "family": "texture",
+   "use": "the transition INTO a brand-new animation (activate energy)",
+   "dur": 0.9,
+   "peak": 0.767,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-energy-2",
+   "family": "texture",
+   "use": "the transition INTO a brand-new animation (activate energy)",
+   "dur": 1.2,
+   "peak": 1.015,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-camera-1",
+   "family": "texture",
+   "use": "a clip-to-clip cut or a camera flash, exactly on the cut frame",
+   "dur": 0.25,
+   "peak": 0.047,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-camera-2",
+   "family": "texture",
+   "use": "a clip-to-clip cut or a camera flash, exactly on the cut frame",
+   "dur": 0.25,
+   "peak": 0.01,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-choir",
+   "family": "texture",
+   "use": "a big reveal that is a big deal (heavenly choir); once per video at most",
+   "dur": 2.2,
+   "peak": 0.764,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "tx-success",
+   "family": "texture",
+   "use": "a conclusion is reached (success reward)",
+   "dur": 0.9,
+   "peak": 0.108,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "rs-bass-1",
+   "family": "riser",
+   "use": "sharp bass riser: about 5 s into the video, into a new segment (a favourite)",
+   "dur": 1.6,
+   "peak": 1.549,
+   "source": "Zancut synth (own, free to use)",
+   "end": 1.6
+  },
+  {
+   "id": "rs-bass-2",
+   "family": "riser",
+   "use": "sharp bass riser: about 5 s into the video, into a new segment (a favourite)",
+   "dur": 2.0,
+   "peak": 1.973,
+   "source": "Zancut synth (own, free to use)",
+   "end": 2.0
+  },
+  {
+   "id": "rs-bass-3",
+   "family": "riser",
+   "use": "sharp bass riser: about 5 s into the video, into a new segment (a favourite)",
+   "dur": 2.6,
+   "peak": 2.571,
+   "source": "Zancut synth (own, free to use)",
+   "end": 2.6
+  },
+  {
+   "id": "rs-metal-1",
+   "family": "riser",
+   "use": "metallic riser: builds into a chapter or reveal (the other favourite)",
+   "dur": 1.5,
+   "peak": 1.457,
+   "source": "Zancut synth (own, free to use)",
+   "end": 1.5
+  },
+  {
+   "id": "rs-metal-2",
+   "family": "riser",
+   "use": "metallic riser: builds into a chapter or reveal (the other favourite)",
+   "dur": 2.0,
+   "peak": 1.932,
+   "source": "Zancut synth (own, free to use)",
+   "end": 2.0
+  },
+  {
+   "id": "rs-metal-3",
+   "family": "riser",
+   "use": "metallic riser: builds into a chapter or reveal (the other favourite)",
+   "dur": 2.4,
+   "peak": 2.312,
+   "source": "Zancut synth (own, free to use)",
+   "end": 2.4
+  },
+  {
+   "id": "rs-suck-1",
+   "family": "riser",
+   "use": "suck-back riser: a slow reversed build; very low or very loud, never middle",
+   "dur": 1.4,
+   "peak": 1.36,
+   "source": "Zancut synth (own, free to use)",
+   "end": 1.4
+  },
+  {
+   "id": "rs-suck-2",
+   "family": "riser",
+   "use": "suck-back riser: a slow reversed build; very low or very loud, never middle",
+   "dur": 1.9,
+   "peak": 1.877,
+   "source": "Zancut synth (own, free to use)",
+   "end": 1.9
+  },
+  {
+   "id": "rs-suspense",
+   "family": "riser",
+   "use": "suspenseful build-up; use sparingly",
+   "dur": 3.0,
+   "peak": 2.908,
+   "source": "Zancut synth (own, free to use)",
+   "end": 3.0
+  },
+  {
+   "id": "hit-1",
+   "family": "hit",
+   "use": "impact hit under a riser's end, so the build lands the new segment",
+   "dur": 1.4,
+   "peak": 0.021,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "hit-2",
+   "family": "hit",
+   "use": "impact hit under a riser's end, so the build lands the new segment",
+   "dur": 1.8,
+   "peak": 0.159,
+   "source": "Zancut synth (own, free to use)"
+  },
+  {
+   "id": "hit-3",
+   "family": "hit",
+   "use": "impact hit under a riser's end, so the build lands the new segment",
+   "dur": 1.1,
+   "peak": 0.026,
+   "source": "Zancut synth (own, free to use)"
+  }
+ ]
+}

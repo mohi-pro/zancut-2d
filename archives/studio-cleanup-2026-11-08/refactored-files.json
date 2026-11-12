@@ -1,0 +1,102 @@
+[
+  {
+    "path": "server/board.mjs",
+    "beforeSha256": "ac99fd8cfc9a3c8a1f3f3d21d2f84513f551b5894693eb210808039010107b81",
+    "afterSha256": "9db42a05175cdfe18ebcc9431fed4e5666a7864e23c3fd1ccb01ab0ba2ca70e7"
+  },
+  {
+    "path": "server/director.mjs",
+    "beforeSha256": "60f85e25cb7bcce68c79133515831c99349febc0797e58336c2b6fbe061d5fa7",
+    "afterSha256": "411c47534ebb0b64e501ef594d4d4314e75d02e785db26efd720a1824b375e4e"
+  },
+  {
+    "path": "server/transcribe.mjs",
+    "beforeSha256": "06cb2ae6deb528d318bdda8b81fc2fe41929e0f574a4f21d84c89210d8f20444",
+    "afterSha256": "d96659d58a964ed16054fba715efcae8f5c7a4e1e52e3fa48fb4d2ea62662253"
+  },
+  {
+    "path": "server/index.mjs",
+    "beforeSha256": "5c7e2a9fa6c2cd81b0699d17154f2bb1cf98c422bc5c7e860d1a8b88f69dfd97",
+    "afterSha256": "71a55cbe2bd7eff3d4f6c12aae55d564c9086cc8046bf5afe401f63d83e1f009"
+  },
+  {
+    "path": "server/agent.mjs",
+    "beforeSha256": "e273f83a0980512aa1be447ebe44ca3557f63b0c2ed375e54ee9a2c2b738c514",
+    "afterSha256": "ffbc08c7da3fd2327fc35a9c1d4871e1f795bb45275c4a65cabc2adcf5b4b343"
+  },
+  {
+    "path": "server/config.mjs",
+    "beforeSha256": "553b797f513527c633307d0a8c1f650e26b4eeea7154a1d908f0dfd396a2ae61",
+    "afterSha256": "3b47e8671fb5832d86d7deee15cc4ad85f043d59c15159b60096ca177649983e"
+  },
+  {
+    "path": "server/studio.mjs",
+    "beforeSha256": "fd9c0ce3868b966f8862b885038b92ed6a4559085cabd02887cc7357eeab9299",
+    "afterSha256": "e0cb73aed6c4824bd3f0f057e6ea6bfe2f1e56d3082bd07212157f91c30ff49d"
+  },
+  {
+    "path": "docs/ARCHITECTURE.md",
+    "beforeSha256": "33bba7196c8de097687a0feb55f28d99e2501166a38bc6a7fe9aaa710c62e034",
+    "afterSha256": "5b928d08e9ee9ab1e914eeb00508eb30ac6ed046a9d4aad181c5182cd077ecfe"
+  },
+  {
+    "path": "docs/PROJECT_OVERVIEW.md",
+    "beforeSha256": "11f5e17dd161ea82c704bc47262f73ef730ccdab0671d076682b2cab84eb8a58",
+    "afterSha256": "58bc53290e247ca07c4882de5b9c83996b3b6e973682ec6647ef09d82f1b9f11"
+  },
+  {
+    "path": "docs/STATUS.md",
+    "beforeSha256": "f040a9b247df7a2c96f9cac292da8ecaddc865b591eb20033267675e89c2c0de",
+    "afterSha256": "709fe786f0dbbeb14101cbc66d665be943093499aa843f91fbda8b31d1178400"
+  },
+  {
+    "path": "docs/TEST_RESULTS.md",
+    "beforeSha256": "1cfa29dfb0cfa67db4500bfbcf1561f548ad6b80dc5d6481c8d153f9dddae17e",
+    "afterSha256": "14a2e13d9a467b2e31984836de63713d6f3be5e7d9e5a83de6b614881903e048"
+  },
+  {
+    "path": "docs/DECISIONS.md",
+    "beforeSha256": "fe11a5532940e15fe9b16f8f47842f803e47235e542a63e1ee8b7a882c0bf8e2",
+    "afterSha256": "a8da1d177403bdd0693befc741dda7446519b0129c0796cc5c7085aa5c750437"
+  },
+  {
+    "path": "docs/2d-library/README.md",
+    "beforeSha256": "0182ee95bcc30ad5bc548ecda952b6e1b1aa95f79011f14054fbf810e12b95ee",
+    "afterSha256": "b080cf743bf4a1bcc90970e7db8fdd12a41a7146c35906b86aa9a5be7a436670"
+  },
+  {
+    "path": "scripts/film-kit-test.mjs",
+    "beforeSha256": "606c7e272bbdba7c15bcb62dfc1e1775619f061be7c5d856c65b2a733d2f883a",
+    "afterSha256": "594ef080f4ae7ccc0dccb3062340a628ac8cedcf142bfb7a0187a7be37d50566"
+  },
+  {
+    "path": "scripts/codefilm-test.mjs",
+    "beforeSha256": "8b4c9591e0a62bbcaf3c1c15756526e313f1ec876e1134b5aa0574f592a9f3f3",
+    "afterSha256": "9fbb2c911b3a0cd990072a5a53feaa359bfbc5318f96c40f8c65082f75341253"
+  },
+  {
+    "path": "scripts/parts-test.mjs",
+    "beforeSha256": "34cc054b1953548eba18dc38ac9891bb45d005bb98acc413318babed41203b79",
+    "afterSha256": "aabe9525412b8e46690a246bf1e0176c6e5fe4df65371b67bdcc55740851b0f6"
+  },
+  {
+    "path": "package.json",
+    "beforeSha256": "12860ffbae32ce2783ba736ffd6f64c316c86033b2add4928320e33f0da543c8",
+    "afterSha256": "4a49f1b07598dabbf881c9fcc116ac8f1ca4ad14d05598506401118b8d96a402"
+  },
+  {
+    "path": "package-lock.json",
+    "beforeSha256": "a2659e116c0b12cd3d599879d1c24773c765e30180b54da8b109ae4c8b5362d3",
+    "afterSha256": "9b3b7f1f90aeeeb75bc6327a2c243a94129ccefdd90178fb975c8a8f2fd2f833"
+  },
+  {
+    "path": "CLAUDE.md",
+    "beforeSha256": "d991b24596b10671f40450abb01f997ff64f578697213e413879728940fe0dee",
+    "afterSha256": "d7ccc9ddc537926c17c07ecc0480c8db3a2ea2c6872e403288553908187e19f1"
+  },
+  {
+    "path": "README.md",
+    "beforeSha256": "c2a3519b1f3e2df9333411e2831ea0d6b72f13956938c679cd53695c3873dcf3",
+    "afterSha256": "1baecf97a769f9bfbf2427cc0e6b3ff4799af612a88d975113a4ec86f2b974fd"
+  }
+]

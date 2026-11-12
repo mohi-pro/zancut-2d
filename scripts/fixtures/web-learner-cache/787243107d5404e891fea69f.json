@@ -1,0 +1,19 @@
+{
+ "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q16521&props=labels&languages=en&format=json",
+ "at": "2026-11-08T17:03:32.967Z",
+ "body": {
+  "entities": {
+   "Q16521": {
+    "type": "item",
+    "id": "Q16521",
+    "labels": {
+     "en": {
+      "language": "en",
+      "value": "taxon"
+     }
+    }
+   }
+  },
+  "success": 1
+ }
+}

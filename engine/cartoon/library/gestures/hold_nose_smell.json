@@ -1,0 +1,125 @@
+{
+  "id": "hold_nose_smell",
+  "about": "the right hand rises to pinch the nose against smoke or a bad smell",
+  "group": "arms",
+  "aliases": [
+    "pinch nose",
+    "bad smell gesture",
+    "cover nose",
+    "নাকে হাত দেওয়া",
+    "দুর্গন্ধে নাক চাপা"
+  ],
+  "seconds": 1.5,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            5.22,
+            -31.78,
+            0
+          ],
+          "wrist": [
+            5.4,
+            -56.88,
+            14.27
+          ],
+          "hand": [
+            5.44,
+            -67.02,
+            21.06
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "relaxed"
+      ]
+    },
+    {
+      "u": 0.4,
+      "arms": {
+        "R": {
+          "elbow": [
+            4.99,
+            -4.13,
+            31.54
+          ],
+          "wrist": [
+            -16,
+            12,
+            20
+          ],
+          "hand": [
+            -24.88,
+            20.37,
+            19.84
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "pinch"
+      ]
+    },
+    {
+      "u": 0.8,
+      "arms": {
+        "R": {
+          "elbow": [
+            4.99,
+            -4.13,
+            31.54
+          ],
+          "wrist": [
+            -16,
+            12,
+            20
+          ],
+          "hand": [
+            -24.88,
+            20.37,
+            19.84
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "pinch"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            5.22,
+            -31.78,
+            0
+          ],
+          "wrist": [
+            5.4,
+            -56.88,
+            14.27
+          ],
+          "hand": [
+            5.44,
+            -67.02,
+            21.06
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "relaxed"
+      ]
+    }
+  ]
+}

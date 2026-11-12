@@ -1,0 +1,6399 @@
+{
+ "about": "Body proportion chart (Brief 6 delivery, 6 Nov 2026): usual [min, usual, max] metres per gender.age row, ratio ranges with cartoon allowances, build multipliers per row. Research-informed estimates, not measured percentiles (see notes/body-proportions-SOURCES.md). Stature for films comes from sizes.json standards (Bangladeshi national); this chart gives the SHAPES. scripts/build-bodies.mjs turns it into engine/cartoon/bodies.js.",
+ "schemaVersion": "1.0.0",
+ "units": "metres",
+ "unitOverrides": {
+  "headsTall": "dimensionless",
+  "stoopDeg": "degrees",
+  "cadence": "steps/minute",
+  "headTurnSpeed": "degrees/second",
+  "walkSpeed": "metres/second",
+  "runSpeed": "metres/second",
+  "sitDownDuration": "seconds",
+  "standUpDuration": "seconds",
+  "ageYears": "years"
+ },
+ "sources": [
+  {
+   "id": "WHO-0-5",
+   "title": "WHO Child Growth Standards: height-for-age, 2–5 years",
+   "url": "https://www.who.int/tools/child-growth-standards/standards/length-height-for-age",
+   "use": "Toddler stature at 30 months; normal approximation using published median and SD."
+  },
+  {
+   "id": "WHO-5-19",
+   "title": "WHO Growth reference 5–19 years: height-for-age",
+   "url": "https://www.who.int/tools/growth-reference-data-for-5to19-years/indicators/height-for-age",
+   "use": "Stature at 72, 108, 144 and 186 months; approximate P10/P90 reconstructed from P15/P85."
+  },
+  {
+   "id": "BD-ADULT",
+   "title": "Asadujjaman et al. (2021), Stature estimation from handprint measurements",
+   "url": "https://link.springer.com/article/10.1186/s41935-020-00215-1",
+   "use": "Bangladeshi young-adult stature sample; not national norms. No handprint-to-hand-width conversion."
+  },
+  {
+   "id": "NIST-CHILD",
+   "title": "Snyder et al. (1977), Anthropometry of Infants, Children, and Youths to Age 18",
+   "url": "https://math.nist.gov/~SRessler/anthrokids/datatoc77.htm",
+   "use": "Historical measurement taxonomy only; numerical front widths were not extracted."
+  },
+  {
+   "id": "CDC-ADULT",
+   "title": "Fryar et al. (2021), Anthropometric Reference Data, United States, 2015–2018",
+   "url": "https://www.cdc.gov/nchs/data/series/sr_03/sr03-046-508.pdf",
+   "use": "Measurement definitions and external plausibility reference; survey arm length is not a joint-centre bone length."
+  },
+  {
+   "id": "NASA-METHOD",
+   "title": "NASA Human Integration Design Handbook, Revision 1",
+   "url": "https://www.nasa.gov/wp-content/uploads/2023/03/human-integration-design-handbook-revision-1.pdf",
+   "use": "Multivariate anthropometry and measurement consistency; not a source of every numeric field."
+  },
+  {
+   "id": "AGING",
+   "title": "Sorkin et al. (1999), Longitudinal change in height of men and women",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/10547143/",
+   "use": "Longitudinal age-related stature loss; elder values here interpolate and extrapolate to a representative age of 75."
+  },
+  {
+   "id": "GAIT-TODDLER",
+   "title": "Guffey et al. (2016), Gait parameters associated with balance in healthy 2–4 year-old children",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4681623/",
+   "use": "Toddler walking magnitudes; authored coherent gait triplets are not study percentiles."
+  },
+  {
+   "id": "GAIT-ADULT",
+   "title": "Oberg et al. (1993), Basic gait parameters: reference data for normal subjects, 10–79 years",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/8035350/",
+   "use": "Age and sex context for gait; no literal per-row normative transcription."
+  },
+  {
+   "id": "SIT-STAND",
+   "title": "Kerr et al. (1997), Analysis of the sit-stand-sit movement cycle in normal subjects",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/11415728/",
+   "use": "Single rise/descent timing reference; all exported age ranges are animation estimates."
+  },
+  {
+   "id": "HEAD-TURN",
+   "title": "Tweed et al. (1995), Eye-head coordination during large gaze shifts",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/7760133/",
+   "use": "Eased head-turn velocity profile; exported speeds are authored, not measured norms."
+  },
+  {
+   "id": "SA-BUILD",
+   "title": "South Asian and European body-fat distribution study, PMID 8653149",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/8653149/",
+   "use": "Supports avoiding one universal body-shape multiplier; no direct conversion of circumference or fat mass to front width."
+  },
+  {
+   "id": "DISNEY",
+   "title": "Walt Disney Animation Studios: Animation",
+   "url": "https://www.disneyanimation.com/process/animation/",
+   "use": "Timing, anticipation, follow-through, staging and secondary action inform optional action phases."
+  },
+  {
+   "id": "AUTHOR",
+   "title": "Zancut authored engineering estimates, 2026-11-06",
+   "url": null,
+   "use": "All non-stature dimensions, build multipliers, cartoon limits, global art envelopes and action prescriptions are estimates; not population percentiles."
+  }
+ ],
+ "rows": {
+  "female.toddler": {
+   "ageYears": [
+    2,
+    2.5,
+    3
+   ],
+   "measures": {
+    "stature": [
+     0.861556,
+     0.906797,
+     0.952038
+    ],
+    "headHeight": [
+     0.17575,
+     0.185,
+     0.19425
+    ],
+    "headWidth": [
+     0.133,
+     0.14,
+     0.147
+    ],
+    "neckLength": [
+     0.037047,
+     0.038992,
+     0.040938
+    ],
+    "upperArmLength": [
+     0.136987,
+     0.144181,
+     0.151374
+    ],
+    "forearmLength": [
+     0.11631,
+     0.122418,
+     0.128525
+    ],
+    "thighLength": [
+     0.176619,
+     0.185893,
+     0.195168
+    ],
+    "shinLength": [
+     0.172311,
+     0.181359,
+     0.190408
+    ],
+    "crotchHeight": [
+     0.331699,
+     0.349117,
+     0.366535
+    ],
+    "handLength": [
+     0.093048,
+     0.097934,
+     0.10282
+    ],
+    "footLength": [
+     0.136126,
+     0.143274,
+     0.150422
+    ],
+    "ankleHeight": [
+     0.03877,
+     0.040806,
+     0.042842
+    ],
+    "neckWidth": [
+     0.066641,
+     0.077078,
+     0.088206
+    ],
+    "shoulderWidth": [
+     0.180324,
+     0.208563,
+     0.238676
+    ],
+    "chestWidth": [
+     0.148963,
+     0.172291,
+     0.197167
+    ],
+    "waistWidth": [
+     0.145043,
+     0.167757,
+     0.191978
+    ],
+    "hipWidth": [
+     0.150531,
+     0.174105,
+     0.199243
+    ],
+    "chestDepth": [
+     0.113682,
+     0.131486,
+     0.15047
+    ],
+    "waistDepth": [
+     0.117602,
+     0.13602,
+     0.155658
+    ],
+    "handWidth": [
+     0.039683,
+     0.044433,
+     0.049449
+    ],
+    "upperArmWidth": [
+     0.040769,
+     0.047153,
+     0.053962
+    ],
+    "elbowWidth": [
+     0.035634,
+     0.039899,
+     0.044403
+    ],
+    "forearmWidth": [
+     0.036849,
+     0.042619,
+     0.048773
+    ],
+    "wristWidth": [
+     0.027535,
+     0.030831,
+     0.034311
+    ],
+    "thighWidth": [
+     0.076834,
+     0.088866,
+     0.101697
+    ],
+    "kneeWidth": [
+     0.051021,
+     0.057128,
+     0.063577
+    ],
+    "calfWidth": [
+     0.054881,
+     0.063476,
+     0.07264
+    ],
+    "ankleWidth": [
+     0.034824,
+     0.038992,
+     0.043394
+    ],
+    "shoulderHeight": [
+     0.648759,
+     0.682805,
+     0.71685
+    ],
+    "elbowHeight": [
+     0.511772,
+     0.538624,
+     0.565476
+    ],
+    "wristHeight": [
+     0.395462,
+     0.416206,
+     0.436951
+    ],
+    "kneeHeight": [
+     0.211081,
+     0.222165,
+     0.23325
+    ],
+    "hipJointHeight": [
+     0.3877,
+     0.408058,
+     0.428418
+    ],
+    "torsoJointLength": [
+     0.261059,
+     0.274747,
+     0.288432
+    ],
+    "headsTall": [
+     4.435295,
+     4.901605,
+     5.417001
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.184604,
+      0.225464
+     ],
+     "cartoonRange": [
+      0.175374,
+      0.259284
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.189408,
+      0.277029
+     ],
+     "cartoonRange": [
+      0.179938,
+      0.29088
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.158114,
+      0.231259
+     ],
+     "cartoonRange": [
+      0.150209,
+      0.242822
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.905046,
+      1.58556
+     ],
+     "cartoonRange": [
+      0.859793,
+      1.664838
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.72797,
+      1.275339
+     ],
+     "cartoonRange": [
+      0.691572,
+      1.339106
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.042823,
+      0.062633
+     ],
+     "cartoonRange": [
+      0.040682,
+      0.065765
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.038705,
+      0.05661
+     ],
+     "cartoonRange": [
+      0.03677,
+      0.059441
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.080705,
+      0.118039
+     ],
+     "cartoonRange": [
+      0.07667,
+      0.123941
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.057646,
+      0.084313
+     ],
+     "cartoonRange": [
+      0.054764,
+      0.088528
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.400887,
+      0.702319
+     ],
+     "cartoonRange": [
+      0.380843,
+      0.737435
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.266058,
+      0.324876
+     ],
+     "cartoonRange": [
+      0.258076,
+      0.334622
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.366508,
+      0.447534
+     ],
+     "cartoonRange": [
+      0.355513,
+      0.46096
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.348409,
+      0.425434
+     ],
+     "cartoonRange": [
+      0.337957,
+      0.438197
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.28,
+     0.34,
+     0.42
+    ],
+    "cadence": [
+     140,
+     160,
+     180
+    ],
+    "walkSpeed": [
+     0.653333,
+     0.906667,
+     1.26
+    ],
+    "runSpeed": [
+     1,
+     1.6,
+     2.2
+    ],
+    "headTurnSpeed": [
+     65,
+     105,
+     150
+    ],
+    "sitDownDuration": [
+     1.3,
+     2,
+     3
+    ],
+    "standUpDuration": [
+     1.2,
+     1.9,
+     3.1
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start"
+   }
+  },
+  "female.child6": {
+   "ageYears": [
+    6,
+    6,
+    6
+   ],
+   "measures": {
+    "stature": [
+     1.085465,
+     1.151,
+     1.216535
+    ],
+    "headHeight": [
+     0.19285,
+     0.203,
+     0.21315
+    ],
+    "headWidth": [
+     0.13775,
+     0.145,
+     0.15225
+    ],
+    "neckLength": [
+     0.048846,
+     0.051795,
+     0.054744
+    ],
+    "upperArmLength": [
+     0.185615,
+     0.196821,
+     0.208027
+    ],
+    "forearmLength": [
+     0.157392,
+     0.166895,
+     0.176398
+    ],
+    "thighLength": [
+     0.243144,
+     0.257824,
+     0.272504
+    ],
+    "shinLength": [
+     0.240973,
+     0.255522,
+     0.270071
+    ],
+    "crotchHeight": [
+     0.461323,
+     0.489175,
+     0.517027
+    ],
+    "handLength": [
+     0.11723,
+     0.124308,
+     0.131386
+    ],
+    "footLength": [
+     0.170418,
+     0.180707,
+     0.190996
+    ],
+    "ankleHeight": [
+     0.048846,
+     0.051795,
+     0.054744
+    ],
+    "neckWidth": [
+     0.07112,
+     0.082872,
+     0.095474
+    ],
+    "shoulderWidth": [
+     0.219286,
+     0.255522,
+     0.294377
+    ],
+    "chestWidth": [
+     0.175824,
+     0.204878,
+     0.236032
+    ],
+    "waistWidth": [
+     0.162983,
+     0.189915,
+     0.218794
+    ],
+    "hipWidth": [
+     0.177799,
+     0.20718,
+     0.238684
+    ],
+    "chestDepth": [
+     0.126435,
+     0.147328,
+     0.169731
+    ],
+    "waistDepth": [
+     0.124459,
+     0.145026,
+     0.167079
+    ],
+    "handWidth": [
+     0.047956,
+     0.054097,
+     0.060608
+    ],
+    "upperArmWidth": [
+     0.046425,
+     0.054097,
+     0.062323
+    ],
+    "elbowWidth": [
+     0.039793,
+     0.044889,
+     0.050292
+    ],
+    "forearmWidth": [
+     0.042474,
+     0.049493,
+     0.057019
+    ],
+    "wristWidth": [
+     0.03061,
+     0.03453,
+     0.038686
+    ],
+    "thighWidth": [
+     0.092851,
+     0.108194,
+     0.124646
+    ],
+    "kneeWidth": [
+     0.05918,
+     0.066758,
+     0.074793
+    ],
+    "calfWidth": [
+     0.066181,
+     0.077117,
+     0.088844
+    ],
+    "ankleWidth": [
+     0.039793,
+     0.044889,
+     0.050292
+    ],
+    "shoulderHeight": [
+     0.843769,
+     0.896205,
+     0.948641
+    ],
+    "elbowHeight": [
+     0.658154,
+     0.699384,
+     0.740614
+    ],
+    "wristHeight": [
+     0.500762,
+     0.532489,
+     0.564216
+    ],
+    "kneeHeight": [
+     0.289819,
+     0.307317,
+     0.324815
+    ],
+    "hipJointHeight": [
+     0.532963,
+     0.565141,
+     0.597319
+    ],
+    "torsoJointLength": [
+     0.310806,
+     0.331064,
+     0.351322
+    ],
+    "headsTall": [
+     5.092494,
+     5.669951,
+     6.308193
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.158524,
+      0.196367
+     ],
+     "cartoonRange": [
+      0.150598,
+      0.225823
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.180255,
+      0.271199
+     ],
+     "cartoonRange": [
+      0.171242,
+      0.284759
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.146152,
+      0.219891
+     ],
+     "cartoonRange": [
+      0.138844,
+      0.230886
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.918729,
+      1.655673
+     ],
+     "cartoonRange": [
+      0.872793,
+      1.738457
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.68284,
+      1.230569
+     ],
+     "cartoonRange": [
+      0.648698,
+      1.292098
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.038162,
+      0.057416
+     ],
+     "cartoonRange": [
+      0.036254,
+      0.060287
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.034914,
+      0.05253
+     ],
+     "cartoonRange": [
+      0.033168,
+      0.055156
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.076324,
+      0.114832
+     ],
+     "cartoonRange": [
+      0.072508,
+      0.120573
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.054401,
+      0.081849
+     ],
+     "cartoonRange": [
+      0.051681,
+      0.085941
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.372455,
+      0.671215
+     ],
+     "cartoonRange": [
+      0.353832,
+      0.704776
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.281954,
+      0.354157
+     ],
+     "cartoonRange": [
+      0.273495,
+      0.364782
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.397947,
+      0.499855
+     ],
+     "cartoonRange": [
+      0.386009,
+      0.514851
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.379211,
+      0.476318
+     ],
+     "cartoonRange": [
+      0.367834,
+      0.490608
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.41,
+     0.49,
+     0.58
+    ],
+    "cadence": [
+     118,
+     136,
+     150
+    ],
+    "walkSpeed": [
+     0.806333,
+     1.110667,
+     1.45
+    ],
+    "runSpeed": [
+     1.8,
+     2.6,
+     3.6
+    ],
+    "headTurnSpeed": [
+     75,
+     125,
+     175
+    ],
+    "sitDownDuration": [
+     1,
+     1.5,
+     2.3
+    ],
+    "standUpDuration": [
+     0.9,
+     1.4,
+     2.3
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start"
+   }
+  },
+  "female.child9": {
+   "ageYears": [
+    9,
+    9,
+    9
+   ],
+   "measures": {
+    "stature": [
+     1.2471,
+     1.325,
+     1.4029
+    ],
+    "headHeight": [
+     0.2052,
+     0.216,
+     0.2268
+    ],
+    "headWidth": [
+     0.1425,
+     0.15,
+     0.1575
+    ],
+    "neckLength": [
+     0.058614,
+     0.062275,
+     0.065936
+    ],
+    "upperArmLength": [
+     0.220737,
+     0.234525,
+     0.248313
+    ],
+    "forearmLength": [
+     0.188312,
+     0.200075,
+     0.211838
+    ],
+    "thighLength": [
+     0.295563,
+     0.314025,
+     0.332487
+    ],
+    "shinLength": [
+     0.291821,
+     0.31005,
+     0.328279
+    ],
+    "crotchHeight": [
+     0.561195,
+     0.59625,
+     0.631305
+    ],
+    "handLength": [
+     0.134687,
+     0.1431,
+     0.151513
+    ],
+    "footLength": [
+     0.193301,
+     0.205375,
+     0.21745
+    ],
+    "ankleHeight": [
+     0.05612,
+     0.059625,
+     0.063131
+    ],
+    "neckWidth": [
+     0.073766,
+     0.086125,
+     0.099395
+    ],
+    "shoulderWidth": [
+     0.253074,
+     0.295475,
+     0.341003
+    ],
+    "chestWidth": [
+     0.199736,
+     0.2332,
+     0.269132
+    ],
+    "waistWidth": [
+     0.178173,
+     0.208025,
+     0.240078
+    ],
+    "hipWidth": [
+     0.20541,
+     0.239825,
+     0.276778
+    ],
+    "chestDepth": [
+     0.138453,
+     0.16165,
+     0.186558
+    ],
+    "waistDepth": [
+     0.132779,
+     0.155025,
+     0.178912
+    ],
+    "handWidth": [
+     0.053925,
+     0.06095,
+     0.068405
+    ],
+    "upperArmWidth": [
+     0.051069,
+     0.059625,
+     0.068812
+    ],
+    "elbowWidth": [
+     0.042202,
+     0.0477,
+     0.053535
+    ],
+    "forearmWidth": [
+     0.046529,
+     0.054325,
+     0.062696
+    ],
+    "wristWidth": [
+     0.032824,
+     0.0371,
+     0.041638
+    ],
+    "thighWidth": [
+     0.108947,
+     0.1272,
+     0.146799
+    ],
+    "kneeWidth": [
+     0.064475,
+     0.072875,
+     0.081789
+    ],
+    "calfWidth": [
+     0.074901,
+     0.08745,
+     0.100925
+    ],
+    "ankleWidth": [
+     0.043374,
+     0.049025,
+     0.055022
+    ],
+    "shoulderHeight": [
+     0.983286,
+     1.046725,
+     1.110164
+    ],
+    "elbowHeight": [
+     0.762549,
+     0.8122,
+     0.861851
+    ],
+    "wristHeight": [
+     0.574237,
+     0.612125,
+     0.650013
+    ],
+    "kneeHeight": [
+     0.347941,
+     0.369675,
+     0.39141
+    ],
+    "hipJointHeight": [
+     0.643504,
+     0.6837,
+     0.723897
+    ],
+    "torsoJointLength": [
+     0.339782,
+     0.363025,
+     0.386267
+    ],
+    "headsTall": [
+     5.498677,
+     6.134259,
+     6.836745
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.146268,
+      0.181862
+     ],
+     "cartoonRange": [
+      0.138955,
+      0.209141
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.180393,
+      0.273437
+     ],
+     "cartoonRange": [
+      0.171374,
+      0.287109
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.146418,
+      0.221937
+     ],
+     "cartoonRange": [
+      0.139097,
+      0.233034
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.914357,
+      1.660109
+     ],
+     "cartoonRange": [
+      0.868639,
+      1.743115
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.64374,
+      1.168775
+     ],
+     "cartoonRange": [
+      0.611553,
+      1.227213
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.036402,
+      0.055178
+     ],
+     "cartoonRange": [
+      0.034582,
+      0.057936
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.033166,
+      0.050273
+     ],
+     "cartoonRange": [
+      0.031508,
+      0.052787
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.077658,
+      0.117712
+     ],
+     "cartoonRange": [
+      0.073776,
+      0.123598
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.05339,
+      0.080928
+     ],
+     "cartoonRange": [
+      0.050721,
+      0.084974
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.347884,
+      0.63161
+     ],
+     "cartoonRange": [
+      0.33049,
+      0.66319
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.291574,
+      0.368977
+     ],
+     "cartoonRange": [
+      0.282827,
+      0.380046
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.418693,
+      0.529842
+     ],
+     "cartoonRange": [
+      0.406132,
+      0.545737
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.400025,
+      0.506218
+     ],
+     "cartoonRange": [
+      0.388024,
+      0.521405
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.48,
+     0.56,
+     0.65
+    ],
+    "cadence": [
+     112,
+     128,
+     142
+    ],
+    "walkSpeed": [
+     0.896,
+     1.194667,
+     1.538333
+    ],
+    "runSpeed": [
+     2.1,
+     3,
+     4.2
+    ],
+    "headTurnSpeed": [
+     80,
+     135,
+     190
+    ],
+    "sitDownDuration": [
+     0.9,
+     1.4,
+     2.2
+    ],
+    "standUpDuration": [
+     0.9,
+     1.4,
+     2.2
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start"
+   }
+  },
+  "female.child12": {
+   "ageYears": [
+    12,
+    12,
+    12
+   ],
+   "measures": {
+    "stature": [
+     1.424208,
+     1.512,
+     1.599792
+    ],
+    "headHeight": [
+     0.2109,
+     0.222,
+     0.2331
+    ],
+    "headWidth": [
+     0.144875,
+     0.1525,
+     0.160125
+    ],
+    "neckLength": [
+     0.069786,
+     0.074088,
+     0.07839
+    ],
+    "upperArmLength": [
+     0.257782,
+     0.273672,
+     0.289562
+    ],
+    "forearmLength": [
+     0.219328,
+     0.232848,
+     0.246368
+    ],
+    "thighLength": [
+     0.346083,
+     0.367416,
+     0.388749
+    ],
+    "shinLength": [
+     0.34181,
+     0.36288,
+     0.38395
+    ],
+    "crotchHeight": [
+     0.660833,
+     0.701568,
+     0.742303
+    ],
+    "handLength": [
+     0.153814,
+     0.163296,
+     0.172778
+    ],
+    "footLength": [
+     0.219328,
+     0.232848,
+     0.246368
+    ],
+    "ankleHeight": [
+     0.064089,
+     0.06804,
+     0.071991
+    ],
+    "neckWidth": [
+     0.078792,
+     0.091922,
+     0.106013
+    ],
+    "shoulderWidth": [
+     0.294973,
+     0.344127,
+     0.396878
+    ],
+    "chestWidth": [
+     0.229203,
+     0.267397,
+     0.308386
+    ],
+    "waistWidth": [
+     0.196096,
+     0.228773,
+     0.263842
+    ],
+    "hipWidth": [
+     0.251808,
+     0.29377,
+     0.338801
+    ],
+    "chestDepth": [
+     0.163871,
+     0.191179,
+     0.220484
+    ],
+    "waistDepth": [
+     0.149287,
+     0.174164,
+     0.200862
+    ],
+    "handWidth": [
+     0.060505,
+     0.068335,
+     0.076641
+    ],
+    "upperArmWidth": [
+     0.057113,
+     0.066631,
+     0.076845
+    ],
+    "elbowWidth": [
+     0.046846,
+     0.052908,
+     0.059339
+    ],
+    "forearmWidth": [
+     0.052528,
+     0.061281,
+     0.070675
+    ],
+    "wristWidth": [
+     0.036436,
+     0.041151,
+     0.046152
+    ],
+    "thighWidth": [
+     0.132732,
+     0.15485,
+     0.178587
+    ],
+    "kneeWidth": [
+     0.071281,
+     0.080505,
+     0.09029
+    ],
+    "calfWidth": [
+     0.086896,
+     0.101377,
+     0.116917
+    ],
+    "ankleWidth": [
+     0.048494,
+     0.054769,
+     0.061426
+    ],
+    "shoulderHeight": [
+     1.143522,
+     1.215912,
+     1.288302
+    ],
+    "elbowHeight": [
+     0.88574,
+     0.94224,
+     0.99874
+    ],
+    "wristHeight": [
+     0.666412,
+     0.709392,
+     0.752372
+    ],
+    "kneeHeight": [
+     0.405899,
+     0.43092,
+     0.455941
+    ],
+    "hipJointHeight": [
+     0.751982,
+     0.798336,
+     0.84469
+    ],
+    "torsoJointLength": [
+     0.39154,
+     0.417576,
+     0.443612
+    ],
+    "headsTall": [
+     6.109858,
+     6.810811,
+     7.585548
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.13183,
+      0.16367
+     ],
+     "cartoonRange": [
+      0.125238,
+      0.18822
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.184382,
+      0.278666
+     ],
+     "cartoonRange": [
+      0.175163,
+      0.292599
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.1574,
+      0.237887
+     ],
+     "cartoonRange": [
+      0.14953,
+      0.249782
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.870638,
+      1.576114
+     ],
+     "cartoonRange": [
+      0.827106,
+      1.654919
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.578794,
+      1.04779
+     ],
+     "cartoonRange": [
+      0.549854,
+      1.10018
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.0357,
+      0.053956
+     ],
+     "cartoonRange": [
+      0.033915,
+      0.056654
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.032834,
+      0.049624
+     ],
+     "cartoonRange": [
+      0.031193,
+      0.052105
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.082968,
+      0.125394
+     ],
+     "cartoonRange": [
+      0.07882,
+      0.131664
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.054317,
+      0.082093
+     ],
+     "cartoonRange": [
+      0.051601,
+      0.086197
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.319805,
+      0.578949
+     ],
+     "cartoonRange": [
+      0.303815,
+      0.607896
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.298233,
+      0.3763
+     ],
+     "cartoonRange": [
+      0.289286,
+      0.387589
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.429989,
+      0.542546
+     ],
+     "cartoonRange": [
+      0.417089,
+      0.558823
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.413074,
+      0.521204
+     ],
+     "cartoonRange": [
+      0.400682,
+      0.53684
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.54,
+     0.62,
+     0.72
+    ],
+    "cadence": [
+     108,
+     122,
+     136
+    ],
+    "walkSpeed": [
+     0.972,
+     1.260667,
+     1.632
+    ],
+    "runSpeed": [
+     2.3,
+     3.4,
+     4.8
+    ],
+    "headTurnSpeed": [
+     85,
+     140,
+     200
+    ],
+    "sitDownDuration": [
+     0.9,
+     1.5,
+     2.3
+    ],
+    "standUpDuration": [
+     0.9,
+     1.5,
+     2.4
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start"
+   }
+  },
+  "female.teen": {
+   "ageYears": [
+    15,
+    15.5,
+    16
+   ],
+   "measures": {
+    "stature": [
+     1.534208,
+     1.622,
+     1.709792
+    ],
+    "headHeight": [
+     0.20995,
+     0.221,
+     0.23205
+    ],
+    "headWidth": [
+     0.14345,
+     0.151,
+     0.15855
+    ],
+    "neckLength": [
+     0.078245,
+     0.082722,
+     0.087199
+    ],
+    "upperArmLength": [
+     0.282294,
+     0.298448,
+     0.314602
+    ],
+    "forearmLength": [
+     0.239336,
+     0.253032,
+     0.266728
+    ],
+    "thighLength": [
+     0.375881,
+     0.39739,
+     0.418899
+    ],
+    "shinLength": [
+     0.372813,
+     0.394146,
+     0.415479
+    ],
+    "crotchHeight": [
+     0.718009,
+     0.759096,
+     0.800183
+    ],
+    "handLength": [
+     0.165694,
+     0.175176,
+     0.184658
+    ],
+    "footLength": [
+     0.234734,
+     0.248166,
+     0.261598
+    ],
+    "ankleHeight": [
+     0.069039,
+     0.07299,
+     0.076941
+    ],
+    "neckWidth": [
+     0.081757,
+     0.094984,
+     0.109137
+    ],
+    "shoulderWidth": [
+     0.321042,
+     0.372981,
+     0.428554
+    ],
+    "chestWidth": [
+     0.24597,
+     0.285764,
+     0.328342
+    ],
+    "waistWidth": [
+     0.20854,
+     0.242278,
+     0.278377
+    ],
+    "hipWidth": [
+     0.292249,
+     0.33953,
+     0.390119
+    ],
+    "chestDepth": [
+     0.187264,
+     0.21756,
+     0.249975
+    ],
+    "waistDepth": [
+     0.16606,
+     0.192926,
+     0.221671
+    ],
+    "handWidth": [
+     0.064901,
+     0.072994,
+     0.081562
+    ],
+    "upperArmWidth": [
+     0.061432,
+     0.071371,
+     0.082005
+    ],
+    "elbowWidth": [
+     0.049731,
+     0.055933,
+     0.062498
+    ],
+    "forearmWidth": [
+     0.056208,
+     0.065302,
+     0.075031
+    ],
+    "wristWidth": [
+     0.038979,
+     0.043839,
+     0.048985
+    ],
+    "thighWidth": [
+     0.154465,
+     0.179455,
+     0.206193
+    ],
+    "kneeWidth": [
+     0.076622,
+     0.086177,
+     0.096292
+    ],
+    "calfWidth": [
+     0.095755,
+     0.111246,
+     0.127822
+    ],
+    "ankleWidth": [
+     0.052007,
+     0.058493,
+     0.065358
+    ],
+    "shoulderHeight": [
+     1.246013,
+     1.318278,
+     1.390543
+    ],
+    "elbowHeight": [
+     0.963719,
+     1.01983,
+     1.075941
+    ],
+    "wristHeight": [
+     0.724383,
+     0.766798,
+     0.809213
+    ],
+    "kneeHeight": [
+     0.441852,
+     0.467136,
+     0.49242
+    ],
+    "hipJointHeight": [
+     0.817733,
+     0.864526,
+     0.911319
+    ],
+    "torsoJointLength": [
+     0.42828,
+     0.453752,
+     0.479224
+    ],
+    "headsTall": [
+     6.611541,
+     7.339367,
+     8.143806
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.122793,
+      0.151251
+     ],
+     "cartoonRange": [
+      0.116653,
+      0.163351
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.187767,
+      0.279332
+     ],
+     "cartoonRange": [
+      0.178378,
+      0.293299
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.170927,
+      0.25428
+     ],
+     "cartoonRange": [
+      0.16238,
+      0.266994
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.822934,
+      1.4664
+     ],
+     "cartoonRange": [
+      0.781787,
+      1.53972
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.534555,
+      0.952534
+     ],
+     "cartoonRange": [
+      0.507827,
+      1.00016
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.03593,
+      0.053451
+     ],
+     "cartoonRange": [
+      0.034133,
+      0.056124
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.032874,
+      0.048905
+     ],
+     "cartoonRange": [
+      0.03123,
+      0.051351
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.090341,
+      0.134397
+     ],
+     "cartoonRange": [
+      0.085824,
+      0.141117
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.056004,
+      0.083315
+     ],
+     "cartoonRange": [
+      0.053204,
+      0.08748
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.297934,
+      0.530897
+     ],
+     "cartoonRange": [
+      0.283038,
+      0.557442
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.305084,
+      0.378912
+     ],
+     "cartoonRange": [
+      0.295931,
+      0.390279
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.437886,
+      0.543849
+     ],
+     "cartoonRange": [
+      0.424749,
+      0.560165
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.419939,
+      0.521561
+     ],
+     "cartoonRange": [
+      0.407341,
+      0.537208
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.58,
+     0.68,
+     0.78
+    ],
+    "cadence": [
+     102,
+     116,
+     130
+    ],
+    "walkSpeed": [
+     0.986,
+     1.314667,
+     1.69
+    ],
+    "runSpeed": [
+     2.5,
+     3.7,
+     5.5
+    ],
+    "headTurnSpeed": [
+     90,
+     145,
+     205
+    ],
+    "sitDownDuration": [
+     1,
+     1.7,
+     2.6
+    ],
+    "standUpDuration": [
+     1,
+     1.6,
+     2.6
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start"
+   }
+  },
+  "female.adult": {
+   "ageYears": [
+    25,
+    32.5,
+    40
+   ],
+   "measures": {
+    "stature": [
+     1.491378,
+     1.566418,
+     1.641458
+    ],
+    "headHeight": [
+     0.2109,
+     0.222,
+     0.2331
+    ],
+    "headWidth": [
+     0.1444,
+     0.152,
+     0.1596
+    ],
+    "neckLength": [
+     0.077552,
+     0.081454,
+     0.085356
+    ],
+    "upperArmLength": [
+     0.274414,
+     0.288221,
+     0.302028
+    ],
+    "forearmLength": [
+     0.232655,
+     0.244361,
+     0.256067
+    ],
+    "thighLength": [
+     0.365388,
+     0.383772,
+     0.402157
+    ],
+    "shinLength": [
+     0.362405,
+     0.38064,
+     0.398874
+    ],
+    "crotchHeight": [
+     0.697965,
+     0.733084,
+     0.768202
+    ],
+    "handLength": [
+     0.161069,
+     0.169173,
+     0.177277
+    ],
+    "footLength": [
+     0.228181,
+     0.239662,
+     0.251143
+    ],
+    "ankleHeight": [
+     0.067112,
+     0.070489,
+     0.073866
+    ],
+    "neckWidth": [
+     0.081836,
+     0.094455,
+     0.107888
+    ],
+    "shoulderWidth": [
+     0.314928,
+     0.363487,
+     0.415181
+    ],
+    "chestWidth": [
+     0.244966,
+     0.282738,
+     0.322949
+    ],
+    "waistWidth": [
+     0.212734,
+     0.245536,
+     0.280455
+    ],
+    "hipWidth": [
+     0.290214,
+     0.334963,
+     0.3826
+    ],
+    "chestDepth": [
+     0.191902,
+     0.221492,
+     0.252991
+    ],
+    "waistDepth": [
+     0.172901,
+     0.199562,
+     0.227943
+    ],
+    "handWidth": [
+     0.063926,
+     0.071429,
+     0.079342
+    ],
+    "upperArmWidth": [
+     0.062103,
+     0.071679,
+     0.081873
+    ],
+    "elbowWidth": [
+     0.0503,
+     0.056203,
+     0.062429
+    ],
+    "forearmWidth": [
+     0.057408,
+     0.066259,
+     0.075683
+    ],
+    "wristWidth": [
+     0.038692,
+     0.043233,
+     0.048022
+    ],
+    "thighWidth": [
+     0.15667,
+     0.180827,
+     0.206544
+    ],
+    "kneeWidth": [
+     0.076712,
+     0.085714,
+     0.09521
+    ],
+    "calfWidth": [
+     0.097715,
+     0.112782,
+     0.128822
+    ],
+    "ankleWidth": [
+     0.051393,
+     0.057425,
+     0.063786
+    ],
+    "shoulderHeight": [
+     1.202926,
+     1.262964,
+     1.323002
+    ],
+    "elbowHeight": [
+     0.928512,
+     0.974743,
+     1.020974
+    ],
+    "wristHeight": [
+     0.695857,
+     0.730382,
+     0.764907
+    ],
+    "kneeHeight": [
+     0.429517,
+     0.451129,
+     0.47274
+    ],
+    "hipJointHeight": [
+     0.794905,
+     0.834901,
+     0.874897
+    ],
+    "torsoJointLength": [
+     0.408021,
+     0.428063,
+     0.448105
+    ],
+    "headsTall": [
+     6.398018,
+     7.055937,
+     7.78311
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.128483,
+      0.156298
+     ],
+     "cartoonRange": [
+      0.122059,
+      0.164113
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.191859,
+      0.278388
+     ],
+     "cartoonRange": [
+      0.182266,
+      0.292307
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.176803,
+      0.256541
+     ],
+     "cartoonRange": [
+      0.167962,
+      0.269368
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.823126,
+      1.430603
+     ],
+     "cartoonRange": [
+      0.78197,
+      1.502133
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.556022,
+      0.966373
+     ],
+     "cartoonRange": [
+      0.528221,
+      1.014692
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.037834,
+      0.054898
+     ],
+     "cartoonRange": [
+      0.034051,
+      0.054898
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.034974,
+      0.050747
+     ],
+     "cartoonRange": [
+      0.033225,
+      0.053284
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.095446,
+      0.138492
+     ],
+     "cartoonRange": [
+      0.090673,
+      0.145417
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.059529,
+      0.086378
+     ],
+     "cartoonRange": [
+      0.056553,
+      0.090697
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.300677,
+      0.522582
+     ],
+     "cartoonRange": [
+      0.270609,
+      0.522582
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.308914,
+      0.374214
+     ],
+     "cartoonRange": [
+      0.299646,
+      0.385441
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.443382,
+      0.537108
+     ],
+     "cartoonRange": [
+      0.430081,
+      0.553221
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.42521,
+      0.515095
+     ],
+     "cartoonRange": [
+      0.412454,
+      0.530548
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.55,
+     0.66,
+     0.77
+    ],
+    "cadence": [
+     100,
+     114,
+     128
+    ],
+    "walkSpeed": [
+     0.916667,
+     1.254,
+     1.642667
+    ],
+    "runSpeed": [
+     2.2,
+     3.2,
+     4.8
+    ],
+    "headTurnSpeed": [
+     80,
+     130,
+     190
+    ],
+    "sitDownDuration": [
+     1.2,
+     1.97,
+     3
+    ],
+    "standUpDuration": [
+     1.2,
+     1.91,
+     3
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start"
+   }
+  },
+  "female.elder": {
+   "ageYears": [
+    70,
+    75,
+    null
+   ],
+   "measures": {
+    "stature": [
+     1.426378,
+     1.501418,
+     1.576458
+    ],
+    "headHeight": [
+     0.2109,
+     0.222,
+     0.2331
+    ],
+    "headWidth": [
+     0.1444,
+     0.152,
+     0.1596
+    ],
+    "neckLength": [
+     0.077552,
+     0.081454,
+     0.085356
+    ],
+    "upperArmLength": [
+     0.274414,
+     0.288221,
+     0.302028
+    ],
+    "forearmLength": [
+     0.232655,
+     0.244361,
+     0.256067
+    ],
+    "thighLength": [
+     0.365388,
+     0.383772,
+     0.402157
+    ],
+    "shinLength": [
+     0.362405,
+     0.38064,
+     0.398874
+    ],
+    "crotchHeight": [
+     0.697965,
+     0.733084,
+     0.768202
+    ],
+    "handLength": [
+     0.161069,
+     0.169173,
+     0.177277
+    ],
+    "footLength": [
+     0.228181,
+     0.239662,
+     0.251143
+    ],
+    "ankleHeight": [
+     0.067112,
+     0.070489,
+     0.073866
+    ],
+    "neckWidth": [
+     0.081836,
+     0.094455,
+     0.107888
+    ],
+    "shoulderWidth": [
+     0.314928,
+     0.363487,
+     0.415181
+    ],
+    "chestWidth": [
+     0.244966,
+     0.282738,
+     0.322949
+    ],
+    "waistWidth": [
+     0.212734,
+     0.245536,
+     0.280455
+    ],
+    "hipWidth": [
+     0.290214,
+     0.334963,
+     0.3826
+    ],
+    "chestDepth": [
+     0.191902,
+     0.221492,
+     0.252991
+    ],
+    "waistDepth": [
+     0.172901,
+     0.199562,
+     0.227943
+    ],
+    "handWidth": [
+     0.063926,
+     0.071429,
+     0.079342
+    ],
+    "upperArmWidth": [
+     0.062103,
+     0.071679,
+     0.081873
+    ],
+    "elbowWidth": [
+     0.0503,
+     0.056203,
+     0.062429
+    ],
+    "forearmWidth": [
+     0.057408,
+     0.066259,
+     0.075683
+    ],
+    "wristWidth": [
+     0.038692,
+     0.043233,
+     0.048022
+    ],
+    "thighWidth": [
+     0.15667,
+     0.180827,
+     0.206544
+    ],
+    "kneeWidth": [
+     0.076712,
+     0.085714,
+     0.09521
+    ],
+    "calfWidth": [
+     0.097715,
+     0.112782,
+     0.128822
+    ],
+    "ankleWidth": [
+     0.051393,
+     0.057425,
+     0.063786
+    ],
+    "shoulderHeight": [
+     1.137926,
+     1.197964,
+     1.258002
+    ],
+    "elbowHeight": [
+     0.863512,
+     0.909743,
+     0.955974
+    ],
+    "wristHeight": [
+     0.630857,
+     0.665382,
+     0.699907
+    ],
+    "kneeHeight": [
+     0.429517,
+     0.451129,
+     0.47274
+    ],
+    "hipJointHeight": [
+     0.794905,
+     0.834901,
+     0.874897
+    ],
+    "torsoJointLength": [
+     0.343021,
+     0.363063,
+     0.383105
+    ],
+    "headsTall": [
+     6.119168,
+     6.763144,
+     7.474908
+    ],
+    "stoopDeg": [
+     0,
+     4,
+     12
+    ],
+    "heightLossVsAdult": [
+     0.02,
+     0.065,
+     0.11
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.133781,
+      0.163421
+     ],
+     "cartoonRange": [
+      0.127092,
+      0.171592
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.199769,
+      0.291074
+     ],
+     "cartoonRange": [
+      0.189781,
+      0.305627
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.184092,
+      0.268232
+     ],
+     "cartoonRange": [
+      0.174888,
+      0.281643
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.823126,
+      1.430603
+     ],
+     "cartoonRange": [
+      0.78197,
+      1.502133
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.556022,
+      0.966373
+     ],
+     "cartoonRange": [
+      0.528221,
+      1.014692
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.039394,
+      0.057399
+     ],
+     "cartoonRange": [
+      0.035455,
+      0.057399
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.036416,
+      0.05306
+     ],
+     "cartoonRange": [
+      0.034595,
+      0.055713
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.099381,
+      0.144803
+     ],
+     "cartoonRange": [
+      0.094412,
+      0.152043
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.061984,
+      0.090314
+     ],
+     "cartoonRange": [
+      0.058885,
+      0.09483
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.300677,
+      0.522582
+     ],
+     "cartoonRange": [
+      0.270609,
+      0.522582
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.321651,
+      0.391267
+     ],
+     "cartoonRange": [
+      0.312001,
+      0.403005
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.461663,
+      0.561584
+     ],
+     "cartoonRange": [
+      0.447814,
+      0.578431
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.442743,
+      0.538568
+     ],
+     "cartoonRange": [
+      0.42946,
+      0.554725
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.42,
+     0.56,
+     0.68
+    ],
+    "cadence": [
+     90,
+     108,
+     122
+    ],
+    "walkSpeed": [
+     0.63,
+     1.008,
+     1.382667
+    ],
+    "runSpeed": [
+     1.3,
+     2.1,
+     3.1
+    ],
+    "headTurnSpeed": [
+     45,
+     80,
+     125
+    ],
+    "sitDownDuration": [
+     1.7,
+     2.7,
+     4.2
+    ],
+    "standUpDuration": [
+     1.8,
+     2.9,
+     4.8
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start",
+    "optionalAdaptations": {
+     "default": "independent walking; assistance is opt-in",
+     "shortStepMultiplier": 0.85,
+     "assistedStandDuration": [
+      2.8,
+      4,
+      6
+     ],
+     "preSitPause": [
+      0.15,
+      0.35,
+      0.7
+     ],
+     "supportChoices": [
+      "none",
+      "hand on own thigh/knee",
+      "chair armrest",
+      "assistance from another person"
+     ],
+     "runNote": "Run only for a character whose mobility supports it; provide walking alternative."
+    }
+   }
+  },
+  "male.toddler": {
+   "ageYears": [
+    2,
+    2.5,
+    3
+   ],
+   "measures": {
+    "stature": [
+     0.875688,
+     0.919327,
+     0.962966
+    ],
+    "headHeight": [
+     0.17575,
+     0.185,
+     0.19425
+    ],
+    "headWidth": [
+     0.133,
+     0.14,
+     0.147
+    ],
+    "neckLength": [
+     0.037655,
+     0.039531,
+     0.041408
+    ],
+    "upperArmLength": [
+     0.139234,
+     0.146173,
+     0.153112
+    ],
+    "forearmLength": [
+     0.118218,
+     0.124109,
+     0.13
+    ],
+    "thighLength": [
+     0.179516,
+     0.188462,
+     0.197408
+    ],
+    "shinLength": [
+     0.175138,
+     0.183865,
+     0.192593
+    ],
+    "crotchHeight": [
+     0.33714,
+     0.353941,
+     0.370742
+    ],
+    "handLength": [
+     0.094574,
+     0.099287,
+     0.104
+    ],
+    "footLength": [
+     0.138359,
+     0.145254,
+     0.152149
+    ],
+    "ankleHeight": [
+     0.039406,
+     0.04137,
+     0.043333
+    ],
+    "neckWidth": [
+     0.067734,
+     0.078143,
+     0.089219
+    ],
+    "shoulderWidth": [
+     0.183281,
+     0.211445,
+     0.241416
+    ],
+    "chestWidth": [
+     0.151406,
+     0.174672,
+     0.19943
+    ],
+    "waistWidth": [
+     0.147422,
+     0.170075,
+     0.194182
+    ],
+    "hipWidth": [
+     0.153,
+     0.176511,
+     0.20153
+    ],
+    "chestDepth": [
+     0.115547,
+     0.133302,
+     0.152197
+    ],
+    "waistDepth": [
+     0.119531,
+     0.137899,
+     0.157445
+    ],
+    "handWidth": [
+     0.040334,
+     0.045047,
+     0.050016
+    ],
+    "upperArmWidth": [
+     0.041438,
+     0.047805,
+     0.054581
+    ],
+    "elbowWidth": [
+     0.036218,
+     0.04045,
+     0.044913
+    ],
+    "forearmWidth": [
+     0.037453,
+     0.043208,
+     0.049333
+    ],
+    "wristWidth": [
+     0.027987,
+     0.031257,
+     0.034705
+    ],
+    "thighWidth": [
+     0.078094,
+     0.090094,
+     0.102864
+    ],
+    "kneeWidth": [
+     0.051858,
+     0.057918,
+     0.064307
+    ],
+    "calfWidth": [
+     0.055781,
+     0.064353,
+     0.073474
+    ],
+    "ankleWidth": [
+     0.035395,
+     0.039531,
+     0.043892
+    ],
+    "shoulderHeight": [
+     0.662283,
+     0.694796,
+     0.727308
+    ],
+    "elbowHeight": [
+     0.523049,
+     0.548623,
+     0.574196
+    ],
+    "wristHeight": [
+     0.404831,
+     0.424514,
+     0.444196
+    ],
+    "kneeHeight": [
+     0.214544,
+     0.225235,
+     0.235926
+    ],
+    "hipJointHeight": [
+     0.39406,
+     0.413697,
+     0.433334
+    ],
+    "torsoJointLength": [
+     0.268223,
+     0.281099,
+     0.293974
+    ],
+    "headsTall": [
+     4.508046,
+     4.969335,
+     5.479181
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.182509,
+      0.221826
+     ],
+     "cartoonRange": [
+      0.173384,
+      0.255099
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.19033,
+      0.275687
+     ],
+     "cartoonRange": [
+      0.180813,
+      0.289472
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.158884,
+      0.230139
+     ],
+     "cartoonRange": [
+      0.15094,
+      0.241646
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.909448,
+      1.577882
+     ],
+     "cartoonRange": [
+      0.863975,
+      1.656776
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.731514,
+      1.269163
+     ],
+     "cartoonRange": [
+      0.694938,
+      1.332622
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.043032,
+      0.062329
+     ],
+     "cartoonRange": [
+      0.04088,
+      0.065446
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.038893,
+      0.056336
+     ],
+     "cartoonRange": [
+      0.036949,
+      0.059153
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.081097,
+      0.117466
+     ],
+     "cartoonRange": [
+      0.077042,
+      0.12334
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.057926,
+      0.083904
+     ],
+     "cartoonRange": [
+      0.05503,
+      0.0881
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.402843,
+      0.698914
+     ],
+     "cartoonRange": [
+      0.3827,
+      0.73386
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.267353,
+      0.323302
+     ],
+     "cartoonRange": [
+      0.259333,
+      0.333001
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.368293,
+      0.445365
+     ],
+     "cartoonRange": [
+      0.357245,
+      0.458726
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.350106,
+      0.423372
+     ],
+     "cartoonRange": [
+      0.339603,
+      0.436073
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.28,
+     0.34,
+     0.42
+    ],
+    "cadence": [
+     140,
+     160,
+     180
+    ],
+    "walkSpeed": [
+     0.653333,
+     0.906667,
+     1.26
+    ],
+    "runSpeed": [
+     1,
+     1.6,
+     2.2
+    ],
+    "headTurnSpeed": [
+     65,
+     105,
+     150
+    ],
+    "sitDownDuration": [
+     1.3,
+     2,
+     3
+    ],
+    "standUpDuration": [
+     1.2,
+     1.9,
+     3.1
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start"
+   }
+  },
+  "male.child6": {
+   "ageYears": [
+    6,
+    6,
+    6
+   ],
+   "measures": {
+    "stature": [
+     1.09632,
+     1.16,
+     1.22368
+    ],
+    "headHeight": [
+     0.19285,
+     0.203,
+     0.21315
+    ],
+    "headWidth": [
+     0.13775,
+     0.145,
+     0.15225
+    ],
+    "neckLength": [
+     0.049334,
+     0.0522,
+     0.055066
+    ],
+    "upperArmLength": [
+     0.187471,
+     0.19836,
+     0.209249
+    ],
+    "forearmLength": [
+     0.158966,
+     0.1682,
+     0.177434
+    ],
+    "thighLength": [
+     0.245576,
+     0.25984,
+     0.274104
+    ],
+    "shinLength": [
+     0.243383,
+     0.25752,
+     0.271657
+    ],
+    "crotchHeight": [
+     0.465936,
+     0.493,
+     0.520064
+    ],
+    "handLength": [
+     0.118403,
+     0.12528,
+     0.132157
+    ],
+    "footLength": [
+     0.172122,
+     0.18212,
+     0.192118
+    ],
+    "ankleHeight": [
+     0.049334,
+     0.0522,
+     0.055066
+    ],
+    "neckWidth": [
+     0.071831,
+     0.08352,
+     0.096034
+    ],
+    "shoulderWidth": [
+     0.221479,
+     0.25752,
+     0.296106
+    ],
+    "chestWidth": [
+     0.177582,
+     0.20648,
+     0.237418
+    ],
+    "waistWidth": [
+     0.164612,
+     0.1914,
+     0.220079
+    ],
+    "hipWidth": [
+     0.179577,
+     0.2088,
+     0.240086
+    ],
+    "chestDepth": [
+     0.127699,
+     0.14848,
+     0.170728
+    ],
+    "waistDepth": [
+     0.125704,
+     0.14616,
+     0.16806
+    ],
+    "handWidth": [
+     0.048435,
+     0.05452,
+     0.060964
+    ],
+    "upperArmWidth": [
+     0.04689,
+     0.05452,
+     0.062689
+    ],
+    "elbowWidth": [
+     0.040191,
+     0.04524,
+     0.050587
+    ],
+    "forearmWidth": [
+     0.042899,
+     0.04988,
+     0.057354
+    ],
+    "wristWidth": [
+     0.030916,
+     0.0348,
+     0.038913
+    ],
+    "thighWidth": [
+     0.093779,
+     0.10904,
+     0.125378
+    ],
+    "kneeWidth": [
+     0.059771,
+     0.06728,
+     0.075232
+    ],
+    "calfWidth": [
+     0.066843,
+     0.07772,
+     0.089365
+    ],
+    "ankleWidth": [
+     0.040191,
+     0.04524,
+     0.050587
+    ],
+    "shoulderHeight": [
+     0.854136,
+     0.9048,
+     0.955464
+    ],
+    "elbowHeight": [
+     0.666665,
+     0.70644,
+     0.746215
+    ],
+    "wristHeight": [
+     0.507699,
+     0.53824,
+     0.568781
+    ],
+    "kneeHeight": [
+     0.292717,
+     0.30972,
+     0.326723
+    ],
+    "hipJointHeight": [
+     0.538293,
+     0.56956,
+     0.600827
+    ],
+    "torsoJointLength": [
+     0.315843,
+     0.33524,
+     0.354637
+    ],
+    "headsTall": [
+     5.14342,
+     5.714286,
+     6.345242
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.157598,
+      0.194423
+     ],
+     "cartoonRange": [
+      0.149718,
+      0.223587
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.180994,
+      0.270091
+     ],
+     "cartoonRange": [
+      0.171945,
+      0.283595
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.146752,
+      0.218993
+     ],
+     "cartoonRange": [
+      0.139414,
+      0.229942
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.922499,
+      1.648908
+     ],
+     "cartoonRange": [
+      0.876374,
+      1.731354
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.685638,
+      1.225541
+     ],
+     "cartoonRange": [
+      0.651356,
+      1.286818
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.038319,
+      0.057181
+     ],
+     "cartoonRange": [
+      0.036403,
+      0.06004
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.035057,
+      0.052315
+     ],
+     "cartoonRange": [
+      0.033304,
+      0.054931
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.076637,
+      0.114363
+     ],
+     "cartoonRange": [
+      0.072805,
+      0.120081
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.054625,
+      0.081514
+     ],
+     "cartoonRange": [
+      0.051893,
+      0.085589
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.373989,
+      0.668476
+     ],
+     "cartoonRange": [
+      0.35529,
+      0.7019
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.283111,
+      0.35271
+     ],
+     "cartoonRange": [
+      0.274617,
+      0.363291
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.399581,
+      0.497812
+     ],
+     "cartoonRange": [
+      0.387593,
+      0.512746
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.380766,
+      0.474372
+     ],
+     "cartoonRange": [
+      0.369343,
+      0.488604
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.41,
+     0.49,
+     0.58
+    ],
+    "cadence": [
+     118,
+     136,
+     150
+    ],
+    "walkSpeed": [
+     0.806333,
+     1.110667,
+     1.45
+    ],
+    "runSpeed": [
+     1.8,
+     2.6,
+     3.6
+    ],
+    "headTurnSpeed": [
+     75,
+     125,
+     175
+    ],
+    "sitDownDuration": [
+     1,
+     1.5,
+     2.3
+    ],
+    "standUpDuration": [
+     0.9,
+     1.4,
+     2.3
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start"
+   }
+  },
+  "male.child9": {
+   "ageYears": [
+    9,
+    9,
+    9
+   ],
+   "measures": {
+    "stature": [
+     1.248719,
+     1.326,
+     1.403281
+    ],
+    "headHeight": [
+     0.2052,
+     0.216,
+     0.2268
+    ],
+    "headWidth": [
+     0.1425,
+     0.15,
+     0.1575
+    ],
+    "neckLength": [
+     0.05869,
+     0.062322,
+     0.065954
+    ],
+    "upperArmLength": [
+     0.221023,
+     0.234702,
+     0.248381
+    ],
+    "forearmLength": [
+     0.188557,
+     0.200226,
+     0.211895
+    ],
+    "thighLength": [
+     0.295946,
+     0.314262,
+     0.332578
+    ],
+    "shinLength": [
+     0.2922,
+     0.310284,
+     0.328368
+    ],
+    "crotchHeight": [
+     0.561924,
+     0.5967,
+     0.631476
+    ],
+    "handLength": [
+     0.134862,
+     0.143208,
+     0.151554
+    ],
+    "footLength": [
+     0.193551,
+     0.20553,
+     0.217509
+    ],
+    "ankleHeight": [
+     0.056192,
+     0.05967,
+     0.063148
+    ],
+    "neckWidth": [
+     0.073862,
+     0.08619,
+     0.099422
+    ],
+    "shoulderWidth": [
+     0.253403,
+     0.295698,
+     0.341096
+    ],
+    "chestWidth": [
+     0.199995,
+     0.233376,
+     0.269205
+    ],
+    "waistWidth": [
+     0.178404,
+     0.208182,
+     0.240143
+    ],
+    "hipWidth": [
+     0.205677,
+     0.240006,
+     0.276853
+    ],
+    "chestDepth": [
+     0.138633,
+     0.161772,
+     0.186608
+    ],
+    "waistDepth": [
+     0.132951,
+     0.155142,
+     0.17896
+    ],
+    "handWidth": [
+     0.053995,
+     0.060996,
+     0.068424
+    ],
+    "upperArmWidth": [
+     0.051135,
+     0.05967,
+     0.068831
+    ],
+    "elbowWidth": [
+     0.042257,
+     0.047736,
+     0.053549
+    ],
+    "forearmWidth": [
+     0.04659,
+     0.054366,
+     0.062713
+    ],
+    "wristWidth": [
+     0.032866,
+     0.037128,
+     0.041649
+    ],
+    "thighWidth": [
+     0.109088,
+     0.127296,
+     0.146839
+    ],
+    "kneeWidth": [
+     0.064559,
+     0.07293,
+     0.081811
+    ],
+    "calfWidth": [
+     0.074998,
+     0.087516,
+     0.100952
+    ],
+    "ankleWidth": [
+     0.04343,
+     0.049062,
+     0.055037
+    ],
+    "shoulderHeight": [
+     0.984829,
+     1.047678,
+     1.110527
+    ],
+    "elbowHeight": [
+     0.763806,
+     0.812976,
+     0.862146
+    ],
+    "wristHeight": [
+     0.575249,
+     0.61275,
+     0.650251
+    ],
+    "kneeHeight": [
+     0.348392,
+     0.369954,
+     0.391516
+    ],
+    "hipJointHeight": [
+     0.644338,
+     0.684216,
+     0.724094
+    ],
+    "torsoJointLength": [
+     0.340491,
+     0.363462,
+     0.386433
+    ],
+    "headsTall": [
+     5.505816,
+     6.138889,
+     6.838601
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.146229,
+      0.181626
+     ],
+     "cartoonRange": [
+      0.138917,
+      0.20887
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.180579,
+      0.273157
+     ],
+     "cartoonRange": [
+      0.17155,
+      0.286815
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.146569,
+      0.22171
+     ],
+     "cartoonRange": [
+      0.13924,
+      0.232795
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.915298,
+      1.658406
+     ],
+     "cartoonRange": [
+      0.869533,
+      1.741326
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.6444,
+      1.167573
+     ],
+     "cartoonRange": [
+      0.61218,
+      1.225952
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.03644,
+      0.055121
+     ],
+     "cartoonRange": [
+      0.034618,
+      0.057877
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.033201,
+      0.050222
+     ],
+     "cartoonRange": [
+      0.031541,
+      0.052733
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.077738,
+      0.117592
+     ],
+     "cartoonRange": [
+      0.073851,
+      0.123471
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.053445,
+      0.080844
+     ],
+     "cartoonRange": [
+      0.050773,
+      0.084887
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.348239,
+      0.630968
+     ],
+     "cartoonRange": [
+      0.330827,
+      0.662516
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.291873,
+      0.368599
+     ],
+     "cartoonRange": [
+      0.283117,
+      0.379656
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.419122,
+      0.529299
+     ],
+     "cartoonRange": [
+      0.406548,
+      0.545178
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.400436,
+      0.505699
+     ],
+     "cartoonRange": [
+      0.388423,
+      0.52087
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.48,
+     0.56,
+     0.65
+    ],
+    "cadence": [
+     112,
+     128,
+     142
+    ],
+    "walkSpeed": [
+     0.896,
+     1.194667,
+     1.538333
+    ],
+    "runSpeed": [
+     2.1,
+     3,
+     4.2
+    ],
+    "headTurnSpeed": [
+     80,
+     135,
+     190
+    ],
+    "sitDownDuration": [
+     0.9,
+     1.4,
+     2.2
+    ],
+    "standUpDuration": [
+     0.9,
+     1.4,
+     2.2
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start"
+   }
+  },
+  "male.child12": {
+   "ageYears": [
+    12,
+    12,
+    12
+   ],
+   "measures": {
+    "stature": [
+     1.400117,
+     1.491,
+     1.581883
+    ],
+    "headHeight": [
+     0.21375,
+     0.225,
+     0.23625
+    ],
+    "headWidth": [
+     0.1463,
+     0.154,
+     0.1617
+    ],
+    "neckLength": [
+     0.068606,
+     0.073059,
+     0.077512
+    ],
+    "upperArmLength": [
+     0.253421,
+     0.269871,
+     0.286321
+    ],
+    "forearmLength": [
+     0.215618,
+     0.229614,
+     0.24361
+    ],
+    "thighLength": [
+     0.340228,
+     0.362313,
+     0.384398
+    ],
+    "shinLength": [
+     0.336028,
+     0.35784,
+     0.379652
+    ],
+    "crotchHeight": [
+     0.649654,
+     0.691824,
+     0.733994
+    ],
+    "handLength": [
+     0.151213,
+     0.161028,
+     0.170843
+    ],
+    "footLength": [
+     0.215618,
+     0.229614,
+     0.24361
+    ],
+    "ankleHeight": [
+     0.063005,
+     0.067095,
+     0.071185
+    ],
+    "neckWidth": [
+     0.080269,
+     0.093933,
+     0.108628
+    ],
+    "shoulderWidth": [
+     0.299415,
+     0.350385,
+     0.405199
+    ],
+    "chestWidth": [
+     0.229339,
+     0.26838,
+     0.310365
+    ],
+    "waistWidth": [
+     0.196212,
+     0.229614,
+     0.265535
+    ],
+    "hipWidth": [
+     0.240806,
+     0.281799,
+     0.325884
+    ],
+    "chestDepth": [
+     0.160537,
+     0.187866,
+     0.217256
+    ],
+    "waistDepth": [
+     0.147796,
+     0.172956,
+     0.200013
+    ],
+    "handWidth": [
+     0.060541,
+     0.068586,
+     0.077133
+    ],
+    "upperArmWidth": [
+     0.058609,
+     0.068586,
+     0.079316
+    ],
+    "elbowWidth": [
+     0.04738,
+     0.053676,
+     0.060365
+    ],
+    "forearmWidth": [
+     0.053512,
+     0.062622,
+     0.072419
+    ],
+    "wristWidth": [
+     0.036851,
+     0.041748,
+     0.04695
+    ],
+    "thighWidth": [
+     0.128685,
+     0.150591,
+     0.174149
+    ],
+    "kneeWidth": [
+     0.07107,
+     0.080514,
+     0.090547
+    ],
+    "calfWidth": [
+     0.086639,
+     0.101388,
+     0.117249
+    ],
+    "ankleWidth": [
+     0.048696,
+     0.055167,
+     0.062041
+    ],
+    "shoulderHeight": [
+     1.117761,
+     1.192941,
+     1.268121
+    ],
+    "elbowHeight": [
+     0.86434,
+     0.92307,
+     0.9818
+    ],
+    "wristHeight": [
+     0.648722,
+     0.693456,
+     0.73819
+    ],
+    "kneeHeight": [
+     0.399033,
+     0.424935,
+     0.450837
+    ],
+    "hipJointHeight": [
+     0.739261,
+     0.787248,
+     0.835235
+    ],
+    "torsoJointLength": [
+     0.3785,
+     0.405693,
+     0.432886
+    ],
+    "headsTall": [
+     5.926421,
+     6.626667,
+     7.400622
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.135124,
+      0.168736
+     ],
+     "cartoonRange": [
+      0.128368,
+      0.194046
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.189278,
+      0.289404
+     ],
+     "cartoonRange": [
+      0.179814,
+      0.303874
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.152227,
+      0.232755
+     ],
+     "cartoonRange": [
+      0.144616,
+      0.244393
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.918778,
+      1.682678
+     ],
+     "cartoonRange": [
+      0.872839,
+      1.766812
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.602092,
+      1.102693
+     ],
+     "cartoonRange": [
+      0.571987,
+      1.157827
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.03705,
+      0.05665
+     ],
+     "cartoonRange": [
+      0.035198,
+      0.059482
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.033828,
+      0.051724
+     ],
+     "cartoonRange": [
+      0.032137,
+      0.05431
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.081349,
+      0.124382
+     ],
+     "cartoonRange": [
+      0.077282,
+      0.130601
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.05477,
+      0.083742
+     ],
+     "cartoonRange": [
+      0.052031,
+      0.087929
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.336545,
+      0.616358
+     ],
+     "cartoonRange": [
+      0.319718,
+      0.647176
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.296507,
+      0.378491
+     ],
+     "cartoonRange": [
+      0.287612,
+      0.389845
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.427501,
+      0.545704
+     ],
+     "cartoonRange": [
+      0.414676,
+      0.562076
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.410684,
+      0.524238
+     ],
+     "cartoonRange": [
+      0.398363,
+      0.539965
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.54,
+     0.62,
+     0.72
+    ],
+    "cadence": [
+     108,
+     122,
+     136
+    ],
+    "walkSpeed": [
+     0.972,
+     1.260667,
+     1.632
+    ],
+    "runSpeed": [
+     2.3,
+     3.4,
+     4.8
+    ],
+    "headTurnSpeed": [
+     85,
+     140,
+     200
+    ],
+    "sitDownDuration": [
+     0.9,
+     1.5,
+     2.3
+    ],
+    "standUpDuration": [
+     0.9,
+     1.5,
+     2.4
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start"
+   }
+  },
+  "male.teen": {
+   "ageYears": [
+    15,
+    15.5,
+    16
+   ],
+   "measures": {
+    "stature": [
+     1.611462,
+     1.711,
+     1.810538
+    ],
+    "headHeight": [
+     0.21945,
+     0.231,
+     0.24255
+    ],
+    "headWidth": [
+     0.1482,
+     0.156,
+     0.1638
+    ],
+    "neckLength": [
+     0.082185,
+     0.087261,
+     0.092337
+    ],
+    "upperArmLength": [
+     0.296509,
+     0.314824,
+     0.333139
+    ],
+    "forearmLength": [
+     0.251388,
+     0.266916,
+     0.282444
+    ],
+    "thighLength": [
+     0.394808,
+     0.419195,
+     0.443582
+    ],
+    "shinLength": [
+     0.391585,
+     0.415773,
+     0.439961
+    ],
+    "crotchHeight": [
+     0.754164,
+     0.800748,
+     0.847332
+    ],
+    "handLength": [
+     0.174038,
+     0.184788,
+     0.195538
+    ],
+    "footLength": [
+     0.246554,
+     0.261783,
+     0.277012
+    ],
+    "ankleHeight": [
+     0.072516,
+     0.076995,
+     0.081474
+    ],
+    "neckWidth": [
+     0.093852,
+     0.109504,
+     0.126303
+    ],
+    "shoulderWidth": [
+     0.365141,
+     0.426039,
+     0.491398
+    ],
+    "chestWidth": [
+     0.269823,
+     0.314824,
+     0.363122
+    ],
+    "waistWidth": [
+     0.228763,
+     0.266916,
+     0.307864
+    ],
+    "hipWidth": [
+     0.28742,
+     0.335356,
+     0.386803
+    ],
+    "chestDepth": [
+     0.195035,
+     0.227563,
+     0.262474
+    ],
+    "waistDepth": [
+     0.177438,
+     0.207031,
+     0.238792
+    ],
+    "handWidth": [
+     0.071194,
+     0.080417,
+     0.090201
+    ],
+    "upperArmWidth": [
+     0.071855,
+     0.083839,
+     0.096701
+    ],
+    "elbowWidth": [
+     0.056047,
+     0.063307,
+     0.071009
+    ],
+    "forearmWidth": [
+     0.064523,
+     0.075284,
+     0.086833
+    ],
+    "wristWidth": [
+     0.043928,
+     0.049619,
+     0.055656
+    ],
+    "thighWidth": [
+     0.156908,
+     0.183077,
+     0.211163
+    ],
+    "kneeWidth": [
+     0.083313,
+     0.094105,
+     0.105554
+    ],
+    "calfWidth": [
+     0.104117,
+     0.121481,
+     0.140118
+    ],
+    "ankleWidth": [
+     0.057561,
+     0.065018,
+     0.072928
+    ],
+    "shoulderHeight": [
+     1.309827,
+     1.392739,
+     1.475651
+    ],
+    "elbowHeight": [
+     1.013318,
+     1.077915,
+     1.142512
+    ],
+    "wristHeight": [
+     0.76193,
+     0.810999,
+     0.860068
+    ],
+    "kneeHeight": [
+     0.464101,
+     0.492768,
+     0.521435
+    ],
+    "hipJointHeight": [
+     0.858909,
+     0.911963,
+     0.965017
+    ],
+    "torsoJointLength": [
+     0.450918,
+     0.480776,
+     0.510634
+    ],
+    "headsTall": [
+     6.643834,
+     7.406926,
+     8.250344
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.121207,
+      0.150515
+     ],
+     "cartoonRange": [
+      0.115147,
+      0.162557
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.201675,
+      0.304939
+     ],
+     "cartoonRange": [
+      0.191592,
+      0.320186
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.158748,
+      0.240032
+     ],
+     "cartoonRange": [
+      0.150811,
+      0.252034
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.943997,
+      1.709686
+     ],
+     "cartoonRange": [
+      0.896797,
+      1.79517
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.59142,
+      1.071129
+     ],
+     "cartoonRange": [
+      0.561849,
+      1.124686
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.039687,
+      0.060008
+     ],
+     "cartoonRange": [
+      0.037703,
+      0.063009
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.035637,
+      0.053885
+     ],
+     "cartoonRange": [
+      0.033856,
+      0.056579
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.086664,
+      0.131038
+     ],
+     "cartoonRange": [
+      0.082331,
+      0.13759
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.057506,
+      0.086951
+     ],
+     "cartoonRange": [
+      0.054631,
+      0.091298
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.340282,
+      0.616291
+     ],
+     "cartoonRange": [
+      0.323268,
+      0.647106
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.302616,
+      0.382003
+     ],
+     "cartoonRange": [
+      0.293537,
+      0.393463
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.434342,
+      0.548287
+     ],
+     "cartoonRange": [
+      0.421312,
+      0.564735
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.416541,
+      0.525816
+     ],
+     "cartoonRange": [
+      0.404045,
+      0.54159
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.58,
+     0.68,
+     0.78
+    ],
+    "cadence": [
+     102,
+     116,
+     130
+    ],
+    "walkSpeed": [
+     0.986,
+     1.314667,
+     1.69
+    ],
+    "runSpeed": [
+     2.5,
+     3.7,
+     5.5
+    ],
+    "headTurnSpeed": [
+     90,
+     145,
+     205
+    ],
+    "sitDownDuration": [
+     1,
+     1.7,
+     2.6
+    ],
+    "standUpDuration": [
+     1,
+     1.6,
+     2.6
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start"
+   }
+  },
+  "male.adult": {
+   "ageYears": [
+    25,
+    32.5,
+    40
+   ],
+   "measures": {
+    "stature": [
+     1.614298,
+     1.694057,
+     1.773816
+    ],
+    "headHeight": [
+     0.2204,
+     0.232,
+     0.2436
+    ],
+    "headWidth": [
+     0.14915,
+     0.157,
+     0.16485
+    ],
+    "neckLength": [
+     0.083943,
+     0.088091,
+     0.092238
+    ],
+    "upperArmLength": [
+     0.297031,
+     0.311706,
+     0.326382
+    ],
+    "forearmLength": [
+     0.25183,
+     0.264273,
+     0.276715
+    ],
+    "thighLength": [
+     0.395503,
+     0.415044,
+     0.434585
+    ],
+    "shinLength": [
+     0.392274,
+     0.411656,
+     0.431037
+    ],
+    "crotchHeight": [
+     0.755491,
+     0.792819,
+     0.830146
+    ],
+    "handLength": [
+     0.174344,
+     0.182958,
+     0.191572
+    ],
+    "footLength": [
+     0.246988,
+     0.259191,
+     0.271394
+    ],
+    "ankleHeight": [
+     0.072643,
+     0.076233,
+     0.079822
+    ],
+    "neckWidth": [
+     0.098424,
+     0.113502,
+     0.129542
+    ],
+    "shoulderWidth": [
+     0.374598,
+     0.431985,
+     0.493032
+    ],
+    "chestWidth": [
+     0.279112,
+     0.321871,
+     0.367357
+    ],
+    "waistWidth": [
+     0.242387,
+     0.279519,
+     0.319021
+    ],
+    "hipWidth": [
+     0.290864,
+     0.335423,
+     0.382825
+    ],
+    "chestDepth": [
+     0.205662,
+     0.237168,
+     0.270684
+    ],
+    "waistDepth": [
+     0.190971,
+     0.220227,
+     0.25135
+    ],
+    "handWidth": [
+     0.072837,
+     0.081315,
+     0.090252
+    ],
+    "upperArmWidth": [
+     0.076389,
+     0.088091,
+     0.10054
+    ],
+    "elbowWidth": [
+     0.05918,
+     0.066068,
+     0.07333
+    ],
+    "forearmWidth": [
+     0.069044,
+     0.079621,
+     0.090873
+    ],
+    "wristWidth": [
+     0.045523,
+     0.050822,
+     0.056407
+    ],
+    "thighWidth": [
+     0.16306,
+     0.18804,
+     0.214614
+    ],
+    "kneeWidth": [
+     0.086494,
+     0.096561,
+     0.107174
+    ],
+    "calfWidth": [
+     0.110176,
+     0.127054,
+     0.145009
+    ],
+    "ankleWidth": [
+     0.05918,
+     0.066068,
+     0.07333
+    ],
+    "shoulderHeight": [
+     1.309955,
+     1.373966,
+     1.437978
+    ],
+    "elbowHeight": [
+     1.012924,
+     1.06226,
+     1.111596
+    ],
+    "wristHeight": [
+     0.761094,
+     0.797987,
+     0.834881
+    ],
+    "kneeHeight": [
+     0.464917,
+     0.487889,
+     0.510859
+    ],
+    "hipJointHeight": [
+     0.86042,
+     0.902933,
+     0.945444
+    ],
+    "torsoJointLength": [
+     0.449535,
+     0.471033,
+     0.492534
+    ],
+    "headsTall": [
+     6.626839,
+     7.30197,
+     8.048167
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.124252,
+      0.150902
+     ],
+     "cartoonRange": [
+      0.118039,
+      0.158447
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.211182,
+      0.305416
+     ],
+     "cartoonRange": [
+      0.200623,
+      0.320687
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.163976,
+      0.237146
+     ],
+     "cartoonRange": [
+      0.155778,
+      0.249004
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.97851,
+      1.69506
+     ],
+     "cartoonRange": [
+      0.929584,
+      1.779813
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.633154,
+      1.096805
+     ],
+     "cartoonRange": [
+      0.601496,
+      1.151645
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.043065,
+      0.062281
+     ],
+     "cartoonRange": [
+      0.040912,
+      0.065395
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.038924,
+      0.056293
+     ],
+     "cartoonRange": [
+      0.036978,
+      0.059107
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.091926,
+      0.132946
+     ],
+     "cartoonRange": [
+      0.08733,
+      0.139593
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.062112,
+      0.089828
+     ],
+     "cartoonRange": [
+      0.059007,
+      0.094319
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.355937,
+      0.616583
+     ],
+     "cartoonRange": [
+      0.33814,
+      0.647412
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.309424,
+      0.373597
+     ],
+     "cartoonRange": [
+      0.300141,
+      0.384805
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.444114,
+      0.536222
+     ],
+     "cartoonRange": [
+      0.430791,
+      0.552309
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.425913,
+      0.514246
+     ],
+     "cartoonRange": [
+      0.413135,
+      0.529673
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.55,
+     0.66,
+     0.77
+    ],
+    "cadence": [
+     100,
+     114,
+     128
+    ],
+    "walkSpeed": [
+     0.916667,
+     1.254,
+     1.642667
+    ],
+    "runSpeed": [
+     2.2,
+     3.2,
+     4.8
+    ],
+    "headTurnSpeed": [
+     80,
+     130,
+     190
+    ],
+    "sitDownDuration": [
+     1.2,
+     1.97,
+     3
+    ],
+    "standUpDuration": [
+     1.2,
+     1.91,
+     3
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start"
+   }
+  },
+  "male.elder": {
+   "ageYears": [
+    70,
+    75,
+    null
+   ],
+   "measures": {
+    "stature": [
+     1.574298,
+     1.654057,
+     1.733816
+    ],
+    "headHeight": [
+     0.2204,
+     0.232,
+     0.2436
+    ],
+    "headWidth": [
+     0.14915,
+     0.157,
+     0.16485
+    ],
+    "neckLength": [
+     0.083943,
+     0.088091,
+     0.092238
+    ],
+    "upperArmLength": [
+     0.297031,
+     0.311706,
+     0.326382
+    ],
+    "forearmLength": [
+     0.25183,
+     0.264273,
+     0.276715
+    ],
+    "thighLength": [
+     0.395503,
+     0.415044,
+     0.434585
+    ],
+    "shinLength": [
+     0.392274,
+     0.411656,
+     0.431037
+    ],
+    "crotchHeight": [
+     0.755491,
+     0.792819,
+     0.830146
+    ],
+    "handLength": [
+     0.174344,
+     0.182958,
+     0.191572
+    ],
+    "footLength": [
+     0.246988,
+     0.259191,
+     0.271394
+    ],
+    "ankleHeight": [
+     0.072643,
+     0.076233,
+     0.079822
+    ],
+    "neckWidth": [
+     0.098424,
+     0.113502,
+     0.129542
+    ],
+    "shoulderWidth": [
+     0.374598,
+     0.431985,
+     0.493032
+    ],
+    "chestWidth": [
+     0.279112,
+     0.321871,
+     0.367357
+    ],
+    "waistWidth": [
+     0.242387,
+     0.279519,
+     0.319021
+    ],
+    "hipWidth": [
+     0.290864,
+     0.335423,
+     0.382825
+    ],
+    "chestDepth": [
+     0.205662,
+     0.237168,
+     0.270684
+    ],
+    "waistDepth": [
+     0.190971,
+     0.220227,
+     0.25135
+    ],
+    "handWidth": [
+     0.072837,
+     0.081315,
+     0.090252
+    ],
+    "upperArmWidth": [
+     0.076389,
+     0.088091,
+     0.10054
+    ],
+    "elbowWidth": [
+     0.05918,
+     0.066068,
+     0.07333
+    ],
+    "forearmWidth": [
+     0.069044,
+     0.079621,
+     0.090873
+    ],
+    "wristWidth": [
+     0.045523,
+     0.050822,
+     0.056407
+    ],
+    "thighWidth": [
+     0.16306,
+     0.18804,
+     0.214614
+    ],
+    "kneeWidth": [
+     0.086494,
+     0.096561,
+     0.107174
+    ],
+    "calfWidth": [
+     0.110176,
+     0.127054,
+     0.145009
+    ],
+    "ankleWidth": [
+     0.05918,
+     0.066068,
+     0.07333
+    ],
+    "shoulderHeight": [
+     1.269955,
+     1.333966,
+     1.397978
+    ],
+    "elbowHeight": [
+     0.972924,
+     1.02226,
+     1.071596
+    ],
+    "wristHeight": [
+     0.721094,
+     0.757987,
+     0.794881
+    ],
+    "kneeHeight": [
+     0.464917,
+     0.487889,
+     0.510859
+    ],
+    "hipJointHeight": [
+     0.86042,
+     0.902933,
+     0.945444
+    ],
+    "torsoJointLength": [
+     0.409535,
+     0.431033,
+     0.452534
+    ],
+    "headsTall": [
+     6.462635,
+     7.129556,
+     7.866679
+    ],
+    "stoopDeg": [
+     0,
+     4,
+     12
+    ],
+    "heightLossVsAdult": [
+     0.01,
+     0.04,
+     0.08
+    ]
+   },
+   "ratios": {
+    "headHeight/stature": {
+     "real": [
+      0.127118,
+      0.154736
+     ],
+     "cartoonRange": [
+      0.120763,
+      0.162472
+     ]
+    },
+    "shoulderWidth/stature": {
+     "real": [
+      0.216054,
+      0.313176
+     ],
+     "cartoonRange": [
+      0.205251,
+      0.328835
+     ]
+    },
+    "hipWidth/stature": {
+     "real": [
+      0.167759,
+      0.243172
+     ],
+     "cartoonRange": [
+      0.159371,
+      0.25533
+     ]
+    },
+    "shoulderWidth/hipWidth": {
+     "real": [
+      0.97851,
+      1.69506
+     ],
+     "cartoonRange": [
+      0.929584,
+      1.779813
+     ]
+    },
+    "waistWidth/hipWidth": {
+     "real": [
+      0.633154,
+      1.096805
+     ],
+     "cartoonRange": [
+      0.601496,
+      1.151645
+     ]
+    },
+    "upperArmWidth/stature": {
+     "real": [
+      0.044058,
+      0.063863
+     ],
+     "cartoonRange": [
+      0.041855,
+      0.067057
+     ]
+    },
+    "forearmWidth/stature": {
+     "real": [
+      0.039822,
+      0.057723
+     ],
+     "cartoonRange": [
+      0.037831,
+      0.060609
+     ]
+    },
+    "thighWidth/stature": {
+     "real": [
+      0.094047,
+      0.136324
+     ],
+     "cartoonRange": [
+      0.089345,
+      0.14314
+     ]
+    },
+    "calfWidth/stature": {
+     "real": [
+      0.063545,
+      0.09211
+     ],
+     "cartoonRange": [
+      0.060368,
+      0.096716
+     ]
+    },
+    "upperArmWidth/thighWidth": {
+     "real": [
+      0.355937,
+      0.616583
+     ],
+     "cartoonRange": [
+      0.33814,
+      0.647412
+     ]
+    },
+    "(upperArmLength+forearmLength)/stature": {
+     "real": [
+      0.316562,
+      0.383089
+     ],
+     "cartoonRange": [
+      0.307066,
+      0.394582
+     ]
+    },
+    "(thighLength+shinLength)/stature": {
+     "real": [
+      0.45436,
+      0.549846
+     ],
+     "cartoonRange": [
+      0.440729,
+      0.566342
+     ]
+    },
+    "crotchHeight/stature": {
+     "real": [
+      0.435739,
+      0.527312
+     ],
+     "cartoonRange": [
+      0.422667,
+      0.543131
+     ]
+    }
+   },
+   "motion": {
+    "stepLength": [
+     0.42,
+     0.56,
+     0.68
+    ],
+    "cadence": [
+     90,
+     108,
+     122
+    ],
+    "walkSpeed": [
+     0.63,
+     1.008,
+     1.382667
+    ],
+    "runSpeed": [
+     1.3,
+     2.1,
+     3.1
+    ],
+    "headTurnSpeed": [
+     45,
+     80,
+     125
+    ],
+    "sitDownDuration": [
+     1.7,
+     2.7,
+     4.2
+    ],
+    "standUpDuration": [
+     1.8,
+     2.9,
+     4.8
+    ],
+    "evidenceStatus": "research-informed animation estimates, not percentiles",
+    "gaitTupleRule": "Match the same triplet index: speed = stepLength * cadence / 60. One stride = two steps.",
+    "headTurnSpeedMeaning": "mean angular speed during the active head rotation; use easing, not an instantaneous constant-speed start",
+    "optionalAdaptations": {
+     "default": "independent walking; assistance is opt-in",
+     "shortStepMultiplier": 0.85,
+     "assistedStandDuration": [
+      2.8,
+      4,
+      6
+     ],
+     "preSitPause": [
+      0.15,
+      0.35,
+      0.7
+     ],
+     "supportChoices": [
+      "none",
+      "hand on own thigh/knee",
+      "chair armrest",
+      "assistance from another person"
+     ],
+     "runNote": "Run only for a character whose mobility supports it; provide walking alternative."
+    }
+   }
+  }
+ },
+ "builds": {
+  "female": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.94,
+    "shoulderWidth": 0.97,
+    "chestWidth": 0.93,
+    "waistWidth": 0.85,
+    "hipWidth": 0.94,
+    "chestDepth": 0.88,
+    "waistDepth": 0.83,
+    "handWidth": 0.99,
+    "upperArmWidth": 0.82,
+    "elbowWidth": 0.98,
+    "forearmWidth": 0.9,
+    "wristWidth": 0.98,
+    "thighWidth": 0.87,
+    "kneeWidth": 0.98,
+    "calfWidth": 0.91,
+    "ankleWidth": 0.99,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.08,
+    "shoulderWidth": 1.06,
+    "chestWidth": 1.13,
+    "waistWidth": 1.23,
+    "hipWidth": 1.19,
+    "chestDepth": 1.23,
+    "waistDepth": 1.29,
+    "handWidth": 1.01,
+    "upperArmWidth": 1.3,
+    "elbowWidth": 1.03,
+    "forearmWidth": 1.12,
+    "wristWidth": 1.02,
+    "thighWidth": 1.28,
+    "kneeWidth": 1.04,
+    "calfWidth": 1.12,
+    "ankleWidth": 1.02,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "male": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.94,
+    "shoulderWidth": 0.97,
+    "chestWidth": 0.93,
+    "waistWidth": 0.86,
+    "hipWidth": 0.92,
+    "chestDepth": 0.88,
+    "waistDepth": 0.83,
+    "handWidth": 0.99,
+    "upperArmWidth": 0.83,
+    "elbowWidth": 0.98,
+    "forearmWidth": 0.9,
+    "wristWidth": 0.98,
+    "thighWidth": 0.85,
+    "kneeWidth": 0.98,
+    "calfWidth": 0.91,
+    "ankleWidth": 0.99,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.08,
+    "shoulderWidth": 1.06,
+    "chestWidth": 1.13,
+    "waistWidth": 1.27,
+    "hipWidth": 1.15,
+    "chestDepth": 1.23,
+    "waistDepth": 1.34,
+    "handWidth": 1.01,
+    "upperArmWidth": 1.28,
+    "elbowWidth": 1.03,
+    "forearmWidth": 1.12,
+    "wristWidth": 1.02,
+    "thighWidth": 1.23,
+    "kneeWidth": 1.04,
+    "calfWidth": 1.12,
+    "ankleWidth": 1.02,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  }
+ },
+ "buildOverrides": {
+  "female.toddler": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.961,
+    "shoulderWidth": 0.9805,
+    "chestWidth": 0.9545,
+    "waistWidth": 0.909,
+    "hipWidth": 0.948,
+    "chestDepth": 0.922,
+    "waistDepth": 0.8895,
+    "handWidth": 0.9935,
+    "upperArmWidth": 0.8895,
+    "elbowWidth": 0.987,
+    "forearmWidth": 0.935,
+    "wristWidth": 0.987,
+    "thighWidth": 0.9025,
+    "kneeWidth": 0.987,
+    "calfWidth": 0.9415,
+    "ankleWidth": 0.9935,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.052,
+    "shoulderWidth": 1.039,
+    "chestWidth": 1.0845,
+    "waistWidth": 1.1755,
+    "hipWidth": 1.0975,
+    "chestDepth": 1.1495,
+    "waistDepth": 1.221,
+    "handWidth": 1.0065,
+    "upperArmWidth": 1.182,
+    "elbowWidth": 1.0195,
+    "forearmWidth": 1.078,
+    "wristWidth": 1.013,
+    "thighWidth": 1.1495,
+    "kneeWidth": 1.026,
+    "calfWidth": 1.078,
+    "ankleWidth": 1.013,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "female.child6": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.9568,
+    "shoulderWidth": 0.9784,
+    "chestWidth": 0.9496,
+    "waistWidth": 0.8992,
+    "hipWidth": 0.9424,
+    "chestDepth": 0.9136,
+    "waistDepth": 0.8776,
+    "handWidth": 0.9928,
+    "upperArmWidth": 0.8776,
+    "elbowWidth": 0.9856,
+    "forearmWidth": 0.928,
+    "wristWidth": 0.9856,
+    "thighWidth": 0.892,
+    "kneeWidth": 0.9856,
+    "calfWidth": 0.9352,
+    "ankleWidth": 0.9928,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.0576,
+    "shoulderWidth": 1.0432,
+    "chestWidth": 1.0936,
+    "waistWidth": 1.1944,
+    "hipWidth": 1.108,
+    "chestDepth": 1.1656,
+    "waistDepth": 1.2448,
+    "handWidth": 1.0072,
+    "upperArmWidth": 1.2016,
+    "elbowWidth": 1.0216,
+    "forearmWidth": 1.0864,
+    "wristWidth": 1.0144,
+    "thighWidth": 1.1656,
+    "kneeWidth": 1.0288,
+    "calfWidth": 1.0864,
+    "ankleWidth": 1.0144,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "female.child9": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.952,
+    "shoulderWidth": 0.976,
+    "chestWidth": 0.944,
+    "waistWidth": 0.888,
+    "hipWidth": 0.936,
+    "chestDepth": 0.904,
+    "waistDepth": 0.864,
+    "handWidth": 0.992,
+    "upperArmWidth": 0.864,
+    "elbowWidth": 0.984,
+    "forearmWidth": 0.92,
+    "wristWidth": 0.984,
+    "thighWidth": 0.88,
+    "kneeWidth": 0.984,
+    "calfWidth": 0.928,
+    "ankleWidth": 0.992,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.064,
+    "shoulderWidth": 1.048,
+    "chestWidth": 1.104,
+    "waistWidth": 1.216,
+    "hipWidth": 1.12,
+    "chestDepth": 1.184,
+    "waistDepth": 1.272,
+    "handWidth": 1.008,
+    "upperArmWidth": 1.224,
+    "elbowWidth": 1.024,
+    "forearmWidth": 1.096,
+    "wristWidth": 1.016,
+    "thighWidth": 1.184,
+    "kneeWidth": 1.032,
+    "calfWidth": 1.096,
+    "ankleWidth": 1.016,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "female.child12": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.9478,
+    "shoulderWidth": 0.9739,
+    "chestWidth": 0.9391,
+    "waistWidth": 0.8695,
+    "hipWidth": 0.9478,
+    "chestDepth": 0.8956,
+    "waistDepth": 0.8521,
+    "handWidth": 0.9913,
+    "upperArmWidth": 0.8434,
+    "elbowWidth": 0.9826,
+    "forearmWidth": 0.913,
+    "wristWidth": 0.9826,
+    "thighWidth": 0.8869,
+    "kneeWidth": 0.9826,
+    "calfWidth": 0.9217,
+    "ankleWidth": 0.9913,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.0696,
+    "shoulderWidth": 1.0522,
+    "chestWidth": 1.1131,
+    "waistWidth": 1.2001,
+    "hipWidth": 1.1653,
+    "chestDepth": 1.2001,
+    "waistDepth": 1.2523,
+    "handWidth": 1.0087,
+    "upperArmWidth": 1.261,
+    "elbowWidth": 1.0261,
+    "forearmWidth": 1.1044,
+    "wristWidth": 1.0174,
+    "thighWidth": 1.2436,
+    "kneeWidth": 1.0348,
+    "calfWidth": 1.1044,
+    "ankleWidth": 1.0174,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "female.teen": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.943,
+    "shoulderWidth": 0.9715,
+    "chestWidth": 0.9335,
+    "waistWidth": 0.8575,
+    "hipWidth": 0.943,
+    "chestDepth": 0.886,
+    "waistDepth": 0.8385,
+    "handWidth": 0.9905,
+    "upperArmWidth": 0.829,
+    "elbowWidth": 0.981,
+    "forearmWidth": 0.905,
+    "wristWidth": 0.981,
+    "thighWidth": 0.8765,
+    "kneeWidth": 0.981,
+    "calfWidth": 0.9145,
+    "ankleWidth": 0.9905,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.076,
+    "shoulderWidth": 1.057,
+    "chestWidth": 1.1235,
+    "waistWidth": 1.2185,
+    "hipWidth": 1.1805,
+    "chestDepth": 1.2185,
+    "waistDepth": 1.2755,
+    "handWidth": 1.0095,
+    "upperArmWidth": 1.285,
+    "elbowWidth": 1.0285,
+    "forearmWidth": 1.114,
+    "wristWidth": 1.019,
+    "thighWidth": 1.266,
+    "kneeWidth": 1.038,
+    "calfWidth": 1.114,
+    "ankleWidth": 1.019,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "female.adult": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.94,
+    "shoulderWidth": 0.97,
+    "chestWidth": 0.93,
+    "waistWidth": 0.85,
+    "hipWidth": 0.94,
+    "chestDepth": 0.88,
+    "waistDepth": 0.83,
+    "handWidth": 0.99,
+    "upperArmWidth": 0.82,
+    "elbowWidth": 0.98,
+    "forearmWidth": 0.9,
+    "wristWidth": 0.98,
+    "thighWidth": 0.87,
+    "kneeWidth": 0.98,
+    "calfWidth": 0.91,
+    "ankleWidth": 0.99,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.08,
+    "shoulderWidth": 1.06,
+    "chestWidth": 1.13,
+    "waistWidth": 1.23,
+    "hipWidth": 1.19,
+    "chestDepth": 1.23,
+    "waistDepth": 1.29,
+    "handWidth": 1.01,
+    "upperArmWidth": 1.3,
+    "elbowWidth": 1.03,
+    "forearmWidth": 1.12,
+    "wristWidth": 1.02,
+    "thighWidth": 1.28,
+    "kneeWidth": 1.04,
+    "calfWidth": 1.12,
+    "ankleWidth": 1.02,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "female.elder": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.946,
+    "shoulderWidth": 0.973,
+    "chestWidth": 0.937,
+    "waistWidth": 0.865,
+    "hipWidth": 0.946,
+    "chestDepth": 0.892,
+    "waistDepth": 0.847,
+    "handWidth": 0.991,
+    "upperArmWidth": 0.838,
+    "elbowWidth": 0.982,
+    "forearmWidth": 0.91,
+    "wristWidth": 0.982,
+    "thighWidth": 0.883,
+    "kneeWidth": 0.982,
+    "calfWidth": 0.919,
+    "ankleWidth": 0.991,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1,
+    "stoopDeg": 1,
+    "heightLossVsAdult": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.072,
+    "shoulderWidth": 1.054,
+    "chestWidth": 1.117,
+    "waistWidth": 1.207,
+    "hipWidth": 1.171,
+    "chestDepth": 1.207,
+    "waistDepth": 1.261,
+    "handWidth": 1.009,
+    "upperArmWidth": 1.27,
+    "elbowWidth": 1.027,
+    "forearmWidth": 1.108,
+    "wristWidth": 1.018,
+    "thighWidth": 1.252,
+    "kneeWidth": 1.036,
+    "calfWidth": 1.108,
+    "ankleWidth": 1.018,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1,
+    "stoopDeg": 1,
+    "heightLossVsAdult": 1
+   }
+  },
+  "male.toddler": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.961,
+    "shoulderWidth": 0.9805,
+    "chestWidth": 0.9545,
+    "waistWidth": 0.909,
+    "hipWidth": 0.948,
+    "chestDepth": 0.922,
+    "waistDepth": 0.8895,
+    "handWidth": 0.9935,
+    "upperArmWidth": 0.8895,
+    "elbowWidth": 0.987,
+    "forearmWidth": 0.935,
+    "wristWidth": 0.987,
+    "thighWidth": 0.9025,
+    "kneeWidth": 0.987,
+    "calfWidth": 0.9415,
+    "ankleWidth": 0.9935,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.052,
+    "shoulderWidth": 1.039,
+    "chestWidth": 1.0845,
+    "waistWidth": 1.1755,
+    "hipWidth": 1.0975,
+    "chestDepth": 1.1495,
+    "waistDepth": 1.221,
+    "handWidth": 1.0065,
+    "upperArmWidth": 1.182,
+    "elbowWidth": 1.0195,
+    "forearmWidth": 1.078,
+    "wristWidth": 1.013,
+    "thighWidth": 1.1495,
+    "kneeWidth": 1.026,
+    "calfWidth": 1.078,
+    "ankleWidth": 1.013,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "male.child6": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.9568,
+    "shoulderWidth": 0.9784,
+    "chestWidth": 0.9496,
+    "waistWidth": 0.8992,
+    "hipWidth": 0.9424,
+    "chestDepth": 0.9136,
+    "waistDepth": 0.8776,
+    "handWidth": 0.9928,
+    "upperArmWidth": 0.8776,
+    "elbowWidth": 0.9856,
+    "forearmWidth": 0.928,
+    "wristWidth": 0.9856,
+    "thighWidth": 0.892,
+    "kneeWidth": 0.9856,
+    "calfWidth": 0.9352,
+    "ankleWidth": 0.9928,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.0576,
+    "shoulderWidth": 1.0432,
+    "chestWidth": 1.0936,
+    "waistWidth": 1.1944,
+    "hipWidth": 1.108,
+    "chestDepth": 1.1656,
+    "waistDepth": 1.2448,
+    "handWidth": 1.0072,
+    "upperArmWidth": 1.2016,
+    "elbowWidth": 1.0216,
+    "forearmWidth": 1.0864,
+    "wristWidth": 1.0144,
+    "thighWidth": 1.1656,
+    "kneeWidth": 1.0288,
+    "calfWidth": 1.0864,
+    "ankleWidth": 1.0144,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "male.child9": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.952,
+    "shoulderWidth": 0.976,
+    "chestWidth": 0.944,
+    "waistWidth": 0.888,
+    "hipWidth": 0.936,
+    "chestDepth": 0.904,
+    "waistDepth": 0.864,
+    "handWidth": 0.992,
+    "upperArmWidth": 0.864,
+    "elbowWidth": 0.984,
+    "forearmWidth": 0.92,
+    "wristWidth": 0.984,
+    "thighWidth": 0.88,
+    "kneeWidth": 0.984,
+    "calfWidth": 0.928,
+    "ankleWidth": 0.992,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.064,
+    "shoulderWidth": 1.048,
+    "chestWidth": 1.104,
+    "waistWidth": 1.216,
+    "hipWidth": 1.12,
+    "chestDepth": 1.184,
+    "waistDepth": 1.272,
+    "handWidth": 1.008,
+    "upperArmWidth": 1.224,
+    "elbowWidth": 1.024,
+    "forearmWidth": 1.096,
+    "wristWidth": 1.016,
+    "thighWidth": 1.184,
+    "kneeWidth": 1.032,
+    "calfWidth": 1.096,
+    "ankleWidth": 1.016,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "male.child12": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.9478,
+    "shoulderWidth": 0.9739,
+    "chestWidth": 0.9391,
+    "waistWidth": 0.8782,
+    "hipWidth": 0.9304,
+    "chestDepth": 0.8956,
+    "waistDepth": 0.8521,
+    "handWidth": 0.9913,
+    "upperArmWidth": 0.8521,
+    "elbowWidth": 0.9826,
+    "forearmWidth": 0.913,
+    "wristWidth": 0.9826,
+    "thighWidth": 0.8695,
+    "kneeWidth": 0.9826,
+    "calfWidth": 0.9217,
+    "ankleWidth": 0.9913,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.0696,
+    "shoulderWidth": 1.0522,
+    "chestWidth": 1.1131,
+    "waistWidth": 1.2349,
+    "hipWidth": 1.1305,
+    "chestDepth": 1.2001,
+    "waistDepth": 1.2958,
+    "handWidth": 1.0087,
+    "upperArmWidth": 1.2436,
+    "elbowWidth": 1.0261,
+    "forearmWidth": 1.1044,
+    "wristWidth": 1.0174,
+    "thighWidth": 1.2001,
+    "kneeWidth": 1.0348,
+    "calfWidth": 1.1044,
+    "ankleWidth": 1.0174,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "male.teen": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.943,
+    "shoulderWidth": 0.9715,
+    "chestWidth": 0.9335,
+    "waistWidth": 0.867,
+    "hipWidth": 0.924,
+    "chestDepth": 0.886,
+    "waistDepth": 0.8385,
+    "handWidth": 0.9905,
+    "upperArmWidth": 0.8385,
+    "elbowWidth": 0.981,
+    "forearmWidth": 0.905,
+    "wristWidth": 0.981,
+    "thighWidth": 0.8575,
+    "kneeWidth": 0.981,
+    "calfWidth": 0.9145,
+    "ankleWidth": 0.9905,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.076,
+    "shoulderWidth": 1.057,
+    "chestWidth": 1.1235,
+    "waistWidth": 1.2565,
+    "hipWidth": 1.1425,
+    "chestDepth": 1.2185,
+    "waistDepth": 1.323,
+    "handWidth": 1.0095,
+    "upperArmWidth": 1.266,
+    "elbowWidth": 1.0285,
+    "forearmWidth": 1.114,
+    "wristWidth": 1.019,
+    "thighWidth": 1.2185,
+    "kneeWidth": 1.038,
+    "calfWidth": 1.114,
+    "ankleWidth": 1.019,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "male.adult": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.94,
+    "shoulderWidth": 0.97,
+    "chestWidth": 0.93,
+    "waistWidth": 0.86,
+    "hipWidth": 0.92,
+    "chestDepth": 0.88,
+    "waistDepth": 0.83,
+    "handWidth": 0.99,
+    "upperArmWidth": 0.83,
+    "elbowWidth": 0.98,
+    "forearmWidth": 0.9,
+    "wristWidth": 0.98,
+    "thighWidth": 0.85,
+    "kneeWidth": 0.98,
+    "calfWidth": 0.91,
+    "ankleWidth": 0.99,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.08,
+    "shoulderWidth": 1.06,
+    "chestWidth": 1.13,
+    "waistWidth": 1.27,
+    "hipWidth": 1.15,
+    "chestDepth": 1.23,
+    "waistDepth": 1.34,
+    "handWidth": 1.01,
+    "upperArmWidth": 1.28,
+    "elbowWidth": 1.03,
+    "forearmWidth": 1.12,
+    "wristWidth": 1.02,
+    "thighWidth": 1.23,
+    "kneeWidth": 1.04,
+    "calfWidth": 1.12,
+    "ankleWidth": 1.02,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1
+   }
+  },
+  "male.elder": {
+   "thin": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 0.946,
+    "shoulderWidth": 0.973,
+    "chestWidth": 0.937,
+    "waistWidth": 0.874,
+    "hipWidth": 0.928,
+    "chestDepth": 0.892,
+    "waistDepth": 0.847,
+    "handWidth": 0.991,
+    "upperArmWidth": 0.847,
+    "elbowWidth": 0.982,
+    "forearmWidth": 0.91,
+    "wristWidth": 0.982,
+    "thighWidth": 0.865,
+    "kneeWidth": 0.982,
+    "calfWidth": 0.919,
+    "ankleWidth": 0.991,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1,
+    "stoopDeg": 1,
+    "heightLossVsAdult": 1
+   },
+   "heavy": {
+    "stature": 1,
+    "headHeight": 1,
+    "headWidth": 1,
+    "neckLength": 1,
+    "upperArmLength": 1,
+    "forearmLength": 1,
+    "thighLength": 1,
+    "shinLength": 1,
+    "crotchHeight": 1,
+    "handLength": 1,
+    "footLength": 1,
+    "ankleHeight": 1,
+    "neckWidth": 1.072,
+    "shoulderWidth": 1.054,
+    "chestWidth": 1.117,
+    "waistWidth": 1.243,
+    "hipWidth": 1.135,
+    "chestDepth": 1.207,
+    "waistDepth": 1.306,
+    "handWidth": 1.009,
+    "upperArmWidth": 1.252,
+    "elbowWidth": 1.027,
+    "forearmWidth": 1.108,
+    "wristWidth": 1.018,
+    "thighWidth": 1.207,
+    "kneeWidth": 1.036,
+    "calfWidth": 1.108,
+    "ankleWidth": 1.018,
+    "shoulderHeight": 1,
+    "elbowHeight": 1,
+    "wristHeight": 1,
+    "kneeHeight": 1,
+    "hipJointHeight": 1,
+    "torsoJointLength": 1,
+    "headsTall": 1,
+    "stoopDeg": 1,
+    "heightLossVsAdult": 1
+   }
+  }
+ },
+ "buildApplication": {
+  "priority": "Use full buildOverrides[rowId][build]. builds[sex] is an adult-only compatibility fallback.",
+  "formula": "builtMeasure = averageMeasure * multiplier, elementwise; average multiplier is 1.0.",
+  "ratios": "Recompute from built measures before applying cartoon allowances. Precomputed results are in optional-extras/build-profiles.json.",
+  "meaning": "Shape presets, not BMI categories or medical weight classifications."
+ },
+ "cartoonNotes": {
+  "headHeight/stature": "Up to 15% larger for toddler–child12, 8% for teens, 5% for adults/elders; lower limit 95% of base.",
+  "shoulderWidth/stature": "Allow 5% either side of the selected build envelope; retain age-specific shoulder form.",
+  "hipWidth/stature": "Allow 5% either side of the selected build envelope; do not infer gender identity from shape.",
+  "shoulderWidth/hipWidth": "Allow 5% either side; overlapping female and male shapes are intentional.",
+  "waistWidth/hipWidth": "Allow 5% either side; avoid automatically giving children an adult waist.",
+  "upperArmWidth/stature": "Adult/elder female: permit 10% thinner and no extra thickening beyond the selected build; others 5% either side.",
+  "forearmWidth/stature": "Permit 5% either side; keep wrists narrower than forearms.",
+  "thighWidth/stature": "Permit 5% either side of the build-specific envelope.",
+  "calfWidth/stature": "Permit 5% either side; preserve the narrower ankle.",
+  "upperArmWidth/thighWidth": "Adult/elder female: permit 10% thinner arms and no upward expansion; others 5% either side.",
+  "(upperArmLength+forearmLength)/stature": "Permit 3% either side; change endpoints and derived floor heights together.",
+  "(thighLength+shinLength)/stature": "Permit 3% either side; preserve age-specific leg length and grounded ankles.",
+  "crotchHeight/stature": "Permit 3% either side; crotch is a surface landmark, not the hip pivot."
+ }
+}

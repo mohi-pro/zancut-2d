@@ -1,0 +1,143 @@
+{
+  "id": "drink_tea_tong",
+  "about": "right hand holds a warm glass of Bangladeshi tong tea near the mouth, pauses to blow steam, and sips",
+  "group": "arms",
+  "seconds": 1.8,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            17.5,
+            -25.7,
+            8.3
+          ],
+          "wrist": [
+            -4,
+            -18,
+            26
+          ],
+          "hand": [
+            -8.5,
+            -13.4,
+            36.4
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "teaCupPinch"
+      ]
+    },
+    {
+      "u": 0.3,
+      "arms": {
+        "R": {
+          "elbow": [
+            14.6,
+            -11.9,
+            26.1
+          ],
+          "wrist": [
+            -8,
+            6,
+            24
+          ],
+          "hand": [
+            -15.2,
+            15.1,
+            27.9
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "teaCupPinch"
+      ]
+    },
+    {
+      "u": 0.55,
+      "arms": {
+        "R": {
+          "elbow": [
+            13.4,
+            -6.5,
+            28.5
+          ],
+          "wrist": [
+            -9,
+            10,
+            21
+          ],
+          "hand": [
+            -16.4,
+            19.6,
+            22.2
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "teaCupPinch"
+      ]
+    },
+    {
+      "u": 0.8,
+      "arms": {
+        "R": {
+          "elbow": [
+            14.6,
+            -11.9,
+            26.1
+          ],
+          "wrist": [
+            -8,
+            6,
+            24
+          ],
+          "hand": [
+            -15.2,
+            15.1,
+            27.9
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "teaCupPinch"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            17.5,
+            -25.7,
+            8.3
+          ],
+          "wrist": [
+            -4,
+            -18,
+            26
+          ],
+          "hand": [
+            -8.5,
+            -13.4,
+            36.4
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "teaCupPinch"
+      ]
+    }
+  ]
+}

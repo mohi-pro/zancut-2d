@@ -1,0 +1,1234 @@
+{
+ "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7123825&props=labels|descriptions|aliases|claims|sitelinks&languages=en|bn&sitefilter=enwiki&format=json",
+ "at": "2026-11-08T17:03:38.427Z",
+ "body": {
+  "entities": {
+   "Q7123825": {
+    "type": "item",
+    "id": "Q7123825",
+    "labels": {
+     "en": {
+      "language": "en",
+      "value": "Padma Bridge"
+     },
+     "bn": {
+      "language": "bn",
+      "value": "পদ্মা সেতু"
+     }
+    },
+    "descriptions": {
+     "en": {
+      "language": "en",
+      "value": "a multipurpose road-rail bridge across the Padma River"
+     },
+     "bn": {
+      "language": "bn",
+      "value": "বাংলাদেশের পদ্মা নদীর উপর নির্মিত বহুমুখী সড়ক ও রেল সেতু"
+     }
+    },
+    "aliases": {
+     "en": [
+      {
+       "language": "en",
+       "value": "Padma Multipurpose Bridge"
+      }
+     ],
+     "bn": [
+      {
+       "language": "bn",
+       "value": "পদ্মা বহুমুখী সেতু"
+      }
+     ]
+    },
+    "claims": {
+     "P625": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P625",
+        "hash": "66869dc236e481f75e6f9ef5311df562138c0513",
+        "datavalue": {
+         "value": {
+          "latitude": 23.4443,
+          "longitude": 90.261,
+          "altitude": null,
+          "precision": 0.0001,
+          "globe": "http://www.wikidata.org/entity/Q2"
+         },
+         "type": "globecoordinate"
+        },
+        "datatype": "globe-coordinate"
+       },
+       "type": "statement",
+       "id": "Q7123825$2A5F3F97-32F5-4BF5-BAC6-C5E7518217EB",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "ec6e076bbe1f2e02576e99f4682565dbd6170476",
+         "snaks": {
+          "P143": [
+           {
+            "snaktype": "value",
+            "property": "P143",
+            "hash": "6b33763b4b95716440c749b497691847e8c74882",
+            "datavalue": {
+             "value": {
+              "entity-type": "item",
+              "numeric-id": 427715,
+              "id": "Q427715"
+             },
+             "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P143"
+         ]
+        }
+       ]
+      }
+     ],
+     "P31": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P31",
+        "hash": "ebf3745cefd493b09b8eecf2b9d44b4fc9f71b5f",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 158218,
+          "id": "Q158218"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$41C12719-EE4E-4249-A491-F6B15A3A3D57",
+       "rank": "normal"
+      },
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P31",
+        "hash": "f98fc30b453c0549717b6e37be18341bb18cef61",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 6636777,
+          "id": "Q6636777"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$12c092ed-42da-50a1-6bb3-a6a93ff37f89",
+       "rank": "normal"
+      },
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P31",
+        "hash": "974fc3333556a3b2612828beb37ac3705d1b64ff",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 1243306,
+          "id": "Q1243306"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$0cb5c149-4f86-3138-480c-c72f9f7b3097",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "fee8fbc5873d5c71dc6e8deab402a961e2a67738",
+         "snaks": {
+          "P4656": [
+           {
+            "snaktype": "value",
+            "property": "P4656",
+            "hash": "b1d9d3743ef42dd4eab656b3550f9bac4e4a0549",
+            "datavalue": {
+             "value": "https://en.wikipedia.org/wiki/List_of_multi-level_bridges",
+             "type": "string"
+            },
+            "datatype": "url"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P4656"
+         ]
+        }
+       ]
+      }
+     ],
+     "P17": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P17",
+        "hash": "4a00ac835a116e416c7a7b7e3395725f0413dd5c",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 902,
+          "id": "Q902"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$8C31FFF8-514B-4694-9D23-C4BDFEBAF7F3",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+         "snaks": {
+          "P143": [
+           {
+            "snaktype": "value",
+            "property": "P143",
+            "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+            "datavalue": {
+             "value": {
+              "entity-type": "item",
+              "numeric-id": 328,
+              "id": "Q328"
+             },
+             "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P143"
+         ]
+        }
+       ]
+      }
+     ],
+     "P177": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P177",
+        "hash": "f0683e858950e1c5e38e57c46c56267032df091b",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 930773,
+          "id": "Q930773"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$E92853F3-C6F1-43A4-BA2B-F6DD1772356D",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+         "snaks": {
+          "P143": [
+           {
+            "snaktype": "value",
+            "property": "P143",
+            "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+            "datavalue": {
+             "value": {
+              "entity-type": "item",
+              "numeric-id": 328,
+              "id": "Q328"
+             },
+             "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P143"
+         ]
+        }
+       ]
+      }
+     ],
+     "P1619": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P1619",
+        "hash": "eba8ed0048c89c2da404e77a2c0644360bcb3a34",
+        "datavalue": {
+         "value": {
+          "time": "+2022-06-25T00:00:00Z",
+          "timezone": 0,
+          "before": 0,
+          "after": 0,
+          "precision": 11,
+          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+         },
+         "type": "time"
+        },
+        "datatype": "time"
+       },
+       "type": "statement",
+       "id": "Q7123825$2091a56d-45f9-c862-dd30-57633f84ddd2",
+       "rank": "normal"
+      }
+     ],
+     "P186": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P186",
+        "hash": "c7ffa46aeac7c205a3a83eee634f2a9e5b80bfe5",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 11427,
+          "id": "Q11427"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$2EB4FC80-DE0F-49A3-AE79-C9E194BDEE33",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+         "snaks": {
+          "P143": [
+           {
+            "snaktype": "value",
+            "property": "P143",
+            "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+            "datavalue": {
+             "value": {
+              "entity-type": "item",
+              "numeric-id": 328,
+              "id": "Q328"
+             },
+             "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P143"
+         ]
+        }
+       ]
+      },
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P186",
+        "hash": "fae844f0dcf485dea09f60675cbdae6081c8498e",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 22657,
+          "id": "Q22657"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$d8a66723-4a0c-dd6f-531c-b51b69e5907b",
+       "rank": "normal"
+      }
+     ],
+     "P2581": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P2581",
+        "hash": "23fac01c4c6bff0ae7b17fcbea87142f05177844",
+        "datavalue": {
+         "value": "02170536n",
+         "type": "string"
+        },
+        "datatype": "external-id"
+       },
+       "type": "statement",
+       "id": "Q7123825$B9F05DBF-B358-4214-A5C9-4139A9FC4953",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "248ac337a217a5f5eed7139a82a4e60931611af0",
+         "snaks": {
+          "P248": [
+           {
+            "snaktype": "value",
+            "property": "P248",
+            "hash": "25b816aab41db18565946259c950aed6de05dd1e",
+            "datavalue": {
+             "value": {
+              "entity-type": "item",
+              "numeric-id": 4837690,
+              "id": "Q4837690"
+             },
+             "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P248"
+         ]
+        }
+       ]
+      }
+     ],
+     "P18": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P18",
+        "hash": "dde7a6596730a53449fc1ac4ca1a4fc8174a675d",
+        "datavalue": {
+         "value": "The padma bridge 02.jpg",
+         "type": "string"
+        },
+        "datatype": "commonsMedia"
+       },
+       "type": "statement",
+       "id": "Q7123825$5588be29-4023-a22d-a055-53b3ee6ef33c",
+       "rank": "preferred"
+      },
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P18",
+        "hash": "e696898dd62a6c05ac13dfe449403224ea9a30d2",
+        "datavalue": {
+         "value": "Padma Multipurpose Bridge.jpg",
+         "type": "string"
+        },
+        "datatype": "commonsMedia"
+       },
+       "type": "statement",
+       "id": "Q7123825$d240e03b-40a9-324e-4081-362ed42a7453",
+       "rank": "normal"
+      }
+     ],
+     "P276": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P276",
+        "hash": "bca15b07bbc5936561fa114148ebe389576905bd",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 4267514,
+          "id": "Q4267514"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$CCAA7652-5A0E-4602-AC81-BC068F469EBF",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "42d1bbdd3604af68e327f7a61da55e4d47f1a996",
+         "snaks": {
+          "P143": [
+           {
+            "snaktype": "value",
+            "property": "P143",
+            "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+            "datavalue": {
+             "value": {
+              "entity-type": "item",
+              "numeric-id": 328,
+              "id": "Q328"
+             },
+             "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+           }
+          ],
+          "P4656": [
+           {
+            "snaktype": "value",
+            "property": "P4656",
+            "hash": "86ab903b387d7657d2bd137d29a91bcf7a387666",
+            "datavalue": {
+             "value": "https://en.wikipedia.org/w/index.php?title=Padma_Bridge&oldid=856981007",
+             "type": "string"
+            },
+            "datatype": "url"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P143",
+          "P4656"
+         ]
+        }
+       ]
+      },
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P276",
+        "hash": "d7a7c241cc289173434428ed7420f9e329a93552",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 15229190,
+          "id": "Q15229190"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$2f1bdc5d-4a39-ad08-25bc-3c7e37e0e136",
+       "rank": "normal"
+      }
+     ],
+     "P571": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P571",
+        "hash": "9873c4d27fa970d9d0e47ea9737cc26fc8c1c900",
+        "datavalue": {
+         "value": {
+          "time": "+2022-06-25T00:00:00Z",
+          "timezone": 0,
+          "before": 0,
+          "after": 0,
+          "precision": 11,
+          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+         },
+         "type": "time"
+        },
+        "datatype": "time"
+       },
+       "type": "statement",
+       "id": "Q7123825$F4D950F7-9A47-4739-9CE4-AA2DA0E38466",
+       "rank": "normal"
+      }
+     ],
+     "P631": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P631",
+        "hash": "12f0c75ac5f1b16d590d4d77fcba024631b96087",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 2825507,
+          "id": "Q2825507"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$662E5953-B92F-4887-A206-70A535366163",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "b54d5c74ec8c6a00233409a04699aeda0d533dc5",
+         "snaks": {
+          "P143": [
+           {
+            "snaktype": "value",
+            "property": "P143",
+            "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+            "datavalue": {
+             "value": {
+              "entity-type": "item",
+              "numeric-id": 48183,
+              "id": "Q48183"
+             },
+             "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+           }
+          ],
+          "P4656": [
+           {
+            "snaktype": "value",
+            "property": "P4656",
+            "hash": "678912442e27209bdb44dc45001e9a9b7e54674b",
+            "datavalue": {
+             "value": "https://de.wikipedia.org/w/index.php?title=Padma-Brücke&oldid=182466038",
+             "type": "string"
+            },
+            "datatype": "url"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P143",
+          "P4656"
+         ]
+        }
+       ]
+      }
+     ],
+     "P2043": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P2043",
+        "hash": "a1b73723a2fa7d1bf24df2ad351e7d9c93bb088f",
+        "datavalue": {
+         "value": {
+          "amount": "+6150",
+          "unit": "http://www.wikidata.org/entity/Q11573"
+         },
+         "type": "quantity"
+        },
+        "datatype": "quantity"
+       },
+       "type": "statement",
+       "id": "Q7123825$873ee6d6-462f-f1dc-d4ba-9333df253f2c",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+         "snaks": {
+          "P143": [
+           {
+            "snaktype": "value",
+            "property": "P143",
+            "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+            "datavalue": {
+             "value": {
+              "entity-type": "item",
+              "numeric-id": 48183,
+              "id": "Q48183"
+             },
+             "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P143"
+         ]
+        }
+       ]
+      }
+     ],
+     "P443": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P443",
+        "hash": "1ef111ef6429fd36042beaa7ac6bd6f876eb482f",
+        "datavalue": {
+         "value": "LL-Q9610 (ben)-Titodutta-পদ্মা সেতু.wav",
+         "type": "string"
+        },
+        "datatype": "commonsMedia"
+       },
+       "type": "statement",
+       "qualifiers": {
+        "P407": [
+         {
+          "snaktype": "value",
+          "property": "P407",
+          "hash": "3ee64c8d23d737a54f3ac40a80cbe1a27c2b93a3",
+          "datavalue": {
+           "value": {
+            "entity-type": "item",
+            "numeric-id": 9610,
+            "id": "Q9610"
+           },
+           "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+         }
+        ]
+       },
+       "qualifiers-order": [
+        "P407"
+       ],
+       "id": "Q7123825$dec8fac6-73cf-4e97-850a-e9edadcef2f7",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "220aec7c27a619d833fe8ee071cea6d840a714a9",
+         "snaks": {
+          "P854": [
+           {
+            "snaktype": "value",
+            "property": "P854",
+            "hash": "f15b8f29bd1cd5d181aa4462c68e713890ce63e3",
+            "datavalue": {
+             "value": "https://lingualibre.org/wiki//Q391134",
+             "type": "string"
+            },
+            "datatype": "url"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P854"
+         ]
+        }
+       ]
+      }
+     ],
+     "P2673": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P2673",
+        "hash": "1142cefac3a550cbd3152e95f406389f49f6b903",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 3304629,
+          "id": "Q3304629"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$aacdc0c4-4080-80bd-4e9d-eff7157d7e3c",
+       "rank": "normal"
+      }
+     ],
+     "P1448": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P1448",
+        "hash": "fd7e5cf773d5d65420121678f03a208c75fdacf5",
+        "datavalue": {
+         "value": {
+          "text": "Padma Multipurpose Bridge",
+          "language": "en"
+         },
+         "type": "monolingualtext"
+        },
+        "datatype": "monolingualtext"
+       },
+       "type": "statement",
+       "id": "Q7123825$25a19664-4c87-b78f-fef4-65ca230de22f",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "b4fec59fc751d1411fc0b7842a47cdbd3c9bdad8",
+         "snaks": {
+          "P248": [
+           {
+            "snaktype": "value",
+            "property": "P248",
+            "hash": "baf68895f78ad1e38cb481757615f530ad7f218c",
+            "datavalue": {
+             "value": {
+              "entity-type": "item",
+              "numeric-id": 4875421,
+              "id": "Q4875421"
+             },
+             "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+           }
+          ],
+          "P854": [
+           {
+            "snaktype": "value",
+            "property": "P854",
+            "hash": "87a4427ab14aa4d29bccefaf9e063508e3b1dc11",
+            "datavalue": {
+             "value": "https://bdnews24.com/bangladesh/2022/06/24/padma-multipurpose-bridge-the-longest-in-bangladesh-at-a-glance",
+             "type": "string"
+            },
+            "datatype": "url"
+           }
+          ],
+          "P813": [
+           {
+            "snaktype": "value",
+            "property": "P813",
+            "hash": "f373d74473bf293a2c9fbd89301efe5f7a2c5a9e",
+            "datavalue": {
+             "value": {
+              "time": "+2022-06-27T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+             },
+             "type": "time"
+            },
+            "datatype": "time"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P248",
+          "P854",
+          "P813"
+         ]
+        }
+       ]
+      },
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P1448",
+        "hash": "bce11023cbd6be5183c89ad6b9d8045a2d712529",
+        "datavalue": {
+         "value": {
+          "text": "পদ্মা বহুমুখী সেতু",
+          "language": "bn"
+         },
+         "type": "monolingualtext"
+        },
+        "datatype": "monolingualtext"
+       },
+       "type": "statement",
+       "id": "Q7123825$715f2437-45c6-a275-85cc-fe2219eae9c7",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "7486bb182750beb26e82d1ac681af274d3942945",
+         "snaks": {
+          "P854": [
+           {
+            "snaktype": "value",
+            "property": "P854",
+            "hash": "7386d9748271136dceda1e03fea1ef002f9801df",
+            "datavalue": {
+             "value": "https://www.ittefaq.com.bd/603507/এক-নজরে-পদ্মা-বহুমুখী-সেতু-প্রকল্প",
+             "type": "string"
+            },
+            "datatype": "url"
+           }
+          ],
+          "P248": [
+           {
+            "snaktype": "value",
+            "property": "P248",
+            "hash": "5547ccca4500cec44ab780891852b39898b59b00",
+            "datavalue": {
+             "value": {
+              "entity-type": "item",
+              "numeric-id": 7728667,
+              "id": "Q7728667"
+             },
+             "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+           }
+          ],
+          "P813": [
+           {
+            "snaktype": "value",
+            "property": "P813",
+            "hash": "f373d74473bf293a2c9fbd89301efe5f7a2c5a9e",
+            "datavalue": {
+             "value": {
+              "time": "+2022-06-27T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+             },
+             "type": "time"
+            },
+            "datatype": "time"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P854",
+          "P248",
+          "P813"
+         ]
+        }
+       ]
+      }
+     ],
+     "P126": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P126",
+        "hash": "6a3f9592aeb1b7ed8fea5731f975286f1e30a181",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 29026889,
+          "id": "Q29026889"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$1859916e-4da9-9695-693a-375c93b952ca",
+       "rank": "normal"
+      }
+     ],
+     "P856": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P856",
+        "hash": "a3774834e7790152ac86269cc70262449ddb227f",
+        "datavalue": {
+         "value": "http://www.padmabridge.gov.bd",
+         "type": "string"
+        },
+        "datatype": "url"
+       },
+       "type": "statement",
+       "qualifiers": {
+        "P407": [
+         {
+          "snaktype": "value",
+          "property": "P407",
+          "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+          "datavalue": {
+           "value": {
+            "entity-type": "item",
+            "numeric-id": 1860,
+            "id": "Q1860"
+           },
+           "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+         }
+        ]
+       },
+       "qualifiers-order": [
+        "P407"
+       ],
+       "id": "Q7123825$d23bf6bb-463f-95bf-e3d6-ee3cc8bdc890",
+       "rank": "normal"
+      }
+     ],
+     "P2049": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P2049",
+        "hash": "3d6a9f2259cd433dd791f545804c1948a074c9cb",
+        "datavalue": {
+         "value": {
+          "amount": "+18.18",
+          "unit": "http://www.wikidata.org/entity/Q11573"
+         },
+         "type": "quantity"
+        },
+        "datatype": "quantity"
+       },
+       "type": "statement",
+       "id": "Q7123825$de51edd6-486f-b7d6-3281-9a921982e2a9",
+       "rank": "normal"
+      }
+     ],
+     "P1314": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P1314",
+        "hash": "7b73c78f92c1b26295eb95f46be4d5d5bffebc2e",
+        "datavalue": {
+         "value": {
+          "amount": "+41",
+          "unit": "1"
+         },
+         "type": "quantity"
+        },
+        "datatype": "quantity"
+       },
+       "type": "statement",
+       "id": "Q7123825$1fce3af1-402b-1260-3b2c-2516f88c70e4",
+       "rank": "normal",
+       "references": [
+        {
+         "hash": "53a987edebc233a2a79ec74500519a882892bacb",
+         "snaks": {
+          "P854": [
+           {
+            "snaktype": "value",
+            "property": "P854",
+            "hash": "1d5d2ce65260f13375eac5a1c99a1f7a3d862d44",
+            "datavalue": {
+             "value": "http://www.padmabridge.gov.bd/mainbr.php",
+             "type": "string"
+            },
+            "datatype": "url"
+           }
+          ]
+         },
+         "snaks-order": [
+          "P854"
+         ]
+        }
+       ]
+      }
+     ],
+     "P193": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P193",
+        "hash": "e53cf5656832ab84bde93d961ddbeaba66f3ab36",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 55698131,
+          "id": "Q55698131"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$0a7c09f3-4513-f0b9-8e16-e2b2efc80677",
+       "rank": "normal"
+      }
+     ],
+     "P2130": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P2130",
+        "hash": "2b15637ce2c227665d53dea559aafcd21b80fc4f",
+        "datavalue": {
+         "value": {
+          "amount": "+3692000000",
+          "unit": "http://www.wikidata.org/entity/Q4917"
+         },
+         "type": "quantity"
+        },
+        "datatype": "quantity"
+       },
+       "type": "statement",
+       "id": "Q7123825$3f8b678c-4ad3-5139-5cb9-535baf9f8b44",
+       "rank": "normal"
+      }
+     ],
+     "P1705": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P1705",
+        "hash": "96fe6e98492b453412a5cb21de78af7096f70cd2",
+        "datavalue": {
+         "value": {
+          "text": "পদ্মা সেতু",
+          "language": "bn"
+         },
+         "type": "monolingualtext"
+        },
+        "datatype": "monolingualtext"
+       },
+       "type": "statement",
+       "id": "Q7123825$398e1d5c-4bcf-bb51-4f42-6bebfe098e9c",
+       "rank": "normal"
+      }
+     ],
+     "P2674": [
+      {
+       "mainsnak": {
+        "snaktype": "novalue",
+        "property": "P2674",
+        "hash": "1133deb1c3ceab29e9677e02486acb664eb59cbd",
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$3aa8c267-4802-2000-9780-64414d58c77d",
+       "rank": "normal"
+      }
+     ],
+     "P646": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P646",
+        "hash": "9bf8ec01b303141d68940a6866d3082bec7ea2be",
+        "datavalue": {
+         "value": "/m/0cmcdtg",
+         "type": "string"
+        },
+        "datatype": "external-id"
+       },
+       "type": "statement",
+       "id": "Q7123825$CD2EA3C4-4930-4B8E-B9C3-CD4688277791",
+       "rank": "normal"
+      }
+     ],
+     "P131": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P131",
+        "hash": "5e731c03bfd2d819db3cf3dda29be9f74e915498",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 1990519,
+          "id": "Q1990519"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$7b835bd4-49b5-415c-ffe0-aaff296bb5be",
+       "rank": "normal"
+      },
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P131",
+        "hash": "b7445749e7df1118c6dc61359a57c5270ca93385",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 928836,
+          "id": "Q928836"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$367c8047-43d7-a290-9626-eeb82761895e",
+       "rank": "normal"
+      },
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P131",
+        "hash": "1d53846e26ae4c1816e01768b5a44069ed2d4865",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 253007,
+          "id": "Q253007"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$312222cb-42ce-b866-33b5-8e9a8d88d844",
+       "rank": "normal"
+      }
+     ],
+     "P373": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P373",
+        "hash": "813a2406c5a5940c8834c41b7d9a608475ccf603",
+        "datavalue": {
+         "value": "Padma Bridge",
+         "type": "string"
+        },
+        "datatype": "string"
+       },
+       "type": "statement",
+       "id": "Q7123825$2dd45e79-5d99-4d37-8c81-2b155ebc5363",
+       "rank": "normal"
+      }
+     ],
+     "P910": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P910",
+        "hash": "c5807e03d7b01173d0aeffcadd79fb96267e6caa",
+        "datavalue": {
+         "value": {
+          "entity-type": "item",
+          "numeric-id": 112679393,
+          "id": "Q112679393"
+         },
+         "type": "wikibase-entityid"
+        },
+        "datatype": "wikibase-item"
+       },
+       "type": "statement",
+       "id": "Q7123825$54899b6d-47f1-9347-04ca-106dc330e0e1",
+       "rank": "normal"
+      }
+     ],
+     "P3451": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P3451",
+        "hash": "908635b4778d50e1e4986670d90e2d19023c3790",
+        "datavalue": {
+         "value": "বিশ্বের প্রকৌশল বিস্ময় পদ্মা সেতু.jpg",
+         "type": "string"
+        },
+        "datatype": "commonsMedia"
+       },
+       "type": "statement",
+       "id": "Q7123825$05631311-4cfa-e44e-230d-5a277437f228",
+       "rank": "normal"
+      }
+     ],
+     "P10689": [
+      {
+       "mainsnak": {
+        "snaktype": "value",
+        "property": "P10689",
+        "hash": "9aefec99864c0bef89cee1ce911d134f65d5d660",
+        "datavalue": {
+         "value": "821981466",
+         "type": "string"
+        },
+        "datatype": "external-id"
+       },
+       "type": "statement",
+       "id": "Q7123825$40B08594-5370-47F0-B64A-220A80E781B0",
+       "rank": "normal"
+      }
+     ]
+    },
+    "sitelinks": {
+     "enwiki": {
+      "site": "enwiki",
+      "title": "Padma Bridge",
+      "badges": []
+     }
+    }
+   }
+  },
+  "success": 1
+ }
+}

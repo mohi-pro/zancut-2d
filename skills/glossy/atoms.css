@@ -1,0 +1,68 @@
+/* Glossy's ready parts: the materials of core-graphic.md as classes, for both themes (the page's tokens hold the colours).
+   Put them on your elements and add your own gx- class for size, place and motion (your class wins where they differ).
+   The page marks itself .style-glossy and .theme-dark / .theme-light. */
+
+/* clear glass: cards and panels */
+.style-glossy .zk-card {
+  background: linear-gradient(160deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.04) 55%, rgba(255,255,255,.07) 100%), var(--zk-glass);
+  -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
+  border-radius: 32px; color: var(--zk-ink);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.38), inset 0 -1px 0 rgba(255,255,255,.08), 0 24px 60px rgba(0,0,0,.42);
+}
+.theme-light.style-glossy .zk-card { box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 24px 60px rgba(30,60,140,.18); }
+
+/* the 1.5 px directional specular edge (never a flat border): add it to a card, a pill or a tile */
+.style-glossy .zk-edge {
+  border: 1.5px solid transparent;
+  background: linear-gradient(160deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.04) 55%, rgba(255,255,255,.07) 100%) padding-box,
+    var(--zk-glass) padding-box,
+    linear-gradient(135deg, rgba(255,255,255,.6) 0%, rgba(255,255,255,.08) 45%, transparent 70%, color-mix(in srgb, var(--zk-a) 55%, transparent) 100%) border-box;
+}
+.theme-light.style-glossy .zk-edge {
+  background: var(--zk-glass) padding-box,
+    linear-gradient(135deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.2) 45%, transparent 70%, color-mix(in srgb, var(--zk-a) 45%, transparent) 100%) border-box;
+}
+
+/* liquid glass: the hero, pills, buttons, bubbles (clear glass + a curved specular streak + a soft inner bottom shade) */
+.style-glossy .zk-liquid {
+  position: relative;
+  background: linear-gradient(160deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,.05) 55%, rgba(255,255,255,.08) 100%), var(--zk-glass);
+  -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
+  border-radius: 32px; color: var(--zk-ink);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.42), inset 0 -10px 24px rgba(0,0,0,.25), 0 24px 60px rgba(0,0,0,.42);
+}
+.style-glossy .zk-liquid::before {
+  content: ""; position: absolute; left: 6%; top: 5%; width: 55%; height: 38%; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(ellipse at 40% 40%, rgba(255,255,255,.38) 0%, rgba(255,255,255,0) 70%);
+}
+.theme-light.style-glossy .zk-liquid { box-shadow: inset 0 1px 0 rgba(255,255,255,.95), inset 0 -10px 24px rgba(30,60,140,.10), 0 24px 60px rgba(30,60,140,.18); }
+
+/* a liquid-glass pill: icon + word */
+.style-glossy .zk-pill {
+  display: inline-flex; align-items: center; gap: calc(var(--u) * 1.2); white-space: nowrap; font-family: var(--zk-font);
+  padding: calc(var(--u) * 1.1) calc(var(--u) * 2.4); border-radius: 9999px; color: var(--zk-ink);
+}
+.style-glossy .zk-pill:not(.zk-liquid):not(.zk-card) {
+  background: linear-gradient(160deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,.05) 100%), var(--zk-glass);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 14px 34px rgba(0,0,0,.34);
+}
+.theme-light.style-glossy .zk-pill:not(.zk-liquid):not(.zk-card) { box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 14px 34px rgba(30,60,140,.14); }
+
+/* a glass squircle tile that holds an icon, a logo or a 3D emoji */
+.style-glossy .zk-tile {
+  display: grid; place-items: center; border-radius: 28%; color: var(--zk-ink);
+  background: linear-gradient(160deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.05) 100%), var(--zk-glass);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -6px 14px rgba(0,0,0,.22), 0 16px 36px rgba(0,0,0,.36);
+}
+.theme-light.style-glossy .zk-tile { box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 16px 36px rgba(30,60,140,.16); }
+
+/* display type: metallic on dark, ink on light; never the metallic clip on Bangla */
+.style-glossy .zk-title {
+  font-family: var(--zk-display); font-weight: 800; letter-spacing: -0.04em; line-height: 1.04;
+  background: linear-gradient(180deg, #FFFFFF 0%, #94A3B8 100%); -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+.theme-light.style-glossy .zk-title, .style-glossy .zk-title.zk-bn, .style-glossy .zk-bn .zk-title {
+  background: none; color: var(--zk-ink); -webkit-text-fill-color: currentColor;
+}
+.style-glossy .zk-num { font-family: var(--zk-display); font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }

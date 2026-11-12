@@ -1,0 +1,118 @@
+{
+  "id": "shh",
+  "about": "right index finger raised vertically in front of the lips to ask for silence",
+  "group": "arms",
+  "seconds": 0.8,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    },
+    {
+      "u": 0.4,
+      "arms": {
+        "R": {
+          "elbow": [
+            22,
+            -22,
+            8.1
+          ],
+          "wrist": [
+            6,
+            -6,
+            26
+          ],
+          "hand": [
+            2.9,
+            4.4,
+            31.6
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "pointUp"
+      ]
+    },
+    {
+      "u": 0.8,
+      "arms": {
+        "R": {
+          "elbow": [
+            7.7,
+            -8.5,
+            30.1
+          ],
+          "wrist": [
+            -12,
+            11,
+            22
+          ],
+          "hand": [
+            -17.6,
+            21.9,
+            22.6
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "pointUp"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            7.9,
+            -9.4,
+            29.8
+          ],
+          "wrist": [
+            -12,
+            10,
+            22
+          ],
+          "hand": [
+            -17.6,
+            20.8,
+            22.7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "pointUp"
+      ]
+    }
+  ]
+}

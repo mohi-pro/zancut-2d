@@ -1,0 +1,258 @@
+[
+  {
+    "g": "both_hands_up",
+    "max": 57.14,
+    "who": "handL",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "carry_bag_strap",
+    "max": 40.86,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "catch_both_hands",
+    "max": 50.04,
+    "who": "handL",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "chin_think",
+    "max": 41.16,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "cover_ears",
+    "max": 54.16,
+    "who": "handL",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "cover_mouth_shock",
+    "max": 43.58,
+    "who": "handR",
+    "when": 1.17,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "dismiss_wave",
+    "max": 51.48,
+    "who": "handR",
+    "when": 2,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "facepalm",
+    "max": 53.61,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "fan_hand",
+    "max": 48.97,
+    "who": "handR",
+    "when": 0.83,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "finger_wag",
+    "max": 46.02,
+    "who": "handR",
+    "when": 0.83,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "fist_pump",
+    "max": 45.47,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "fix_glasses",
+    "max": 58.71,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "hands_to_cheeks",
+    "max": 51.25,
+    "who": "handL",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "hold_nose_smell",
+    "max": 46.2,
+    "who": "handR",
+    "when": 2.83,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "knock_door",
+    "max": 48.59,
+    "who": "handR",
+    "when": 0.83,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "phone_call",
+    "max": 43.38,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "push_door",
+    "max": 44.05,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "raise_hand",
+    "max": 45.16,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "salam_adab",
+    "max": 44.73,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "scratch_head",
+    "max": 60.19,
+    "who": "handR",
+    "when": 0.83,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "shake_fist",
+    "max": 54.03,
+    "who": "handR",
+    "when": 0.83,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "shh",
+    "max": 49.22,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "stop_palm",
+    "max": 42.78,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "take_photo",
+    "max": 40.99,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "talk_argue",
+    "max": 41.87,
+    "who": "handR",
+    "when": 0.83,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "throw_overarm",
+    "max": 71,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "tie_hair",
+    "max": 55.4,
+    "who": "handR",
+    "when": 0.83,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "wave_bye",
+    "max": 55.97,
+    "who": "handR",
+    "when": 0.83,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "wave_hello",
+    "max": 58.69,
+    "who": "handR",
+    "when": 0.83,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "whisper_aside",
+    "max": 44.73,
+    "who": "handR",
+    "when": 2.83,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "wipe_sweat",
+    "max": 61.34,
+    "who": "handR",
+    "when": 1.33,
+    "root": 0,
+    "foot": 0
+  },
+  {
+    "g": "wipe_tears",
+    "max": 53.74,
+    "who": "handR",
+    "when": 0.83,
+    "root": 0,
+    "foot": 0
+  }
+]

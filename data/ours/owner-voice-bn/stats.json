@@ -1,0 +1,33 @@
+{
+ "id": "owner-voice-bn",
+ "file": "owner-voice-bn.mp4",
+ "seconds": 95,
+ "width": 1920,
+ "height": 1080,
+ "fps": "30/1",
+ "cuts": 4,
+ "cutsPerMinute": 2.5,
+ "shotSeconds": {
+  "median": 9.8,
+  "p25": 3.2,
+  "p75": 28.2,
+  "p90": 50.2
+ },
+ "stillShare": 0.45,
+ "silentShare": 0.01,
+ "loudnessLUFS": -13.9,
+ "palette": [
+  "#28252a",
+  "#5f5343",
+  "#846148",
+  "#8d7961",
+  "#a3bab9",
+  "#aa9068",
+  "#b9986c",
+  "#c0a67e",
+  "#c1cfcc",
+  "#d2ac84",
+  "#e5e2d6",
+  "#00ff00"
+ ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": "phone_call",
+  "about": "right hand brings a phone up beside the right ear to talk",
+  "group": "arms",
+  "seconds": 0.9,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "phone"
+      ]
+    },
+    {
+      "u": 0.45,
+      "arms": {
+        "R": {
+          "elbow": [
+            22.2,
+            -23.2,
+            2.3
+          ],
+          "wrist": [
+            14,
+            -6,
+            24
+          ],
+          "hand": [
+            11.3,
+            4.7,
+            29.3
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "phone"
+      ]
+    },
+    {
+      "u": 0.8,
+      "arms": {
+        "R": {
+          "elbow": [
+            26.1,
+            2.1,
+            18.8
+          ],
+          "wrist": [
+            2.1,
+            17.1,
+            12.8
+          ],
+          "hand": [
+            -4.8,
+            27.2,
+            13
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "phone"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            26.1,
+            1.4,
+            18.8
+          ],
+          "wrist": [
+            2.2,
+            16.7,
+            13.4
+          ],
+          "hand": [
+            -4.6,
+            26.8,
+            13.7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "phone"
+      ]
+    }
+  ]
+}

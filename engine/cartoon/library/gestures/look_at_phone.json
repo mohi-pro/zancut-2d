@@ -1,0 +1,118 @@
+{
+  "id": "look_at_phone",
+  "about": "right hand holds a smartphone in front of the chest at reading distance",
+  "group": "arms",
+  "seconds": 0.8,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "phone"
+      ]
+    },
+    {
+      "u": 0.45,
+      "arms": {
+        "R": {
+          "elbow": [
+            20.4,
+            -24.9,
+            0.4
+          ],
+          "wrist": [
+            4,
+            -22,
+            24
+          ],
+          "hand": [
+            1.3,
+            -17.3,
+            34.9
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "phone"
+      ]
+    },
+    {
+      "u": 0.8,
+      "arms": {
+        "R": {
+          "elbow": [
+            12.8,
+            -25.4,
+            15.1
+          ],
+          "wrist": [
+            -8,
+            -12,
+            30
+          ],
+          "hand": [
+            -12.4,
+            -5.8,
+            39.6
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "phone"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            13.3,
+            -25.7,
+            14.2
+          ],
+          "wrist": [
+            -8,
+            -13,
+            29
+          ],
+          "hand": [
+            -12.6,
+            -6.8,
+            38.5
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "phone"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": "shake_fist",
+  "about": "right fist raised and shaking in anger or protest",
+  "group": "arms",
+  "seconds": 0.6,
+  "loop": true,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            27,
+            -13.3,
+            11.4
+          ],
+          "wrist": [
+            18,
+            12,
+            22
+          ],
+          "hand": [
+            18,
+            23.2,
+            27
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    },
+    {
+      "u": 0.25,
+      "arms": {
+        "R": {
+          "elbow": [
+            27.5,
+            -5.9,
+            15.6
+          ],
+          "wrist": [
+            18,
+            20,
+            24
+          ],
+          "hand": [
+            18,
+            31.2,
+            29
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "R": {
+          "elbow": [
+            27,
+            -13.3,
+            11.4
+          ],
+          "wrist": [
+            18,
+            12,
+            22
+          ],
+          "hand": [
+            18,
+            23.2,
+            27
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "R": {
+          "elbow": [
+            27.6,
+            -7,
+            15
+          ],
+          "wrist": [
+            18,
+            19,
+            23
+          ],
+          "hand": [
+            18,
+            30.2,
+            28
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    }
+  ]
+}

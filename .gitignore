@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+
+# secrets / local config
+.env
+.env.*
+*.key
+*.pem
+data/hub/owner.key
+data/claude-login/
+
+# generated / runtime data
+data/qa/
+data/projects/
+data/teaching/
+inbox/*
+outbox/*
+!inbox/.gitkeep
+!outbox/.gitkeep
+examples/out/
+
+# downloaded reference videos (large, third-party)
+examples/*.mp4
+*.mov
+*.mkv
+
+# OS / editor
+.DS_Store
+*.log
+.claude/settings.local.json

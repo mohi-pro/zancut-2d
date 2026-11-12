@@ -1,0 +1,11 @@
+/* 2D Animation's ready parts: cartoon materials for cards and badges (the people and the world are drawn with ZC) */
+.style-2d-animation .zk-card { background: #fffaf0; color: #2a1d14; border: 5px solid #2a1d14; border-radius: 34px; box-shadow: 0 10px 0 rgba(42, 29, 20, .9); }
+.style-2d-animation .zk-pill { display: inline-flex; align-items: center; gap: calc(var(--u) * 1.2); padding: calc(var(--u) * 1) calc(var(--u) * 2.4); border-radius: 9999px;
+  background: #fffaf0; color: #2a1d14; border: 4px solid #2a1d14; font-family: var(--zk-font); font-weight: 700; box-shadow: 0 6px 0 rgba(42, 29, 20, .85); }
+.style-2d-animation .zk-tile { display: grid; place-items: center; border-radius: 28%; background: #ffe7a8; border: 4px solid #2a1d14; }
+.style-2d-animation .zk-title { font-family: var(--zk-display); font-weight: 800; color: #2a1d14; -webkit-text-stroke: 0; }
+.style-2d-animation .zk-num { font-family: var(--zk-display); font-weight: 800; font-variant-numeric: tabular-nums; }
+/* captions stay readable on any picture: light words on a soft dark pill, the spoken word in warm yellow */
+.style-2d-animation .cap-inner, .style-2d-animation.theme-light .cap-inner { padding: calc(var(--u) * .8) calc(var(--u) * 1.8); border-radius: calc(var(--u) * 1.6); background: rgba(24, 16, 12, .8); color: #fff; text-shadow: none; }
+.style-2d-animation .cap .w, .style-2d-animation.theme-light .cap .w { color: #fff; text-shadow: none; }
+.style-2d-animation .cap .w.on, .style-2d-animation.theme-light .cap .w.on { color: #ffd166; text-shadow: none; }

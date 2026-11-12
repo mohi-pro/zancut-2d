@@ -1,0 +1,52 @@
+{
+ "found": [
+  {
+   "rule": "R5",
+   "category": "out-of-frame",
+   "severity": "error",
+   "shot": 1,
+   "t": 2.5,
+   "evidence": "rafi stands at x=-6.5 m in shot 2; the frame shows ±2.8 m",
+   "key": "R5|frame:2.50@village_road:rafi:x"
+  },
+  {
+   "rule": "R4",
+   "category": "overlap",
+   "severity": "warn",
+   "shot": 2,
+   "t": 5.5,
+   "evidence": "rafi and baba stand 0.20 m apart in shot 3",
+   "key": "R4|overlap:5.50@village_road:rafi:baba"
+  },
+  {
+   "rule": "R6",
+   "category": "timing",
+   "severity": "warn",
+   "shot": 3,
+   "t": 9.8,
+   "evidence": "shot 4 lasts 0.20 s (minimum 1.2 s)",
+   "key": "R6|short:9.80@village_road"
+  }
+ ],
+ "repairs": [
+  {
+   "rule": "R5",
+   "issue": "rafi stands at x=-6.5 m in shot 2; the frame shows ±2.8 m",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R4",
+   "issue": "rafi and baba stand 0.20 m apart in shot 3",
+   "repair": "person-x",
+   "result": "applied"
+  },
+  {
+   "rule": "R6",
+   "issue": "shot 4 lasts 0.20 s (minimum 1.2 s)",
+   "repair": "shot-at",
+   "result": "applied"
+  }
+ ],
+ "remaining": []
+}

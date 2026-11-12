@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zancut 2D</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1b1b1f;--mut:#6b6b76;--line:#e4e2dc;--acc:#ff6a2b;--ok:#1f9d55;--bad:#d33}
+@media(prefers-color-scheme:dark){:root{--bg:#141417;--card:#1d1d22;--ink:#f1f0ee;--mut:#9a9aa6;--line:#2c2c33}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,sans-serif}
+header{display:flex;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--card);position:sticky;top:0;z-index:5;flex-wrap:wrap}
+header b{font-size:16px}header select{max-width:260px;width:auto}
+nav{display:flex;gap:4px;padding:8px 16px 0;flex-wrap:wrap}nav button{background:transparent;color:var(--mut);border:0;border-bottom:2px solid transparent;border-radius:0;padding:8px 12px;font-weight:600}nav button.on{color:var(--ink);border-color:var(--acc)}
+main{max-width:1100px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px}
+label{display:block;font-size:12px;color:var(--mut);margin:8px 0 3px}
+input,select,textarea{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+input[type=checkbox]{width:auto}textarea{min-height:90px;resize:vertical}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1;min-width:110px}
+button{background:var(--acc);color:#fff;border:0;border-radius:9px;padding:8px 14px;font:inherit;font-weight:600;cursor:pointer}button.g{background:transparent;color:var(--ink);border:1px solid var(--line)}button.s{padding:4px 9px;font-size:12px}button:disabled{opacity:.45;cursor:default}
+.mut{color:var(--mut);font-size:12px}.err{color:var(--bad)}.ok{color:var(--ok)}
+.shot{display:grid;grid-template-columns:230px 1fr;gap:12px}@media(max-width:700px){.shot{grid-template-columns:1fr}}
+.shot img{width:100%;border-radius:8px;background:#0001;object-fit:cover}
+.ppl{display:grid;grid-template-columns:1.1fr 1.2fr 1fr .8fr .8fr auto;gap:6px;align-items:center;margin-top:6px}
+.log{font:12px/1.5 ui-monospace,monospace;color:var(--mut);white-space:pre-wrap;max-height:160px;overflow:auto}
+video{width:100%;max-height:70vh;border-radius:10px;background:#000}
+.steps{display:flex;gap:6px;margin-bottom:10px}.st{flex:1;padding:6px;border-radius:8px;background:var(--bg);text-align:center;font-size:12px;color:var(--mut)}.st.on{background:var(--acc);color:#fff}
+.tag{display:inline-block;padding:2px 8px;border-radius:99px;border:1px solid var(--line);font-size:11px;margin:2px}
+
+.iss{border-left:3px solid var(--bad);padding:4px 8px;margin:6px 0;background:var(--bg);border-radius:4px}.iss.warn{border-color:#e0a000}
+.conf{display:inline-block;padding:1px 7px;border-radius:99px;font-size:11px;font-weight:700;margin:2px;border:1px solid var(--line)}.conf.hi{color:var(--ok)}.conf.mid{color:#b07800}.conf.lo{color:var(--bad)}
+.cmd{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.cmd input:not([type=checkbox]){flex:3;min-width:220px}.cmd input[type=checkbox]{width:auto;min-height:0;margin:0}.cmd label{flex:0 0 auto;white-space:nowrap}.cmd button{flex:0 0 auto}
+.res{margin-top:10px;padding:10px;border-radius:10px;background:var(--bg)}.res img{max-width:100%;border-radius:8px}.icons{display:flex;gap:10px;flex-wrap:wrap}.icons figure{margin:0;text-align:center;font-size:12px}.icons img{width:64px;height:64px;background:#fff;border-radius:8px;padding:4px}
+.ctrl{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px;margin-top:8px}
+table.ev{border-collapse:collapse;width:100%;font-size:12px}table.ev td,table.ev th{border-bottom:1px solid var(--line);padding:4px 6px;text-align:left}
+/* the Android app's touch layout: one column, phone width, 44 px targets */
+body.mobile main{max-width:400px;border-left:1px solid var(--line);border-right:1px solid var(--line);min-height:100vh;padding:12px}
+body.mobile .shot{grid-template-columns:1fr}body.mobile .ppl{grid-template-columns:1fr 1fr}body.mobile .ctrl{grid-template-columns:1fr 1fr}body.mobile .ctrl>div{grid-column:auto!important}body.mobile .ctrl>div:last-child{grid-column:1/-1!important}
+body.mobile button,body.mobile select,body.mobile input{min-height:44px}body.mobile .row>*{min-width:100%}body.mobile .cmd input[type=checkbox]{min-height:0}.urow{display:grid;grid-template-columns:minmax(90px,1fr) auto minmax(120px,2fr) auto;gap:10px;align-items:center;border-top:1px solid var(--line);padding:6px 0}body.mobile .urow{grid-template-columns:1fr auto}body.mobile .urow>span.mut{grid-column:1/-1}body.mobile nav button{padding:12px 10px}
+</style></head><body>
+<header><b>Zancut 2D</b><select id="proj"></select><button class="s" id="new">+ New</button><span id="cap" class="mut"></span><span style="flex:1"></span><label style="margin:0;display:flex;gap:6px;align-items:center;cursor:pointer" title="Always-on worker: processes folders dropped into inbox/"><input type="checkbox" id="ap"> Autopilot <span id="apm" class="mut"></span></label><button class="s g" id="mob" title="See the touch layout the Android app uses">📱 Mobile preview</button><button class="s g" id="undo">↶ Undo</button><button class="s g" id="redo">↷ Redo</button></header>
+<nav id="tabs"></nav>
+<main id="main"></main>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const api=async(u,o={})=>{const r=await fetch(u,o),j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||r.statusText);return j};
+const send=(u,m,b)=>api(u,{method:m,headers:{'content-type':'application/json'},body:JSON.stringify(b||{})});
+let P=null,tab='story',lib=null,qa=[],timer=null,msg='',previews={};
+const TABS=[['story','1. Voice & Story'],['board','2. Customize Scenes'],['render','3. Export MP4']]; // owner tools live at /admin
+const FACES=['','happy','worried','sad','surprised','neutral'],clone=o=>JSON.parse(JSON.stringify(o));
+async function projects(sel){const ps=await api('/api/projects');$('#proj').innerHTML=ps.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('')||'<option value="">(no projects)</option>';if(sel||P)$('#proj').value=sel||P.id;else if(ps[0]){$('#proj').value=ps[0].id;await open(ps[0].id)}}
+async function open(id){if(!id)return;P=await api('/api/projects/'+id);qa=[];previews={};draw();clearInterval(timer);timer=setInterval(async()=>{if(!P)return;const was=P.status+P.stage,n=await api('/api/projects/'+P.id).catch(()=>null);if(!n)return;const ch=(n.status+n.stage)!==was||['editing','queued'].includes(n.status);P=n;if(ch)draw(true)},2500)}
+function drawTabs(){$('#tabs').innerHTML=TABS.map(([k,t])=>`<button class="${tab===k?'on':''}" data-k="${k}">${t}</button>`).join('');document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>{tab=b.dataset.k;draw()})}
+function draw(soft){drawTabs();if(!P){$('#main').innerHTML='<div class="card">Create a project with “+ New”.</div>';return}
+ if(soft&&tab!=='render'&&document.activeElement&&$('#main').contains(document.activeElement)&&/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName))return;
+ $('#undo').disabled=!P.canUndo;$('#redo').disabled=!P.canRedo;$('#cap').textContent=P.stage&&P.stage!=='draft'?'stage: '+P.stage:'';
+ ({story,board,lib:library,render,json:advanced})[tab]()}
+const busy=()=>['queued','editing'].includes(P.status);
+/* ---------- 1 story ---------- */
+async function story(){const b=await api('/api/brain').catch(()=>null),v=P.voice;
+ $('#main').innerHTML=`<div class="card"><div class="row"><div><label>Name</label><input id="name" value="${esc(P.name)}"></div>
+ <div><label>Language</label><select id="lang">${[['bn','Bangla'],['en','English'],['hi','Hindi'],['ar','Arabic']].map(([k,t])=>`<option value="${k}" ${P.language===k?'selected':''}>${t}</option>`).join('')}</select></div>
+ <div><label>Frame</label><select id="fmt">${['16:9','9:16','1:1','4:5'].map(k=>`<option ${P.format===k?'selected':''}>${k}</option>`).join('')}</select></div></div>
+ <label>Voice recording (the film is timed to it)</label><input type="file" id="voice" accept="audio/*,video/*"><div class="mut">${v?`✔ ${esc(v.original)} · ${Math.round(v.duration||0)} s`:'No voice yet'}</div></div>
+ <div class="card"><label>Story script (Bangla or English)</label><textarea id="script" style="min-height:140px">${esc(P.film?.plan?.sentences?.map(x=>x.text).join(' ')||'')}</textarea>
+ <p class="row" style="align-items:center"><span style="flex:0;white-space:nowrap"><button id="plan">Plan scenes</button> <button class="g" id="planv" ${v?'':'disabled'}>Plan from the voice</button></span><span class="mut" style="flex:3">Planner: <b>Zancut's own brain</b>${b?` — trained from scratch on ${b.examples} examples`:''}. No outside AI, works offline.</span></p><div id="pm" class="mut">${esc(msg)}</div>
+ ${P.film?.plan?`<div class="mut">Last plan: ${esc(P.film.plan.mode||'')}</div>`:''}
+ ${(P.film?.plan?.notes||[]).map(n=>`<div class="iss warn">${esc(n)}</div>`).join('')}</div>
+ <div class="card"><b>The brain</b><p class="mut">It learns from you. Fix a shot in the storyboard and press “Make” (or “Teach the brain” there) and it is retrained from your correction in a few seconds.</p>
+ ${b?`<div class="mut">${b.examples} training examples · last trained ${esc(b.trainedAt||'')}</div><button class="g s" id="rt">Retrain now</button> <span id="rtm" class="mut"></span>`:''}</div>`;
+ const save=()=>send('/api/projects/'+P.id,'PATCH',{name:$('#name').value,language:$('#lang').value,format:$('#fmt').value}).then(n=>{P=n;projects(P.id)});
+ ['name','lang','fmt'].forEach(i=>$('#'+i).onchange=save);
+ $('#voice').onchange=async e=>{const f=e.target.files[0];if(!f)return;msg='Uploading…';draw();await fetch(`/api/projects/${P.id}/voice?name=${encodeURIComponent(f.name)}`,{method:'POST',body:f});msg='';P=await api('/api/projects/'+P.id);draw()};
+ $('#plan').onclick=async()=>{try{$('#pm').textContent='Planning…';P=await send(`/api/projects/${P.id}/plan`,'POST',{script:$('#script').value});msg='';tab='board';draw()}catch(e){$('#pm').innerHTML=`<span class="err">${esc(e.message)}</span>`}};
+ $('#planv').onclick=async()=>{try{$('#pm').textContent='Listening to the voice, then planning… (about a minute)';P=await send(`/api/projects/${P.id}/plan`,'POST',{script:''});const w=setInterval(async()=>{P=await api('/api/projects/'+P.id);if(P.film&&P.stage!=='words'){clearInterval(w);tab='board';draw()}else if(P.stage==='failed'){clearInterval(w);$('#pm').innerHTML=`<span class="err">${esc(P.error)}</span>`}},3000)}catch(e){$('#pm').innerHTML=`<span class="err">${esc(e.message)}</span>`}};
+ $('#rt')&&($('#rt').onclick=async()=>{$('#rtm').textContent='training…';const r=await send('/api/brain/retrain','POST');$('#rtm').textContent=`done: ${r.examples} examples`})}
+/* ---------- 2 storyboard ---------- */
+async function commit(film){try{P=await send(`/api/projects/${P.id}/film`,'PUT',film);draw()}catch(e){alert(e.message)}}
+async function board(){if(!lib)lib=await api('/api/library').catch(()=>null);
+ if(!P.film){$('#main').innerHTML='<div class="card">No scenes yet. Plan them from the script (tab 1), or <button id="ex">load the example</button>.</div>';$('#ex').onclick=async()=>commit(await api('/api/example'));return}
+ qa=(await api(`/api/projects/${P.id}/qa`).catch(()=>({issues:[]}))).issues;const BR=(await api(`/api/projects/${P.id}/brain`).catch(()=>({shots:[]}))).shots;
+ const pc=x=>x?`<span class="conf ${x.conf>=70?'hi':x.conf>=40?'mid':'lo'}" title="the brain: ${esc(x.label)}">${x.conf}%</span>`:'';
+ const F=P.film,ids=Object.keys(F.cast),acts=[...(lib?.basicActions||[]),...((lib?.actions||[]).map(a=>a.id))];
+ const opt=(arr,v,blank)=>(blank?'<option value=""></option>':'')+arr.map(x=>`<option ${x===v?'selected':''}>${esc(x)}</option>`).join('');
+ $('#main').innerHTML=`<div class="card"><div class="row" style="align-items:center"><b style="flex:2">${F.shots.length} shots · ${ids.length} people</b><span style="flex:0 1 auto;display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end"><button class="s g" id="addshot">+ Shot</button> <button class="s g" id="addp">+ Person</button> <button class="s g" id="teach">Teach the brain</button> <button class="s" id="rep" ${qa.length?'':'disabled'}>Repair issues (${qa.length})</button></span></div>
+ ${qa.map(i=>`<div class="iss ${i.severity==='warn'?'warn':''}"><b>${esc(i.category)}</b> ${i.t!=null?`@ ${i.t}s `:''}— ${esc(i.evidence)}</div>`).join('')||'<div class="mut ok">✔ no issues found</div>'}<div id="tm" class="mut"></div></div>
+ <div class="card"><b>Cast</b><div class="row">${ids.map(id=>{const s=F.cast[id];if(s.creation||s.description||s.dna)return `<div class="card" style="margin:6px 0;flex:1;min-width:220px"><b>${esc(id)}</b> <span class="tag">custom creation</span> <button class="s g" data-delc="${id}">remove</button><div class="mut">${esc(s.description||s.creation||'')}</div></div>`;return `<div class="card" style="margin:6px 0;flex:1;min-width:220px"><b>${esc(id)}</b> <button class="s g" data-delc="${id}">remove</button>
+ <div class="row"><div><label>gender</label><select data-c="${id}" data-f="gender">${opt(['male','female'],s.gender)}</select></div><div><label>age</label><select data-c="${id}" data-f="age">${opt(['child','teen','adult','elderly'],s.age)}</select></div></div>
+ <div class="row"><div><label>hair</label><select data-c="${id}" data-f="hair">${opt(['crop','side','bun','long','bob','bald','cap','hijab'],s.hair?.style)}</select></div><div><label>outfit</label><select data-c="${id}" data-f="outfit">${opt(['tshirt','shirt','punjabi','salwar','saree','abaya','uniform'],s.outfit?.type)}</select></div><div><label>colour</label><input type="color" data-c="${id}" data-f="color" value="${/^#[0-9a-f]{6}$/i.test(s.outfit?.color||'')?s.outfit.color:'#e0862b'}"></div></div></div>`}).join('')}</div></div>`+
+ F.shots.map((s,i)=>`<div class="card shot"><div><img id="pv${i}" src="${previews[i]||''}" alt="" ${previews[i]?'':'style="display:none"'}><button class="s g" data-pv="${i}" style="margin-top:6px">${previews[i]?'Redraw':'Preview'} shot ${i+1}</button><div class="mut" id="pvm${i}"></div></div>
+ <div><div class="row" style="align-items:end"><div style="flex:.5"><label>shot ${i+1} · starts (s)</label><input type="number" step="0.1" min="0" value="${s.at}" data-s="${i}" data-f="at"></div><div><label>place</label><select data-s="${i}" data-f="place">${opt(lib?.places||[s.place],s.place)}</select></div><span style="flex:0"><button class="s g" data-dels="${i}">delete</button></span></div>
+ <div class="ctrl"><div><label>B-roll</label><select data-cx="${i}" data-f="broll"><option value="auto" ${s.broll==null?'selected':''}>auto</option><option value="none" ${s.broll===false?'selected':''}>none</option>${s.broll?.recipe?'<option value="recipe" selected>custom recipe</option>':''}${(lib?.brollTemplates||[]).map(t=>`<option value="${t.id}" ${s.broll?.template===t.id?'selected':''}>${t.id.replace(/_/g,' ')}</option>`).join('')}</select></div>
+ <div><label>B-roll mode</label><select data-cx="${i}" data-f="bmode" ${s.broll?'':'disabled'}>${['cutaway','pip_corner'].map(m=>`<option ${s.broll?.mode===m?'selected':''}>${m}</option>`).join('')}</select></div>
+ <div><label>Motion graphics</label><select data-cx="${i}" data-f="graphic"><option value="auto" ${!Array.isArray(s.overlays)&&!s.brain?.graphic?.conf?'selected':''}>auto (from the words)</option><option value="none" ${Array.isArray(s.overlays)&&!s.overlays.length?'selected':''}>none</option>${(lib?.graphicKinds||[]).map(k=>`<option value="${k}" ${s.brain?.graphic?.label===k&&s.brain.graphic.conf===1?'selected':''}>${k.replace(/_/g,' ')}</option>`).join('')}</select></div>
+ <div><label>Camera move</label><select data-cx="${i}" data-f="move"><option value="auto" ${!s.camera?.move?'selected':''}>auto</option><option value="steady" ${s.camera?.move==='steady'?'selected':''}>steady</option>${(lib?.cameraMoves||[]).map(m=>`<option value="${m}" ${s.camera?.move===m?'selected':''}>${m.replace(/_/g,' ')}</option>`).join('')}</select></div>
+ <div style="grid-column:span 2"><label>Headline caption</label><input data-cx="${i}" data-f="headline" value="${esc(s.headline||'')}" placeholder="auto from the words"></div></div>
+ ${(s.people||[]).map((p,j)=>`<div class="ppl"><select data-s="${i}" data-p="${j}" data-f="who">${opt(ids,p.who)}</select><input list="acts" data-s="${i}" data-p="${j}" data-f="do" value="${esc(p.do||'idle')}"><select data-s="${i}" data-p="${j}" data-f="face">${opt(FACES,p.face||'')}</select><input type="number" step="0.1" title="x (m)" value="${p.x??0}" data-s="${i}" data-p="${j}" data-f="x"><label style="margin:0"><input type="checkbox" ${(s.people.some(q=>q.speaks!=null)?p.speaks:(p.who===(s.camera?.on||s.people[0]?.who)))?'checked':''} data-s="${i}" data-p="${j}" data-f="speaks" title="Lip-sync with the voice. By default the shot's main person talks."> talks</label><button class="s g" data-delp="${i}.${j}">✕</button></div>`).join('')}
+ <button class="s g" style="margin-top:8px" data-addpp="${i}">+ person in shot</button></div></div>`).join('')+`<datalist id="acts">${acts.map(a=>`<option value="${esc(a)}">`).join('')}</datalist>`;
+ const E=()=>clone(P.film);
+ $('#addshot').onclick=()=>{const f=E(),last=f.shots.at(-1);f.shots.push({...clone(last),at:Math.round(((last?.at||0)+2)*10)/10});commit(f)};
+ $('#addp').onclick=()=>{const f=E(),id='person'+(Object.keys(f.cast).length+1);f.cast[id]={gender:'male',age:'adult',skin:3,hair:{style:'crop',color:'black'},outfit:{type:'shirt',color:'#4a78a6'}};commit(f)};
+ $('#rep').onclick=async()=>{try{const r=await send(`/api/projects/${P.id}/qa/repair`,'POST');P=r.project;draw()}catch(e){alert(e.message)}};
+ $('#teach').onclick=async()=>{$('#tm').textContent='Teaching…';try{const r=await send(`/api/projects/${P.id}/teach`,'POST',{all:false});$('#tm').innerHTML=`<span class="ok">Learned ${r.learned} shots; brain retrained on ${r.examples} examples.</span>`}catch(e){$('#tm').innerHTML=`<span class="err">${esc(e.message)}</span>`}};
+ document.querySelectorAll('[data-c]').forEach(el=>el.onchange=()=>{const f=E(),c=f.cast[el.dataset.c],k=el.dataset.f;if(k==='gender'||k==='age')c[k]=el.value;if(k==='hair')c.hair={...(c.hair||{}),style:el.value};if(k==='outfit')c.outfit={...(c.outfit||{}),type:el.value};if(k==='color')c.outfit={...(c.outfit||{}),color:el.value};commit(f)});
+ document.querySelectorAll('[data-s]').forEach(el=>el.onchange=()=>{const f=E(),s=f.shots[+el.dataset.s],k=el.dataset.f,v=el.type==='checkbox'?el.checked:el.type==='number'?+el.value:el.value;if(el.dataset.p!=null){const p=s.people[+el.dataset.p];if(k==='face'&&!v)delete p.face;else if(k==='speaks'&&!v)delete p.speaks;else p[k]=v}else s[k]=v;commit(f)});
+ document.querySelectorAll('[data-cx]').forEach(el=>el.onchange=()=>{const f=E(),s=f.shots[+el.dataset.cx],k=el.dataset.f,v=el.value;
+  if(k==='broll'){if(v==='auto')delete s.broll;else if(v==='none')s.broll=false;else if(v!=='recipe')s.broll={mode:s.broll?.mode||(s.people?.length?'pip_corner':'cutaway'),template:v,...(s.people?.length?{corner:'tr',top:0.17}:{})}}
+  if(k==='bmode'&&s.broll)s.broll.mode=v;
+  if(k==='graphic'){if(s.brain)delete s.brain.graphic;if(v==='auto')delete s.overlays;else if(v==='none')s.overlays=[];else{delete s.overlays;s.brain={...(s.brain||{}),graphic:{label:v,conf:1}}}}
+  if(k==='move'){s.camera={...(s.camera||{})};if(v==='auto')delete s.camera.move;else s.camera.move=v}
+  if(k==='headline'){if(v.trim())s.headline=v.trim();else delete s.headline}
+  commit(f)});
+ document.querySelectorAll('[data-dels]').forEach(b=>b.onclick=()=>{const f=E();if(f.shots.length<2)return alert('A film needs a shot.');f.shots.splice(+b.dataset.dels,1);commit(f)});
+ document.querySelectorAll('[data-delp]').forEach(b=>b.onclick=()=>{const[i,j]=b.dataset.delp.split('.').map(Number),f=E();f.shots[i].people.splice(j,1);commit(f)});
+ document.querySelectorAll('[data-addpp]').forEach(b=>b.onclick=()=>{const f=E(),s=f.shots[+b.dataset.addpp],used=new Set(s.people.map(p=>p.who)),who=ids.find(x=>!used.has(x))||ids[0];s.people.push({who,x:s.people.length?1.3:0,dz:1,do:'idle'});commit(f)});
+ document.querySelectorAll('[data-delc]').forEach(b=>b.onclick=()=>{const f=E(),id=b.dataset.delc;if(ids.length<2)return alert('Keep one person.');delete f.cast[id];f.shots.forEach(s=>s.people=(s.people||[]).filter(p=>p.who!==id));f.shots=f.shots.filter(s=>s.people.length);commit(f)});
+ document.querySelectorAll('[data-pv]').forEach(b=>b.onclick=async()=>{const i=+b.dataset.pv;b.disabled=true;$('#pvm'+i).textContent='Drawing with the engine… (10–20 s)';try{const r=await send(`/api/projects/${P.id}/preview`,'POST',{shot:i});previews[i]=r.url;draw()}catch(e){b.disabled=false;$('#pvm'+i).innerHTML=`<span class="err">${esc(e.message)}</span>`}});
+}
+/* ---------- library ---------- */
+async function library(){const q=window.__q||'';lib=await api('/api/library?q='+encodeURIComponent(q));
+ const chips=l=>l.map(x=>`<span class="tag" title="${esc(x.about||'')}">${esc(x.id)}</span>`).join('')||'<span class="mut">none</span>';
+ $('#main').innerHTML=`<div class="card"><input id="q" placeholder="Search the library (walk, tree, school…)" value="${esc(q)}"><p class="mut">Read-only. ${lib.counts.actions} actions · ${lib.counts.gestures} gestures · ${lib.counts.set} set pieces · ${lib.counts.props} props · ${lib.counts.hands} hand shapes. Type an action id into a person's “do” box in the storyboard.</p></div>
+ <div class="card"><b>Ready places (${lib.places.length})</b><br>${lib.places.map(p=>`<span class="tag">${p}</span>`).join('')}</div><div class="card"><b>Basic actions</b><br>${lib.basicActions.map(p=>`<span class="tag">${p}</span>`).join('')}</div>
+ <div class="card"><b>Actions</b><br>${chips(lib.actions)}</div><div class="card"><b>Gestures</b><br>${chips(lib.gestures)}</div><div class="card"><b>Set pieces</b><br>${chips(lib.set)}</div><div class="card"><b>Props</b><br>${chips(lib.props)}</div>`;
+ let t;$('#q').oninput=e=>{window.__q=e.target.value;clearTimeout(t);t=setTimeout(library,300)};$('#q').focus();$('#q').setSelectionRange(1e4,1e4)}
+/* ---------- 3 render ---------- */
+function render(){const v=P.versions.at(-1),st=P.stage,S=(k,t)=>`<div class="st ${st===k?'on':''}">${t}</div>`;
+ $('#main').innerHTML=`<div class="card"><div class="steps">${S('words','Words')}${S('plan','Shots')}${S('render','Render')}${S('checking','Check')}${S('done','Done')}</div>
+ <p><button id="go" ${busy()||!P.voice||!P.film?'disabled':''}>${busy()?'Working…':'Make the animation'}</button> ${busy()?'<button class="g" id="stop">Stop</button>':''} <span class="mut">${P.voice?'':'Upload the voice first. '}${P.film?'':'Plan the scenes first. '}Frame ${esc(P.format||'16:9')}</span></p>
+ ${P.error?`<div class="err">${esc(P.error)}</div>`:''}<div class="log">${(P.job?.steps||[]).map(s=>esc(s.text||s)).join('\n')}</div></div>
+ ${v?`<div class="card"><b>Film v${v.n}</b> · ${v.width}×${v.height} · ${Math.round(v.duration)} s<video controls src="/video/${P.id}/${v.file}"></video><p><a href="/video/${P.id}/${v.file}?dl=1">Download MP4</a></p>${v.music?`<p class="mut">Music: ${esc(v.music.title)} (${esc(v.music.mood)})${v.music.license==='by'?` — <b>credit required in the video description:</b> ${esc(v.music.credit)}`:' — CC0, no credit needed'}</p>`:''}
+ ${v.qa?`<b>Checks on the finished file</b> <span class="${v.qa.ok?'ok':'err'}">${v.qa.ok?'passed':'failed'}</span> <span class="mut">${v.qa.facts.seconds}s · ${v.qa.facts.fps} fps · ${v.qa.facts.width}×${v.qa.facts.height} · audio ${v.qa.facts.audio?'yes':'no'}</span>${v.qa.issues.map(i=>`<div class="iss ${i.severity==='warn'?'warn':''}"><b>${esc(i.category)}</b> — ${esc(i.evidence)}</div>`).join('')}`:''}</div>`:''}`;
+ $('#go').onclick=async()=>{try{P=await send(`/api/projects/${P.id}/make`,'POST');draw()}catch(e){alert(e.message)}};$('#stop')&&($('#stop').onclick=async()=>{P=await send(`/api/projects/${P.id}/cancel`,'POST');draw()})}
+/* ---------- advanced ---------- */
+function advanced(){$('#main').innerHTML=`<div class="card"><label>Scene file (JSON, the editable project)</label><textarea id="film" style="min-height:420px;font:12px ui-monospace,monospace">${esc(P.film?JSON.stringify(P.film,null,1):'')}</textarea><p><button id="sv">Save</button> <button class="g" id="ex">Load example</button> <span id="fm" class="mut"></span></p></div>`;
+ $('#sv').onclick=async()=>{try{await commit(JSON.parse($('#film').value))}catch(e){$('#fm').innerHTML=`<span class="err">${esc(e.message)}</span>`}};$('#ex').onclick=async()=>commit(await api('/api/example'))}
+/* ---------- chrome ---------- */
+try{if(localStorage.getItem('z2d-mobile')==='1')document.body.classList.add('mobile')}catch{}
+$('#mob').onclick=()=>{const on=document.body.classList.toggle('mobile');try{localStorage.setItem('z2d-mobile',on?'1':'0')}catch{}};
+$('#proj').onchange=e=>open(e.target.value);
+$('#new').onclick=async()=>{const n=await send('/api/projects','POST',{name:'New animation'});await projects(n.id);await open(n.id);tab='story';draw()};
+$('#undo').onclick=async()=>{try{P=await send(`/api/projects/${P.id}/film/undo`,'POST');draw()}catch(e){alert(e.message)}};
+$('#redo').onclick=async()=>{try{P=await send(`/api/projects/${P.id}/film/redo`,'POST');draw()}catch(e){alert(e.message)}};
+async function apRefresh(){try{const a=await api('/api/autopilot');$('#ap').checked=a.on;const w=a.jobs.filter(j=>j.status==='waiting').length,n=a.jobs.filter(j=>j.status==='needs-owner').length;$('#apm').textContent=a.on?(a.busy?`working on ${a.current}`:`watching inbox/ · ${w} waiting${n?` · ${n} need you`:''}`):''}catch{}}
+$('#ap').onchange=async e=>{await send('/api/autopilot','POST',{on:e.target.checked});apRefresh()};setInterval(apRefresh,4000);apRefresh();
+projects();
+</script></body></html>

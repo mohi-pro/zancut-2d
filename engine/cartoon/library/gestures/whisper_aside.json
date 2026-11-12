@@ -1,0 +1,124 @@
+{
+  "id": "whisper_aside",
+  "about": "the right hand rises cupped beside the mouth as if whispering a secret to someone nearby",
+  "group": "arms",
+  "aliases": [
+    "whisper secret",
+    "hand by mouth whisper",
+    "tell secret gesture",
+    "কানে কানে বলা",
+    "ফিসফিস করে কথা বলা"
+  ],
+  "seconds": 1.5,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            5.22,
+            -31.78,
+            0
+          ],
+          "wrist": [
+            5.4,
+            -56.88,
+            14.27
+          ],
+          "hand": [
+            5.44,
+            -67.02,
+            21.06
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "relaxed"
+      ]
+    },
+    {
+      "u": 0.4,
+      "arms": {
+        "R": {
+          "elbow": [
+            9.4,
+            -6.55,
+            30.09
+          ],
+          "wrist": [
+            -12,
+            10,
+            20
+          ],
+          "hand": [
+            -20.8,
+            18.44,
+            20.52
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "cupped"
+      ]
+    },
+    {
+      "u": 0.8,
+      "arms": {
+        "R": {
+          "elbow": [
+            9.4,
+            -6.55,
+            30.09
+          ],
+          "wrist": [
+            -12,
+            10,
+            20
+          ],
+          "hand": [
+            -20.8,
+            18.44,
+            20.52
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "cupped"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            5.22,
+            -31.78,
+            0
+          ],
+          "wrist": [
+            5.4,
+            -56.88,
+            14.27
+          ],
+          "hand": [
+            5.44,
+            -67.02,
+            21.06
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "relaxed"
+      ]
+    }
+  ]
+}

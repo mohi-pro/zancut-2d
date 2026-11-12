@@ -1,0 +1,186 @@
+{
+  "id": "rub_hands",
+  "about": "both hands rubbing together briskly in front of the chest in excitement or anticipation",
+  "group": "arms",
+  "seconds": 0.7,
+  "loop": true,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "L": {
+          "elbow": [
+            -9.7,
+            -25,
+            17.8
+          ],
+          "wrist": [
+            14,
+            -12,
+            28
+          ],
+          "hand": [
+            20,
+            -4.8,
+            35.7
+          ]
+        },
+        "R": {
+          "elbow": [
+            10.8,
+            -26,
+            15.6
+          ],
+          "wrist": [
+            -14,
+            -18,
+            28
+          ],
+          "hand": [
+            -20.7,
+            -13.2,
+            37
+          ]
+        }
+      },
+      "hands": [
+        "openSide",
+        "openSide"
+      ]
+    },
+    {
+      "u": 0.25,
+      "arms": {
+        "L": {
+          "elbow": [
+            -10.8,
+            -26,
+            15.6
+          ],
+          "wrist": [
+            14,
+            -18,
+            28
+          ],
+          "hand": [
+            20.7,
+            -13.2,
+            37
+          ]
+        },
+        "R": {
+          "elbow": [
+            9.7,
+            -25,
+            17.8
+          ],
+          "wrist": [
+            -14,
+            -12,
+            28
+          ],
+          "hand": [
+            -20,
+            -4.8,
+            35.7
+          ]
+        }
+      },
+      "hands": [
+        "openSide",
+        "openSide"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "L": {
+          "elbow": [
+            -9.7,
+            -25,
+            17.8
+          ],
+          "wrist": [
+            14,
+            -12,
+            28
+          ],
+          "hand": [
+            20,
+            -4.8,
+            35.7
+          ]
+        },
+        "R": {
+          "elbow": [
+            10.8,
+            -26,
+            15.6
+          ],
+          "wrist": [
+            -14,
+            -18,
+            28
+          ],
+          "hand": [
+            -20.7,
+            -13.2,
+            37
+          ]
+        }
+      },
+      "hands": [
+        "openSide",
+        "openSide"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "L": {
+          "elbow": [
+            -10.8,
+            -26,
+            15.6
+          ],
+          "wrist": [
+            14,
+            -18,
+            28
+          ],
+          "hand": [
+            20.7,
+            -13.2,
+            37
+          ]
+        },
+        "R": {
+          "elbow": [
+            9.7,
+            -25,
+            17.8
+          ],
+          "wrist": [
+            -14,
+            -12,
+            28
+          ],
+          "hand": [
+            -20,
+            -4.8,
+            35.7
+          ]
+        }
+      },
+      "hands": [
+        "openSide",
+        "openSide"
+      ]
+    }
+  ]
+}

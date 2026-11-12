@@ -1,0 +1,7453 @@
+{
+ "meta": {
+  "name": "Zancut camera rule book",
+  "brief": 9,
+  "version": "1.0.0",
+  "date": "2026-11-06",
+  "phoneFirst": "Every top-level framing number is the 9:16 value. formats['16:9'] inside a size/angle lists only what changes for 16:9.",
+  "conventions": {
+   "frame": "x 0 = left edge, 1 = right edge (fraction of frame width). y 0 = top edge, 1 = bottom edge (fraction of frame height). Values below 0 or above 1 mean outside the frame (used for horizons).",
+   "landmarkOffset": "'chin+0.7head' = 0.7 head-heights BELOW the chin. Minus = above. 1 head = top of skull to chin of THAT character (from the body chart, Brief 6). Default landmark positions are in landmarks below.",
+   "headroom": "gap between the top of the head (hair/cap included) and the frame top, as a fraction of frame height. Negative = the head is cropped.",
+   "eyeLine": "height of the eyes in the frame, fraction from the top.",
+   "cameraHeight": "metres above the ground under the camera. 'eye' = the subject's eye height. 'eye+0.3' = 0.3 m above it.",
+   "horizon": "fraction from the top. For a level camera the horizon is the line at camera height: it cuts every standing person at the same real height as the camera.",
+   "facing": "yaw in degrees around the vertical axis: 0 = toward camera (front), +-45 = three-quarter, +-90 = side, 180 = back. + means the nose points to screen right.",
+   "views": {
+    "front": [
+     -22.5,
+     22.5
+    ],
+    "three": [
+     22.5,
+     67.5
+    ],
+    "side": [
+     67.5,
+     112.5
+    ],
+    "threeBack": [
+     112.5,
+     157.5
+    ],
+    "back": [
+     157.5,
+     180
+    ]
+   },
+   "screenDir": "+1 = person faces/moves toward screen right, -1 = toward screen left, 0 = toward or away from camera.",
+   "time": "seconds; f = frames at 30 fps. Ranges are [min, max].",
+   "metresAtSubject": "All metre framing (frame width/height) is measured at the depth of the subject's feet. Convert with the engine's own scale-by-depth.",
+   "sizeLadder": "ladder index used by the jump-cut rule: extremeWide 0, wide 1, full 2, mediumWide 3, medium 4, mediumClose 5, closeUp 6, extremeClose 7. insert, twoShot and group map onto the ladder by their actual framing (field ladderEquivalent)."
+  },
+  "engineAssumptions": [
+   "Camera = lookAt(x, y) + frame width + tilt (roll) + camera height; frame height follows the format.",
+   "Level camera with a shift: verticals stay vertical. A real camera that pitches up/down (3-point perspective) is NOT available; the rule book fakes pitch with horizon position, camera height and what shows behind the head.",
+   "People: front, three, side, back views; full body or waist up; head turn and eye targets free.",
+   "Most set pieces: front view only, drawn as seen from about 1.5 m camera height (h_ref).",
+   "Layers have depth; size and height on screen follow depth. If the engine can move the camera in depth (z), moves marked 'dolly' get real parallax; otherwise they fall back to zoom."
+  ],
+  "howToUse": [
+   "1. Pick a recipe for the story moment (recipes).",
+   "2. For each shot, resolve size -> frame top/bottom from landmarks, angle -> camera height and horizon, move -> keyframes.",
+   "3. Run every rule in rules[] on the planned shot list; apply 'fix' for failures.",
+   "4. Check pace against style.pace for the film length."
+  ],
+  "priorityKey": {
+   "must": "breaking it looks like a mistake to any viewer",
+   "should": "breaking it looks amateur; allowed with a reason tag",
+   "may": "style preference"
+  }
+ },
+ "landmarks": {
+  "note": "Default positions in head units down from headTop. Replace with the measured body chart (Brief 6) per character; every framing rule here uses landmark names, so it adapts automatically.",
+  "adult": {
+   "headTop": 0.0,
+   "eyes": 0.5,
+   "nose": 0.68,
+   "mouth": 0.8,
+   "chin": 1.0,
+   "neck": 1.3,
+   "shoulders": 1.45,
+   "armpits": 1.8,
+   "chest": 2.0,
+   "elbows": 2.85,
+   "waist": 3.0,
+   "hips": 3.6,
+   "wrists": 3.75,
+   "crotch": 4.0,
+   "fingertips": 4.55,
+   "midThigh": 4.6,
+   "knees": 5.4,
+   "midShin": 6.3,
+   "ankles": 7.2,
+   "feet": 7.5
+  },
+  "child6": {
+   "headTop": 0.0,
+   "eyes": 0.55,
+   "nose": 0.72,
+   "mouth": 0.83,
+   "chin": 1.0,
+   "neck": 1.22,
+   "shoulders": 1.35,
+   "armpits": 1.65,
+   "chest": 1.8,
+   "elbows": 2.35,
+   "waist": 2.5,
+   "hips": 2.9,
+   "wrists": 2.95,
+   "crotch": 3.15,
+   "fingertips": 3.55,
+   "midThigh": 3.65,
+   "knees": 4.2,
+   "midShin": 4.9,
+   "ankles": 5.5,
+   "feet": 5.75
+  },
+  "referencePeople": {
+   "man": {
+    "stature_m": 1.65,
+    "heads": 7.5,
+    "head_m": 0.22,
+    "eyeHeight_m": 1.54
+   },
+   "woman": {
+    "stature_m": 1.52,
+    "heads": 7.5,
+    "head_m": 0.203,
+    "eyeHeight_m": 1.419
+   },
+   "child6": {
+    "stature_m": 1.15,
+    "heads": 5.75,
+    "head_m": 0.2,
+    "eyeHeight_m": 1.04
+   }
+  },
+  "seatedAdult": {
+   "eyeHeight_m_chair": 1.15,
+   "eyeHeight_m_floorMat": 0.78,
+   "note": "chair seat 0.45 m; on a mat or pati the hips are at 0 m. Use these as 'eye' for seated subjects."
+  },
+  "joints": {
+   "note": "Frame edges must not cross a person inside these bands (head units). Cut in the 'safeCuts' instead.",
+   "neck": [
+    1.0,
+    1.42
+   ],
+   "shoulders": [
+    1.38,
+    1.55
+   ],
+   "elbows": [
+    2.7,
+    3.0
+   ],
+   "waistLine": [
+    2.92,
+    3.08
+   ],
+   "wrists": [
+    3.6,
+    3.9
+   ],
+   "knees": [
+    5.2,
+    5.6
+   ],
+   "ankles": [
+    7.05,
+    7.4
+   ],
+   "child6": {
+    "neck": [
+     1.0,
+     1.3
+    ],
+    "elbows": [
+     2.25,
+     2.45
+    ],
+    "wrists": [
+     2.85,
+     3.05
+    ],
+    "knees": [
+     4.05,
+     4.35
+    ],
+    "ankles": [
+     5.4,
+     5.65
+    ]
+   }
+  },
+  "safeCuts": {
+   "adult": {
+    "forehead": 0.15,
+    "upperChest": 1.7,
+    "midChest": 2.2,
+    "aboveElbow": 2.4,
+    "midForearm": 3.3,
+    "upperThigh": 4.3,
+    "aboveKnee": 5.0,
+    "midShin": 6.3,
+    "underFeet": 7.6
+   },
+   "child6": {
+    "upperChest": 1.55,
+    "aboveElbow": 2.1,
+    "midForearm": 2.7,
+    "aboveKnee": 3.9,
+    "midShin": 4.9,
+    "underFeet": 5.85
+   }
+  }
+ },
+ "formats": {
+  "9:16": {
+   "pixels": [
+    1080,
+    1920
+   ],
+   "role": "primary (phone). Design here first.",
+   "safeZones": {
+    "note": "Platform UI covers these bands. Faces, captions, text and the key prop stay inside the 'keySafe' box. Values are fractions of the frame. Measured on 1080x1920; apps change their UI, so re-check yearly.",
+    "TikTok": {
+     "top": 0.11,
+     "bottom": 0.25,
+     "left": 0.05,
+     "right": 0.13
+    },
+    "Reels": {
+     "top": 0.14,
+     "bottom": 0.35,
+     "left": 0.06,
+     "right": 0.06
+    },
+    "Shorts": {
+     "top": 0.15,
+     "bottom": 0.35,
+     "left": 0.04,
+     "right": 0.18
+    },
+    "allPlatforms": {
+     "top": 0.15,
+     "bottom": 0.35,
+     "left": 0.06,
+     "right": 0.18
+    },
+    "keySafe": {
+     "x": [
+      0.06,
+      0.82
+     ],
+     "y": [
+      0.15,
+      0.65
+     ]
+    },
+    "eyesBest": [
+     0.25,
+     0.4
+    ],
+    "burnedInCaptions": {
+     "centreY": [
+      0.58,
+      0.64
+     ],
+     "maxWidth": 0.76,
+     "note": "Above the Reels/Shorts tray. For TikTok-only posts y 0.66-0.72 is fine."
+    }
+   },
+   "composition": "Centre-weighted. One subject per frame by default; two only when stacked in depth or very close. Vertical motion (rise, fall, tilt) reads strongest.",
+   "lookRoomSingle": "face centre x 0.42-0.47 when facing right (mirror for left); centred 0.5 when facing camera",
+   "twoPeopleSideBySide": "only from mediumWide outward, or when they stand <= 0.6 m apart; otherwise stack in depth or use OTS"
+  },
+  "16:9": {
+   "pixels": [
+    1920,
+    1080
+   ],
+   "role": "secondary (YouTube, TV).",
+   "safeZones": {
+    "actionSafe": 0.93,
+    "titleSafe": 0.9,
+    "note": "Keep text inside the central 90 % and action inside 93 % (broadcast convention)."
+   },
+   "composition": "Rule of thirds: face on the third line opposite the look direction; two-shots side by side work from medium outward.",
+   "lookRoomSingle": "face centre x 0.33-0.40 when facing right (mirror for left)",
+   "phoneLetterbox": "Watched on an upright phone a 16:9 film fills only ~32 % of the screen height: frame one size tighter than you would for TV."
+  },
+  "dualDelivery": "Render each format natively from the same shot spec (same landmarks, same camera height). Never crop 16:9 to 9:16: a crop keeps only 32 % of the width."
+ },
+ "geometry": {
+  "frameFromLandmarks": {
+   "frameHeight": "H = (bottomLandmark - topLandmark) / (1 - headroom - footroom) * head_m   [footroom only for full shots]",
+   "frameWidth": "W = H * 9/16 (9:16) or H * 16/9 (16:9)",
+   "lookAtY": "frame centre height in metres = headTopHeight + headroom*H - H/2 (world height above the subject's ground)",
+   "lookAtX": "subjectFaceX_world - (faceX_target - 0.5) * W"
+  },
+  "horizon": {
+   "rule": "Level camera at height h: every point at height h, at any depth, lands on the horizon line. So the horizon cuts every standing person at the same body height (h).",
+   "formula": "horizonY = (pointOnSubjectAtHeight_h - frameTop) / frameHeight, in head units: ((stature - h)/head_m - topHeads) / frameHeightHeads",
+   "examples_man_9x16": {
+    "eyeLevel": {
+     "closeUp": 0.33,
+     "medium": 0.24,
+     "full": 0.14
+    },
+    "low_h0.94": {
+     "medium": 0.98,
+     "full": 0.45
+    },
+    "worm_h0.2": {
+     "full": 0.84
+    },
+    "high_h2.34": {
+     "medium": -0.76,
+     "full": -0.28
+    }
+   }
+  },
+  "behindTheHead": {
+   "rule": "What the background shows behind a subject's eyes tells the viewer the camera height even when the horizon is out of frame.",
+   "formula": "backgroundHeightBehindEyes = h + (eyeHeight - h) * (D / d)   (d = subject depth, D = background depth)",
+   "example": "man eyes 1.54 m, d 2 m, wall at 4 m: eye level -> 1.54 m (mid wall); h 0.9 -> 2.18 m (top of wall / ceiling line); h 2.4 -> 0.68 m (lower wall, floor shows above the shoulders)"
+  },
+  "floorBand": {
+   "rule": "The ground strip between two depths appears with a height proportional to camera height h.",
+   "scaleVsDrawn": "floorScale = h / 1.5  (0.2 m -> 0.13x, 0.9 -> 0.6x, 2.2 -> 1.47x, 3 -> 2x, 5 -> 3.3x)"
+  },
+  "surfaceTop": {
+   "rule": "A horizontal surface at height s shows its top only when s < h, its underside only when s > h, and is edge-on when |s-h| < 0.08 m.",
+   "frontPieceTolerance": "Front-view pieces are drawn for h_ref 1.5 m. Top-band ratio = (h - s)/(1.5 - s). Ratio 0.7-1.4 passes as drawn; outside that, crop the surface out of frame, cover it with foreground, or scale the piece's top layer by the ratio if the piece has its top as a separate layer.",
+   "examples": {
+    "table0.75": {
+     "h0.9": 0.2,
+     "h1.1": 0.47,
+     "h2.0": 1.67,
+     "h2.5": 2.33
+    },
+    "bed0.45": {
+     "h0.9": 0.43,
+     "h2.0": 1.48
+    }
+   }
+  },
+  "depthScale": "screen size = realSize * k / depth. Two people of equal height: size ratio = depthFar / depthNear.",
+  "lensFeel": {
+   "wide": "subject 0.8-1.5 m from camera: near things swell, background shrinks fast (low-angle power, worm's eye, comedy)",
+   "normal": "subject 2-4 m: default for dialogue",
+   "telephoto": "subject 10-30 m with a tight frame: depth compresses, crowds and rickshaw traffic stack up (Dhaka streets, markets)",
+   "howInFlat2D": "Lens = camera distance. Same frame size from a longer distance = background layers keep their size (compressed). From a short distance = background tiny, foreground huge."
+  },
+  "dutchCoverage": {
+   "rule": "Rolling the frame by angle t needs the set to cover w' = w*cos t + h*sin t and h' = w*sin t + h*cos t.",
+   "9:16": {
+    "10deg": {
+     "width": 1.29,
+     "height": 1.08
+    },
+    "15deg": {
+     "width": 1.43,
+     "height": 1.11
+    },
+    "20deg": {
+     "width": 1.55,
+     "height": 1.13
+    },
+    "25deg": {
+     "width": 1.66,
+     "height": 1.14
+    }
+   },
+   "16:9": {
+    "10deg": {
+     "width": 1.08,
+     "height": 1.29
+    },
+    "15deg": {
+     "width": 1.11,
+     "height": 1.43
+    },
+    "20deg": {
+     "width": 1.13,
+     "height": 1.55
+    },
+    "25deg": {
+     "width": 1.14,
+     "height": 1.66
+    }
+   },
+   "note": "multipliers of the frame width and height the set must cover; or shrink frameW by the width factor."
+  },
+  "panSpeedLimit": {
+   "rule": "Without motion blur, nothing should move more than 0.0106 of the frame's SHORT side per frame (about 11 px at 1080). This is the cinema '7-second rule' (24 fps, edge to edge in 7 s) carried to 30 fps.",
+   "9:16": {
+    "crossWidth_s_min": 3.2,
+    "crossHeight_s_min": 5.6
+   },
+   "16:9": {
+    "crossWidth_s_min": 5.6,
+    "crossHeight_s_min": 3.2
+   },
+   "withMotionBlur": "halve the minimum times; blur length = per-frame travel * 0.5",
+   "exception": "When the camera follows a moving subject, judge the subject (nearly still in frame), not the background."
+  },
+  "blur": {
+   "depthOfField": "blurRadius = k * |1/d - 1/dFocus|, clamp to 3 % of the short side. k chosen so the main background (2x subject depth) gets 0.6-1.0 % of the short side.",
+   "levels_shortSide": {
+    "none": 0,
+    "soft": [
+     0.004,
+     0.008
+    ],
+    "medium": [
+     0.008,
+     0.014
+    ],
+    "strong": [
+     0.014,
+     0.025
+    ]
+   }
+  }
+ },
+ "sizeClassify": {
+  "note": "Classify any planned or rendered shot by headFraction = (projected head height of the main subject) / frameHeight. Boundaries are geometric means between the canonical sizes below.",
+  "headFractionMin": {
+   "extremeClose": 0.7,
+   "closeUp": 0.46,
+   "mediumClose": 0.323,
+   "medium": 0.22,
+   "mediumWide": 0.143,
+   "full": 0.076,
+   "wide": 0.027,
+   "extremeWide": 0.0
+  },
+  "ladder": [
+   "extremeWide",
+   "wide",
+   "full",
+   "mediumWide",
+   "medium",
+   "mediumClose",
+   "closeUp",
+   "extremeClose"
+  ]
+ },
+ "sizes": {
+  "extremeWide": {
+   "aliases": [
+    "EWS",
+    "ELS",
+    "extreme long shot",
+    "vista",
+    "এক্সট্রিম ওয়াইড",
+    "এক্সট্রিম লং শট"
+   ],
+   "ladderIndex": 0,
+   "frameTop": {
+    "landmark": "environment",
+    "headroom": null
+   },
+   "frameBottom": "environment",
+   "personHeightOfFrame": [
+    0.02,
+    0.2
+   ],
+   "eyeLine": null,
+   "horizonY": {
+    "land": [
+     0.36,
+     0.45
+    ],
+    "skyDrama": [
+     0.6,
+     0.7
+    ],
+    "water": [
+     0.4,
+     0.5
+    ]
+   },
+   "subjectPos": {
+    "x": "on a vertical third (0.33 or 0.67) in 16:9; x 0.4-0.6 in 9:16",
+    "y": "feet on the ground band 0.55-0.75"
+   },
+   "body": "fullBody",
+   "legsDrawn": true,
+   "drawDetail": "people can be simplified silhouettes (no face features) below head height 0.012 of frame height",
+   "use": "open a film or a new place (village, river, city); show a person small against the world (lost, alone, a long journey); time and weather changes (monsoon clouds, dusk); end a film",
+   "avoid": "any shot where we must read a face or a small action; more than one in a row unless it is a journey montage; under 1.5 s (nothing reads)",
+   "hold": [
+    2.0,
+    4.5
+   ],
+   "holdFrames": [
+    60,
+    135
+   ],
+   "minHold": 1.5,
+   "flat2d": "Cheapest shot to make beautiful: 4-5 depth layers (sky, far trees/hills, midground houses, ground band, foreground grass/branch). A slow parallaxDrift (2-4 % of frame width) keeps it alive.",
+   "formats": {
+    "9:16": {
+     "note": "Tall frame: lots of sky or lots of ground. Put the horizon on a third: low (0.6-0.7) for sky/clouds/rain drama, high (0.36-0.45) for fields, river, roads. Subject inside keySafe x 0.06-0.82."
+    },
+    "16:9": {
+     "horizonY": {
+      "land": [
+       0.6,
+       0.67
+      ],
+      "skyDrama": [
+       0.33,
+       0.4
+      ]
+     },
+     "note": "Classic wide vista; subject on a vertical third, small."
+    }
+   }
+  },
+  "wide": {
+   "aliases": [
+    "WS",
+    "LS",
+    "long shot",
+    "establishing",
+    "master",
+    "ওয়াইড শট",
+    "লং শট",
+    "এস্টাবলিশিং শট"
+   ],
+   "ladderIndex": 1,
+   "frameTop": {
+    "landmark": "environment",
+    "headroom": [
+     0.25,
+     0.6
+    ]
+   },
+   "frameBottom": "belowFeet+environment",
+   "personHeightOfFrame": [
+    0.2,
+    0.6
+   ],
+   "eyeLine": [
+    0.3,
+    0.55
+   ],
+   "subjectPos": {
+    "x": "16:9: thirds; 9:16: 0.35-0.65",
+    "y": "feet at 0.62-0.85"
+   },
+   "body": "fullBody",
+   "legsDrawn": true,
+   "use": "establish where everyone is before cutting closer (geography for the 180 line); entrances and exits; physical comedy; group blocking; a person in their room/shop/field",
+   "avoid": "dialogue that matters (faces too small: lip-sync not readable under head 0.06 of frame); staying wide for an emotional line",
+   "hold": [
+    1.5,
+    3.5
+   ],
+   "holdFrames": [
+    45,
+    105
+   ],
+   "minHold": 1.2,
+   "lipSync": "Head below 0.06 of frame height: simple open/close mouth is enough; below 0.03 no mouth animation needed.",
+   "flat2d": "Needs the full set front view plus floor/ground band. Horizon passes through standing people at camera height (see geometry.horizon).",
+   "formats": {
+    "9:16": {
+     "note": "Person 0.2-0.45 of frame height. Use the height: ceiling fan + floor, or sky + road. Two people side by side fit easily here."
+    },
+    "16:9": {
+     "personHeightOfFrame": [
+      0.25,
+      0.6
+     ],
+     "note": "Room for 3-6 people across."
+    }
+   }
+  },
+  "full": {
+   "aliases": [
+    "FS",
+    "full body",
+    "full figure",
+    "ফুল শট"
+   ],
+   "ladderIndex": 2,
+   "frameTop": {
+    "landmark": "headTop",
+    "headroom": [
+     0.05,
+     0.12
+    ]
+   },
+   "frameBottom": "belowFeet",
+   "footroom": [
+    0.03,
+    0.08
+   ],
+   "eyeLine": [
+    0.11,
+    0.2
+   ],
+   "headOfFrame": 0.115,
+   "subjectPos": {
+    "x": "9:16 0.42-0.58 (facing right: 0.42-0.47)",
+    "y": "feet at 0.92-0.97"
+   },
+   "body": "fullBody",
+   "legsDrawn": true,
+   "use": "body language that needs the whole body (a slump, a dance, a namaz rakat seen from the side or behind, a child jumping); a walk; costume reveal; a person entering",
+   "avoid": "feet cut at the ankles (use belowFeet or cut at midShin = mediumWide); dialogue longer than one line",
+   "hold": [
+    1.2,
+    3.0
+   ],
+   "holdFrames": [
+    36,
+    90
+   ],
+   "minHold": 1.0,
+   "flat2d": "Contact shadow under feet is mandatory (an ellipse 1.1 x shoe length wide, 0.25 of that tall, 20-35 % darker than the floor). Floating feet are the first thing that looks cheap.",
+   "formats": {
+    "9:16": {
+     "note": "Frame width ~4.9 heads (man 1.08 m): one person fills the frame nicely; feet sit under the caption tray, which is fine (feet are not key content)."
+    },
+    "16:9": {
+     "note": "Frame width ~15.5 heads (3.4 m): lots of side room; place the person on a third, look room ahead."
+    }
+   },
+   "computed": {
+    "9:16": {
+     "woman": {
+      "frameW_m": 0.994,
+      "frameH_m": 1.767
+     },
+     "man": {
+      "frameW_m": 1.079,
+      "frameH_m": 1.919
+     },
+     "child6": {
+      "frameW_m": 0.752,
+      "frameH_m": 1.337
+     },
+     "frameH_heads": 8.721,
+     "frameW_heads": 4.906,
+     "eyeLine": 0.137
+    },
+    "16:9": {
+     "woman": {
+      "frameW_m": 3.142,
+      "frameH_m": 1.767
+     },
+     "man": {
+      "frameW_m": 3.411,
+      "frameH_m": 1.919
+     },
+     "child6": {
+      "frameW_m": 2.377,
+      "frameH_m": 1.337
+     },
+     "frameH_heads": 8.721,
+     "frameW_heads": 15.504,
+     "eyeLine": 0.137
+    }
+   }
+  },
+  "mediumWide": {
+   "aliases": [
+    "MWS",
+    "MLS",
+    "medium long shot",
+    "cowboy",
+    "American shot",
+    "knee shot",
+    "মিডিয়াম ওয়াইড",
+    "কাউবয় শট"
+   ],
+   "ladderIndex": 3,
+   "frameTop": {
+    "landmark": "headTop",
+    "headroom": [
+     0.08,
+     0.14
+    ]
+   },
+   "frameBottom": "knees-0.4head",
+   "safeCutName": "aboveKnee",
+   "eyeLine": [
+    0.17,
+    0.24
+   ],
+   "headOfFrame": 0.178,
+   "subjectPos": {
+    "x": "9:16 0.42-0.58 (facing right 0.42-0.47)",
+    "y": "eyes 0.17-0.24"
+   },
+   "body": "fullBody",
+   "legsDrawn": true,
+   "use": "two people standing and talking in 9:16 (both fit when <= 0.6 m apart); gestures with both arms; a person holding a big thing (sack of rice, school bag, cricket bat); shop counters",
+   "avoid": "cutting exactly at the knee (the joint band 5.2-5.6 head); using it for an emotional peak (go tighter)",
+   "hold": [
+    1.2,
+    3.0
+   ],
+   "holdFrames": [
+    36,
+    90
+   ],
+   "minHold": 0.9,
+   "flat2d": "Legs are in frame down to the thighs: walk cycles and sitting poses must be the full-body rig.",
+   "formats": {
+    "9:16": {
+     "note": "Frame width ~3.2 heads (0.69 m for a man): both arms with gestures fit. The best 9:16 shot for acting with the hands."
+    },
+    "16:9": {
+     "note": "Frame width ~10 heads: a natural two-shot size for people 0.8-1.2 m apart."
+    }
+   },
+   "computed": {
+    "9:16": {
+     "woman": {
+      "frameW_m": 0.64,
+      "frameH_m": 1.139
+     },
+     "man": {
+      "frameW_m": 0.695,
+      "frameH_m": 1.236
+     },
+     "child6": {
+      "frameW_m": 0.48,
+      "frameH_m": 0.854
+     },
+     "frameH_heads": 5.618,
+     "frameW_heads": 3.16,
+     "eyeLine": 0.199
+    },
+    "16:9": {
+     "woman": {
+      "frameW_m": 2.024,
+      "frameH_m": 1.139
+     },
+     "man": {
+      "frameW_m": 2.197,
+      "frameH_m": 1.236
+     },
+     "child6": {
+      "frameW_m": 1.518,
+      "frameH_m": 0.854
+     },
+     "frameH_heads": 5.618,
+     "frameW_heads": 9.988,
+     "eyeLine": 0.199
+    }
+   }
+  },
+  "medium": {
+   "aliases": [
+    "MS",
+    "mid shot",
+    "waist shot",
+    "মিড শট",
+    "মিডিয়াম শট"
+   ],
+   "ladderIndex": 4,
+   "frameTop": {
+    "landmark": "headTop",
+    "headroom": [
+     0.08,
+     0.16
+    ]
+   },
+   "frameBottom": "waist+0.3head",
+   "safeCutName": "midForearm",
+   "eyeLine": [
+    0.22,
+    0.3
+   ],
+   "headOfFrame": 0.272,
+   "subjectPos": {
+    "x": "9:16 0.42-0.58 (facing right 0.42-0.47; facing camera 0.5)",
+    "y": "eyes 0.22-0.3"
+   },
+   "body": "waistUp",
+   "legsDrawn": false,
+   "use": "the default dialogue size; explaining with one hand; eating, writing, phone use; a narrator/presenter talking to camera",
+   "avoid": "a whole scene at this size (the 'one long medium' problem the brief names); cutting at the belt line (waistLine band) or at the wrists when hands hang",
+   "hold": [
+    1.2,
+    3.5
+   ],
+   "holdFrames": [
+    36,
+    105
+   ],
+   "minHold": 0.8,
+   "flat2d": "Waist-up rig is enough. Hands that rise above the frame bottom must be drawn; hands below it can be skipped.",
+   "formats": {
+    "9:16": {
+     "note": "Frame width ~2.1 heads: the shoulders fill the width, upper arms cut by the sides. Gestures leave the frame: for big gestures use mediumWide."
+    },
+    "16:9": {
+     "subjectPos": {
+      "x": "0.33-0.4 facing right (mirror for left)"
+     },
+     "note": "Frame width ~6.5 heads: real look room on the facing side; a medium two-shot works when the two are <= 0.75 m apart."
+    }
+   },
+   "computed": {
+    "9:16": {
+     "woman": {
+      "frameW_m": 0.418,
+      "frameH_m": 0.743
+     },
+     "man": {
+      "frameW_m": 0.454,
+      "frameH_m": 0.807
+     },
+     "child6": {
+      "frameW_m": 0.35,
+      "frameH_m": 0.622
+     },
+     "frameH_heads": 3.667,
+     "frameW_heads": 2.062,
+     "eyeLine": 0.236
+    },
+    "16:9": {
+     "woman": {
+      "frameW_m": 1.321,
+      "frameH_m": 0.743
+     },
+     "man": {
+      "frameW_m": 1.434,
+      "frameH_m": 0.807
+     },
+     "child6": {
+      "frameW_m": 1.106,
+      "frameH_m": 0.622
+     },
+     "frameH_heads": 3.667,
+     "frameW_heads": 6.519,
+     "eyeLine": 0.236
+    }
+   }
+  },
+  "mediumClose": {
+   "aliases": [
+    "MCU",
+    "medium close-up",
+    "chest shot",
+    "bust shot",
+    "মিডিয়াম ক্লোজ আপ"
+   ],
+   "ladderIndex": 5,
+   "frameTop": {
+    "landmark": "headTop",
+    "headroom": [
+     0.06,
+     0.1
+    ]
+   },
+   "frameBottom": "chest+0.4head",
+   "safeCutName": "aboveElbow",
+   "eyeLine": [
+    0.25,
+    0.32
+   ],
+   "headOfFrame": 0.383,
+   "subjectPos": {
+    "x": "9:16 0.43-0.57 (facing right 0.43-0.47; facing camera 0.5)",
+    "y": "eyes 0.25-0.32"
+   },
+   "body": "waistUp",
+   "legsDrawn": false,
+   "use": "the workhorse of phone dialogue: lines that matter, listening reactions, a thought; most 9:16 singles live here",
+   "avoid": "cutting MCU to CU of the same person with no other change (step 1.45 is the minimum; add a view change or a push); a person who is not feeling or saying anything",
+   "hold": [
+    1.0,
+    3.5
+   ],
+   "holdFrames": [
+    30,
+    105
+   ],
+   "minHold": 0.7,
+   "flat2d": "Face expression must be readable: eyes, brows and mouth shapes matter more than the body here.",
+   "formats": {
+    "9:16": {
+     "note": "Frame width ~1.5 heads: face plus a bit of shoulder; look room is tiny, so show direction with head turn (three view) and eye direction."
+    },
+    "16:9": {
+     "frameBottom": "chest+0.2head",
+     "headroom": [
+      0.07,
+      0.11
+     ],
+     "eyeLine": [
+      0.28,
+      0.34
+     ],
+     "subjectPos": {
+      "x": "0.35-0.42 facing right"
+     },
+     "note": "Classic TV dialogue single."
+    }
+   },
+   "computed": {
+    "9:16": {
+     "woman": {
+      "frameW_m": 0.297,
+      "frameH_m": 0.529
+     },
+     "man": {
+      "frameW_m": 0.323,
+      "frameH_m": 0.574
+     },
+     "child6": {
+      "frameW_m": 0.269,
+      "frameH_m": 0.478
+     },
+     "frameH_heads": 2.609,
+     "frameW_heads": 1.467,
+     "eyeLine": 0.272
+    },
+    "16:9": {
+     "woman": {
+      "frameW_m": 0.871,
+      "frameH_m": 0.49
+     },
+     "man": {
+      "frameW_m": 0.946,
+      "frameH_m": 0.532
+     },
+     "child6": {
+      "frameW_m": 0.781,
+      "frameH_m": 0.44
+     },
+     "frameH_heads": 2.418,
+     "frameW_heads": 4.298,
+     "eyeLine": 0.297
+    }
+   }
+  },
+  "closeUp": {
+   "aliases": [
+    "CU",
+    "close",
+    "close shot",
+    "ক্লোজ আপ",
+    "ক্লোজ শট"
+   ],
+   "ladderIndex": 6,
+   "frameTop": {
+    "landmark": "headTop",
+    "headroom": [
+     0.03,
+     0.08
+    ],
+    "allowCrop": -0.12
+   },
+   "frameBottom": "chin+0.7head",
+   "safeCutName": "upperChest",
+   "eyeLine": [
+    0.3,
+    0.37
+   ],
+   "headOfFrame": 0.556,
+   "subjectPos": {
+    "x": "9:16 face centre 0.46-0.54 (direction shown by yaw and eyes)",
+    "y": "eyes 0.3-0.37"
+   },
+   "body": "waistUp",
+   "legsDrawn": false,
+   "use": "emotion that matters; a reaction; a decision; the moment a feeling changes; the end of a scene",
+   "avoid": "more than 3 in a row; a close-up of someone who is not feeling anything; during sajdah; on a young child's crying face held longer than 2 s (feels exploitative); hiding bad animation (close-ups magnify it)",
+   "hold": [
+    0.8,
+    4.0
+   ],
+   "holdFrames": [
+    24,
+    120
+   ],
+   "minHold": 0.6,
+   "flat2d": "The face fills the frame: eyes, blinks, brows and mouth must be animated; a held face with no blink for > 3 s looks dead (blink every 2-4 s).",
+   "formats": {
+    "9:16": {
+     "note": "Frame width ~1.0 head (man 0.22 m): the face fills the width. This is THE phone shot."
+    },
+    "16:9": {
+     "frameBottom": "chin+0.62head",
+     "headroom": [
+      0.04,
+      0.08
+     ],
+     "eyeLine": [
+      0.32,
+      0.38
+     ],
+     "subjectPos": {
+      "x": "0.38-0.45 facing right"
+     },
+     "note": "Frame width ~3 heads: look room on the facing side."
+    }
+   },
+   "computed": {
+    "9:16": {
+     "woman": {
+      "frameW_m": 0.205,
+      "frameH_m": 0.365
+     },
+     "man": {
+      "frameW_m": 0.223,
+      "frameH_m": 0.396
+     },
+     "child6": {
+      "frameW_m": 0.202,
+      "frameH_m": 0.36
+     },
+     "frameH_heads": 1.799,
+     "frameW_heads": 1.012,
+     "eyeLine": 0.333
+    },
+    "16:9": {
+     "woman": {
+      "frameW_m": 0.621,
+      "frameH_m": 0.349
+     },
+     "man": {
+      "frameW_m": 0.674,
+      "frameH_m": 0.379
+     },
+     "child6": {
+      "frameW_m": 0.613,
+      "frameH_m": 0.345
+     },
+     "frameH_heads": 1.723,
+     "frameW_heads": 3.064,
+     "eyeLine": 0.35
+    }
+   }
+  },
+  "extremeClose": {
+   "aliases": [
+    "ECU",
+    "XCU",
+    "BCU",
+    "big close-up",
+    "detail of face",
+    "এক্সট্রিম ক্লোজ আপ",
+    "বিগ ক্লোজ আপ"
+   ],
+   "ladderIndex": 7,
+   "variants": {
+    "faceFill": {
+     "frameTop": "eyes-0.4head",
+     "frameBottom": "eyes+0.74head",
+     "eyeLine": [
+      0.33,
+      0.38
+     ],
+     "note": "forehead to under the chin, cheeks cropped; 9:16 default"
+    },
+    "eyes": {
+     "frameTop": "eyes-0.3head",
+     "frameBottom": "eyes+0.35head",
+     "eyeLine": [
+      0.43,
+      0.5
+     ],
+     "note": "16:9 default (both eyes); in 9:16 only ONE eye fits: frame width 0.35 head"
+    },
+    "mouth": {
+     "frameTop": "nose-0.05head",
+     "frameBottom": "chin+0.1head",
+     "note": "a word that matters, a smile starting, biting a lip"
+    },
+    "oneEye": {
+     "frameWidth": "0.35-0.45 head",
+     "note": "9:16 eye ECU: the eye at y 0.4-0.5"
+    }
+   },
+   "frameTop": {
+    "landmark": "eyes-0.4head",
+    "headroom": null
+   },
+   "frameBottom": "eyes+0.74head",
+   "eyeLine": [
+    0.33,
+    0.38
+   ],
+   "headOfFrame": 0.88,
+   "body": "waistUp",
+   "legsDrawn": false,
+   "use": "a shock or realisation peak (eyes widen); tension before an action (eyes narrow); the hidden truth in a smile; a tear",
+   "avoid": "dialogue; more than 1 per 20 s; any character whose face design has no detail at this scale (flat-colour faces can look empty: test it)",
+   "hold": [
+    0.5,
+    1.8
+   ],
+   "holdFrames": [
+    15,
+    54
+   ],
+   "minHold": 0.4,
+   "flat2d": "Magnification is 3-5x a medium shot: needs a face drawn with enough shape detail (iris, eyelid line, lip shape). If the face design is very simple, use closeUp + zoomPunch instead.",
+   "formats": {
+    "9:16": {
+     "note": "Use faceFill or oneEye or mouth."
+    },
+    "16:9": {
+     "frameTop": {
+      "landmark": "eyes-0.3head"
+     },
+     "frameBottom": "eyes+0.35head",
+     "eyeLine": [
+      0.43,
+      0.5
+     ],
+     "note": "the 'eyes' strip"
+    }
+   },
+   "computed": {
+    "9:16": {
+     "woman": {
+      "frameW_m": 0.13,
+      "frameH_m": 0.231
+     },
+     "man": {
+      "frameW_m": 0.141,
+      "frameH_m": 0.251
+     },
+     "child6": {
+      "frameW_m": 0.128,
+      "frameH_m": 0.228
+     },
+     "frameH_heads": 1.14,
+     "frameW_heads": 0.641,
+     "eyeLine": 0.351
+    },
+    "16:9": {
+     "woman": {
+      "frameW_m": 0.234,
+      "frameH_m": 0.132
+     },
+     "man": {
+      "frameW_m": 0.254,
+      "frameH_m": 0.143
+     },
+     "child6": {
+      "frameW_m": 0.231,
+      "frameH_m": 0.13
+     },
+     "frameH_heads": 0.65,
+     "frameW_heads": 1.156,
+     "eyeLine": 0.462
+    }
+   }
+  },
+  "insert": {
+   "aliases": [
+    "insert",
+    "detail",
+    "cutaway detail",
+    "ইনসার্ট",
+    "ডিটেইল শট"
+   ],
+   "ladderIndex": null,
+   "ladderEquivalent": "closeUp (for jump-cut tests treat the object as the subject)",
+   "framingByObject": {
+    "9:16": {
+     "objectFillsWidth": [
+      0.45,
+      0.7
+     ],
+     "orFillsHeight": [
+      0.35,
+      0.55
+     ],
+     "centre": {
+      "x": [
+       0.45,
+       0.55
+      ],
+      "y": [
+       0.38,
+       0.5
+      ]
+     }
+    },
+    "16:9": {
+     "objectFillsHeight": [
+      0.35,
+      0.6
+     ],
+     "orFillsWidth": [
+      0.3,
+      0.5
+     ],
+     "centre": {
+      "x": "0.4-0.6 or on a third",
+      "y": [
+       0.4,
+       0.55
+      ]
+     }
+    },
+    "frameWidthFormula": "W = objectWidth / fill",
+    "examples_9x16_frameW_m": {
+     "coin 0.026 m": 0.047,
+     "key 0.06 m": 0.11,
+     "phone 0.075 m": 0.14,
+     "hand 0.17 m": 0.3,
+     "letter A4 0.21 m": 0.38,
+     "rice plate 0.27 m": 0.48,
+     "school bag 0.32 m": 0.55
+    }
+   },
+   "magnificationCheck": "magnification = mediumShotFrameWidth(of the character using it) / insertFrameWidth. <= 3: front-view prop is fine. 3-6: needs clean big shapes (no thin details lost). > 6: needs a detail drawing of the prop.",
+   "holdItUp": "Flat things (letter, phone screen, photo, money, exam result, ID card) work in FRONT view if the character holds them up facing the camera. A thing lying on a table needs a TOP view (see angles.topDown).",
+   "body": "none (or hands)",
+   "legsDrawn": false,
+   "use": "what the story needs us to notice: the result on the screen, the ring, the empty plate, the clock, the money, the knock on the door; also to cover time and to cut between two shots of the same person",
+   "avoid": "an insert of something that will not matter; readable text held shorter than its reading time (see rules.textReadTime)",
+   "hold": [
+    0.8,
+    2.0
+   ],
+   "holdFrames": [
+    24,
+    60
+   ],
+   "minHold": 0.6,
+   "flat2d": "Cheapest bridge shot in the book: one prop, one background colour, maybe one hand.",
+   "formats": {
+    "9:16": {
+     "note": "Centre it; keep it above y 0.6 (caption tray)."
+    },
+    "16:9": {
+     "note": "Thirds work; a hand entering from the side reads well."
+    }
+   }
+  },
+  "twoShot": {
+   "aliases": [
+    "2S",
+    "two-shot",
+    "টু শট"
+   ],
+   "ladderIndex": null,
+   "ladderEquivalent": "size of the nearer person",
+   "variants": {
+    "sideBySide": {
+     "views": "both front or three",
+     "use": "walking together, sitting on a bench/rickshaw, watching something together, a united front"
+    },
+    "faceToFace": {
+     "views": "both side (see angles.profile)",
+     "use": "confrontation, negotiation, romance (the gap between them is the story)"
+    },
+    "deep": {
+     "views": "near: three or back-three; far: front or three",
+     "depthRatio": [
+      1.5,
+      3.0
+     ],
+     "use": "9:16 two-shots; one listening in the foreground while the other talks; power (the bigger one dominates)"
+    }
+   },
+   "frameTop": {
+    "landmark": "headTop of the taller/nearer person",
+    "headroom": [
+     0.06,
+     0.12
+    ]
+   },
+   "frameBottom": "set by the size chosen for the nearer person",
+   "widthNeed": "frameWidth >= (distance between the two face centres + 2.0 heads) / 0.84",
+   "examples": {
+    "9:16": {
+     "faceToFace0.8m": "frame W 1.48 m (man) -> wider than a full shot (1.08 m): full/wide",
+     "shoulderToShoulder0.5m": "frame W 1.13 m -> full shot",
+     "rule": "In 9:16 a side-by-side or face-to-face two-shot is always full/wide unless the two are stacked in depth (variant deep)."
+    },
+    "16:9": {
+     "medium": "works when face centres <= 0.75 m apart",
+     "mediumWide": "works up to 1.4 m apart"
+    }
+   },
+   "eyeLine": "taller/nearer person's eyes at 0.25-0.35",
+   "body": "depends on size",
+   "use": "relationship at a glance; re-establish geography after singles; humour (reaction of both in one frame)",
+   "avoid": "both people in front view talking to the lens (they must angle 30-90 deg toward each other); heads at exactly the same height and size (flat, 'twinning')",
+   "hold": [
+    1.5,
+    4.0
+   ],
+   "holdFrames": [
+    45,
+    120
+   ],
+   "minHold": 1.0,
+   "formats": {
+    "9:16": {
+     "note": "Prefer deep. Near person head 0.18-0.28 of frame height at x 0.3-0.4; far person 0.1-0.16 at x 0.6-0.7."
+    },
+    "16:9": {
+     "note": "sideBySide and faceToFace both fine at mediumWide; medium when close."
+    }
+   }
+  },
+  "group": {
+   "aliases": [
+    "group",
+    "crowd",
+    "গ্রুপ শট",
+    "ভিড়"
+   ],
+   "ladderIndex": null,
+   "ladderEquivalent": "size of the nearest person",
+   "definition": "3 or more people whose faces are readable (head >= 0.04 of frame height) in one frame",
+   "capacity": {
+    "9:16": {
+     "expressionsReadable(head>=0.10)": 2,
+     "identityReadable(head>=0.06)": 4,
+     "beyond": "stack in depth (triangle) or go wide and cut to singles for reactions"
+    },
+    "16:9": {
+     "expressionsReadable(head>=0.10)": 7,
+     "identityReadable(head>=0.06)": 12
+    }
+   },
+   "staging": "triangle: nearest person largest; faces at 3 different heights and x positions; nobody's face overlapping another's",
+   "body": "fullBody (usually)",
+   "use": "family scenes, a classroom, a committee, friends at a tea stall; re-establish who is where",
+   "avoid": "lining everyone up on one horizontal row facing camera (school photo look) unless it is a deliberate tableau",
+   "hold": [
+    1.5,
+    3.5
+   ],
+   "holdFrames": [
+    45,
+    105
+   ],
+   "minHold": 1.2,
+   "formats": {
+    "9:16": {
+     "note": "Use height: people on two or three depth rows. Max 2 readable faces side by side."
+    },
+    "16:9": {
+     "note": "Rows across are fine; still vary heights (someone sits, someone stands)."
+    }
+   }
+  }
+ },
+ "angles": {
+  "eyeLevel": {
+   "aliases": [
+    "eye level",
+    "neutral",
+    "আই লেভেল",
+    "চোখের সমান"
+   ],
+   "cameraHeight": {
+    "rule": "eye +- 0.1 m",
+    "metres": {
+     "woman": 1.42,
+     "man": 1.54,
+     "child6": 1.04,
+     "seatedChair": 1.15,
+     "seatedFloor": 0.78
+    },
+    "twoPeople": "use the eye height of the person whose side we are on; if neutral, the mean of both"
+   },
+   "pitchEquivalent_deg": 0,
+   "horizon": {
+    "crossesSubjectAt": "eyes",
+    "frac": {
+     "subject": "man 1.65 m (eyes 1.54 m)",
+     "cameraHeight_m": 1.54,
+     "9:16": {
+      "closeUp": 0.333,
+      "medium": 0.236,
+      "mediumWide": 0.199,
+      "full": 0.137
+     },
+     "16:9": {
+      "closeUp": 0.35,
+      "medium": 0.236,
+      "mediumWide": 0.199,
+      "full": 0.137
+     }
+    },
+    "behindHead": "middle of the back wall / distant trees and houses at eye height"
+   },
+   "subjectView": "any; dialogue singles three (yaw 20-45 deg toward the partner); profile two-shots side",
+   "flat2dFake": {
+    "how": "native: the front-view pieces were drawn for about this height (h_ref 1.5 m). Nothing to fake.",
+    "floorScale": 1.0,
+    "personScaleY": 1.0
+   },
+   "needs": "nothing new",
+   "possibleWithFrontPieces": "yes",
+   "use": "neutral, equal, honest; the default (60-75 % of shots in a calm film); people talking as equals",
+   "avoid": "100 % of shots (the flat 'TV' look); a scene about power, fear or smallness",
+   "formats": {
+    "9:16": {
+     "note": "eyes on the horizon at 0.3-0.37 in CU/MCU"
+    },
+    "16:9": {
+     "note": "same rule; horizon 0.33-0.38"
+    }
+   }
+  },
+  "low": {
+   "aliases": [
+    "low angle",
+    "লো অ্যাঙ্গেল",
+    "নিচ থেকে"
+   ],
+   "cameraHeight": {
+    "rule": "eye-0.5 to eye-0.9 m (about chest-to-hip height of the subject)",
+    "metres": {
+     "woman": [
+      0.52,
+      0.92
+     ],
+     "man": [
+      0.64,
+      1.04
+     ],
+     "seatedChair": [
+      0.4,
+      0.7
+     ]
+    }
+   },
+   "pitchEquivalent_deg": [
+    10,
+    25
+   ],
+   "horizon": {
+    "crossesSubjectAt": "chest to hips",
+    "frac": {
+     "subject": "man 1.65 m (eyes 1.54 m)",
+     "cameraHeight_m": 0.84,
+     "9:16": {
+      "closeUp": 2.102,
+      "medium": 1.104,
+      "mediumWide": 0.765,
+      "full": 0.502
+     },
+     "16:9": {
+      "closeUp": 2.197,
+      "medium": 1.104,
+      "mediumWide": 0.765,
+      "full": 0.502
+     }
+    },
+    "behindHead": "upper wall, ceiling line, sky, treetops: backgroundHeightBehindEyes = h + (eye - h) * D/d"
+   },
+   "subjectView": "front or three; when they look at the (lower) partner their eyes aim 10-20 deg below level",
+   "flat2dFake": {
+    "horizon": "lower it so it crosses the subject at chest/hip height; out of frame below in MS/CU",
+    "floorScale": [
+     0.45,
+     0.7
+    ],
+    "personScaleY": [
+     1.03,
+     1.05
+    ],
+    "personScaleNote": "affine stretch of the whole character, anchored at the feet; if the rig allows head scale, head 0.96-0.98",
+    "foreground": "one near object along the bottom edge at 0.3-0.5 x subject depth (2-3x size): table edge, grass, a bicycle wheel, a raised hand",
+    "showAbove": "interiors need a ceiling strip (flat colour band with a ceiling fan or beams) whenever the frame reaches above 2.6 m",
+    "hide": "every horizontal surface whose drawn top lies between h and 1.5 m (desks, counters, a shop's taak at 0.75-1.0 m): crop it below the frame or cover it"
+   },
+   "needs": "ceiling strip piece with a ceiling fan (cheap). Nothing else.",
+   "possibleWithFrontPieces": "yes (cheap)",
+   "use": "power, authority, threat (landlord, strict headmaster, a bully, a villain); heroism and triumph (the boy who just won the match); a parent seen by a small child; a tall tree, a minaret, a building towering",
+   "avoid": "a person praying (never); a victim; ordinary talk; giving every character low angles (everyone becomes a hero, the angle stops meaning anything)",
+   "formats": {
+    "9:16": {
+     "note": "tall frame shows lots of ceiling/sky above the head: use it (fan, sky, branches)"
+    },
+    "16:9": {
+     "note": "keep a foreground element on the low corner to sell the height"
+    }
+   }
+  },
+  "high": {
+   "aliases": [
+    "high angle",
+    "হাই অ্যাঙ্গেল",
+    "উপর থেকে"
+   ],
+   "cameraHeight": {
+    "rule": "eye+0.5 to eye+1.5 m",
+    "metres": {
+     "woman": [
+      1.92,
+      2.92
+     ],
+     "man": [
+      2.04,
+      3.04
+     ],
+     "onChild": "an adult's eye height (1.42-1.54) is already high on a child (eye 1.04)"
+    }
+   },
+   "pitchEquivalent_deg": [
+    10,
+    30
+   ],
+   "horizon": {
+    "crossesSubjectAt": "above the head",
+    "frac": {
+     "subject": "man 1.65 m (eyes 1.54 m)",
+     "cameraHeight_m": 2.44,
+     "9:16": {
+      "closeUp": -1.941,
+      "medium": -0.879,
+      "mediumWide": -0.529,
+      "full": -0.332
+     },
+     "16:9": {
+      "closeUp": -2.024,
+      "medium": -0.879,
+      "mediumWide": -0.529,
+      "full": -0.332
+     }
+    },
+    "behindHead": "floor or ground fills the space behind the head; no sky"
+   },
+   "subjectView": "front or three; when they look at the (higher) partner their eyes aim 10-25 deg above level",
+   "flat2dFake": {
+    "horizon": "raise it above the head (out of frame in MS/CU; near the top in wides)",
+    "floorScale": [
+     1.35,
+     2.0
+    ],
+    "personScaleY": [
+     0.96,
+     0.98
+    ],
+    "personScaleNote": "affine squash anchored at the feet; head scale 1.02-1.04 if the rig allows",
+    "floor": "more floor shows: needs a floor texture/rug/pati pattern tile",
+    "hide": "tables and beds below h show 1.6-2.5x too little top (topBandRatio): crop them out, cover with foreground, or scale their top layer by the ratio"
+   },
+   "needs": "floor texture tiles; optionally furniture with the top surface as its own layer",
+   "possibleWithFrontPieces": "yes (moderate)",
+   "use": "small, alone, defeated, watched; a child seen by an adult; someone sitting on the floor after bad news; a lost child in a crowd; the moment of being judged",
+   "avoid": "making the powerful person look small by accident; looking down steeply on people praying (if ever, gentle: <= eye+0.5 m and from >= 3 m)",
+   "formats": {
+    "9:16": {
+     "note": "floor fills the tall frame: needs texture, or it looks empty"
+    },
+    "16:9": {
+     "note": "works well with negative space on one side for loneliness"
+    }
+   }
+  },
+  "topDown": {
+   "aliases": [
+    "top shot",
+    "overhead",
+    "flat lay",
+    "God's eye",
+    "টপ শট",
+    "ওভারহেড"
+   ],
+   "cameraHeight": {
+    "rule": "1.0-3.0 m above the top of the subject, pitch -90 deg"
+   },
+   "pitchEquivalent_deg": -90,
+   "horizon": {
+    "crossesSubjectAt": "none (no horizon in frame)"
+   },
+   "subjectView": "top (not in the current library)",
+   "flat2dFake": {
+    "objects": "cheap for FLAT things: draw only the top view of that one object (plate of bhat and dal, a letter, a phone on a table, ludo board, exam paper with a hand writing, a map). Flat colour top views are simple shapes.",
+    "people": "not fakeable: needs top-view people"
+   },
+   "needs": "top-view people (head and shoulders from above; poses: standing, sitting on a mat, lying on a bed, lying on a floor mat), top views of table, bed with mosquito net, jainamaz, pati/shital pati, plates and bowls, a boat",
+   "possibleWithFrontPieces": "no for people; partly for flat objects",
+   "drawToUnlock": [
+    "topPlate",
+    "topTable",
+    "topBedWithNet",
+    "topMat",
+    "topPerson4Poses"
+   ],
+   "use": "a family meal from above; writing an exam; a person lying awake at night; a pattern (students in rows, boats on a ghat); fate",
+   "avoid": "close-ups of people praying from above; holding > 3 s with no context",
+   "formats": {
+    "9:16": {
+     "note": "tall frame: a person lying on a bed fits head-to-foot"
+    },
+    "16:9": {
+     "note": "good for tables seen across"
+    }
+   }
+  },
+  "overShoulder": {
+   "aliases": [
+    "OTS",
+    "over the shoulder",
+    "dirty single",
+    "ওভার দ্য শোল্ডার",
+    "কাঁধের উপর দিয়ে"
+   ],
+   "cameraHeight": {
+    "rule": "near person's shoulder to eye height: A.eye-0.2 to A.eye",
+    "metres": {
+     "man": [
+      1.34,
+      1.54
+     ],
+     "woman": [
+      1.22,
+      1.42
+     ]
+    }
+   },
+   "placement": "0.4-0.8 m behind A, 0.2-0.4 m to A's side on the established camera side of the 180 line",
+   "pitchEquivalent_deg": 0,
+   "nearPerson": {
+    "who": "A (the listener we stand behind)",
+    "view": "back or threeBack (yaw 135-165): back of the head, the cheek edge, one shoulder",
+    "whichShoulder": "the shoulder on the camera side of the line: A facing screen-right -> A's right shoulder; facing screen-left -> left shoulder",
+    "scaleVsFar": [
+     2.0,
+     3.0
+    ],
+    "frameShare": {
+     "9:16": {
+      "box": {
+       "x": [
+        0.0,
+        0.38
+       ],
+       "y": [
+        0.5,
+        1.0
+       ]
+      },
+      "widthFraction": [
+       0.25,
+       0.4
+      ]
+     },
+     "16:9": {
+      "box": {
+       "x": [
+        0.0,
+        0.3
+       ],
+       "y": [
+        0.2,
+        1.0
+       ]
+      },
+      "widthFraction": [
+       0.25,
+       0.33
+      ]
+     }
+    },
+    "blur_shortSide": [
+     0.01,
+     0.02
+    ],
+    "darken": [
+     0.1,
+     0.25
+    ],
+    "headClearance": "A's head stays >= 0.05 of frame width away from B's face"
+   },
+   "farPerson": {
+    "who": "B (the one we watch)",
+    "size": {
+     "9:16": "mediumClose",
+     "16:9": "mediumClose or closeUp"
+    },
+    "view": "three (yaw 25-45 deg toward A)",
+    "eyes": "look at A's eyes: 5-15 deg off the lens, on A's side",
+    "faceX": {
+     "9:16": [
+      0.55,
+      0.65
+     ],
+     "16:9": [
+      0.6,
+      0.68
+     ]
+    },
+    "eyeLine": [
+     0.28,
+     0.36
+    ],
+    "depthBehindA": [
+     1.0,
+     1.6
+    ]
+   },
+   "variants": {
+    "dirtySingle": "A shows as a sliver <= 0.1 of frame width",
+    "cleanSingle": "A out of frame, B framed as if A were there (same eyes direction)"
+   },
+   "reverse": "mirror everything: B near on the right edge, A far at faceX 0.32-0.4 (16:9) / 0.35-0.45 (9:16); same size and eyeLine (rules.shotReverseShotMatch)",
+   "horizon": {
+    "crossesSubjectAt": "A's shoulders/eyes",
+    "frac": {
+     "subject": "man 1.65 m (eyes 1.54 m)",
+     "cameraHeight_m": 1.44,
+     "9:16": {
+      "closeUp": 0.586,
+      "medium": 0.36,
+      "mediumWide": 0.28,
+      "full": 0.189
+     },
+     "16:9": {
+      "closeUp": 0.614,
+      "medium": 0.36,
+      "mediumWide": 0.28,
+      "full": 0.189
+     }
+    }
+   },
+   "subjectView": "near: back/threeBack; far: three",
+   "flat2dFake": {
+    "near": "A's back or threeBack head-and-shoulder at 2-3x B's scale, cropped by the frame edge, blurred and darkened",
+    "far": "B on the existing front set",
+    "reverseBackground": "the wall behind A in the reverse does not exist in a front-view set. Cheap first: blur it to soft colour blocks in the room palette; or reuse a door/window/almirah piece; or reframe A against a plain wall colour. Best: draw a 'reverse wall' for each main set."
+   },
+   "needs": "back/threeBack views (exist), a blur filter, reverse-wall backgrounds (new drawings, or the blur fake)",
+   "possibleWithFrontPieces": "yes",
+   "drawToUnlock": [
+    "reverseWallPerSet"
+   ],
+   "use": "the standard way to cover a conversation; confrontation, interrogation, interviews, romance; makes the viewer stand with A",
+   "avoid": "A's head covering B's face; mixing dirty and clean singles inside one exchange; crossing the line on the reverse",
+   "formats": {
+    "9:16": {
+     "note": "the main 9:16 dialogue tool (vertical microdramas cut OTS A / OTS B); A's shoulder in the lower corner, B's face high and central"
+    },
+    "16:9": {
+     "note": "A on one edge, B on the opposite third"
+    }
+   }
+  },
+  "pov": {
+   "aliases": [
+    "POV",
+    "point of view",
+    "subjective",
+    "পিওভি",
+    "চোখে দেখা"
+   ],
+   "cameraHeight": {
+    "rule": "the looker's eye height at the looker's position",
+    "metres": {
+     "child6": 1.04,
+     "woman": 1.42,
+     "man": 1.54,
+     "seatedChair": 1.15,
+     "seatedFloor": 0.78,
+     "rickshawPassenger": [
+      1.6,
+      1.8
+     ],
+     "boat": [
+      1.1,
+      1.3
+     ]
+    }
+   },
+   "pitchEquivalent_deg": "follows the looker's gaze",
+   "horizon": {
+    "crossesSubjectAt": "the looker's eye height on every standing person",
+    "frac": "depends on who is seen"
+   },
+   "subjectView": "a person who looks at the looker: front, eyes INTO the lens (+-2 deg). Objects: as seen.",
+   "flat2dFake": {
+    "breathing": "handheld 0.2-0.4 % of the short side, 0.3-0.6 Hz for a person; none for a fixed view (window, CCTV)",
+    "hands": "optional POV hands in the lower 0.3 of the frame (holding a phone/letter/handlebar): needs first-person hand drawings",
+    "blink": "optional: 3-4 frame close to black for waking up or fainting"
+   },
+   "needs": "front views looking into the lens (exist); POV hands (new, optional)",
+   "possibleWithFrontPieces": "yes (without hands)",
+   "drawToUnlock": [
+    "povHands"
+   ],
+   "pattern": "looker (CU, eyes off-screen) -> POV -> looker reacts (the Kuleshov sandwich)",
+   "use": "what someone sees: the letter, the result list on the notice board, the person at the door, the bus leaving; a child's view up at adults (camera 1.0 m); fear of someone approaching; love (a smile seen)",
+   "avoid": "a POV from someone praying; > 3 s before cutting back to the looker; eyes into the lens outside a POV or a direct address",
+   "formats": {
+    "9:16": {
+     "note": "centred subject, works naturally (phone = eyes)"
+    },
+    "16:9": {
+     "note": "fine; optional slight vignette"
+    }
+   }
+  },
+  "profile": {
+   "aliases": [
+    "profile two-shot",
+    "side on",
+    "50-50",
+    "প্রোফাইল",
+    "পাশ থেকে"
+   ],
+   "cameraHeight": {
+    "rule": "mean eye height of the two",
+    "metres": {
+     "manWoman": 1.48
+    }
+   },
+   "placement": "camera perpendicular to the line between them (90 +- 10 deg)",
+   "pitchEquivalent_deg": 0,
+   "horizon": {
+    "crossesSubjectAt": "eyes",
+    "frac": {
+     "subject": "man 1.65 m (eyes 1.54 m)",
+     "cameraHeight_m": 1.48,
+     "9:16": {
+      "closeUp": 0.485,
+      "medium": 0.311,
+      "mediumWide": 0.248,
+      "full": 0.169
+     },
+     "16:9": {
+      "closeUp": 0.508,
+      "medium": 0.311,
+      "mediumWide": 0.248,
+      "full": 0.169
+     }
+    }
+   },
+   "subjectView": "both side (yaw +90 and -90)",
+   "positions": {
+    "16:9": {
+     "A_faceX": [
+      0.25,
+      0.38
+     ],
+     "B_faceX": [
+      0.62,
+      0.75
+     ]
+    },
+    "9:16": {
+     "rule": "mediumWide only if they stand <= 0.6 m apart (faces x 0.3-0.38 and 0.62-0.7); else full/wide"
+    }
+   },
+   "flat2dFake": {
+    "how": "native to flat 2D: side views exist and the set stays front-on. The gap between them is the drama: 0.3 m intimate/fight, 0.8 m talk, 1.5 m distance."
+   },
+   "needs": "side views (exist)",
+   "possibleWithFrontPieces": "yes",
+   "use": "a confrontation between equals; negotiation; a romance stand-off; two kids comparing marbles; seated talk at a table or on a bench (both side on)",
+   "avoid": "whole conversations in profile (eyes hard to read: cut to three-quarter singles for key lines); both heads at the same height and size (twinning)",
+   "formats": {
+    "9:16": {
+     "note": "hard: they must be close; use as an accent"
+    },
+    "16:9": {
+     "note": "a classic"
+    }
+   }
+  },
+  "dutch": {
+   "aliases": [
+    "dutch angle",
+    "canted",
+    "tilted",
+    "ডাচ অ্যাঙ্গেল",
+    "বাঁকা ফ্রেম"
+   ],
+   "cameraHeight": {
+    "rule": "any (usually eyeLevel or low)"
+   },
+   "roll_deg": {
+    "subtle": [
+     5,
+     10
+    ],
+    "standard": [
+     12,
+     18
+    ],
+    "strong": [
+     20,
+     25
+    ],
+    "max": 30
+   },
+   "horizon": {
+    "crossesSubjectAt": "as the base angle",
+    "frac": "rotated by the roll"
+   },
+   "subjectView": "any",
+   "flat2dFake": {
+    "how": "roll the frame with the tilt parameter (free)",
+    "coverage": "the set must cover the rotated frame: 9:16 at 15 deg needs 1.43x the frame width and 1.11x its height (geometry.dutchCoverage)",
+    "drift": "optional roll change of 2-5 deg over the shot for fever, drunkenness, dizziness",
+    "opposite": "in a confrontation tilt A's singles +12 deg and B's -12 deg"
+   },
+   "needs": "an oversized background",
+   "possibleWithFrontPieces": "yes",
+   "use": "unease, plotting, confusion after shocking news, fever or dizziness, a dream going wrong, the chaos of a scuffle (non-graphic), parody",
+   "avoid": "faith moments (never); calm or happy scenes; more than 2-3 in a row unless the whole sequence is 'wrong'; random tilt directions",
+   "formats": {
+    "9:16": {
+     "note": "needs much more set width (x1.43 at 15 deg)"
+    },
+    "16:9": {
+     "note": "needs more set height"
+    }
+   }
+  },
+  "worm": {
+   "aliases": [
+    "worm's eye",
+    "ground level",
+    "ওয়ার্মস আই",
+    "মাটি থেকে"
+   ],
+   "cameraHeight": {
+    "rule": "0.05-0.4 m"
+   },
+   "pitchEquivalent_deg": [
+    30,
+    70
+   ],
+   "horizon": {
+    "crossesSubjectAt": "shins/ankles",
+    "frac": {
+     "subject": "man 1.65 m (eyes 1.54 m)",
+     "cameraHeight_m": 0.2,
+     "9:16": {
+      "closeUp": 3.719,
+      "medium": 1.897,
+      "mediumWide": 1.283,
+      "full": 0.836
+     },
+     "16:9": {
+      "closeUp": 3.885,
+      "medium": 1.897,
+      "mediumWide": 1.283,
+      "full": 0.836
+     }
+    },
+    "behindHead": "sky or ceiling fills 60-80 % of the frame"
+   },
+   "subjectView": "front or three; footsteps: feet in front view",
+   "flat2dFake": {
+    "cheap": "horizon at the ankles, floorScale 0.05-0.27, a giant foreground (grass blades, pebbles, a shoe, a cricket ball) at 0.1-0.3 x subject depth (3-10x size), personScaleY 1.05-1.08",
+    "true": "looking steeply up (converging verticals, under the chin, nostrils, the fan from below) needs under-view drawings or a perspective mesh warp"
+   },
+   "needs": "giant foreground props (reuse props at big scale); for the true version: under-views or a mesh warp",
+   "possibleWithFrontPieces": "partly (cheap version yes)",
+   "drawToUnlock": [
+    "underChinHeads",
+    "meshWarp"
+   ],
+   "use": "a giant/hero/villain entrance; a child's or a cat's view; shoes stepping in; a ball rolling at camera; a towering tree, minaret or building",
+   "avoid": "people praying; ordinary talk; more than once a minute",
+   "formats": {
+    "9:16": {
+     "note": "tall frame = huge sky: great for towering"
+    },
+    "16:9": {
+     "note": "wide foreground across the bottom"
+    }
+   }
+  },
+  "bird": {
+   "aliases": [
+    "bird's eye",
+    "aerial",
+    "drone shot",
+    "বার্ডস আই",
+    "ড্রোন শট",
+    "আকাশ থেকে"
+   ],
+   "cameraHeight": {
+    "rule": "8-60 m (drone 20-60 m), pitch -45 to -90 deg"
+   },
+   "pitchEquivalent_deg": [
+    -90,
+    -45
+   ],
+   "horizon": {
+    "crossesSubjectAt": "none or at the very top"
+   },
+   "subjectView": "top",
+   "flat2dFake": {
+    "cheapSubstitute": "angles.elevatedWide (stacked front pieces, high horizon)",
+    "true": "needs a map kit of top views"
+   },
+   "needs": "map kit (top views): tin roofs, thatch roofs, concrete roofs, paddy fields (green/gold patches), river ribbon, boats from above, roads with rickshaws/CNG/buses from above, round tree canopies, ponds, people as head-and-shoulder dots, umbrellas",
+   "possibleWithFrontPieces": "no",
+   "drawToUnlock": [
+    "mapKit"
+   ],
+   "use": "opening and ending; a journey's progress (a boat on a wide river); a whole village or city; floods; a crowd or an Eid jamaat from far and high (respectful); a chase map",
+   "avoid": "holding > 4 s without a move; expecting faces to read",
+   "formats": {
+    "9:16": {
+     "note": "a river or road running bottom-to-top is the strongest 9:16 aerial"
+    },
+    "16:9": {
+     "note": "classic drone vista"
+    }
+   }
+  },
+  "elevatedWide": {
+   "aliases": [
+    "stacked view",
+    "storybook high",
+    "rooftop view",
+    "ছাদ থেকে"
+   ],
+   "cameraHeight": {
+    "rule": "3-6 m (a rooftop, a balcony, a tree)"
+   },
+   "pitchEquivalent_deg": [
+    15,
+    35
+   ],
+   "horizon": {
+    "crossesSubjectAt": "above everyone",
+    "frac": "-0.1 to 0.15 (at or above the top edge)"
+   },
+   "subjectView": "front/three/side as usual",
+   "flat2dFake": {
+    "how": "front-view pieces in 3-6 depth rows, each row scaled by depth and raised toward the horizon; floorScale 2-4x so the ground band needs a texture (fields, road, courtyard). Reads like a miniature painting or a picture book.",
+    "accept": "roofs show only as drawn in front view: fine in this style"
+   },
+   "needs": "ground textures; enough set pieces to fill rows",
+   "possibleWithFrontPieces": "yes",
+   "use": "the cheap stand-in for bird: a village lane, a market, a school yard, a ghat",
+   "avoid": "pretending it is a drone shot (do not push it past 6 m)",
+   "formats": {
+    "9:16": {
+     "note": "5-6 rows fill the tall frame"
+    },
+    "16:9": {
+     "note": "3-4 rows"
+    }
+   }
+  },
+  "childHeight": {
+   "aliases": [
+    "kid level",
+    "শিশুর চোখে"
+   ],
+   "cameraHeight": {
+    "rule": "the child's eye height",
+    "metres": {
+     "toddler3": 0.75,
+     "child6": 1.04,
+     "child10": 1.22
+    }
+   },
+   "pitchEquivalent_deg": 0,
+   "horizon": {
+    "crossesSubjectAt": "adults' hips/waist; children's eyes",
+    "frac": {
+     "subject": "man 1.65 m (eyes 1.54 m)",
+     "cameraHeight_m": 1.04,
+     "9:16": {
+      "closeUp": 1.596,
+      "medium": 0.856,
+      "mediumWide": 0.604,
+      "full": 0.398
+     },
+     "16:9": {
+      "closeUp": 1.669,
+      "medium": 0.856,
+      "mediumWide": 0.604,
+      "full": 0.398
+     }
+    }
+   },
+   "subjectView": "any",
+   "flat2dFake": {
+    "how": "native (it is just a lower camera): adults' heads end up 0.4-0.6 m above the horizon, tables show their undersides edge-on, so crop tabletops above 1.0 m"
+   },
+   "needs": "nothing new",
+   "possibleWithFrontPieces": "yes",
+   "use": "any story told from a child's side: the classroom, the market, a parent's anger, a festival",
+   "avoid": "switching between child height and adult height inside one exchange without a reason",
+   "formats": {
+    "9:16": {
+     "note": "adults get cut at the chest in MS: let them lean down into the frame"
+    },
+    "16:9": {
+     "note": "same"
+    }
+   }
+  },
+  "frontalTableau": {
+   "aliases": [
+    "planimetric",
+    "flat-on",
+    "tableau",
+    "সামনাসামনি"
+   ],
+   "cameraHeight": {
+    "rule": "eye level of the main subject"
+   },
+   "pitchEquivalent_deg": 0,
+   "horizon": {
+    "crossesSubjectAt": "eyes",
+    "frac": {
+     "subject": "man 1.65 m (eyes 1.54 m)",
+     "cameraHeight_m": 1.54,
+     "9:16": {
+      "closeUp": 0.333,
+      "medium": 0.236,
+      "mediumWide": 0.199,
+      "full": 0.137
+     },
+     "16:9": {
+      "closeUp": 0.35,
+      "medium": 0.236,
+      "mediumWide": 0.199,
+      "full": 0.137
+     }
+    }
+   },
+   "subjectView": "front (looking slightly off lens, 5-10 deg) or side for people walking across",
+   "flat2dFake": {
+    "how": "native: the camera is square to the back wall, the room is symmetrical, people stand in one plane. This is where flat 2D looks most intentional."
+   },
+   "needs": "nothing new",
+   "possibleWithFrontPieces": "yes",
+   "use": "comedy deadpan, formal moments (school assembly, a courtroom, a wedding stage), introductions of a family, faith settings at a respectful distance, title shots",
+   "avoid": "dialogue coverage (use singles and OTS); making every shot symmetrical",
+   "formats": {
+    "9:16": {
+     "note": "subject at x 0.5 +- 0.02"
+    },
+    "16:9": {
+     "note": "subject at x 0.5 or symmetrical pairs"
+    }
+   }
+  },
+  "backView": {
+   "aliases": [
+    "from behind",
+    "Ruckenfigur",
+    "পেছন থেকে"
+   ],
+   "cameraHeight": {
+    "rule": "eye level or slightly high, 1.5-3 m behind the subject"
+   },
+   "pitchEquivalent_deg": 0,
+   "horizon": {
+    "crossesSubjectAt": "eyes",
+    "frac": {
+     "subject": "man 1.65 m (eyes 1.54 m)",
+     "cameraHeight_m": 1.54,
+     "9:16": {
+      "closeUp": 0.333,
+      "medium": 0.236,
+      "mediumWide": 0.199,
+      "full": 0.137
+     },
+     "16:9": {
+      "closeUp": 0.35,
+      "medium": 0.236,
+      "mediumWide": 0.199,
+      "full": 0.137
+     }
+    }
+   },
+   "subjectView": "back",
+   "flat2dFake": {
+    "how": "the subject's back view in the foreground (0.3-0.5 of the frame height), the thing they look at beyond it (river, road, closed door, a grave, a train leaving)"
+   },
+   "needs": "back views (exist)",
+   "possibleWithFrontPieces": "yes",
+   "use": "longing, leaving, contemplation, watching someone go, standing at a grave, looking at the sea; prayer seen respectfully from behind",
+   "avoid": "using it to hide a face during the key emotion (follow with a front CU)",
+   "formats": {
+    "9:16": {
+     "note": "subject low-centre, the view above"
+    },
+    "16:9": {
+     "note": "subject on a third, the view across"
+    }
+   }
+  },
+  "throughFrame": {
+   "aliases": [
+    "frame in frame",
+    "through the door",
+    "দরজার ফাঁক দিয়ে"
+   ],
+   "cameraHeight": {
+    "rule": "as the base angle"
+   },
+   "pitchEquivalent_deg": 0,
+   "horizon": {
+    "crossesSubjectAt": "as the base angle"
+   },
+   "subjectView": "any",
+   "flat2dFake": {
+    "how": "a door, window, bars, mosquito net, rickshaw hood, bamboo fence or shop shutter in the foreground at 0.3-0.6 x subject depth, darkened 20-40 %; the subject inside the opening"
+   },
+   "needs": "door/window/fence front pieces (reuse)",
+   "possibleWithFrontPieces": "yes",
+   "use": "watched, trapped, outsider looking in, eavesdropping, longing, a secret",
+   "avoid": "covering the face in the key moment",
+   "formats": {
+    "9:16": {
+     "note": "a vertical door opening fits 9:16 perfectly"
+    },
+    "16:9": {
+     "note": "a window works best"
+    }
+   }
+  }
+ },
+ "moves": {
+  "static": {
+   "aliases": [
+    "locked off",
+    "still",
+    "স্থির",
+    "ক্যামেরা স্থির"
+   ],
+   "params": [],
+   "seconds": [
+    0.6,
+    6.0
+   ],
+   "amount": "none",
+   "use": "the default (about 70-85 % of shots in calm talk); comedy timing; faith moments; anything where acting carries the beat",
+   "avoid": "a static wide held > 4 s while nothing moves in it (use parallaxDrift or cut)",
+   "cost": "free"
+  },
+  "creep": {
+   "aliases": [
+    "slow push",
+    "imperceptible push",
+    "breathing push"
+   ],
+   "params": [
+    "frameW"
+   ],
+   "seconds": [
+    3.0,
+    8.0
+   ],
+   "amount": {
+    "frameWScale": [
+     0.94,
+     0.97
+    ]
+   },
+   "speedLimit": "<= 1.5 % frame-width change per second",
+   "ease": {
+    "name": "linear",
+    "bezier": [
+     0,
+     0,
+     1,
+     1
+    ]
+   },
+   "anchor": "the subject's eyes keep their frame position",
+   "use": "a long line or a long silence that should grow heavier; waiting; a confession; keeps a long 9:16 hold alive",
+   "avoid": "comedy (kills timing); shots under 3 s",
+   "cost": "free"
+  },
+  "pushIn": {
+   "aliases": [
+    "push in",
+    "dolly in",
+    "zoom in",
+    "track in",
+    "পুশ ইন",
+    "জুম ইন",
+    "ডলি ইন"
+   ],
+   "params": [
+    "frameW",
+    "lookAt",
+    "cameraZ (dolly mode)"
+   ],
+   "from": "medium",
+   "to": "closeUp",
+   "seconds": [
+    2.0,
+    5.0
+   ],
+   "frames": [
+    60,
+    150
+   ],
+   "amount": {
+    "frameWScale": [
+     0.45,
+     0.75
+    ],
+    "examples9x16": {
+     "medium->closeUp": 0.49,
+     "mediumClose->closeUp": 0.69,
+     "full->medium": 0.42
+    }
+   },
+   "ease": {
+    "name": "slowInSlowOut",
+    "bezier": [
+     0.45,
+     0.0,
+     0.55,
+     1.0
+    ]
+   },
+   "speedLimit": "average frame-width change <= 15 %/s, peak <= 25 %/s",
+   "anchor": "scale about the eyes so the face does not drift into the caption tray",
+   "modes": {
+    "zoom": "scale frameW only: works today, no parallax (reads as a zoom lens)",
+    "dolly": "move camera z forward by 20-45 % of the subject distance: background shrinks less than the subject grows, foreground grows faster. Reads as real cinema; prefer when the engine can."
+   },
+   "use": "a realisation, a decision forming, a memory arriving, rising tension in a line, the turn of a scene",
+   "avoid": "calm talk (moves are rare there); two push-ins in a row; pushing in while the subject walks away; with any other move at once",
+   "cost": "free (zoom) / cheap (dolly needs camera z)"
+  },
+  "pullOut": {
+   "aliases": [
+    "pull out",
+    "pull back",
+    "dolly out",
+    "zoom out",
+    "পুল আউট",
+    "জুম আউট"
+   ],
+   "params": [
+    "frameW",
+    "lookAt",
+    "cameraZ (dolly mode)"
+   ],
+   "from": "closeUp",
+   "to": "wide",
+   "seconds": [
+    3.0,
+    6.0
+   ],
+   "frames": [
+    90,
+    180
+   ],
+   "amount": {
+    "frameWScale": [
+     1.5,
+     4.0
+    ]
+   },
+   "ease": {
+    "reveal": {
+     "name": "easeOut",
+     "bezier": [
+      0.22,
+      1.0,
+      0.36,
+      1.0
+     ]
+    },
+    "ending": {
+     "name": "slowInSlowOut",
+     "bezier": [
+      0.45,
+      0.0,
+      0.55,
+      1.0
+     ]
+    }
+   },
+   "speedLimit": "peak <= 30 % frame-width change per second; slower than the push it mirrors",
+   "use": "isolation (a person alone in a big empty room/field); revealing the context (the 'he is in hospital' reveal); the ending of a film; leaving a scene",
+   "avoid": "revealing a set that is not drawn wide enough (check the set covers the final frame)",
+   "combineWith": [
+    "crane"
+   ],
+   "cost": "free"
+  },
+  "panLeft": {
+   "aliases": [
+    "pan left",
+    "প্যান বামে"
+   ],
+   "params": [
+    "lookAt.x"
+   ],
+   "seconds": [
+    2.0,
+    6.0
+   ],
+   "amount": {
+    "frameWidths": [
+     0.3,
+     2.0
+    ]
+   },
+   "ease": {
+    "name": "gentleInOut",
+    "bezier": [
+     0.37,
+     0.0,
+     0.63,
+     1.0
+    ],
+    "easeIn_s": [
+     0.3,
+     0.5
+    ],
+    "easeOut_s": [
+     0.4,
+     0.8
+    ]
+   },
+   "speedLimit": "geometry.panSpeedLimit (9:16 width crossed in >= 3.2 s, 16:9 in >= 5.6 s without motion blur)",
+   "flat2d": "A real pan rotates the camera, so NOTHING shows parallax: slide all layers together. Correct and cheap.",
+   "use": "follow a moving subject; reveal what someone is looking at; connect two people in one space (the 'pan to the listener')",
+   "avoid": "panning across a set that is not wide enough; slow pans in fast films (cut instead); pans back and forth between speakers (soap-opera look) unless it is a comic choice",
+   "cost": "free"
+  },
+  "panRight": {
+   "aliases": [
+    "pan right",
+    "প্যান ডানে"
+   ],
+   "params": [
+    "lookAt.x"
+   ],
+   "seconds": [
+    2.0,
+    6.0
+   ],
+   "amount": {
+    "frameWidths": [
+     0.3,
+     2.0
+    ]
+   },
+   "ease": {
+    "name": "gentleInOut",
+    "bezier": [
+     0.37,
+     0.0,
+     0.63,
+     1.0
+    ],
+    "easeIn_s": [
+     0.3,
+     0.5
+    ],
+    "easeOut_s": [
+     0.4,
+     0.8
+    ]
+   },
+   "speedLimit": "geometry.panSpeedLimit",
+   "flat2d": "same as panLeft",
+   "use": "as panLeft; left-to-right reads as moving forward/away from home in left-to-right reading cultures (Bangla reads left to right)",
+   "avoid": "as panLeft",
+   "cost": "free"
+  },
+  "tiltUp": {
+   "aliases": [
+    "tilt up",
+    "টিল্ট আপ"
+   ],
+   "params": [
+    "lookAt.y"
+   ],
+   "seconds": [
+    2.0,
+    6.0
+   ],
+   "amount": {
+    "frameHeights": [
+     0.3,
+     2.0
+    ]
+   },
+   "ease": {
+    "name": "gentleInOut",
+    "bezier": [
+     0.37,
+     0.0,
+     0.63,
+     1.0
+    ]
+   },
+   "speedLimit": "9:16: frame height crossed in >= 5.6 s without blur; 16:9: >= 3.2 s",
+   "flat2d": "A level shift-camera 'tilt' slides layers together (no parallax), like a pan. True pitch (converging verticals) is not available.",
+   "use": "hero reveal from shoes to face (2-4 s); a tree, minaret or tower bottom to top; from a face up to the sky (hope, prayer ending, death handled gently)",
+   "avoid": "tilting up on a person praying to make them look grand; revealing an undrawn ceiling",
+   "best": "9:16 (vertical frame = vertical moves read strongest)",
+   "cost": "free"
+  },
+  "tiltDown": {
+   "aliases": [
+    "tilt down",
+    "টিল্ট ডাউন"
+   ],
+   "params": [
+    "lookAt.y"
+   ],
+   "seconds": [
+    2.0,
+    6.0
+   ],
+   "amount": {
+    "frameHeights": [
+     0.3,
+     2.0
+    ]
+   },
+   "ease": {
+    "name": "gentleInOut",
+    "bezier": [
+     0.37,
+     0.0,
+     0.63,
+     1.0
+    ]
+   },
+   "speedLimit": "as tiltUp",
+   "use": "from the sky down to the village (opening); from a face down to the thing in their hands (the letter, the result); from a sign down to the shop",
+   "avoid": "as tiltUp",
+   "best": "9:16",
+   "cost": "free"
+  },
+  "trackSide": {
+   "aliases": [
+    "truck",
+    "tracking",
+    "dolly side",
+    "ট্র্যাকিং",
+    "পাশে পাশে"
+   ],
+   "params": [
+    "camera.x",
+    "lookAt.x"
+   ],
+   "seconds": [
+    3.0,
+    8.0
+   ],
+   "speed": {
+    "adultWalk_mps": [
+     1.2,
+     1.4
+    ],
+    "childWalk_mps": [
+     0.9,
+     1.1
+    ],
+    "elderWalk_mps": [
+     0.7,
+     0.9
+    ],
+    "run_mps": [
+     3.0,
+     5.0
+    ],
+    "rickshaw_mps": [
+     3.0,
+     5.0
+    ],
+    "bus_mps": [
+     6.0,
+     12.0
+    ],
+    "boat_mps": [
+     1.5,
+     4.0
+    ]
+   },
+   "framing": {
+    "9:16": "subject face x 0.4-0.45 (lead room ahead)",
+    "16:9": "x 0.33-0.4"
+   },
+   "parallax": "automatic from depth: layer speed = cameraSpeed * subjectDepth / layerDepth. Add 1-2 foreground posts/trees/rickshaws at 0.3-0.5 x subject depth: they pass at 2-3x and sell the speed; give them motion blur.",
+   "ease": {
+    "name": "gentleInOut",
+    "bezier": [
+     0.37,
+     0.0,
+     0.63,
+     1.0
+    ],
+    "easeIn_s": 0.5,
+    "easeOut_s": 0.5
+   },
+   "use": "walking and talking; a rickshaw or bus ride; a chase; a child running to school",
+   "avoid": "tracking a person who stands still; a set that ends before the move does",
+   "combineWith": [
+    "panLeft",
+    "panRight"
+   ],
+   "cost": "free with depth layers"
+  },
+  "followBehind": {
+   "aliases": [
+    "follow",
+    "follow shot",
+    "ফলো শট",
+    "পেছনে পেছনে"
+   ],
+   "params": [
+    "cameraZ"
+   ],
+   "seconds": [
+    3.0,
+    8.0
+   ],
+   "distanceBehind_m": [
+    1.5,
+    3.0
+   ],
+   "speed": "the walker's speed in depth",
+   "flat2d": "the walker (back view walk cycle) keeps a constant size; every set layer scales up as the camera approaches (camera z). Without camera z: use a static camera and let the walker walk away (shrinking) instead.",
+   "needs": "back-view walk cycle; camera z (or per-layer scale animation)",
+   "use": "entering a new world (first day at school, arriving in Dhaka); suspense (walking into a dark room); following someone through a crowd",
+   "avoid": "long follows with no destination reveal",
+   "cost": "needs camera z"
+  },
+  "lead": {
+   "aliases": [
+    "lead shot",
+    "track back",
+    "walking toward camera"
+   ],
+   "params": [
+    "cameraZ"
+   ],
+   "seconds": [
+    3.0,
+    8.0
+   ],
+   "flat2d": "front-view walk toward the camera while the camera retreats at the same speed: the walker stays the same size, set layers shrink. Needs camera z.",
+   "use": "walk-and-talk with faces visible; a determined walk; two friends on a village path",
+   "avoid": "very long leads (> 8 s) in short films",
+   "cost": "needs camera z"
+  },
+  "crane": {
+   "aliases": [
+    "crane up",
+    "jib",
+    "pedestal",
+    "rise",
+    "ক্রেন শট",
+    "জিব",
+    "উপরে ওঠা"
+   ],
+   "params": [
+    "cameraH",
+    "lookAt.y"
+   ],
+   "seconds": [
+    4.0,
+    8.0
+   ],
+   "amount": {
+    "cameraH_m": "1.5 -> 4-6 (ending), 1.5 -> 2.5 (reveal over a wall/crowd)"
+   },
+   "ease": {
+    "name": "slowInSlowOut",
+    "bezier": [
+     0.45,
+     0.0,
+     0.55,
+     1.0
+    ]
+   },
+   "flat2d": "Animate camera height. With a level shift camera the horizon stays at the same frame row; every ground layer slides DOWN by k*dh/d (near layers faster): vertical parallax. The floor band grows with h; front-view tabletops get wrong past about h 2.2 m (crop them out). Add a small tilt down to keep the subject in frame.",
+   "use": "ending a film (rise and leave the characters); revealing a crowd or a flooded village; a moment of release after tension",
+   "avoid": "rising inside a room with no ceiling drawn; more than one per film",
+   "combineWith": [
+    "tiltDown",
+    "pullOut"
+   ],
+   "variants": {
+    "craneDown": "6 m -> 1.5 m over 3-6 s: descend from the sky into the street to open a film"
+   },
+   "cost": "cheap (camera height parameter)"
+  },
+  "handheld": {
+   "aliases": [
+    "handheld",
+    "shaky cam",
+    "হ্যান্ডহেল্ড"
+   ],
+   "params": [
+    "lookAt (noise)",
+    "tilt (noise)"
+   ],
+   "type": "texture (may sit under one real move)",
+   "levels": {
+    "calm": {
+     "translate_shortSide": [
+      0.004,
+      0.006
+     ],
+     "roll_deg": [
+      0.2,
+      0.3
+     ],
+     "freq_hz": [
+      0.5,
+      1.0
+     ]
+    },
+    "tense": {
+     "translate_shortSide": [
+      0.008,
+      0.015
+     ],
+     "roll_deg": [
+      0.5,
+      1.0
+     ],
+     "freq_hz": [
+      1.0,
+      2.0
+     ]
+    },
+    "panic": {
+     "translate_shortSide": [
+      0.02,
+      0.03
+     ],
+     "roll_deg": [
+      1.0,
+      2.0
+     ],
+     "freq_hz": [
+      2.0,
+      3.0
+     ],
+     "jitter": "plus 6 Hz micro-jitter at 20 % amplitude"
+    }
+   },
+   "noise": "smooth (simplex/Perlin) noise, 2 octaves; never per-frame random values",
+   "overscan": "scale the frame up 2-4 % so shake never shows the set edge",
+   "use": "documentary feel, tension, chases, POV, a crowd, panic",
+   "avoid": "prayer and faith moments; calm dialogue; inserts with text; under a zoomPunch",
+   "cost": "free"
+  },
+  "whipPan": {
+   "aliases": [
+    "whip pan",
+    "swish pan",
+    "হুইপ প্যান"
+   ],
+   "params": [
+    "lookAt.x",
+    "motion blur"
+   ],
+   "frames": [
+    6,
+    12
+   ],
+   "seconds": [
+    0.2,
+    0.4
+   ],
+   "phases_f": {
+    "accelerate": [
+     2,
+     3
+    ],
+    "blur": [
+     2,
+     4
+    ],
+    "decelerate": [
+     2,
+     4
+    ]
+   },
+   "peakSpeed": "2-4 frame widths per second",
+   "blurLength": "0.3-0.6 of frame width at peak",
+   "ease": {
+    "name": "whip",
+    "bezier": [
+     0.7,
+     0.0,
+     0.3,
+     1.0
+    ]
+   },
+   "cutInside": "put the cut on the most blurred frame; the incoming shot whips in the SAME direction",
+   "use": "energy; jumping to another place or time ('meanwhile'); comedy; a sudden look",
+   "avoid": "calm and faith scenes; more than 2 per minute",
+   "cost": "cheap (needs a directional blur)"
+  },
+  "focusPull": {
+   "aliases": [
+    "rack focus",
+    "focus pull",
+    "ফোকাস পুল",
+    "র‍্যাক ফোকাস"
+   ],
+   "params": [
+    "blur per layer"
+   ],
+   "frames": [
+    15,
+    36
+   ],
+   "seconds": [
+    0.5,
+    1.2
+   ],
+   "amount": {
+    "outOfFocus_shortSide": [
+     0.014,
+     0.025
+    ],
+    "inFocus": 0
+   },
+   "ease": {
+    "name": "slowInSlowOut",
+    "bezier": [
+     0.45,
+     0.0,
+     0.55,
+     1.0
+    ]
+   },
+   "timing": "start 4-8 frames after the new subject starts to move or speak",
+   "flat2d": "Blur whole depth layers (geometry.blur). Flat colour blurs beautifully; cheap in canvas/CSS filters.",
+   "use": "shift attention from near to far (someone appears in the doorway behind); OTS emphasis; a tear in focus then the photo behind",
+   "avoid": "pulling to an empty plane; pulling in every shot",
+   "combineWith": [
+    "creep"
+   ],
+   "cost": "cheap"
+  },
+  "zoomPunch": {
+   "aliases": [
+    "punch in",
+    "crash zoom",
+    "snap zoom",
+    "zoom punch",
+    "পাঞ্চ ইন",
+    "জুম পাঞ্চ"
+   ],
+   "params": [
+    "frameW"
+   ],
+   "frames": [
+    3,
+    5
+   ],
+   "seconds": [
+    0.1,
+    0.17
+   ],
+   "amount": {
+    "frameWScale": [
+     0.85,
+     0.92
+    ],
+    "overshoot": 0.02
+   },
+   "ease": {
+    "name": "snapOvershoot",
+    "bezier": [
+     0.18,
+     1.35,
+     0.4,
+     1.0
+    ]
+   },
+   "after": "hold to the end of the shot, or snap back in 4-6 frames after 0.5-1.0 s",
+   "anchor": "the eyes keep their frame position",
+   "timing": "land on the stressed syllable of the key word, or 2-4 frames after a reaction starts",
+   "maxRate": "1 per 8-10 s",
+   "variants": {
+    "doublePunch": "x0.9 then x0.82 on two beats 8-15 frames apart: comic overkill / soap-opera parody"
+   },
+   "use": "comedy emphasis, a punchline, an explainer's key word, a sudden 'what?!' reaction",
+   "avoid": "serious grief, faith, and any scene that should feel real; stacking with handheld",
+   "cost": "free"
+  },
+  "impactShake": {
+   "aliases": [
+    "camera shake",
+    "jolt",
+    "ঝাঁকুনি"
+   ],
+   "params": [
+    "lookAt (noise)",
+    "tilt (noise)"
+   ],
+   "type": "texture",
+   "amount": {
+    "translate_shortSide": [
+     0.015,
+     0.04
+    ],
+    "roll_deg": [
+     0.5,
+     1.5
+    ],
+    "freq_hz": [
+     8,
+     14
+    ]
+   },
+   "decay_s": [
+    0.25,
+    0.5
+   ],
+   "decayFrames": [
+    8,
+    15
+   ],
+   "trigger": "starts on the impact frame, exponential decay",
+   "use": "thunder, a door slam, a fall, a bus braking hard, a cricket ball hitting the stumps, a heavy sack dropped",
+   "avoid": "violence shown for its own sake; more than 1 per 10 s",
+   "cost": "free"
+  },
+  "parallaxDrift": {
+   "aliases": [
+    "2.5D drift",
+    "parallax slide",
+    "Ken Burns with depth"
+   ],
+   "params": [
+    "camera.x"
+   ],
+   "type": "texture-level move (counts as the one move)",
+   "seconds": [
+    3.0,
+    8.0
+   ],
+   "amount": {
+    "frameWidths": [
+     0.02,
+     0.05
+    ]
+   },
+   "ease": {
+    "name": "linear or gentleInOut",
+    "bezier": [
+     0.37,
+     0.0,
+     0.63,
+     1.0
+    ]
+   },
+   "flat2d": "The cheapest 'cinematic' move in flat 2D: a tiny sideways truck; depth layers slide at different speeds and the picture gains depth.",
+   "use": "establishing wides, landscapes, long calm singles, title cards over a set",
+   "avoid": "dialogue cutting (cutting between drifting shots that drift in opposite directions is jarring)",
+   "cost": "free"
+  },
+  "dollyZoom": {
+   "aliases": [
+    "vertigo",
+    "zolly",
+    "contra-zoom"
+   ],
+   "params": [
+    "cameraZ",
+    "frameW"
+   ],
+   "seconds": [
+    1.0,
+    2.5
+   ],
+   "amount": {
+    "backgroundScale": {
+     "dollyOutZoomIn": [
+      1.2,
+      1.6
+     ],
+     "dollyInZoomOut": [
+      0.7,
+      0.85
+     ]
+    },
+    "subjectScale": 1.0
+   },
+   "ease": {
+    "name": "slowInSlowOut",
+    "bezier": [
+     0.45,
+     0.0,
+     0.55,
+     1.0
+    ]
+   },
+   "flat2d": "possible with depth layers: keep the subject's size, scale background layers by their depth ratio as camera z changes",
+   "use": "a shocking realisation (the exam result, a betrayal); at most once per film",
+   "avoid": "comedy (unless parody); more than once",
+   "cost": "needs camera z"
+  },
+  "arc": {
+   "aliases": [
+    "orbit",
+    "circle",
+    "arc shot"
+   ],
+   "params": [
+    "camera around subject"
+   ],
+   "possibleWithFrontPieces": "no (beyond +-10 deg)",
+   "fake": "+-10-15 deg: slide background layers opposite to the subject (parallax) and swap the person's view front->three at the midpoint, hidden by a foreground wipe",
+   "needs": "every set piece and person in several views",
+   "use": "a reunion, a dizzy romance, a hero moment",
+   "avoid": "until the library has multi-view sets",
+   "cost": "expensive"
+  },
+  "craneDown": {
+   "aliases": [
+    "crane down",
+    "descend",
+    "নেমে আসা"
+   ],
+   "params": [
+    "cameraH",
+    "lookAt.y"
+   ],
+   "seconds": [
+    3.0,
+    6.0
+   ],
+   "amount": {
+    "cameraH_m": "6 -> 1.5 (sky into the street), 2.5 -> 1.5 (over a wall into a yard)"
+   },
+   "ease": {
+    "name": "slowInSlowOut",
+    "bezier": [
+     0.45,
+     0.0,
+     0.55,
+     1.0
+    ]
+   },
+   "flat2d": "the reverse of crane: ground layers slide UP by k*dh/d as the camera comes down; the floor band shrinks",
+   "use": "opening a film: from the sky or a rooftop down into the lane where the story starts",
+   "avoid": "more than one per film; descending into a room with no ceiling drawn",
+   "combineWith": [
+    "tiltUp"
+   ],
+   "cost": "cheap (camera height parameter)"
+  }
+ },
+ "moveRules": {
+  "maxSimultaneous": 1,
+  "textureAllowedUnderOneMove": [
+   "handheld",
+   "impactShake"
+  ],
+  "allowedPairs": [
+   [
+    "trackSide",
+    "panLeft"
+   ],
+   [
+    "trackSide",
+    "panRight"
+   ],
+   [
+    "crane",
+    "tiltDown"
+   ],
+   [
+    "crane",
+    "pullOut"
+   ],
+   [
+    "focusPull",
+    "creep"
+   ]
+  ],
+  "calmTalkShare": "in calm dialogue <= 1 moving shot (not counting creep/parallaxDrift) per 5 shots",
+  "settle": "a move into a cut: either finish the move and hold >= 0.4 s (12 f), or cut mid-move into a shot moving the same direction at a similar speed"
+ },
+ "cuts": {
+  "hardCut": {
+   "aliases": [
+    "cut",
+    "straight cut",
+    "কাট"
+   ],
+   "rule": "Picture and sound change on the same frame.",
+   "timing": {
+    "frames": 0,
+    "seconds": 0.0
+   },
+   "use": "the default (90 %+ of joins)",
+   "avoid": "between two shots of the same size and angle on the same person (rules.jumpCut)"
+  },
+  "cutOnAction": {
+   "aliases": [
+    "match on action",
+    "action cut",
+    "অ্যাকশন কাট"
+   ],
+   "rule": "Start a movement in shot A and finish it in shot B (sit down, stand up, turn, open a door, lift a cup, throw).",
+   "timing": {
+    "overlap_f": {
+     "default": 0,
+     "allowed": [
+      -2,
+      3
+     ]
+    },
+    "cutPoint": "1/3 to 1/2 into the action, during the fastest part, not after it lands",
+    "outgoingMin_f": 6,
+    "incomingMotionMin_f": 10,
+    "outgoingMin_s": 0.2,
+    "incomingMotionMin_s": 0.33,
+    "overlap_s": {
+     "default": 0.0,
+     "allowed": [
+      -0.07,
+      0.1
+     ]
+    }
+   },
+   "why": "Viewers prefer a straight match (0 frames) on average; a few frames either way barely matter. Motion AFTER the cut is what hides it, so the incoming shot must keep moving for >= 10 frames.",
+   "sizeChange": ">= 1 ladder step (wide -> medium, medium -> closeUp) or a view change",
+   "use": "joining a wide and a close shot of one action; hiding a size change; energy",
+   "avoid": "cutting after the action has stopped (the cut shows)"
+  },
+  "matchCut": {
+   "aliases": [
+    "graphic match",
+    "ম্যাচ কাট"
+   ],
+   "rule": "Join two different things that share a shape, position, colour or movement (a round roti -> the full moon; a spinning wheel -> a spinning fan; a falling kite -> a falling leaf).",
+   "timing": {
+    "outgoingHold_s": [
+     1.0,
+     2.0
+    ],
+    "frames": 0,
+    "outgoingHold_f": [
+     30,
+     60
+    ],
+    "seconds": 0.0
+   },
+   "tolerance": {
+    "shapeCentre_frame": 0.08,
+    "shapeSize": 0.2,
+    "angle_deg": 15,
+    "motionSpeed": 0.3,
+    "motionDirection": "same sign"
+   },
+   "use": "jumping in time or place with elegance; openings; montage transitions; memory",
+   "avoid": "forcing it (if the shapes differ by more than the tolerance, use a dissolve)"
+  },
+  "eyelineMatch": {
+   "aliases": [
+    "eyeline",
+    "looking cut",
+    "আইলাইন ম্যাচ"
+   ],
+   "rule": "A looks off-screen; cut to what A looks at, seen from about A's position and height; then (often) back to A.",
+   "timing": {
+    "holdLookBeforeCut_f": [
+     12,
+     18
+    ],
+    "targetHold_s": [
+     0.8,
+     2.0
+    ],
+    "holdLookBeforeCut_s": [
+     0.4,
+     0.6
+    ],
+    "targetHold_f": [
+     24,
+     60
+    ]
+   },
+   "geometry": "A's gaze direction (left/right, up/down) predicts where the target is; the target shot's camera height = A's eye height (or the POV).",
+   "use": "showing what someone sees or wants; reveals; Kuleshov-style reactions",
+   "avoid": "a look with no payoff; a target framed from an impossible height"
+  },
+  "reactionCut": {
+   "aliases": [
+    "reaction shot",
+    "cutaway to listener",
+    "রিঅ্যাকশন শট"
+   ],
+   "rule": "Cut to the listener when the line lands, not when it ends.",
+   "timing": {
+    "afterKeyWord_f": [
+     6,
+     15
+    ],
+    "reactionHold_s": [
+     1.0,
+     2.5
+    ],
+    "lCutOverlap_f": [
+     6,
+     24
+    ],
+    "afterKeyWord_s": [
+     0.2,
+     0.5
+    ],
+    "reactionHold_f": [
+     30,
+     75
+    ],
+    "lCutOverlap_s": [
+     0.2,
+     0.8
+    ]
+   },
+   "use": "dialogue rhythm; comedy (the reaction IS the joke); bad news (the face receiving it matters more than the face giving it)",
+   "avoid": "a reaction with no change in the face"
+  },
+  "jCut": {
+   "aliases": [
+    "J-cut",
+    "audio lead",
+    "sound advance",
+    "জে কাট"
+   ],
+   "rule": "The sound of the NEXT shot starts before its picture.",
+   "timing": {
+    "dialogue_s": [
+     0.2,
+     0.5
+    ],
+    "dialogue_f": [
+     6,
+     15
+    ],
+    "sceneEntry_s": [
+     0.5,
+     1.5
+    ],
+    "sceneEntry_f": [
+     15,
+     45
+    ],
+    "ambienceLead_s": [
+     1.0,
+     3.0
+    ],
+    "ambienceLead_f": [
+     30,
+     90
+    ]
+   },
+   "use": "a voice calls before we see the speaker; the azan or a train is heard before the new scene; smoothing dialogue so it feels like a real conversation",
+   "avoid": "leading with a sound that belongs to nothing on screen later"
+  },
+  "lCut": {
+   "aliases": [
+    "L-cut",
+    "audio trail",
+    "এল কাট"
+   ],
+   "rule": "The sound of the PREVIOUS shot keeps playing over the next picture.",
+   "timing": {
+    "dialogue_s": [
+     0.2,
+     0.8
+    ],
+    "dialogue_f": [
+     6,
+     24
+    ],
+    "sceneExit_s": [
+     1.0,
+     3.0
+    ],
+    "sceneExit_f": [
+     30,
+     90
+    ]
+   },
+   "use": "the speaker keeps talking while we watch the listener's reaction; a song or a mother's voice carries into the next scene",
+   "avoid": "trailing a speaker's line under a shot where the speaker's mouth is visible and closed"
+  },
+  "fade": {
+   "aliases": [
+    "fade in",
+    "fade out",
+    "fade from black",
+    "fade to black",
+    "ফেড ইন",
+    "ফেড আউট"
+   ],
+   "rule": "From/to a flat colour (black by default; white for heaven/memory/purity).",
+   "timing": {
+    "fadeInOpening_s": [
+     0.5,
+     1.0
+    ],
+    "fadeInOpening_f": [
+     15,
+     30
+    ],
+    "fadeOutEnding_s": [
+     1.0,
+     2.0
+    ],
+    "fadeOutEnding_f": [
+     30,
+     60
+    ],
+    "holdBlackAfter_s": [
+     0.5,
+     1.0
+    ],
+    "chapterEnd_f": [
+     20,
+     30
+    ],
+    "holdBlackAfter_f": [
+     15,
+     30
+    ],
+    "chapterEnd_s": [
+     0.67,
+     1.0
+    ]
+   },
+   "use": "the start and end of a film; the end of a chapter; sleep; death handled gently",
+   "avoid": "inside a scene; in 15-30 s phone videos except at the very end (it costs precious seconds)"
+  },
+  "dissolve": {
+   "aliases": [
+    "cross-dissolve",
+    "mix",
+    "lap dissolve",
+    "ডিজলভ"
+   ],
+   "rule": "Shot A fades out while shot B fades in, overlapping.",
+   "timing": {
+    "quickSoft_f": [
+     12,
+     24
+    ],
+    "timePassing_f": [
+     30,
+     60
+    ],
+    "minimum_f": 8,
+    "quickSoft_s": [
+     0.4,
+     0.8
+    ],
+    "timePassing_s": [
+     1.0,
+     2.0
+    ],
+    "minimum_s": 0.27
+   },
+   "use": "time passing; a memory starting or ending; softness (a lullaby, a sunset); joining two similar compositions (same room, later)",
+   "avoid": "between two shots in the same time (it says 'time passed'); under 8 frames (looks like a mistake)"
+  },
+  "cutToBlack": {
+   "aliases": [
+    "cut to black",
+    "smash to black",
+    "কাট টু ব্ল্যাক"
+   ],
+   "rule": "Instant black; usually sound stops too (or one sound continues).",
+   "timing": {
+    "holdBlack_s": [
+     0.5,
+     2.0
+    ],
+    "holdBlack_f": [
+     15,
+     60
+    ]
+   },
+   "use": "shock; an unfinished sentence; the last frame of a film; a chapter hit",
+   "avoid": "more than once per short film"
+  },
+  "smashCut": {
+   "aliases": [
+    "smash cut",
+    "স্ম্যাশ কাট"
+   ],
+   "rule": "Abrupt jump from one intensity to its opposite (quiet -> loud, calm -> chaos, a promise -> its contradiction). Picture and sound change on the same frame; the incoming shot starts at its peak.",
+   "timing": {
+    "incomingHoldMin_s": 1.0,
+    "frames": 0,
+    "incomingHoldMin_f": 30,
+    "seconds": 0.0
+   },
+   "pattern": "'I will never eat that.' -> SMASH -> him eating it.",
+   "use": "comedy; waking from a dream; a scream into silence",
+   "avoid": "faith scenes; grief"
+  },
+  "timeJump": {
+   "aliases": [
+    "time passes",
+    "later",
+    "পরের দিন",
+    "সময় পার"
+   ],
+   "rule": "Show time passing with one of these, cheapest first.",
+   "timing": {
+    "dissolveStep_f": [
+     30,
+     60
+    ],
+    "lightChangeShot_s": [
+     0.8,
+     1.2
+    ],
+    "insert_s": [
+     1.0,
+     1.5
+    ],
+    "titleCard_s": [
+     1.5,
+     2.5
+    ],
+    "montageShot_s": [
+     0.6,
+     1.2
+    ],
+    "dissolveStep_s": [
+     1.0,
+     2.0
+    ],
+    "lightChangeShot_f": [
+     24,
+     36
+    ],
+    "insert_f": [
+     30,
+     45
+    ],
+    "titleCard_f": [
+     45,
+     75
+    ],
+    "montageShot_f": [
+     18,
+     36
+    ]
+   },
+   "methods": {
+    "sameFrameDissolve": {
+     "how": "same set and framing, people/props/light change, dissolve 30-60 f each; 2-4 steps",
+     "cost": "very cheap in 2D"
+    },
+    "lightChange": {
+     "how": "3 shots of the same place: day -> dusk -> night, 0.8-1.2 s each, hard cuts or 12 f dissolves",
+     "cost": "cheap (palette swap)"
+    },
+    "insert": {
+     "how": "clock, calendar, phone date, the moon, a candle burned down, rice grown in the field: 1.0-1.5 s",
+     "cost": "cheap"
+    },
+    "titleCard": {
+     "how": "'পরের দিন' / 'তিন বছর পর' 1.5-2.5 s (reading time)",
+     "cost": "free"
+    },
+    "montage": {
+     "how": "4-8 shots 0.6-1.2 s each on music beats",
+     "cost": "medium"
+    },
+    "matchAcrossTime": {
+     "how": "matchCut on the same action years apart (a child's hand -> an adult's hand)",
+     "cost": "medium"
+    }
+   },
+   "use": "any ellipsis of hours to years",
+   "avoid": "mixing 3 methods for one jump"
+  },
+  "crossCut": {
+   "aliases": [
+    "parallel editing",
+    "intercut",
+    "cross-cutting"
+   ],
+   "rule": "Alternate between two places/people happening at the same time.",
+   "timing": {
+    "segmentStart_s": [
+     2.0,
+     4.0
+    ],
+    "segmentEnd_s": [
+     0.6,
+     1.2
+    ],
+    "shrinkPerSwitch": 0.8,
+    "segmentStart_f": [
+     60,
+     120
+    ],
+    "segmentEnd_f": [
+     18,
+     36
+    ]
+   },
+   "use": "phone calls; a race against time (the bus is leaving / she is running); a rescue",
+   "avoid": "switching without a clear question linking the two"
+  },
+  "cutaway": {
+   "aliases": [
+    "cutaway",
+    "B-roll",
+    "insert cut"
+   ],
+   "rule": "Cut to something else in the same place (a clock, a cat, the window, the street), then back.",
+   "timing": {
+    "hold_s": [
+     0.8,
+     2.0
+    ],
+    "hold_f": [
+     24,
+     60
+    ]
+   },
+   "use": "breathing room; hiding a jump in time or a jump cut; showing the world",
+   "avoid": "cutaways that pull attention from the emotional line"
+  },
+  "montage": {
+   "aliases": [
+    "montage",
+    "মন্তাজ"
+   ],
+   "rule": "A run of short shots that compresses a process or a period.",
+   "timing": {
+    "shot_s": [
+     0.5,
+     1.5
+    ],
+    "shots": [
+     4,
+     10
+    ],
+    "onBeat": "cut on music beats (every 2 beats at 90-120 bpm = 1.0-1.3 s)",
+    "shot_f": [
+     15,
+     45
+    ]
+   },
+   "use": "studying for exams, preparing for Eid, building a boat, a season changing, training for a match",
+   "avoid": "montages longer than 15 % of a short film"
+  },
+  "whiteFlash": {
+   "aliases": [
+    "flash cut",
+    "white flash"
+   ],
+   "rule": "2-4 frames of white (or the brightest palette colour) between two shots.",
+   "timing": {
+    "frames": [
+     2,
+     4
+    ],
+    "seconds": [
+     0.07,
+     0.13
+    ]
+   },
+   "use": "a memory flashing back; a camera flash; lightning; a sudden idea",
+   "avoid": "repeated flashes (photosensitivity: never more than 3 flashes in any 1 s)"
+  },
+  "wipe": {
+   "aliases": [
+    "wipe",
+    "slide transition"
+   ],
+   "rule": "A shape or edge pushes the old shot off the screen.",
+   "timing": {
+    "frames": [
+     10,
+     20
+    ],
+    "seconds": [
+     0.33,
+     0.67
+    ]
+   },
+   "use": "children's content, retro comedy, chapter breaks in explainers",
+   "avoid": "drama"
+  },
+  "irisOut": {
+   "aliases": [
+    "iris out",
+    "iris in"
+   ],
+   "rule": "A circle closes on the subject to black (classic cartoon).",
+   "timing": {
+    "frames": [
+     15,
+     24
+    ],
+    "seconds": [
+     0.5,
+     0.8
+    ]
+   },
+   "use": "comic endings, retro cartoon style",
+   "avoid": "serious drama"
+  },
+  "jumpCutStyle": {
+   "aliases": [
+    "vlog cut",
+    "talking-head jump cut"
+   ],
+   "rule": "Deliberate jump cuts inside one take of a person talking to camera, to remove pauses.",
+   "timing": {
+    "removeSilenceMin_f": 8,
+    "punchInOnAlternateCuts": "frameW x0.85-0.9 on every 2nd cut hides the jump",
+    "removeSilenceMin_s": 0.27
+   },
+   "use": "direct-address explainers and narrator pieces only",
+   "avoid": "drama scenes"
+  },
+  "objectWipe": {
+   "aliases": [
+    "foreground wipe",
+    "hidden cut"
+   ],
+   "rule": "A foreground thing (a person, a rickshaw, a pillar, a passing bus) fills the frame for 3-6 frames; cut while it covers the frame.",
+   "timing": {
+    "cover_f": [
+     3,
+     6
+    ],
+    "cover_s": [
+     0.1,
+     0.2
+    ]
+   },
+   "use": "hiding a cut in a 'one-shot' feel; changing place in a market or a street",
+   "avoid": "using it twice in a row"
+  },
+  "soundBridge": {
+   "aliases": [
+    "match on sound",
+    "sound bridge"
+   ],
+   "rule": "A sound connects two shots: a kettle whistle becomes a train whistle; a heartbeat becomes a drum.",
+   "timing": {
+    "overlap_s": [
+     0.3,
+     1.0
+    ],
+    "overlap_f": [
+     9,
+     30
+    ]
+   },
+   "use": "transitions with wit; memory",
+   "avoid": "when the two sounds are not alike"
+  }
+ },
+ "rulesInput": {
+  "note": "What the checker needs per shot. All tests below use only these fields plus the engine's project(point) -> frame (x, y).",
+  "shot": {
+   "id": "string",
+   "sceneId": "string",
+   "locationId": "string",
+   "t0": "s",
+   "t1": "s",
+   "format": "9:16|16:9",
+   "size": "planned size key",
+   "angle": "angle key",
+   "moves": [
+    "move keys active in the shot"
+   ],
+   "cutIn": "cut key that joins this shot to the previous one",
+   "camera": {
+    "x": "m",
+    "h": "m (camera height)",
+    "z": "m (if the engine has it)",
+    "frameW": "m at subject depth",
+    "tilt": "deg roll",
+    "lookAtY": "m",
+    "mirrored": "bool"
+   },
+   "people": [
+    {
+     "id": "A",
+     "x": "m",
+     "depth": "m from camera",
+     "stature": "m",
+     "head_m": "m",
+     "yaw": "deg",
+     "view": "front|three|side|threeBack|back",
+     "posture": "stand|sit|kneel|lie|sajdah|ruku",
+     "eyeTarget": "personId | 'lens' | {x,y,depth}",
+     "gazePitch": "deg (+ up)",
+     "mouth": "speaking|closed|idle",
+     "velocity": {
+      "x": "m/s",
+      "depth": "m/s"
+     }
+    }
+   ],
+   "tags": [
+    "pov",
+    "directAddress",
+    "faith",
+    "emotionBeat",
+    "keyLine",
+    "shortSide",
+    "jumpCutStyle",
+    "timeSkip",
+    "lineCross",
+    "delayedEstablish",
+    "montage",
+    "powerShift",
+    "kids"
+   ]
+  },
+  "dialogue": [
+   {
+    "speaker": "A",
+    "t0": "s",
+    "t1": "s",
+    "text": "string",
+    "words": [
+     {
+      "w": "string",
+      "t0": "s",
+      "t1": "s"
+     }
+    ]
+   }
+  ],
+  "derived": {
+   "faceX/eyeY/headTopY/chinY": "project the landmarks",
+   "headFrac": "(chinY - headTopY) in frame-height units",
+   "screenDir(p)": "sign(sin(yaw)) for |yaw| >= 22.5 else 0",
+   "gazeDirX(p)": "sign of the screen-x component of the gaze vector (yaw + eye offset)",
+   "frameH_heads(shot, p)": "1 / headFrac(p)"
+  }
+ },
+ "rules": [
+  {
+   "id": "line180",
+   "priority": "must",
+   "rule": "In a scene where people interact, keep the camera on one side of the line through the two main people, so A stays left of B and each keeps their facing direction.",
+   "test": "Take the scene's first shot with both A and B visible (the master): s0 = sign(faceX(B) - faceX(A)). In every later shot with both visible, sign(faceX(B) - faceX(A)) must equal s0. In singles where A looks at B, screenDir(A) must equal s0 and screenDir(B) must equal -s0. In ground-plane terms: sign(cross(B - A, Camera - A)) is constant.",
+   "params": {
+    "onTheLineYaw_deg": 15
+   },
+   "allowedCrossings": [
+    "a shot taken ON the line (subject front-on |yaw| <= 15, or a POV)",
+    "a move that crosses the line inside the shot",
+    "a character crossing the frame and re-establishing",
+    "a cutaway/insert followed by a new master"
+   ],
+   "fix": "mirror the offending shot (cheap; then run mirrorSafety), or re-stage, or add one of the allowed bridges"
+  },
+  {
+   "id": "screenDirection",
+   "priority": "must",
+   "rule": "A movement that continues across cuts (a walk, a chase, a journey) keeps the same screen direction.",
+   "test": "For consecutive shots sharing a movementId: sign(screen vx of the mover) is the same. Ignore shots where |vx| < 0.02 frame widths/s (moving toward/away from camera = neutral).",
+   "convention": {
+    "outward": "+1 (left to right): home -> school, village -> Dhaka, leaving",
+    "return": "-1 (right to left): coming home",
+    "note": "Bangla reads left to right, so the Western convention holds; keep it consistent within a film."
+   },
+   "fix": "mirror the shot; or insert a neutral shot (head-on or tail-away); or show the turn on screen"
+  },
+  {
+   "id": "eyelineMatch",
+   "priority": "must",
+   "rule": "Two people looking at each other in separate shots look in opposite screen directions (A looks right -> B looks left).",
+   "test": "Consecutive singles X (A, eyeTarget B, B not visible) and Y (B, eyeTarget A, A not visible): gazeDirX(A) = -gazeDirX(B), both non-zero, and the gaze is 5-35 deg off the lens. If A is left in the master, gazeDirX(A) = +1.",
+   "fix": "set yaw/eye direction from the master positions (rig parameters, free) or mirror one shot"
+  },
+  {
+   "id": "eyelineHeight",
+   "priority": "should",
+   "rule": "Vertical gaze matches real heights: the taller or standing person looks down, the shorter or seated one looks up.",
+   "test": "d = eyeH(A) - eyeH(B) (world). If d > 0.15 m: gazePitch(A) = -atan(d / dist) +- 10 deg and gazePitch(B) = +atan(d / dist) +- 10 deg. If |d| <= 0.15 m both |gazePitch| <= 8 deg.",
+   "fix": "compute pitch = atan2(d, horizontal distance) and set the eye targets"
+  },
+  {
+   "id": "headroom",
+   "priority": "must",
+   "rule": "The gap above the head matches the shot size.",
+   "test": "headTopY must lie within sizes[size].frameTop.headroom (format value). Negative (cropped) only for closeUp (>= allowCrop -0.12) and extremeClose. Fail 'sinking' if headroom > max + 0.05.",
+   "fix": "lookAt.y += (actualHeadTopY - targetHeadTopY) * frameH"
+  },
+  {
+   "id": "leadRoom",
+   "priority": "should",
+   "rule": "Leave more space in front of a face (where it looks) or a mover (where it goes) than behind.",
+   "test": "For a person with |yaw| >= 20 or |vx| > 0: ahead = 1 - faceX if screenDir = +1, else faceX; behind = 1 - ahead. Looks: ahead/behind >= 1.12 (9:16), >= 1.5 (16:9). Movers: >= 1.3 (9:16), >= 1.8 (16:9). 9:16 closeUp and extremeClose are exempt (the face fills the width; show direction with yaw and eyes).",
+   "exceptions": [
+    "tag shortSide: deliberate trapped/threat framing, max 3 s"
+   ],
+   "fix": "shift lookAt.x so faceX hits sizes[size].subjectPos"
+  },
+  {
+   "id": "jumpCut",
+   "priority": "must",
+   "rule": "Never cut between two shots of the same subject at the same size and angle.",
+   "test": "Consecutive shots with the same main subject: r = max(frameH_heads1, frameH_heads2) / min(...). Angle change = |yaw1 - yaw2| (view change) and vertical change = atan(|h1 - h2| / subjectDistance). FAIL if r < 1.25 and yaw change < 30 deg and vertical change < 15 deg. WARN if 1.25 <= r < 1.4 with no other change.",
+   "exceptions": [
+    "tag jumpCutStyle (direct-address explainers)",
+    "tag timeSkip with a dissolve"
+   ],
+   "fix": "change size by >= 1 ladder step (2 is better), or change the view (front -> three = 45 deg), or put a reaction/insert between them"
+  },
+  {
+   "id": "minChangePerCut",
+   "priority": "must",
+   "rule": "Every cut on the same subject changes size by at least one ladder step (frame-height ratio >= 1.4) or angle by at least 30 deg (the 30-degree rule).",
+   "test": "For same-subject cuts: r >= 1.4 OR yaw change >= 30 OR vertical angle change >= 15 deg (about 0.5 m of camera height at 2 m) OR a change of angle family (eyeLevel -> overShoulder, profile, high, low).",
+   "flat2dNote": "The flat engine cannot orbit; 'angle' changes come from the person's view (front/three/side), camera height, OTS vs clean, and mirroring for reverses.",
+   "fix": "as jumpCut"
+  },
+  {
+   "id": "eyesUpperThird",
+   "priority": "should",
+   "rule": "In human singles the eyes sit near the upper third.",
+   "test": "medium to closeUp: eyeY in [0.22, 0.4]; mediumWide/full: eyeY <= 0.25; extremeClose variants and inserts exempt. FAIL if eyeY > 0.5 in any single from medium inward.",
+   "fix": "lookAt.y correction as headroom"
+  },
+  {
+   "id": "jointCuts",
+   "priority": "must",
+   "rule": "Frame edges never cut a person at a joint (neck, shoulders line, elbows, waist line, wrists, knees, ankles).",
+   "test": "For each visible person, convert where the top/bottom edge crosses them into head units from headTop; fail if it falls inside any landmarks.joints band. For side edges: warn if a wrist or elbow lies within 0.03 of frame width of the edge.",
+   "exceptions": [
+    "OTS near person",
+    "people passing in the foreground",
+    "extremeWide/wide crowds"
+   ],
+   "fix": "move the edge to the nearest landmarks.safeCuts value (prefer the one that keeps the planned size)"
+  },
+  {
+   "id": "minShotLength",
+   "priority": "must",
+   "rule": "A shot lasts long enough to be read on a phone.",
+   "test": "duration >= sizes[size].minHold * clutter * audience. clutter = clamp(1 + 0.15 * (significantElements - 3), 1, 1.6). audience: kids profile x1.5. Plus text: see textReadTime. Absolute floor 0.4 s (12 f); montage/flash shots 0.2 s (6 f). The first shot of a film >= 1.5 s.",
+   "fix": "extend the shot, simplify the frame, or merge it with the next"
+  },
+  {
+   "id": "maxShotLength",
+   "priority": "should",
+   "rule": "No dead air: a shot ends once it has said its thing.",
+   "test": "WARN if a static shot has no character action (mouth or limb animation < 15 % of its time) for > 4 s (9:16) / > 5 s (16:9); WARN on any shot > 8 s in films <= 60 s unless tagged hold.",
+   "fix": "cut, add a creep/parallaxDrift, or give the character an action"
+  },
+  {
+   "id": "groupThreshold",
+   "priority": "should",
+   "rule": "3+ readable faces make a group shot; a phone frame holds only 2 readable expressions side by side.",
+   "test": "n = faces with headFrac >= 0.04. n >= 3 -> class group. 9:16: FAIL if n >= 3 standing side by side (all within 0.5 m depth) and the beat needs expressions (headFrac >= 0.10). 16:9: max 7 readable expressions across.",
+   "fix": "stack in depth (triangle), or go wide and cut to singles for reactions"
+  },
+  {
+   "id": "speakerOnScreen",
+   "priority": "must",
+   "rule": "Whenever a mouth is readable on screen, it moves only if that person is speaking.",
+   "test": "For each frame of a line by S, for each visible P with view in {front, three, side} and headFrac >= 0.06: P = S -> mouth = speaking; P != S -> mouth in {closed, idle}. S with headFrac < 0.06 -> simple flap allowed; S in back/threeBack view or off screen -> fine (voice off).",
+   "fix": "animate visemes for S; close the listener's mouth"
+  },
+  {
+   "id": "speakerCoverage",
+   "priority": "should",
+   "rule": "The audience sees who is talking.",
+   "test": "Each line: speaker visible (face readable) >= 50 % of its duration unless the line's picture is a deliberate reaction/J/L cut. A new speaker's first line: speaker visible within 1.0 s of the line start. keyLine-tagged lines: speaker visible >= 70 % or the listener's reaction is the planned payoff.",
+   "fix": "move the cut or add a shot of the speaker"
+  },
+  {
+   "id": "horizonConsistency",
+   "priority": "must",
+   "rule": "The horizon crosses every standing person at the same real height: the camera height.",
+   "test": "For each standing person on the same floor: hp = stature * (feetY - horizonY) / (feetY - headTopY). |hp - camera.h| <= max(0.05 m, 0.03 * stature), and any two people differ by <= 0.08 m.",
+   "fix": "that person's depth scale or feet position is wrong (floating or mis-sized): recompute from depth"
+  },
+  {
+   "id": "surfaceSide",
+   "priority": "should",
+   "rule": "Horizontal surfaces show their tops only below camera height, and front-view pieces only near the height they were drawn for.",
+   "test": "For each visible piece with a top at height s (world sizes, Brief 5): if s > h + 0.08 and the piece shows a drawn top -> FAIL. topBandRatio = (h - s) / (1.5 - s); WARN if the top is visible and the ratio is outside [0.7, 1.4].",
+   "fix": "crop the surface out, cover it with foreground, use a no-top variant, or scale the piece's top layer by the ratio"
+  },
+  {
+   "id": "safeZone",
+   "priority": "must",
+   "rule": "In 9:16, faces of key characters, on-screen text and the key prop stay out of the platform UI.",
+   "test": "For >= 90 % of the shot, those boxes are inside formats['9:16'].safeZones.keySafe (x 0.06-0.82, y 0.15-0.65). Background faces exempt.",
+   "fix": "shift lookAt or change size"
+  },
+  {
+   "id": "faceSizeForEmotion",
+   "priority": "should",
+   "rule": "A feeling that matters is shown big enough to read.",
+   "test": "Shots holding an emotionBeat: main face headFrac >= 0.27 (9:16), >= 0.38 for keyLine beats; 16:9 >= 0.38 for key beats (phones letterbox 16:9).",
+   "fix": "go one or two sizes tighter or pushIn"
+  },
+  {
+   "id": "closeUpRun",
+   "priority": "should",
+   "rule": "No more than 3 close-ups in a row, and no close-up of someone who is not feeling anything.",
+   "test": "Consecutive shots with size in {closeUp, extremeClose} <= 3. In any 10 shots CU+ECU <= 50 % (9:16), <= 35 % (16:9). WARN on a CU whose subject has no emotion change and no line.",
+   "fix": "insert a mediumClose, an OTS, a two-shot or an insert"
+  },
+  {
+   "id": "oneMoveAtATime",
+   "priority": "must",
+   "rule": "Never two camera moves at once (textures like handheld may sit under one move).",
+   "test": "Active moves in a shot minus moveRules.textureAllowedUnderOneMove: count <= 1, unless the pair is in moveRules.allowedPairs.",
+   "fix": "split into two shots or drop one move"
+  },
+  {
+   "id": "moveSettle",
+   "priority": "should",
+   "rule": "Don't cut a move off mid-way into a still shot.",
+   "test": "If camera speed in the last 6 frames > 10 % of the move's peak, the next shot must start with a move in the same direction at 0.5-1.5x the speed; otherwise the move must end >= 12 frames before the cut.",
+   "fix": "end the move earlier, or start the next shot moving"
+  },
+  {
+   "id": "establishNewPlace",
+   "priority": "should",
+   "rule": "When the place changes, show it.",
+   "test": "When locationId changes, one of the first 3 shots (or the first 6 s) has size in {extremeWide, wide, full} or angle in {bird, elevatedWide}. Tag delayedEstablish: it must come before the scene's midpoint.",
+   "fix": "add an establishing wide (a 1.5-2.5 s parallaxDrift is enough)"
+  },
+  {
+   "id": "shotReverseShotMatch",
+   "priority": "should",
+   "rule": "Paired singles in a conversation mirror each other.",
+   "test": "For alternating singles of A and B: same size key, |eyeY_A - eyeY_B| <= 0.03, faceX_B = 1 - faceX_A +- 0.05, camera height relative to each one's eyes within 0.1 m, same angle family (both OTS or both clean).",
+   "exceptions": [
+    "tag powerShift: one side deliberately lower/closer"
+   ],
+   "fix": "copy A's framing values to B mirrored"
+  },
+  {
+   "id": "eyeTrace",
+   "priority": "should",
+   "rule": "In fast cutting, the next point of interest appears near where the eye already is.",
+   "test": "For cuts where both shots are < 1.5 s: distance between the focal point (main face centre or key prop) on the last outgoing frame and the first incoming frame <= 0.3 of the frame diagonal.",
+   "fix": "re-frame the incoming shot so its face lands near the previous one (9:16 centre framing makes this easy)"
+  },
+  {
+   "id": "setCoverage",
+   "priority": "must",
+   "rule": "The camera never shows past the edge of a drawn set.",
+   "test": "For every frame (moves, handheld overscan and dutch roll included), the rotated frame rectangle is inside the drawn area of the layers behind the subject. Dutch: see geometry.dutchCoverage.",
+   "fix": "shrink frameW, limit the move, or extend the set"
+  },
+  {
+   "id": "lineThroughHead",
+   "priority": "should",
+   "rule": "No strong horizontal line of the set touches a chin or the top of a head.",
+   "test": "Horizontal set lines (horizon, wall-floor line, table edge, window sill, shelf, roof line) with screen y within +- 0.08 head of a visible chinY or headTopY -> WARN. A non-horizon graphic line through the eyes -> WARN.",
+   "fix": "change camera height by >= 0.15 head equivalent, move lookAt.y, or move the person in depth"
+  },
+  {
+   "id": "grounded",
+   "priority": "must",
+   "rule": "Standing people stand on the floor at the right size for their depth, with a contact shadow.",
+   "test": "feetY = project(feet at depth) within 0.005 of frame height; a contact-shadow layer exists under each visible foot.",
+   "fix": "snap feet to the ground plane; add the shadow (sizes.full.flat2d)"
+  },
+  {
+   "id": "lookIntoLens",
+   "priority": "must",
+   "rule": "Characters look into the lens only in a POV, a direct address, or a deliberate fourth-wall break.",
+   "test": "eyeTarget == 'lens' requires a tag in {pov, directAddress}; otherwise the gaze is >= 5 deg off the lens.",
+   "fix": "aim the eyes at the partner's position"
+  },
+  {
+   "id": "mirrorSafety",
+   "priority": "must",
+   "rule": "A mirrored (flipped) shot must not contain anything with a correct side.",
+   "test": "If camera.mirrored: FAIL if the frame contains readable text (Bangla or English signs, books, phone screens, number plates), a clock or watch face, a person eating, giving or receiving with the right hand, a vehicle whose driving side shows (Bangladesh drives on the LEFT: steering on the right), asymmetric character marks (side parting, mole, scar, watch arm), a known landmark, a cricketer's batting side, or anyone praying.",
+   "fix": "re-stage instead of mirroring, or swap that element for its own correctly-sided version"
+  },
+  {
+   "id": "faithRespect",
+   "priority": "must",
+   "rule": "Prayer and faith moments are shot calmly and respectfully, for every faith.",
+   "test": "Shots tagged faith: angle not in {low, worm, dutch}; moves not in {zoomPunch, whipPan, impactShake, dollyZoom} and handheld at most 'calm'; cutIn/cutOut not in {smashCut, wipe, irisOut}. Posture sajdah: size not in {closeUp, extremeClose, mediumClose}. No POV from a praying person. No camera directly in front of a praying person closer than 2 m (do not stand between them and the qibla). High angles: h <= eye + 0.5 m and distance >= 3 m.",
+   "contentRules": [
+    "never depict any prophet; show a place, light or calligraphy instead",
+    "holy books never on the floor or under feet in frame",
+    "no comic sound hits on a prayer"
+   ],
+   "fix": "use profile, backView or a respectful wide at eye level"
+  },
+  {
+   "id": "qiblaConsistency",
+   "priority": "must",
+   "rule": "Everyone praying together faces the same way, and that way stays consistent across cuts.",
+   "test": "Within a prayer scene, all people with posture in {stand, ruku, sajdah, sit} and tag faith share one facing direction (world); across shots the screen direction of that facing follows line180 logic. Mirroring is forbidden.",
+   "fix": "fix yaw; re-stage the camera on one side of the prayer row"
+  },
+  {
+   "id": "textReadTime",
+   "priority": "must",
+   "rule": "On-screen text stays up long enough to read.",
+   "test": "hold >= 0.5 s + characters / cps, with cps = 13 (adult Bangla), 17 (adult English), 9 (children). Minimum 0.83 s, maximum 7 s per caption.",
+   "fix": "lengthen the shot or shorten the text"
+  },
+  {
+   "id": "cutInDialogueGaps",
+   "priority": "should",
+   "rule": "Straight cuts in dialogue fall between words.",
+   "test": "A hardCut whose picture and sound change together must fall in a silence >= 4 frames, or <= 6 frames before the next line starts; never inside a word (word timings). With a J/L cut the picture may change anywhere, best within 6 frames of a sentence end or on a reaction.",
+   "fix": "slide the cut to the nearest gap, or make it a J/L cut"
+  },
+  {
+   "id": "flashSafety",
+   "priority": "must",
+   "rule": "No more than 3 flashes in any 1 second.",
+   "test": "Count frame-to-frame luminance jumps of >= 10 % of full range across >= 25 % of the frame (lightning, whiteFlash, strobing): <= 3 per any 1 s window; avoid large saturated-red flashes.",
+   "fix": "space the flashes or soften them"
+  },
+  {
+   "id": "monotony",
+   "priority": "should",
+   "rule": "Vary the camera.",
+   "test": "<= 4 consecutive shots at the same size; <= 6 consecutive at the same camera height (+- 0.2 m); in any 60 s: >= 4 size classes and >= 2 angle families, unless tagged tableauFilm.",
+   "fix": "swap in an insert, an OTS, a wide or a height change"
+  },
+  {
+   "id": "rhythm",
+   "priority": "may",
+   "rule": "Shot lengths breathe; they are not a metronome.",
+   "test": "In scenes of >= 6 shots, the coefficient of variation of shot lengths >= 0.25 (montages cut on the beat are exempt).",
+   "fix": "lengthen the emotional holds, shorten the plain information shots"
+  }
+ ],
+ "recipes": [
+  {
+   "id": "twoPeopleTalk",
+   "moment": "two people talk",
+   "bn": "দুজনের কথা",
+   "shots": [
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "parallaxDrift",
+     "on": "A+B",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "note": "sets who is left and who is right: this fixes the 180 line"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "overShoulder",
+     "move": "static",
+     "on": "B over A",
+     "hold": [
+      1.5,
+      3.5
+     ],
+     "note": "first speaker"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "overShoulder",
+     "move": "static",
+     "on": "A over B",
+     "hold": [
+      1.5,
+      3.5
+     ],
+     "cut": "jCut",
+     "note": "the mirrored reverse"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "B",
+     "hold": [
+      1.5,
+      3.5
+     ],
+     "note": "clean single for the line that matters"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "listener",
+     "hold": [
+      1.0,
+      2.5
+     ],
+     "cut": "reactionCut",
+     "note": "the face receiving the key line"
+    },
+    {
+     "size": "twoShot",
+     "angle": "profile",
+     "move": "static",
+     "on": "A+B",
+     "hold": [
+      1.5,
+      3.0
+     ],
+     "note": "re-establish after about 6 lines, or end on it"
+    }
+   ],
+   "order": "wide -> OTS on the first speaker -> OTS reverse -> clean singles as the talk deepens -> reaction CU on the key line -> two-shot to close",
+   "rhythm": {
+    "avgShot_s": [
+     2.2,
+     3.0
+    ],
+    "pattern": "cut on speaker changes; J-cut 6-12 f on about 1 in 3 changes; hold the reaction longer than the line before it"
+   },
+   "cuts": [
+    "hardCut",
+    "jCut",
+    "lCut",
+    "reactionCut"
+   ],
+   "watch": [
+    "line180",
+    "eyelineMatch",
+    "shotReverseShotMatch",
+    "speakerOnScreen",
+    "jumpCut"
+   ],
+   "9:16": "OTS with the shoulder in the lower corner; the opening wide can be a deep two-shot",
+   "16:9": "classic OTS pair; a medium two-shot works when they sit close",
+   "avoid": "the whole talk in one medium two-shot; both people in front view talking to the lens"
+  },
+  {
+   "id": "threePeopleTalk",
+   "moment": "three people talk",
+   "bn": "তিনজনের আড্ডা",
+   "shots": [
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A+B+C",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "note": "triangle staging; decide the main pair (their line rules)"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "overShoulder",
+     "move": "static",
+     "on": "B over A",
+     "hold": [
+      1.5,
+      3.0
+     ]
+    },
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "C",
+     "hold": [
+      1.5,
+      3.0
+     ],
+     "note": "C's eyes show whom C answers"
+    },
+    {
+     "size": "twoShot",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A+C (deep)",
+     "hold": [
+      1.5,
+      3.0
+     ],
+     "note": "the pair that is talking now"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "whoever reacts",
+     "hold": [
+      1.0,
+      2.0
+     ],
+     "cut": "reactionCut"
+    },
+    {
+     "size": "group",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A+B+C",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "note": "re-establish when the talk switches pairs"
+    }
+   ],
+   "order": "Cover it as pairs: who is talking to whom. When the talk moves to a new pair, re-establish (a wide, a two-shot, or a visible head turn) before cutting on the new line.",
+   "rhythm": {
+    "avgShot_s": [
+     2.0,
+     2.8
+    ]
+   },
+   "cuts": [
+    "hardCut",
+    "jCut",
+    "reactionCut"
+   ],
+   "watch": [
+    "line180",
+    "eyelineMatch",
+    "groupThreshold",
+    "speakerCoverage"
+   ],
+   "9:16": "never three faces side by side for expressions: stack in depth or use singles",
+   "16:9": "a medium-wide group across works; still vary heights (one sits)",
+   "avoid": "cutting to a person who is not part of the current pair without a look that motivates it"
+  },
+  {
+   "id": "argumentBuilding",
+   "moment": "an argument building up",
+   "bn": "ঝগড়া বাড়ছে",
+   "shots": [
+    {
+     "size": "twoShot",
+     "angle": "profile",
+     "move": "static",
+     "on": "A+B",
+     "hold": [
+      2.5,
+      3.5
+     ],
+     "note": "calm: equals, a gap between them"
+    },
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "B",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "mediumClose",
+     "angle": "overShoulder",
+     "move": "creep",
+     "on": "A over B",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "note": "rising: tighter, faster"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "low",
+     "move": "static",
+     "on": "the one winning",
+     "hold": [
+      1.2,
+      2.0
+     ],
+     "tags": [
+      "powerShift"
+     ]
+    },
+    {
+     "size": "mediumClose",
+     "angle": "high",
+     "move": "static",
+     "on": "the one losing",
+     "hold": [
+      1.2,
+      2.0
+     ],
+     "tags": [
+      "powerShift"
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "handheld",
+     "on": "A",
+     "hold": [
+      0.8,
+      1.5
+     ],
+     "cut": "lCut",
+     "note": "peak: lines overlap; optional dutch +12 deg on A, -12 deg on B"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "handheld",
+     "on": "B",
+     "hold": [
+      0.8,
+      1.5
+     ]
+    },
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A+B",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "note": "the break: silence, or someone walks out (cutOnAction on the door)"
+    }
+   ],
+   "order": "calm two-shot -> medium singles -> tighter OTS singles -> power angles -> CU singles at the peak -> a hard stop on a still wide",
+   "rhythm": {
+    "avgShot_s": [
+     1.5,
+     2.2
+    ],
+    "pattern": "each exchange about 20 % shorter: 3.0 -> 2.4 -> 1.9 -> 1.5 -> 1.2 -> <= 1.0 at the peak; then one silent hold 2-3 s"
+   },
+   "cuts": [
+    "hardCut",
+    "lCut",
+    "jCut",
+    "cutOnAction",
+    "cutToBlack"
+   ],
+   "watch": [
+    "line180",
+    "closeUpRun",
+    "oneMoveAtATime",
+    "shotReverseShotMatch"
+   ],
+   "9:16": "the peak lives in CU singles; the break wide can be a backView of the one left alone",
+   "16:9": "profile two-shot at the start and the end frames the whole fight",
+   "avoid": "starting at the peak size (nowhere to go); slapping or violence shown as spectacle"
+  },
+  {
+   "id": "badNews",
+   "moment": "a sad moment / bad news",
+   "bn": "খারাপ খবর",
+   "shots": [
+    {
+     "size": "mediumWide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "receiver",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "note": "ordinary life just before (cooking, studying)"
+    },
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "messenger",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "note": "hesitates; eyes down"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "creep",
+     "on": "receiver",
+     "hold": [
+      2.0,
+      4.0
+     ],
+     "cut": "reactionCut",
+     "note": "cut to the receiver BEFORE the sentence ends; L-cut the rest of the line"
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the thing the news is about",
+     "hold": [
+      1.0,
+      1.5
+     ],
+     "note": "the photo, the phone, the empty chair"
+    },
+    {
+     "size": "full",
+     "angle": "high",
+     "move": "pullOut",
+     "on": "receiver alone",
+     "hold": [
+      3.0,
+      5.0
+     ],
+     "note": "isolation; or sits down on the floor"
+    }
+   ],
+   "order": "normal life -> the messenger -> the face receiving it -> what it is about -> alone",
+   "rhythm": {
+    "avgShot_s": [
+     2.5,
+     3.5
+    ],
+    "pattern": "slow; let silence play; the longest hold is the receiver's CU"
+   },
+   "cuts": [
+    "lCut",
+    "reactionCut",
+    "dissolve",
+    "fade"
+   ],
+   "watch": [
+    "faceSizeForEmotion",
+    "speakerCoverage",
+    "maxShotLength"
+   ],
+   "9:16": "the CU is the whole scene; keep the face inside keySafe",
+   "16:9": "negative space on one side of the high-angle wide",
+   "avoid": "zoomPunch, whipPan, fast cutting, comic music; holding a crying child's CU > 2 s"
+  },
+  {
+   "id": "goodNewsJoy",
+   "moment": "good news / joy",
+   "bn": "খুশির খবর",
+   "shots": [
+    {
+     "size": "insert",
+     "angle": "pov",
+     "move": "static",
+     "on": "the news (result on a phone, a letter)",
+     "hold": [
+      1.0,
+      1.5
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A",
+     "hold": [
+      1.0,
+      2.0
+     ],
+     "cut": "reactionCut",
+     "note": "the smile grows; zoomPunch only if comic"
+    },
+    {
+     "size": "mediumWide",
+     "angle": "eyeLevel",
+     "move": "handheld",
+     "on": "A",
+     "hold": [
+      1.2,
+      2.0
+     ],
+     "cut": "cutOnAction",
+     "note": "jump, shout, run"
+    },
+    {
+     "size": "full",
+     "angle": "low",
+     "move": "static",
+     "on": "A",
+     "hold": [
+      1.2,
+      2.0
+     ],
+     "note": "triumph"
+    },
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "crane",
+     "on": "family/friends join",
+     "hold": [
+      2.5,
+      4.0
+     ],
+     "note": "or a held group hug"
+    }
+   ],
+   "order": "the news -> the face -> the body explodes -> triumph -> shared",
+   "rhythm": {
+    "avgShot_s": [
+     1.4,
+     2.0
+    ],
+    "pattern": "fast build, then a long held hug"
+   },
+   "cuts": [
+    "hardCut",
+    "cutOnAction",
+    "reactionCut",
+    "jCut"
+   ],
+   "watch": [
+    "textReadTime",
+    "oneMoveAtATime"
+   ],
+   "9:16": "a jump reads best vertically: give headroom 0.2 in the mediumWide for the jump",
+   "16:9": "the group wide can hold 5-6 people",
+   "avoid": "cutting away before the joy lands"
+  },
+  {
+   "id": "arrival",
+   "moment": "someone arrives",
+   "bn": "কেউ আসছে",
+   "shots": [
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the door/gate/road",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "note": "show where they will come from"
+    },
+    {
+     "size": "insert",
+     "angle": "worm",
+     "move": "static",
+     "on": "feet stepping in / the knock / a shadow",
+     "hold": [
+      0.8,
+      1.2
+     ],
+     "cut": "jCut",
+     "note": "footsteps or the knock lead the picture"
+    },
+    {
+     "size": "full",
+     "angle": "throughFrame",
+     "move": "static",
+     "on": "arriver in the doorway",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the one waiting",
+     "hold": [
+      1.0,
+      2.0
+     ],
+     "cut": "eyelineMatch"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "arriver",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "note": "their reaction to the room"
+    }
+   ],
+   "order": "the place -> a sign of them -> them -> the reaction -> them closer",
+   "rhythm": {
+    "avgShot_s": [
+     1.5,
+     2.2
+    ]
+   },
+   "cuts": [
+    "jCut",
+    "eyelineMatch",
+    "cutOnAction"
+   ],
+   "variants": {
+    "fearedGuest": "the doorway shot from low; the waiting person from high",
+    "longAwaited": "backView of the waiting person, then a run-to-hug wide with cutOnAction"
+   },
+   "watch": [
+    "screenDirection",
+    "establishNewPlace"
+   ],
+   "9:16": "a vertical doorway frames a full figure perfectly",
+   "16:9": "the arriver can enter from frame edge on a third",
+   "avoid": "showing the arriver's face before the reveal is earned"
+  },
+  {
+   "id": "revealThing",
+   "moment": "a reveal: a thing",
+   "bn": "জিনিস উন্মোচন",
+   "shots": [
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "looker",
+     "hold": [
+      1.0,
+      1.5
+     ],
+     "note": "eyes widen, looking off-screen"
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "hands opening the box/cloth",
+     "hold": [
+      1.0,
+      1.5
+     ],
+     "cut": "cutOnAction"
+    },
+    {
+     "size": "insert",
+     "angle": "pov",
+     "move": "pushIn",
+     "on": "the thing",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "cut": "eyelineMatch",
+     "note": "or focusPull from hands to the thing"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "looker",
+     "hold": [
+      1.0,
+      2.0
+     ],
+     "cut": "reactionCut"
+    }
+   ],
+   "order": "face first, thing second, face again (delay builds the question)",
+   "rhythm": {
+    "avgShot_s": [
+     1.2,
+     1.8
+    ]
+   },
+   "cuts": [
+    "cutOnAction",
+    "eyelineMatch",
+    "reactionCut"
+   ],
+   "watch": [
+    "textReadTime",
+    "safeZone"
+   ],
+   "9:16": "hold the thing up to the camera (sizes.insert.holdItUp) and centre it",
+   "16:9": "the hand can bring the thing in from a frame edge",
+   "avoid": "showing the thing in the wide before the reveal"
+  },
+  {
+   "id": "revealResult",
+   "moment": "a reveal: a result (exam, message, test)",
+   "bn": "ফলাফল",
+   "shots": [
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "creep",
+     "on": "A scanning the notice board / phone",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "pov",
+     "move": "tiltDown",
+     "on": "the list of names / the screen",
+     "hold": [
+      1.5,
+      3.0
+     ],
+     "cut": "eyelineMatch"
+    },
+    {
+     "size": "extremeClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A's eyes",
+     "hold": [
+      0.5,
+      1.0
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "pov",
+     "move": "static",
+     "on": "the name and the grade",
+     "hold": [
+      1.5,
+      2.0
+     ],
+     "note": "reading time!"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A",
+     "hold": [
+      1.0,
+      2.5
+     ],
+     "cut": "reactionCut",
+     "note": "then continue with goodNewsJoy or badNews"
+    }
+   ],
+   "order": "scan -> search -> tension -> find -> react",
+   "rhythm": {
+    "avgShot_s": [
+     1.5,
+     2.0
+    ],
+    "pattern": "slowest right before the find"
+   },
+   "variants": {
+    "twist": "show only the reaction first (we cannot tell which way it went), then reveal the result"
+   },
+   "cuts": [
+    "eyelineMatch",
+    "reactionCut",
+    "hardCut"
+   ],
+   "watch": [
+    "textReadTime",
+    "safeZone",
+    "closeUpRun"
+   ],
+   "9:16": "the list scrolls vertically: a tiltDown is native",
+   "16:9": "the notice board can be a wide crowd shot first",
+   "avoid": "text too small to read on a phone (text height >= 0.035 of frame height)"
+  },
+  {
+   "id": "revealPerson",
+   "moment": "a reveal: a person",
+   "bn": "মানুষ উন্মোচন",
+   "shots": [
+    {
+     "size": "full",
+     "angle": "backView",
+     "move": "static",
+     "on": "the mystery person (face hidden)",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the observer recognising",
+     "hold": [
+      1.0,
+      1.5
+     ]
+    },
+    {
+     "size": "full",
+     "angle": "eyeLevel",
+     "move": "tiltUp",
+     "on": "mystery person, shoes to face",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "note": "or a focusPull to the figure in the background doorway"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "revealed person",
+     "hold": [
+      1.5,
+      2.0
+     ],
+     "note": "low angle if they are a threat"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "observer",
+     "hold": [
+      1.0,
+      2.0
+     ],
+     "cut": "reactionCut"
+    }
+   ],
+   "order": "hidden -> someone knows -> slow reveal -> face -> reaction",
+   "rhythm": {
+    "avgShot_s": [
+     1.5,
+     2.2
+    ]
+   },
+   "variants": {
+    "pullBack": "start on a detail (a familiar shawl, a watch) and pullOut to reveal who wears it"
+   },
+   "cuts": [
+    "hardCut",
+    "reactionCut",
+    "jCut"
+   ],
+   "watch": [
+    "oneMoveAtATime",
+    "lookIntoLens"
+   ],
+   "9:16": "the tiltUp from shoes to face is the strongest vertical reveal",
+   "16:9": "the figure can be revealed by a focusPull across the frame",
+   "avoid": "revealing the face in the first shot"
+  },
+  {
+   "id": "decision",
+   "moment": "a decision",
+   "bn": "সিদ্ধান্ত",
+   "shots": [
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A with the two options",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "pov",
+     "move": "static",
+     "on": "option 1",
+     "hold": [
+      1.0,
+      1.5
+     ],
+     "cut": "eyelineMatch"
+    },
+    {
+     "size": "insert",
+     "angle": "pov",
+     "move": "static",
+     "on": "option 2",
+     "hold": [
+      1.0,
+      1.5
+     ],
+     "cut": "eyelineMatch"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "pushIn",
+     "on": "A thinking",
+     "hold": [
+      2.0,
+      4.0
+     ]
+    },
+    {
+     "size": "extremeClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "eyes / hand gripping",
+     "hold": [
+      0.6,
+      1.2
+     ]
+    },
+    {
+     "size": "mediumWide",
+     "angle": "low",
+     "move": "static",
+     "on": "A acts (stands, picks up the bag)",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "cut": "cutOnAction"
+    }
+   ],
+   "order": "the dilemma -> the options -> thinking -> the moment -> the act",
+   "rhythm": {
+    "avgShot_s": [
+     1.6,
+     2.4
+    ],
+    "pattern": "slow down before the decision (the longest hold), speed up after it"
+   },
+   "cuts": [
+    "eyelineMatch",
+    "cutOnAction",
+    "hardCut"
+   ],
+   "watch": [
+    "oneMoveAtATime",
+    "minChangePerCut"
+   ],
+   "9:16": "options can be stacked: one high in frame, one low",
+   "16:9": "options left and right of the thinker",
+   "avoid": "a decision with no visible act afterwards"
+  },
+  {
+   "id": "chaseHurry",
+   "moment": "a chase or a hurry",
+   "bn": "তাড়া / ধাওয়া",
+   "shots": [
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the space and the direction",
+     "hold": [
+      1.2,
+      1.8
+     ],
+     "note": "direction left -> right"
+    },
+    {
+     "size": "mediumWide",
+     "angle": "eyeLevel",
+     "move": "trackSide",
+     "on": "runner",
+     "hold": [
+      1.0,
+      2.0
+     ],
+     "note": "lead room ahead; foreground posts whip past"
+    },
+    {
+     "size": "insert",
+     "angle": "worm",
+     "move": "static",
+     "on": "feet",
+     "hold": [
+      0.5,
+      0.8
+     ]
+    },
+    {
+     "size": "medium",
+     "angle": "pov",
+     "move": "handheld",
+     "on": "runner's view ahead",
+     "hold": [
+      0.8,
+      1.2
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "handheld",
+     "on": "runner breathing",
+     "hold": [
+      0.6,
+      1.0
+     ]
+    },
+    {
+     "size": "full",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "obstacle (bus, crowd, rickshaw)",
+     "hold": [
+      0.6,
+      1.0
+     ],
+     "cut": "objectWipe"
+    },
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the goal (the bus leaving / the pursuer)",
+     "hold": [
+      0.7,
+      2.0
+     ],
+     "cut": "crossCut"
+    },
+    {
+     "size": "wide",
+     "angle": "high",
+     "move": "static",
+     "on": "they stop",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "note": "release: one long hold"
+    }
+   ],
+   "order": "direction -> runner -> details -> obstacle -> goal (cross-cut) -> stop",
+   "rhythm": {
+    "avgShot_s": [
+     0.9,
+     1.4
+    ],
+    "pattern": "cross-cut segments shrink 2.0 -> 1.4 -> 1.0 -> 0.7 s; then one 2-3 s hold"
+   },
+   "cuts": [
+    "hardCut",
+    "cutOnAction",
+    "crossCut",
+    "objectWipe",
+    "whiteFlash"
+   ],
+   "watch": [
+    "screenDirection",
+    "minShotLength",
+    "eyeTrace",
+    "panSpeed: geometry.panSpeedLimit"
+   ],
+   "9:16": "keep the runner centred so fast cuts pass eyeTrace",
+   "16:9": "long lateral tracks with 3+ parallax layers",
+   "avoid": "flipping the run direction between shots"
+  },
+  {
+   "id": "waiting",
+   "moment": "waiting",
+   "bn": "অপেক্ষা",
+   "shots": [
+    {
+     "size": "extremeWide",
+     "angle": "eyeLevel",
+     "move": "parallaxDrift",
+     "on": "A small in a big space (station bench, hospital corridor)",
+     "hold": [
+      3.0,
+      5.0
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "clock / phone with no reply",
+     "hold": [
+      1.0,
+      1.5
+     ]
+    },
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "creep",
+     "on": "A fidgets",
+     "hold": [
+      2.5,
+      4.0
+     ]
+    },
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "same wide, later (shadows longer, tea cups pile up)",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "cut": "timeJump",
+     "note": "sameFrameDissolve, 2-3 steps"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A hears the door",
+     "hold": [
+      1.0,
+      2.0
+     ],
+     "cut": "jCut"
+    }
+   ],
+   "order": "small in space -> time -> restless -> time jumps -> hope",
+   "rhythm": {
+    "avgShot_s": [
+     2.5,
+     3.5
+    ],
+    "pattern": "slow is the meaning; keep each <= 5 s on phones and use dissolves"
+   },
+   "cuts": [
+    "dissolve",
+    "timeJump",
+    "jCut"
+   ],
+   "watch": [
+    "maxShotLength",
+    "monotony"
+   ],
+   "9:16": "the empty space above A in a tall frame says 'waiting'",
+   "16:9": "A on a third with the empty corridor on the other two",
+   "avoid": "cutting fast (kills the feeling)"
+  },
+  {
+   "id": "childWithParent",
+   "moment": "a child with a parent",
+   "bn": "বাবা-মা ও শিশু",
+   "shots": [
+    {
+     "size": "full",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "parent+child",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "note": "camera at mid height shows the height difference"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "childHeight",
+     "move": "static",
+     "on": "parent seen by the child",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "note": "adult's head 0.4-0.6 m above the horizon: reads as low angle"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "high",
+     "move": "static",
+     "on": "child seen by the parent",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "note": "camera at the adult's eye height"
+    },
+    {
+     "size": "twoShot",
+     "angle": "profile",
+     "move": "static",
+     "on": "parent kneels to the child's eye level",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "note": "the warm moment: equal height"
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "hands holding",
+     "hold": [
+      1.0,
+      1.5
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "childHeight",
+     "move": "static",
+     "on": "child",
+     "hold": [
+      1.0,
+      2.0
+     ],
+     "cut": "reactionCut"
+    }
+   ],
+   "order": "the gap -> each seen by the other -> the parent comes down to the child -> touch -> the child's face",
+   "rhythm": {
+    "avgShot_s": [
+     1.8,
+     2.6
+    ]
+   },
+   "rule": "Staying high on the child = authority/scolding. Coming down to the child's eye level = love and respect.",
+   "cuts": [
+    "hardCut",
+    "reactionCut",
+    "lCut"
+   ],
+   "watch": [
+    "eyelineHeight",
+    "line180"
+   ],
+   "9:16": "adults get cut at the chest in child-height MCU: let them lean down into the frame",
+   "16:9": "full two-shot with the height difference across the frame",
+   "avoid": "long CUs of a crying child"
+  },
+  {
+   "id": "classroom",
+   "moment": "a classroom",
+   "bn": "ক্লাসরুম",
+   "shots": [
+    {
+     "size": "wide",
+     "angle": "backView",
+     "move": "static",
+     "on": "rows of students, teacher at the board",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "medium",
+     "angle": "childHeight",
+     "move": "static",
+     "on": "teacher (low if strict)",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "note": "camera at seated child eye height ~1.0 m"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "protagonist at the desk",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "notebook / blackboard text",
+     "hold": [
+      1.0,
+      2.0
+     ]
+    },
+    {
+     "size": "group",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "classmates react (laugh)",
+     "hold": [
+      1.2,
+      1.8
+     ],
+     "cut": "reactionCut"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "overShoulder",
+     "move": "static",
+     "on": "friend whispering over protagonist's shoulder",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "wide",
+     "angle": "frontalTableau",
+     "move": "static",
+     "on": "the class from the teacher's side",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    }
+   ],
+   "order": "the room -> authority -> our child -> details -> peers -> a secret -> the room again",
+   "rhythm": {
+    "avgShot_s": [
+     1.8,
+     2.5
+    ]
+   },
+   "cuts": [
+    "hardCut",
+    "reactionCut",
+    "eyelineMatch"
+   ],
+   "watch": [
+    "textReadTime",
+    "groupThreshold",
+    "line180 (teacher <-> class axis)"
+   ],
+   "9:16": "rows of desks stack up the frame nicely in the backView wide",
+   "16:9": "the frontalTableau of the whole class is the comic 'school photo'",
+   "avoid": "cutting between the teacher's side and the class's side without an establishing look"
+  },
+  {
+   "id": "marketCrowd",
+   "moment": "a market or a crowd",
+   "bn": "বাজার / ভিড়",
+   "shots": [
+    {
+     "size": "wide",
+     "angle": "elevatedWide",
+     "move": "parallaxDrift",
+     "on": "the market rows",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "telephoto crowd (compressed)",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "note": "geometry.lensFeel.telephoto"
+    },
+    {
+     "size": "mediumWide",
+     "angle": "eyeLevel",
+     "move": "trackSide",
+     "on": "protagonist moving through, people wipe past in the foreground",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "fish, vegetables, money changing hands",
+     "hold": [
+      0.8,
+      1.2
+     ],
+     "cut": "cutaway",
+     "note": "2-4 of these as a mini montage"
+    },
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "handheld",
+     "on": "a vendor calling",
+     "hold": [
+      1.5,
+      2.0
+     ],
+     "cut": "jCut"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "protagonist searching",
+     "hold": [
+      1.0,
+      1.5
+     ]
+    }
+   ],
+   "order": "the whole -> the density -> our person in it -> the details -> the voices -> our person's goal",
+   "rhythm": {
+    "avgShot_s": [
+     1.4,
+     2.0
+    ]
+   },
+   "variants": {
+    "lostChild": "a full shot from high above the crowd on the child; then childHeight POV of legs and bags"
+   },
+   "cuts": [
+    "hardCut",
+    "objectWipe",
+    "cutaway",
+    "jCut",
+    "montage"
+   ],
+   "watch": [
+    "groupThreshold",
+    "minShotLength (clutter factor)",
+    "mirrorSafety (signs, number plates)"
+   ],
+   "9:16": "stack the crowd in 4-6 depth rows; keep the protagonist centred",
+   "16:9": "telephoto wides of crowds are spectacular",
+   "avoid": "crowd shots shorter than their clutter needs"
+  },
+  {
+   "id": "journey",
+   "moment": "a journey (rickshaw, bus, boat)",
+   "bn": "যাত্রা (রিকশা / বাস / নৌকা)",
+   "shots": [
+    {
+     "size": "extremeWide",
+     "angle": "eyeLevel",
+     "move": "parallaxDrift",
+     "on": "the vehicle small in the landscape",
+     "hold": [
+      2.5,
+      3.5
+     ]
+    },
+    {
+     "size": "full",
+     "angle": "profile",
+     "move": "trackSide",
+     "on": "the vehicle side-on with the rider",
+     "hold": [
+      3.0,
+      5.0
+     ],
+     "note": "left -> right for outward"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "throughFrame",
+     "move": "static",
+     "on": "passenger framed by the hood/window",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "wide",
+     "angle": "pov",
+     "move": "trackSide",
+     "on": "the view from the seat",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "wheel, bell, ticket, a hand in the water",
+     "hold": [
+      0.8,
+      1.2
+     ]
+    },
+    {
+     "size": "full",
+     "angle": "backView",
+     "move": "static",
+     "on": "passenger looking at what passes",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    }
+   ],
+   "order": "the route -> the vehicle -> the passenger -> what they see -> texture -> thought",
+   "rhythm": {
+    "avgShot_s": [
+     2.2,
+     3.0
+    ],
+    "pattern": "music-led; dissolves allowed between legs of the trip"
+   },
+   "variants": {
+    "rickshaw": "backView over the rickshaw-puller's back to the road ahead (OTS-like); the hood as frame-in-frame; bell insert; telephoto traffic wide",
+    "bus": "window seat MCU with the landscape layer sliding behind the glass (parallax); POV out of the window; hand on the rail",
+    "boat": "extremeWide river with horizon at 0.4-0.5 and a tiny boat; profile full with water layers; hand trailing in water; backView looking at the bank"
+   },
+   "cuts": [
+    "hardCut",
+    "dissolve",
+    "matchCut",
+    "timeJump"
+   ],
+   "watch": [
+    "screenDirection",
+    "mirrorSafety (left-hand traffic)",
+    "geometry.panSpeedLimit"
+   ],
+   "9:16": "a road or river running bottom-to-top is the strongest vertical journey image",
+   "16:9": "long lateral tracks",
+   "avoid": "flipping the travel direction; mirrored traffic"
+  },
+  {
+   "id": "prayerFaith",
+   "moment": "a prayer or a faith moment",
+   "bn": "নামাজ / প্রার্থনা",
+   "shots": [
+    {
+     "size": "wide",
+     "angle": "frontalTableau",
+     "move": "parallaxDrift",
+     "on": "mosque / prayer space exterior",
+     "hold": [
+      2.5,
+      4.0
+     ],
+     "cut": "jCut",
+     "note": "the azan leads the picture"
+    },
+    {
+     "size": "full",
+     "angle": "profile",
+     "move": "static",
+     "on": "the person praying (stand, ruku, sajdah)",
+     "hold": [
+      3.0,
+      5.0
+     ],
+     "note": "eye level, >= 2 m away; side view; for sajdah keep full or wider"
+    },
+    {
+     "size": "full",
+     "angle": "backView",
+     "move": "static",
+     "on": "the person or the row from behind",
+     "hold": [
+      3.0,
+      5.0
+     ]
+    },
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "creep",
+     "on": "hands raised in dua (after salam)",
+     "hold": [
+      2.5,
+      4.0
+     ],
+     "note": "the only place for a closer shot"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "face after the prayer",
+     "hold": [
+      2.0,
+      3.5
+     ],
+     "note": "emotion allowed here, never during sajdah"
+    },
+    {
+     "size": "extremeWide",
+     "angle": "eyeLevel",
+     "move": "crane",
+     "on": "the place at the end",
+     "hold": [
+      3.0,
+      5.0
+     ],
+     "cut": "dissolve",
+     "note": "gentle rise from >= 3 m away"
+    }
+   ],
+   "order": "the call -> the act seen from the side -> from behind -> the dua -> the face -> the place",
+   "rhythm": {
+    "avgShot_s": [
+     3.0,
+     4.5
+    ],
+    "pattern": "the slowest scene type in the book"
+   },
+   "cuts": [
+    "dissolve",
+    "hardCut",
+    "fade",
+    "jCut",
+    "lCut"
+   ],
+   "watch": [
+    "faithRespect",
+    "qiblaConsistency",
+    "mirrorSafety"
+   ],
+   "otherFaiths": "Puja, church, pagoda: same rules (eye level or respectful wides, no low angles on the worshipper, no comic cuts).",
+   "9:16": "a full side view of a prayer row fits as a stacked deep shot",
+   "16:9": "a row of worshippers across a frontalTableau",
+   "avoid": "low angles on the person praying; CU during sajdah; POV of the praying person; camera in front of them within 2 m; zoomPunch, whipPan, dutch, comic sounds; depicting any prophet"
+  },
+  {
+   "id": "phoneCall",
+   "moment": "a phone call",
+   "bn": "ফোনালাপ",
+   "shots": [
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "phone screen: the caller's name",
+     "hold": [
+      1.0,
+      1.5
+     ]
+    },
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A (phone on the camera-far ear)",
+     "hold": [
+      1.5,
+      3.0
+     ],
+     "note": "A faces screen right"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "B in their own place",
+     "hold": [
+      1.5,
+      3.0
+     ],
+     "cut": "crossCut",
+     "note": "B faces screen left: opposite directions make them 'face' each other"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the one hearing the key line",
+     "hold": [
+      1.5,
+      3.0
+     ],
+     "cut": "lCut",
+     "note": "the other's voice continues over"
+    }
+   ],
+   "order": "who calls -> A -> B -> back and forth -> the listener on the key line",
+   "rhythm": {
+    "avgShot_s": [
+     1.8,
+     2.8
+    ]
+   },
+   "variants": {
+    "splitStack9x16": "9:16 split screen stacked: A in the top half, B in the bottom half (each a mediumClose in a 9:8 box); cheap and very phone-native",
+    "oneSided": "stay on A only; the other's voice tinny (good for suspense)"
+   },
+   "cuts": [
+    "crossCut",
+    "lCut",
+    "jCut"
+   ],
+   "watch": [
+    "eyelineMatch (phone version)",
+    "textReadTime",
+    "speakerCoverage"
+   ],
+   "9:16": "phone on the ear away from the camera so the face stays clear",
+   "16:9": "side-by-side split screen also works",
+   "avoid": "both callers facing the same screen direction"
+  },
+  {
+   "id": "flashbackMemory",
+   "moment": "a flashback or memory",
+   "bn": "স্মৃতি / ফ্ল্যাশব্যাক",
+   "shots": [
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "pushIn",
+     "on": "A in the present, looking into the distance",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the memory (shifted palette)",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "cut": "dissolve",
+     "note": "dissolve 30-45 f, or whiteFlash 2-4 f, or a matchCut on an object"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "handheld",
+     "on": "a detail of the memory",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A in the present again",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "cut": "matchCut",
+     "note": "the memory's sound L-cuts over"
+    }
+   ],
+   "order": "enter on a face -> the memory -> leave on the same face",
+   "rhythm": {
+    "avgShot_s": [
+     2.0,
+     3.0
+    ]
+   },
+   "look": "memory palette: desaturate 20-40 % or warm sepia, soft vignette, simpler sets; keep it consistent for every memory in the film",
+   "cuts": [
+    "dissolve",
+    "whiteFlash",
+    "matchCut",
+    "lCut"
+   ],
+   "watch": [
+    "minChangePerCut",
+    "monotony"
+   ],
+   "9:16": "vignette top and bottom, not the sides (tall frame)",
+   "16:9": "soft vignette all round",
+   "avoid": "changing the memory look between memories"
+  },
+  {
+   "id": "filmOpening",
+   "moment": "the opening of a film",
+   "bn": "ছবির শুরু",
+   "shots": [
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the hook: a face with a question, or a striking insert",
+     "hold": [
+      1.0,
+      2.0
+     ],
+     "note": "phone films: the hook must land inside the first 1-2 s"
+    },
+    {
+     "size": "extremeWide",
+     "angle": "bird",
+     "move": "craneDown",
+     "on": "the world",
+     "hold": [
+      2.0,
+      3.5
+     ],
+     "note": "or elevatedWide / extremeWide with parallaxDrift if no map kit"
+    },
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the place",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the protagonist doing their thing",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    }
+   ],
+   "order": "phone shorts: hook first, establish second. Films of 2+ min: classic outside-in (extremeWide -> wide -> medium -> close).",
+   "rhythm": {
+    "avgShot_s": [
+     1.5,
+     2.5
+    ]
+   },
+   "variants": {
+    "classic2min": "fade in 15-30 f -> extremeWide (parallaxDrift or craneDown) 3 s -> wide 2 s -> medium 2 s -> title card 1.5-2.5 s",
+    "shortHook": "cold open on the most intriguing frame of the story, then rewind to establish"
+   },
+   "cuts": [
+    "fade",
+    "hardCut",
+    "matchCut",
+    "jCut"
+   ],
+   "watch": [
+    "minShotLength (first shot >= 1.5 s)",
+    "establishNewPlace",
+    "safeZone"
+   ],
+   "9:16": "first frame must work as a thumbnail: one clear subject, centred",
+   "16:9": "classic wide openings are fine",
+   "avoid": "3+ seconds of landscape before anything happens in a 30 s film"
+  },
+  {
+   "id": "filmEnding",
+   "moment": "the ending of a film",
+   "bn": "ছবির শেষ",
+   "shots": [
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "final emotion",
+     "hold": [
+      2.0,
+      3.5
+     ],
+     "note": "hold longer than the film's average"
+    },
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "pullOut",
+     "on": "A in their world",
+     "hold": [
+      4.0,
+      6.0
+     ],
+     "note": "or a crane up and away"
+    },
+    {
+     "size": "extremeWide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the world goes on",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "cut": "dissolve"
+    }
+   ],
+   "order": "the face -> the person in the world -> the world -> fade",
+   "rhythm": {
+    "avgShot_s": [
+     3.0,
+     4.5
+    ],
+    "pattern": "the slowest shots of the film; fade out 30-60 f, hold black 0.5-1 s"
+   },
+   "variants": {
+    "backViewExit": "backView of A walking away into an extremeWide",
+    "twist": "cutToBlack on the last line",
+    "loop": "for shorts: end on a frame that matches the first frame so the replay feels seamless"
+   },
+   "cuts": [
+    "dissolve",
+    "fade",
+    "cutToBlack"
+   ],
+   "watch": [
+    "oneMoveAtATime",
+    "setCoverage"
+   ],
+   "9:16": "leave the final card inside keySafe",
+   "16:9": "credits can run over the final wide",
+   "avoid": "ending on a mid-move cut"
+  },
+  {
+   "id": "comedyBeat",
+   "moment": "a joke (setup, punchline, reaction)",
+   "bn": "কমেডি",
+   "shots": [
+    {
+     "size": "wide",
+     "angle": "frontalTableau",
+     "move": "static",
+     "on": "setup: everyone in one frame",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "note": "comedy lives in wides and still frames"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the one who says/does the funny thing",
+     "hold": [
+      1.0,
+      2.0
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "zoomPunch",
+     "on": "the reaction",
+     "hold": [
+      1.0,
+      1.5
+     ],
+     "cut": "reactionCut",
+     "note": "a 0.3-0.6 s pause BEFORE the reaction is the laugh"
+    },
+    {
+     "size": "wide",
+     "angle": "frontalTableau",
+     "move": "static",
+     "on": "hold for the laugh",
+     "hold": [
+      1.2,
+      2.0
+     ]
+    }
+   ],
+   "order": "setup -> beat (pause) -> punchline -> reaction -> hold",
+   "rhythm": {
+    "avgShot_s": [
+     1.2,
+     2.0
+    ],
+    "pattern": "rule of three: two normal beats then the twist; cut the reaction 8-12 frames after the punch"
+   },
+   "variants": {
+    "smash": "'I will never...' -> smashCut -> doing it",
+    "deadpan": "no zoom, no cut: hold the frontal wide 2-3 s on a blank face"
+   },
+   "cuts": [
+    "smashCut",
+    "reactionCut",
+    "hardCut"
+   ],
+   "watch": [
+    "oneMoveAtATime",
+    "closeUpRun"
+   ],
+   "9:16": "the reaction CU is the meme frame: centred, inside keySafe",
+   "16:9": "the frontal wide is where physical comedy reads",
+   "avoid": "explaining the joke with extra shots; moving the camera during the setup"
+  },
+  {
+   "id": "directAddress",
+   "moment": "a narrator/explainer talks to the viewer",
+   "bn": "সরাসরি দর্শককে বলা",
+   "shots": [
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "narrator, eyes into the lens",
+     "hold": [
+      2.0,
+      4.0
+     ],
+     "tags": [
+      "directAddress"
+     ]
+    },
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "zoomPunch",
+     "on": "narrator on the key word",
+     "hold": [
+      1.5,
+      3.0
+     ],
+     "cut": "jumpCutStyle"
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the thing explained (graphic, object, diagram)",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "cut": "cutaway"
+    },
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "narrator again",
+     "hold": [
+      2.0,
+      4.0
+     ]
+    }
+   ],
+   "order": "talk -> punch on the key word -> show -> talk",
+   "rhythm": {
+    "cutsPerSecond": [
+     0.3,
+     0.37
+    ],
+    "avgShot_s": [
+     2.7,
+     3.3
+    ],
+    "pattern": "a visual change every ~3 s; faster than 0.5 cuts/s stops helping viewers keep watching"
+   },
+   "cuts": [
+    "jumpCutStyle",
+    "cutaway",
+    "hardCut"
+   ],
+   "watch": [
+    "lookIntoLens",
+    "safeZone",
+    "textReadTime"
+   ],
+   "9:16": "narrator centred, eyes 0.28-0.35, captions at y 0.58-0.64",
+   "16:9": "narrator on a third with graphics on the other two",
+   "avoid": "B-roll that does not show what is being said"
+  },
+  {
+   "id": "familyMeal",
+   "moment": "a family meal",
+   "bn": "পরিবারের খাওয়া",
+   "shots": [
+    {
+     "size": "wide",
+     "angle": "frontalTableau",
+     "move": "static",
+     "on": "family on the floor mat or at the table",
+     "hold": [
+      2.5,
+      3.5
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "topDown",
+     "move": "static",
+     "on": "the food (bhat, dal, fish curry)",
+     "hold": [
+      1.0,
+      1.5
+     ],
+     "note": "needs top views of plates; else a plate held up"
+    },
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "each speaker (seated eye height: mat 0.78 m, chair 1.15 m)",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "a hand mixing rice (the RIGHT hand)",
+     "hold": [
+      1.0,
+      1.5
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the one who goes quiet",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "cut": "reactionCut"
+    }
+   ],
+   "order": "everyone -> the food -> the talk -> a detail -> the person the scene is about",
+   "rhythm": {
+    "avgShot_s": [
+     2.0,
+     2.8
+    ]
+   },
+   "cuts": [
+    "hardCut",
+    "jCut",
+    "reactionCut"
+   ],
+   "watch": [
+    "mirrorSafety (right-hand eating)",
+    "eyelineHeight (seated)",
+    "line180 (the table axis)"
+   ],
+   "9:16": "floor seating stacks well in depth",
+   "16:9": "the frontal table wide is a classic",
+   "avoid": "mirroring any shot with a person eating"
+  },
+  {
+   "id": "workProcess",
+   "moment": "someone works (cooking, farming, a craft)",
+   "bn": "কাজ / প্রক্রিয়া",
+   "shots": [
+    {
+     "size": "mediumWide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the worker at work",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "hands: step 1",
+     "hold": [
+      0.8,
+      1.2
+     ],
+     "cut": "cutOnAction"
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "hands: step 2",
+     "hold": [
+      0.8,
+      1.2
+     ],
+     "cut": "montage"
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "hands: step 3",
+     "hold": [
+      0.8,
+      1.2
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the worker's focus",
+     "hold": [
+      1.0,
+      1.5
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "pushIn",
+     "on": "the finished thing",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    }
+   ],
+   "order": "who -> how (steps) -> the face -> the result",
+   "rhythm": {
+    "avgShot_s": [
+     1.0,
+     1.6
+    ],
+    "pattern": "cut on the work's own rhythm (the knife, the hammer, the paddle)"
+   },
+   "cuts": [
+    "cutOnAction",
+    "montage",
+    "matchCut"
+   ],
+   "watch": [
+    "minShotLength",
+    "jumpCut (insert to insert of the same object needs a size change)"
+   ],
+   "9:16": "hands centred, work surface stacked below the face",
+   "16:9": "worker on one third, the work on the other",
+   "avoid": "a process with no finished result shown"
+  },
+  {
+   "id": "departureGoodbye",
+   "moment": "a goodbye / departure",
+   "bn": "বিদায়",
+   "shots": [
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "bus stand / launch ghat / airport",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "full",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the hug",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "cut": "cutOnAction"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the one staying",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the one leaving",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "full",
+     "angle": "backView",
+     "move": "static",
+     "on": "the leaver walks to the bus",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "cut": "lCut",
+     "note": "a last line carries over"
+    },
+    {
+     "size": "wide",
+     "angle": "pov",
+     "move": "pullOut",
+     "on": "from the bus window: the family gets smaller",
+     "hold": [
+      2.5,
+      4.0
+     ]
+    },
+    {
+     "size": "extremeWide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the bus/launch leaves (left -> right)",
+     "hold": [
+      2.5,
+      3.5
+     ]
+    }
+   ],
+   "order": "the place -> the hug -> both faces -> the walk away -> what they leave -> gone",
+   "rhythm": {
+    "avgShot_s": [
+     2.2,
+     3.0
+    ]
+   },
+   "cuts": [
+    "cutOnAction",
+    "lCut",
+    "dissolve"
+   ],
+   "watch": [
+    "screenDirection",
+    "mirrorSafety (vehicles)"
+   ],
+   "9:16": "the shrinking family in the POV stacks vertically",
+   "16:9": "the leaving vehicle crosses the whole frame",
+   "avoid": "cutting away before the last look"
+  },
+  {
+   "id": "ideaRealization",
+   "moment": "an idea / a realisation",
+   "bn": "আইডিয়া",
+   "shots": [
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "creep",
+     "on": "A thinking",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "pov",
+     "move": "static",
+     "on": "the trigger object",
+     "hold": [
+      0.8,
+      1.2
+     ],
+     "cut": "eyelineMatch"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "pushIn",
+     "on": "A's eyes light up",
+     "hold": [
+      1.0,
+      2.0
+     ],
+     "note": "comic: zoomPunch instead"
+    },
+    {
+     "size": "mediumWide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A springs into action",
+     "hold": [
+      1.0,
+      1.5
+     ],
+     "cut": "cutOnAction"
+    }
+   ],
+   "order": "stuck -> the trigger -> the click -> the action",
+   "rhythm": {
+    "avgShot_s": [
+     1.4,
+     2.0
+    ]
+   },
+   "cuts": [
+    "eyelineMatch",
+    "cutOnAction",
+    "whiteFlash"
+   ],
+   "watch": [
+    "oneMoveAtATime"
+   ],
+   "9:16": "the trigger object can sit high in the frame like a thought",
+   "16:9": "the trigger on the opposite third",
+   "avoid": "a realisation with no trigger shown"
+  },
+  {
+   "id": "surpriseScare",
+   "moment": "a surprise or a scare",
+   "bn": "চমক / ভয়",
+   "shots": [
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A with empty space behind (short-sided)",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "tags": [
+      "shortSide"
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A hears something",
+     "hold": [
+      1.0,
+      1.5
+     ],
+     "cut": "jCut",
+     "note": "the creak leads the picture"
+    },
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "focusPull",
+     "on": "something appears in the empty space",
+     "hold": [
+      0.8,
+      1.2
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "impactShake",
+     "on": "A jumps",
+     "hold": [
+      0.6,
+      1.0
+     ],
+     "cut": "hardCut"
+    },
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "release: it was the cat / the little brother",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    }
+   ],
+   "order": "calm with a hole -> a sound -> the thing -> the jolt -> the release",
+   "rhythm": {
+    "avgShot_s": [
+     1.2,
+     1.8
+    ],
+    "pattern": "hold the calm longer than feels right, then cut on the jolt"
+   },
+   "cuts": [
+    "jCut",
+    "hardCut",
+    "smashCut"
+   ],
+   "watch": [
+    "flashSafety",
+    "oneMoveAtATime"
+   ],
+   "9:16": "the empty space can be above A (something on the ceiling, on the stairs)",
+   "16:9": "the empty side of the frame",
+   "avoid": "real violence or gore; scares in content for very young children"
+  },
+  {
+   "id": "sportsMoment",
+   "moment": "a sports moment (cricket)",
+   "bn": "খেলা / ক্রিকেট",
+   "shots": [
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the field (telephoto compression)",
+     "hold": [
+      1.5,
+      2.0
+     ]
+    },
+    {
+     "size": "full",
+     "angle": "eyeLevel",
+     "move": "trackSide",
+     "on": "bowler's run-up",
+     "hold": [
+      1.5,
+      2.0
+     ]
+    },
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "batter's eyes narrow",
+     "hold": [
+      0.8,
+      1.2
+     ]
+    },
+    {
+     "size": "extremeClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "eyes",
+     "hold": [
+      0.4,
+      0.6
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the ball leaves the hand",
+     "hold": [
+      0.4,
+      0.6
+     ],
+     "cut": "cutOnAction"
+    },
+    {
+     "size": "full",
+     "angle": "eyeLevel",
+     "move": "impactShake",
+     "on": "bat hits the ball",
+     "hold": [
+      0.6,
+      1.0
+     ],
+     "cut": "cutOnAction"
+    },
+    {
+     "size": "wide",
+     "angle": "worm",
+     "move": "tiltUp",
+     "on": "the ball in the sky",
+     "hold": [
+      1.0,
+      1.5
+     ]
+    },
+    {
+     "size": "group",
+     "angle": "eyeLevel",
+     "move": "handheld",
+     "on": "team/crowd reacts",
+     "hold": [
+      1.5,
+      2.0
+     ]
+    },
+    {
+     "size": "full",
+     "angle": "low",
+     "move": "static",
+     "on": "the hero",
+     "hold": [
+      1.5,
+      2.0
+     ]
+    }
+   ],
+   "order": "space -> wind-up -> tension -> release -> impact -> flight -> reaction -> hero",
+   "rhythm": {
+    "avgShot_s": [
+     0.9,
+     1.4
+    ],
+    "pattern": "shrinking to 0.4-0.6 s at the delivery, then a long hero hold"
+   },
+   "cuts": [
+    "cutOnAction",
+    "hardCut",
+    "smashCut"
+   ],
+   "watch": [
+    "screenDirection (bowler -> batter axis)",
+    "mirrorSafety (batting side)",
+    "minShotLength (montage floor)"
+   ],
+   "9:16": "the ball's flight is a vertical tiltUp",
+   "16:9": "bowler-to-batter across the frame",
+   "avoid": "mirroring the batter (left-hander becomes right-hander)"
+  },
+  {
+   "id": "rainStorm",
+   "moment": "rain or a storm",
+   "bn": "বৃষ্টি / ঝড়",
+   "shots": [
+    {
+     "size": "extremeWide",
+     "angle": "eyeLevel",
+     "move": "parallaxDrift",
+     "on": "dark clouds, horizon low (sky drama)",
+     "hold": [
+      2.5,
+      3.5
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "first drops on a tin roof / a pond",
+     "hold": [
+      0.8,
+      1.2
+     ],
+     "cut": "jCut",
+     "note": "rain on tin leads the picture"
+    },
+    {
+     "size": "full",
+     "angle": "eyeLevel",
+     "move": "trackSide",
+     "on": "people running for cover",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "mediumClose",
+     "angle": "throughFrame",
+     "move": "static",
+     "on": "someone watching the rain from a window",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "impactShake",
+     "on": "lightning and thunder",
+     "hold": [
+      0.8,
+      1.2
+     ],
+     "cut": "whiteFlash"
+    },
+    {
+     "size": "wide",
+     "angle": "high",
+     "move": "static",
+     "on": "the flooded courtyard after",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "cut": "timeJump"
+    }
+   ],
+   "order": "the sky -> the first sound -> the rush -> the inside -> the peak -> after",
+   "rhythm": {
+    "avgShot_s": [
+     1.8,
+     2.6
+    ]
+   },
+   "cuts": [
+    "jCut",
+    "whiteFlash",
+    "dissolve",
+    "timeJump"
+   ],
+   "watch": [
+    "flashSafety",
+    "oneMoveAtATime"
+   ],
+   "9:16": "rain streaks are vertical: the tall frame loves them",
+   "16:9": "wide horizons with a curtain of rain",
+   "avoid": "more than 3 lightning flashes per second"
+  },
+  {
+   "id": "celebrationFestival",
+   "moment": "a celebration (Eid, Pohela Boishakh, a wedding)",
+   "bn": "উৎসব",
+   "shots": [
+    {
+     "size": "wide",
+     "angle": "elevatedWide",
+     "move": "parallaxDrift",
+     "on": "colourful crowd / decorated street",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "mehedi hands, semai, new clothes, alpona",
+     "hold": [
+      0.8,
+      1.2
+     ],
+     "cut": "montage",
+     "note": "3-5 of these on the music beat"
+    },
+    {
+     "size": "mediumWide",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the Eid embrace (kolakuli) x3",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "cut": "cutOnAction"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "a child's joy (salami money)",
+     "hold": [
+      1.0,
+      1.5
+     ]
+    },
+    {
+     "size": "group",
+     "angle": "eyeLevel",
+     "move": "handheld",
+     "on": "family together",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "extremeWide",
+     "angle": "eyeLevel",
+     "move": "crane",
+     "on": "the whole neighbourhood",
+     "hold": [
+      3.0,
+      4.0
+     ]
+    }
+   ],
+   "order": "the scale -> the details -> the ritual -> a face -> together -> the world",
+   "rhythm": {
+    "avgShot_s": [
+     1.2,
+     2.0
+    ],
+    "pattern": "cut on music beats (every 2 beats)"
+   },
+   "cuts": [
+    "montage",
+    "cutOnAction",
+    "hardCut",
+    "dissolve"
+   ],
+   "watch": [
+    "minShotLength",
+    "groupThreshold",
+    "mirrorSafety (banners and signs)"
+   ],
+   "9:16": "crowds in depth rows; the embrace is a perfect mediumWide",
+   "16:9": "the street wide",
+   "avoid": "the festival shown only in wides (find the faces)"
+  },
+  {
+   "id": "nightDream",
+   "moment": "night, sleep, a dream",
+   "bn": "রাত / ঘুম / স্বপ্ন",
+   "shots": [
+    {
+     "size": "full",
+     "angle": "high",
+     "move": "static",
+     "on": "A awake on the bed (through the mosquito net)",
+     "hold": [
+      3.0,
+      4.0
+     ],
+     "note": "or topDown if top-view people exist"
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the moon through the window / the clock",
+     "hold": [
+      1.5,
+      2.0
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "creep",
+     "on": "eyes close",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "wide",
+     "angle": "dutch",
+     "move": "parallaxDrift",
+     "on": "the dream (subtle roll 5-8 deg, soft palette)",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "cut": "dissolve"
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "eyes snap open",
+     "hold": [
+      0.8,
+      1.5
+     ],
+     "cut": "smashCut"
+    }
+   ],
+   "order": "restless -> time -> sleep -> dream -> awake",
+   "rhythm": {
+    "avgShot_s": [
+     2.2,
+     3.0
+    ]
+   },
+   "cuts": [
+    "dissolve",
+    "smashCut",
+    "fade"
+   ],
+   "watch": [
+    "oneMoveAtATime",
+    "flashSafety"
+   ],
+   "9:16": "a person lying on a bed fits the tall frame only from topDown; otherwise use a high full shot",
+   "16:9": "the bed across the frame",
+   "avoid": "a dream look that matches the memory look (keep them different)"
+  },
+  {
+   "id": "productShowcase",
+   "moment": "a product / ad moment",
+   "bn": "পণ্য প্রদর্শন",
+   "shots": [
+    {
+     "size": "extremeClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "texture hook (fabric, surface, steam)",
+     "hold": [
+      0.8,
+      1.2
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "pushIn",
+     "on": "hero product held up to camera",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "person using it (the benefit)",
+     "hold": [
+      1.5,
+      2.0
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "zoomPunch",
+     "on": "delight",
+     "hold": [
+      0.8,
+      1.2
+     ],
+     "cut": "reactionCut"
+    },
+    {
+     "size": "insert",
+     "angle": "frontalTableau",
+     "move": "static",
+     "on": "product + price / call to action",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "note": "reading time"
+    }
+   ],
+   "order": "hook -> hero -> benefit -> feeling -> ask",
+   "rhythm": {
+    "avgShot_s": [
+     1.2,
+     2.0
+    ],
+    "pattern": "15-30 s total"
+   },
+   "cuts": [
+    "hardCut",
+    "matchCut",
+    "whiteFlash"
+   ],
+   "watch": [
+    "safeZone",
+    "textReadTime",
+    "faceSizeForEmotion"
+   ],
+   "9:16": "product centred in keySafe; text never in the bottom 35 %",
+   "16:9": "product on a third, text on the other",
+   "avoid": "small text; the product only appearing at the end"
+  },
+  {
+   "id": "secretOverhear",
+   "moment": "overhearing a secret",
+   "bn": "আড়ি পাতা",
+   "shots": [
+    {
+     "size": "mediumWide",
+     "angle": "throughFrame",
+     "move": "static",
+     "on": "the eavesdropper at the door gap",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "medium",
+     "angle": "pov",
+     "move": "focusPull",
+     "on": "through the gap: the speakers",
+     "hold": [
+      2.0,
+      3.0
+     ],
+     "note": "door edges dark in the foreground"
+    },
+    {
+     "size": "extremeClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "an ear / the eyes",
+     "hold": [
+      0.6,
+      1.0
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "the eavesdropper reacts",
+     "hold": [
+      1.0,
+      1.5
+     ],
+     "cut": "reactionCut"
+    },
+    {
+     "size": "medium",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "a speaker turns toward the door",
+     "hold": [
+      0.8,
+      1.2
+     ],
+     "cut": "hardCut"
+    }
+   ],
+   "order": "hiding -> what they hear -> tension -> reaction -> near-discovery",
+   "rhythm": {
+    "avgShot_s": [
+     1.5,
+     2.2
+    ]
+   },
+   "cuts": [
+    "hardCut",
+    "reactionCut",
+    "jCut"
+   ],
+   "watch": [
+    "lookIntoLens",
+    "line180"
+   ],
+   "9:16": "a door gap is a vertical slit: native to 9:16",
+   "16:9": "the eavesdropper on one edge, the room beyond",
+   "avoid": "letting the eavesdropper's POV be from an impossible height"
+  },
+  {
+   "id": "shyRomance",
+   "moment": "a shy romantic moment",
+   "bn": "লাজুক ভালোবাসা",
+   "shots": [
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "A looks",
+     "hold": [
+      1.5,
+      2.5
+     ]
+    },
+    {
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "B looks away, smiling",
+     "hold": [
+      1.5,
+      2.5
+     ],
+     "cut": "eyelineMatch"
+    },
+    {
+     "size": "twoShot",
+     "angle": "profile",
+     "move": "static",
+     "on": "the gap between them (0.8-1.2 m)",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "insert",
+     "angle": "eyeLevel",
+     "move": "static",
+     "on": "hands nearly touching / a flower / two tea cups",
+     "hold": [
+      1.0,
+      1.5
+     ]
+    },
+    {
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "creep",
+     "on": "a shy smile",
+     "hold": [
+      2.0,
+      3.0
+     ]
+    },
+    {
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "parallaxDrift",
+     "on": "the two at a distance by the river / on a rooftop",
+     "hold": [
+      2.5,
+      3.5
+     ]
+    }
+   ],
+   "order": "look -> look away -> the gap -> the almost -> the smile -> the world around them",
+   "rhythm": {
+    "avgShot_s": [
+     2.0,
+     2.8
+    ]
+   },
+   "cuts": [
+    "eyelineMatch",
+    "hardCut",
+    "dissolve"
+   ],
+   "watch": [
+    "eyelineMatch",
+    "shotReverseShotMatch"
+   ],
+   "9:16": "the two stacked in depth, the river behind",
+   "16:9": "profile two-shot across the frame",
+   "avoid": "physical intimacy beyond the audience's comfort; leering angles"
+  }
+ ],
+ "composition": {
+  "thirds": {
+   "9:16": "use the horizontal third lines (y 0.333, 0.667) for eyes and horizons; vertical thirds only from mediumWide outward",
+   "16:9": "eyes on y 0.33-0.38, face on x 0.33 or 0.67"
+  },
+  "negativeSpace": {
+   "loneliness": "subject occupies <= 12 % of frame area with empty space on the side they face or above them",
+   "threat": "empty space behind the subject's back (short-siding) for 1-3 s before a surprise"
+  },
+  "foregroundLayer": {
+   "depth": "0.3-0.6 x subject depth",
+   "cover": "<= 25 % of frame area",
+   "value": "darker or lighter than the subject layer by >= 15 % luminance",
+   "use": "depth, frame-in-frame, hiding missing set pieces, hiding cuts (object wipe)"
+  },
+  "frameInFrame": {
+   "how": "door, window, bars, rickshaw hood, mosquito net in the foreground at 0.3-0.6 x subject depth, darkened 20-40 %",
+   "use": "trapped, watched, longing, outsider looking in",
+   "cost": "cheap: reuse door/window front pieces"
+  },
+  "depthLayers": {
+   "minimum": 3,
+   "hero": [
+    4,
+    5
+   ],
+   "names": [
+    "foreground",
+    "subject",
+    "midground",
+    "background",
+    "sky/far"
+   ]
+  },
+  "parallax": "layer screen speed = cameraSpeed * (subjectDepth / layerDepth). Sky ~0, far trees 0.1-0.3, subject 1, foreground 1.5-3.",
+  "atmosphere": "flat colour, no outlines: separate depth layers by value. Each doubling of depth: lighten/desaturate 10-20 % toward the sky colour. Keep >= 15 % luminance between a face and what is directly behind it.",
+  "symmetry": {
+   "use": "formal moments, faith, institutions (school assembly, court, mosque), comedy deadpan",
+   "how": "camera centred on the set's axis, subject x 0.5 +- 0.02, frontal view"
+  },
+  "triangleStaging": "three people: one near (largest), two farther on either side; faces at three different heights and x positions",
+  "depthStacking9x16": "two people: near one low-left (head height 0.18-0.28 of frame), far one high-right (0.10-0.16), faces not overlapping, both inside keySafe",
+  "tangents": "never let a horizon, table edge, wall-floor line or window sill run within 0.08 head of a chin or the top of a head (reads as a cut through the head)",
+  "silhouette": "faces must not overlap other faces; hands in front of the body must keep >= 0.1 head of contrast edge or they vanish in flat colour"
+ },
+ "style": {
+  "pace": {
+   "note": "ASL = average shot length. Ranges are for narrative 2D phone films; check the film against them after planning.",
+   "byLength": {
+    "30s": {
+     "asl_s": [
+      1.8,
+      2.5
+     ],
+     "shots": [
+      12,
+      17
+     ],
+     "firstCut_s": [
+      1.0,
+      2.0
+     ]
+    },
+    "60s": {
+     "asl_s": [
+      2.2,
+      3.0
+     ],
+     "shots": [
+      20,
+      27
+     ],
+     "firstCut_s": [
+      1.5,
+      2.5
+     ]
+    },
+    "120s": {
+     "asl_s": [
+      2.6,
+      3.5
+     ],
+     "shots": [
+      34,
+      46
+     ],
+     "firstCut_s": [
+      1.5,
+      3.0
+     ]
+    }
+   },
+   "climax": {
+    "shotLength": "0.4-0.6 x the film's ASL for 3-8 shots (about 0.8-1.4 s; floor 0.4 s)",
+    "release": "then one hold of 1.5-2x ASL (2-4 s)"
+   },
+   "profiles": {
+    "drama": {
+     "aslMultiplier": 1.15
+    },
+    "comedy": {
+     "aslMultiplier": 1.0,
+     "note": "longer setups, quick reactions"
+    },
+    "action": {
+     "aslMultiplier": 0.7,
+     "floor_s": 0.4
+    },
+    "explainer": {
+     "cutsPerSecond": [
+      0.3,
+      0.37
+     ],
+     "note": "a visual change about every 3 s; a field sample of high-performing talking-head TikToks averaged 0.37 cuts/s, and medium pace (~0.33 cuts/s) kept viewers watching best in a test"
+    },
+    "kidsUnder7": {
+     "asl_s_min": 4.0,
+     "noShotsUnder_s": 1.5,
+     "sceneChange_s_min": 20,
+     "note": "very fast cartoons (scene change every 11 s) impaired 4-year-olds' executive function right after viewing vs a slow one (every 34 s); go slow for small children"
+    }
+   },
+   "references": {
+    "hollywood": "ASL fell from about 12 s (1930s) to about 2.5-4 s (2000s-2010s); fast action films 1.7-3 s",
+    "animatedFeatures": "animated movies have shorter shots and more motion than live action",
+    "shortForm": "creator advice says 'cut every 1-3 s'; treat this as marketing lore, not measured fact. Measured: ~2.7 s between cuts in strong talking-head TikToks",
+    "readingFaces": "closer shots are read faster: close-ups can be shorter than wides (larger face + less clutter = faster)"
+   }
+  },
+  "traditions": {
+   "bangladeshiTvDrama": {
+    "production": "most natoks are made in a few days on small budgets (many at 1-2 lakh taka; often about 70 % goes to the two lead actors) and released mainly on YouTube; Eid is the peak season",
+    "camera": [
+     "dialogue covered with 1-2 cameras: MCU/CU singles and OTS, long dialogue scenes",
+     "frequent zoom-lens moves and slow push-ins on reactions; drone 'top shots' of rivers, roads and fields as establishing and transition shots",
+     "romance and longing carried by music montages, slow motion and glance exchanges rather than touch",
+     "3-camera set-ups for action or crowd moments",
+     "the Farooki/'Chabial' wave brought handheld naturalism, overlapping everyday dialogue, jump cuts and deadpan pans",
+     "frontal staging: actors often cheat toward the camera; the 180 line is kept loosely in fast productions"
+    ],
+    "status": "observed conventions from viewing and press coverage, not a measured study"
+   },
+   "modernAnimatedShorts": [
+    "design-led frames: bold silhouettes, centred 9:16 compositions, graphic match cuts",
+    "limited animation: held poses kept alive by camera (parallax drifts, punch-ins) and sound",
+    "vertical microdrama grammar: one subject per frame, alternating singles and OTS, close-ups dominate; conventional side-by-side two-shots are rare",
+    "on-screen text and captions as part of the picture"
+   ],
+   "hollywoodContinuity": [
+    "establish -> medium -> close; strict 180 line; eyeline matches; cut on action; the 30-degree rule",
+    "coverage from many angles, picked in the edit",
+    "camera moves motivated by character movement"
+   ],
+   "whereTheyDiffer": [
+    "Bangladeshi dramas hold dialogue shots longer and let music carry emotion; Hollywood cuts faster and uses silence and reaction shots",
+    "natoks stage more frontally (to the lens); Hollywood stages in depth and across the axis",
+    "natoks lean on zoom and drone; Hollywood leans on dolly/track and lens choice",
+    "faith and family scenes in Bangladesh are shot at a respectful distance and eye level; Hollywood may go close and dramatic",
+    "phone shorts (all traditions) are tighter, more centred and faster than any TV tradition"
+   ],
+   "zancutBlend": "Use Hollywood continuity (180, eyelines, cut on action) as the skeleton, Bangladeshi warmth and respect in what we show and how long we hold it, and phone-short tightness in framing."
+  },
+  "minimumSet1min": {
+   "setups": [
+    {
+     "what": "establishing wide",
+     "size": "wide",
+     "angle": "eyeLevel",
+     "move": "parallaxDrift"
+    },
+    {
+     "what": "single A",
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "view": "three"
+    },
+    {
+     "what": "single B (mirrored framing)",
+     "size": "mediumClose",
+     "angle": "eyeLevel",
+     "view": "three"
+    },
+    {
+     "what": "OTS pair (A over B, B over A)",
+     "size": "mediumClose",
+     "angle": "overShoulder"
+    },
+    {
+     "what": "close-up for the turning point",
+     "size": "closeUp",
+     "angle": "eyeLevel",
+     "move": "pushIn"
+    },
+    {
+     "what": "insert of the key object",
+     "size": "insert"
+    },
+    {
+     "what": "one accent angle",
+     "options": [
+      "low",
+      "high",
+      "pov"
+     ]
+    }
+   ],
+   "plus": "end on a wide (reuse setup 1 with a pullOut)",
+   "moves": "<= 3 per minute: one parallaxDrift, one pushIn, one pullOut",
+   "cuts": "hard cuts, 1-2 J-cuts, one reaction cut on the key line, one dissolve or fade",
+   "why": "6 setups + 1 accent give 4 size classes, 3 angle families and real shot/reverse-shot: enough to pass monotony and feel cinematic."
+  },
+  "cheapMistakes": [
+   {
+    "id": "oneFlatMedium",
+    "mistake": "Everything in one front-on medium: people side by side at one depth, facing the lens, the horizon through every head.",
+    "fix": "stage in depth, use OTS and singles, vary sizes (rules.monotony)"
+   },
+   {
+    "id": "eyelinesMiss",
+    "mistake": "Characters talk to the lens or both look the same way; eyelines never meet.",
+    "fix": "rules.eyelineMatch, three views turned 20-45 deg toward the partner"
+   },
+   {
+    "id": "floatingPeople",
+    "mistake": "Feet off the ground plane, no contact shadow, sizes that ignore depth, heads that don't sit on one horizon.",
+    "fix": "rules.grounded, rules.horizonConsistency"
+   },
+   {
+    "id": "unmotivatedMoves",
+    "mistake": "Constant slow zooms on everything, linear (un-eased) keyframes, two moves at once, zooms with no parallax.",
+    "fix": "moves only on turns of the story; eased; one at a time; parallax via depth layers"
+   },
+   {
+    "id": "deadTiming",
+    "mistake": "Shots held after they are read, lip-flap in static wides, metronome cutting, cutting only to whoever speaks (no reactions).",
+    "fix": "rules.maxShotLength, rules.rhythm, reactionCut"
+   }
+  ],
+  "alsoCheap": [
+   "lines through heads (rules.lineThroughHead)",
+   "mirrored shots with backwards Bangla text (rules.mirrorSafety)",
+   "accidental jump cuts (rules.jumpCut)",
+   "the camera showing the edge of the set (rules.setCoverage)"
+  ]
+ },
+ "costLadder": {
+  "free": [
+   "static",
+   "creep",
+   "panLeft",
+   "panRight",
+   "tiltUp",
+   "tiltDown",
+   "pushIn (zoom)",
+   "pullOut (zoom)",
+   "zoomPunch",
+   "handheld",
+   "impactShake",
+   "dutch",
+   "eyeLevel",
+   "profile",
+   "frontalTableau",
+   "childHeight",
+   "backView",
+   "throughFrame"
+  ],
+  "cheap": [
+   "parallaxDrift",
+   "trackSide",
+   "focusPull",
+   "whipPan",
+   "overShoulder",
+   "low",
+   "high",
+   "elevatedWide",
+   "crane",
+   "worm (cheap version)",
+   "pov (no hands)",
+   "insert (held up)"
+  ],
+  "needsCameraZ": [
+   "pushIn (dolly)",
+   "followBehind",
+   "lead",
+   "dollyZoom"
+  ],
+  "needsNewDrawings": [
+   "topDown (people)",
+   "bird",
+   "worm (true)",
+   "pov hands",
+   "reverse walls",
+   "arc"
+  ]
+ },
+ "newDrawings": [
+  {
+   "rank": 1,
+   "draw": "reverse wall for each of the 5-8 most used sets",
+   "unlocks": "real shot/reverse-shot: the OTS reverse and every single of the second person",
+   "why": "dialogue is most of every film"
+  },
+  {
+   "rank": 2,
+   "draw": "threeBack head-and-shoulders view for main characters",
+   "unlocks": "better OTS near shoulders (cheek edge visible)"
+  },
+  {
+   "rank": 3,
+   "draw": "ceiling strip (with ceiling fan, beams, tin roof underside) + floor/ground texture tiles",
+   "unlocks": "low and high angles inside rooms and courtyards"
+  },
+  {
+   "rank": 4,
+   "draw": "top-view kit: plates and food, table, bed with mosquito net, floor mat, jainamaz, phone/letter on a surface, people from above in 4 poses",
+   "unlocks": "topDown inserts, meals, sleepless nights"
+  },
+  {
+   "rank": 5,
+   "draw": "map kit (top views): tin/thatch/concrete roofs, paddy fields, river ribbon, roads, rickshaws/CNG/buses/boats from above, tree canopies, ponds, people dots, umbrellas",
+   "unlocks": "bird's-eye / drone openings and endings"
+  },
+  {
+   "rank": 6,
+   "draw": "POV hands: holding a phone, a letter, a rickshaw handlebar, a tea cup",
+   "unlocks": "first-person shots"
+  },
+  {
+   "rank": 7,
+   "draw": "furniture with its top surface as a separate layer",
+   "unlocks": "correct tabletops at any camera height (rules.surfaceSide)"
+  },
+  {
+   "rank": 8,
+   "draw": "under-chin heads, or a perspective mesh warp in code",
+   "unlocks": "true worm's-eye and steep low angles"
+  }
+ ]
+}

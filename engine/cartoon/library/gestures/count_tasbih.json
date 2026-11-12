@@ -1,0 +1,118 @@
+{
+  "id": "count_tasbih",
+  "about": "right hand held peacefully in front of the waist gently rolling tasbih prayer beads between thumb and index",
+  "group": "arms",
+  "seconds": 1,
+  "loop": true,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            17.1,
+            -26.8,
+            5.4
+          ],
+          "wrist": [
+            -4,
+            -20,
+            24
+          ],
+          "hand": [
+            -8.3,
+            -16.4,
+            34.8
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "pinch"
+      ]
+    },
+    {
+      "u": 0.25,
+      "arms": {
+        "R": {
+          "elbow": [
+            16.1,
+            -27,
+            6.9
+          ],
+          "wrist": [
+            -5,
+            -19,
+            25
+          ],
+          "hand": [
+            -9.3,
+            -14.8,
+            35.6
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "eatBite"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "R": {
+          "elbow": [
+            17.1,
+            -26.8,
+            5.4
+          ],
+          "wrist": [
+            -4,
+            -20,
+            24
+          ],
+          "hand": [
+            -8.3,
+            -16.4,
+            34.8
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "pinch"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "R": {
+          "elbow": [
+            16.1,
+            -27,
+            6.9
+          ],
+          "wrist": [
+            -5,
+            -19,
+            25
+          ],
+          "hand": [
+            -9.3,
+            -14.8,
+            35.6
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "eatBite"
+      ]
+    }
+  ]
+}

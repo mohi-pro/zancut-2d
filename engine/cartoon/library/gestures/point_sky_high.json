@@ -1,0 +1,99 @@
+{
+  "id": "point_sky_high",
+  "about": "the right arm rises to point high toward the sky, moon, or a rooftop",
+  "group": "arms",
+  "aliases": [
+    "point up at sky",
+    "point at moon",
+    "look there high",
+    "আকাশে আঙুল দেখানো",
+    "উপরে দেখানো"
+  ],
+  "seconds": 1.4,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            5.22,
+            -31.78,
+            0
+          ],
+          "wrist": [
+            5.4,
+            -56.88,
+            14.27
+          ],
+          "hand": [
+            5.44,
+            -67.02,
+            21.06
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "relaxed"
+      ]
+    },
+    {
+      "u": 0.45,
+      "arms": {
+        "R": {
+          "elbow": [
+            18.81,
+            1.29,
+            26.11
+          ],
+          "wrist": [
+            8,
+            28,
+            28
+          ],
+          "hand": [
+            5.46,
+            38.65,
+            33.41
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "pointUp"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            18.81,
+            1.29,
+            26.11
+          ],
+          "wrist": [
+            8,
+            28,
+            28
+          ],
+          "hand": [
+            5.46,
+            38.65,
+            33.41
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "pointUp"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+# Brain v2 holdout benchmark: written by hand (by the assistant, 2026-11-08) BEFORE the Step 8 training generator, labelled by hand
+# for all 7 heads. NOT the owner's real sentences (those stay in brain/real-test.jsonl). Rows with the same story id form a story:
+# prevText / nextText / prevPlace come from the neighbouring rows. Fields: id|text|place|action|face|roles|broll|graphic|cameraMove
+S1|ভোরবেলা রাফি গ্রামের মেঠোপথ ধরে স্কুলের দিকে হাঁটছিল।|village_road|walk|neutral||none|none|steady
+S1|পথে তার বন্ধু তুহিনের সঙ্গে দেখা হলো।|village_road|wave|happy||none|none|steady
+S1|দুজনে গল্প করতে করতে এগিয়ে চলল।|village_road|walk|happy||none|none|steady
+S1|হঠাৎ আকাশ কালো করে মেঘ জমল।|village_road|idle|worried||heavy_rain_clouds|none|steady
+S2|মা রান্নাঘরে ডাল রান্না করছিলেন।|kitchen|stir_pot|neutral|mother|rice_bowl_steam|none|steady
+S2|চুলার আঁচ একটু কমিয়ে তিনি মরিচ কাটতে লাগলেন।|kitchen|idle|neutral||none|none|steady
+S2|এমন সময় দরজায় কেউ কড়া নাড়ল।|kitchen|knock_door|surprised||none|none|steady
+S2|মিনা দৌড়ে এসে দরজা খুলে দিল।|kitchen|run|happy||none|none|steady
+S3|অফিসে ঢুকেই জামাল সাহেব ল্যাপটপ খুলে বসলেন।|office_room|type_laptop|neutral||laptop_typing_fast|none|steady
+S3|আজ তাঁর হাতে অনেক কাজ জমে আছে।|office_room|idle|worried||none|none|steady
+S3|বস এসে জানালেন, এই মাসে বিক্রি ২০% কমে গেছে।|office_room|talk_explain|worried||none|percentage_progress_ring|slow_push_in
+S3|জামাল সাহেব কপালে হাত দিয়ে বসে রইলেন।|office_room|facepalm|sad||none|none|steady
+S4|দাদুকে নিয়ে সবাই হাসপাতালে পৌঁছাল।|hospital_clinic|walk|worried|baba|none|none|steady
+S4|ডাক্তার মন দিয়ে তাঁর বুকের শব্দ শুনলেন।|hospital_clinic|idle|neutral||heartbeat_pulse|none|steady
+S4|তারপর বললেন, ভয়ের কিছু নেই।|hospital_clinic|talk_explain|happy||none|none|steady
+S4|সবার মুখে স্বস্তির হাসি ফুটে উঠল।|hospital_clinic|idle|happy||none|none|steady
+S5|বিকেলে করিম নদীর ঘাটে নৌকা বাঁধছিল।|river_ghat|idle|neutral||none|none|steady
+S5|ওপারের গ্রাম থেকে ভেসে আসছিল আজানের সুর।|river_ghat|idle|neutral||none|none|gentle_pan
+S5|সূর্য ধীরে ধীরে নদীর বুকে ডুবে গেল।|river_ghat|idle|neutral||sunrise_to_sunset|none|gentle_pan
+S5|অন্ধকার নামতেই সে বাড়ির পথ ধরল।|village_road|walk|neutral||night_stars_moon|none|steady
+S6|মোড়ের চায়ের দোকানে বসে চারজন বন্ধু আড্ডা দিচ্ছে।|tea_stall|sit|happy||teacup_steaming|none|steady
+S6|দোকানি গরম চা কাপে ঢেলে দিল।|tea_stall|pour_tea|neutral||teacup_steaming|none|steady
+S6|সাকিব বলল, চিনির দাম তো ৮০ টাকা থেকে ১২০ টাকা হয়ে গেছে।|tea_stall|talk_argue|worried||market_price_up|dynamic_comparison_chart|slow_push_in
+S6|সবাই মাথা নেড়ে সায় দিল।|tea_stall|idle|neutral||none|none|steady
+S7|অফিস ছুটির পর সুমন বাস স্ট্যান্ডে দাঁড়িয়ে ছিল।|bus_stop|idle|neutral||none|none|steady
+S7|আধা ঘণ্টা কেটে গেল, তবু বাসের দেখা নেই।|bus_stop|check_watch|worried||clock_ticking|none|steady
+S7|অবশেষে একটা লক্কড়ঝক্কড় বাস এসে থামল।|bus_stop|idle|happy||bus_passing_road|none|steady
+S7|ঠেলাঠেলি করে সে কোনোমতে উঠে পড়ল।|bus_stop|idle|worried||none|none|steady
+S8|রাতে মিনা ছাদে উঠে আকাশের তারা দেখছিল।|rooftop|point_sky_high|happy||night_stars_moon|none|gentle_pan
+S8|সে মনে মনে একটা নতুন সাইকেলের স্বপ্ন দেখছিল।|rooftop|chin_think|happy||none|thought_cloud|steady
+S8|নিচ থেকে মা ডাকলেন, খেতে আয়।|rooftop|idle|neutral|mother|none|none|steady
+S8|মিনা দৌড়ে সিঁড়ি দিয়ে নেমে গেল।|rooftop|run|happy||none|none|steady
+S9|বর্ষার শুরুতে কৃষক বাবা ধানক্ষেতে চারা রোপণ করছেন।|farm_field|idle|neutral|father|heavy_rain_clouds|none|steady
+S9|গত বছরের চেয়ে এবার সারের দাম অনেক বেশি।|farm_field|idle|worried||market_price_up|none|slow_push_in
+S9|তবু তিনি আশা ছাড়লেন না।|farm_field|idle|neutral||none|none|steady
+S9|দূরে মেঘ ডাকছে, বৃষ্টি নামবে বলে।|farm_field|idle|neutral||thunder_lightning|none|gentle_pan
+S10|ক্লাসে শিক্ষক বোর্ডে অঙ্ক কষছিলেন।|classroom|idle|neutral|teacher|none|none|steady
+S10|পেছনের বেঞ্চে বসে রনি ফিসফিস করে কথা বলছিল।|classroom|whisper_aside|neutral||none|none|steady
+S10|স্যার রেগে গিয়ে বললেন, চুপ করো!|classroom|shh|neutral|teacher|none|comic_emotion_fx|impact_shake
+S10|রনি লজ্জায় মাথা নিচু করল।|classroom|idle|sad||none|none|steady
+S11|On Friday afternoon, Anika took her little brother to the park.|park|walk|happy|boy|none|none|steady
+S11|They fed the ducks near the pond and laughed a lot.|park|idle|happy||none|none|steady
+S11|Then a sudden gust of wind blew her hat away.|park|run|surprised||wind_leaves_blowing|none|steady
+S11|Her brother chased it across the grass and brought it back.|park|run|happy||none|none|steady
+S12|The city street was jammed with rickshaws and buses.|city_street|idle|neutral||bus_passing_road|none|gentle_pan
+S12|Tanvir was already twenty minutes late for his interview.|city_street|check_watch|worried||clock_ticking|number_badge_pop|steady
+S12|He jumped out of the rickshaw and ran the rest of the way.|city_street|run|worried||fast_running_feet|none|steady
+S12|Breathless, he reached the office gate just in time.|city_street|idle|happy||none|none|steady
+S13|For her birthday, the family went to a small restaurant downtown.|restaurant_cafe|walk|happy||none|none|steady
+S13|Father ordered biryani and a big plate of kebabs.|restaurant_cafe|talk_explain|happy|father|rice_bowl_steam|none|steady
+S13|When the cake arrived, everyone sang and clapped.|restaurant_cafe|clap|happy||none|none|steady
+S13|Mina blew out the candles and made a wish.|restaurant_cafe|idle|happy||none|none|steady
+S14|আদালতে সেদিন খুব ভিড় ছিল।|courthouse_hall|idle|neutral||none|none|gentle_pan
+S14|উকিল সাহেব জোর গলায় যুক্তি দিচ্ছিলেন।|courthouse_hall|talk_argue|neutral||none|none|steady
+S14|বিচারক রায় ঘোষণা করতেই সবাই চুপ হয়ে গেল।|courthouse_hall|idle|surprised||none|none|slow_push_in
+S14|নিরপরাধ রহিম চোখ মুছে বাইরে বেরিয়ে এল।|courthouse_hall|wipe_tears|happy||none|none|steady
+S15|ছোট্ট মেয়েটি পথ হারিয়ে গভীর জঙ্গলে ঢুকে পড়ল।|forest_path|walk|worried|girl|none|none|steady
+S15|চারদিকে অদ্ভুত শব্দ, তার বুক দুরুদুরু করছে।|forest_path|idle|worried||none|comic_emotion_fx|steady
+S15|হঠাৎ গাছের আড়াল থেকে একটা হরিণ বেরিয়ে এল।|forest_path|idle|surprised||none|comic_emotion_fx|impact_shake
+S15|হরিণটা তাকে পথ দেখিয়ে বনের বাইরে নিয়ে গেল।|forest_path|walk|happy||none|none|steady
+S16|সন্ধ্যায় সবাই বসার ঘরে টিভিতে খবর দেখছিল।|living_room|sit|neutral||notification_bell|none|steady
+S16|খবরে বলল, আজ রাতে ঘূর্ণিঝড় উপকূলে আঘাত হানবে।|living_room|idle|worried||thunder_lightning|none|slow_push_in
+S16|বাবা সঙ্গে সঙ্গে গ্রামের বাড়িতে ফোন করলেন।|living_room|phone_call|worried|father|phone_ringing_vibrate|none|steady
+S16|দাদি ফোন ধরে বললেন, তোমরা চিন্তা কোরো না।|living_room|phone_call|neutral||none|none|steady
+S17|শুক্রবার সকালে বাবা আর ছেলেটি কাঁচাবাজারে গেলেন।|market_bazaar|walk|neutral|father,boy|none|none|steady
+S17|এক কেজি পেঁয়াজের দাম শুনে বাবা আঁতকে উঠলেন।|market_bazaar|cover_mouth_shock|surprised|father|market_price_up|comic_emotion_fx|impact_shake
+S17|দোকানি বলল, গত সপ্তাহে ছিল ৬০ টাকা, আজ ৯০ টাকা।|market_bazaar|talk_explain|neutral||market_price_up|dynamic_comparison_chart|slow_push_in
+S17|শেষে আধা কেজি কিনেই তাঁরা ফিরে এলেন।|market_bazaar|walk|sad||none|none|slow_pull_out
+S18|Late at night, Rafi was still awake in his bedroom.|bedroom|sit|worried||night_stars_moon|none|steady
+S18|His exam was the next morning and he had not finished revising.|bedroom|read_book|worried||books_stack_study|none|steady
+S18|He made a cup of tea and opened his notes again.|bedroom|drink_tea_tong|neutral||teacup_steaming|none|steady
+S18|At three o'clock he finally fell asleep over his books.|bedroom|idle|neutral||clock_ticking|none|slow_pull_out
+S19|টিফিনের ঘণ্টা পড়তেই ছেলেমেয়েরা স্কুলের মাঠে ছুটে এল।|school_yard|run|happy||none|none|steady
+S19|কেউ ফুটবল খেলছে, কেউ দড়ি লাফাচ্ছে।|school_yard|idle|happy||none|none|gentle_pan
+S19|তুহিন জোরে বল মারতেই সেটা জানালার কাচে গিয়ে লাগল।|school_yard|idle|surprised||compose_custom_recipe|none|impact_shake
+S19|প্রধান শিক্ষক বেরিয়ে এসে সবাইকে ডাকলেন।|school_yard|beckon|neutral|teacher|none|none|steady
+S20|ঈদের আগের দিন গ্রামের বাড়িতে সবাই ব্যস্ত।|village_home|idle|happy||none|none|gentle_pan
+S20|উঠানে বসে নানি পিঠা বানাচ্ছেন।|village_home|sit|happy||none|none|steady
+S20|ছোটরা নতুন জামা পরে একে অপরকে দেখাচ্ছে।|village_home|idle|happy||none|none|steady
+S20|সন্ধ্যায় আকাশে ঈদের চাঁদ উঠতেই সবাই আনন্দে চিৎকার করে উঠল।|village_home|cheer|happy||night_stars_moon|none|steady
+S21|প্রথমত, সময়মতো স্কুলে যাবে।|none|finger_wag|neutral||none|step_list_card|slow_push_in
+S21|দ্বিতীয়ত, বড়দের সম্মান করবে।|none|finger_wag|neutral||none|step_list_card|slow_push_in
+S21|তৃতীয়ত, কখনো মিথ্যা বলবে না।|none|finger_wag|neutral||none|step_list_card|slow_push_in
+-|মিনা হাসতে হাসতে বলল, "তুমি তো একেবারে বোকা!"|none|idle|happy||none|none|steady
+-|বাবা গম্ভীর গলায় জিজ্ঞেস করলেন, "এত রাত পর্যন্ত কোথায় ছিলে?"|none|ask_what_why|worried|father|none|none|steady
+-|"আমাকে একটু সাহায্য করবে?" অনুরোধ করল মেয়েটি।|none|idle|neutral|girl|none|none|steady
+-|শিক্ষক বললেন, "কাল সবাই হোমওয়ার্ক নিয়ে আসবে।"|classroom|talk_explain|neutral|teacher|books_stack_study|none|steady
+-|"Where did you put my glasses?" grandfather asked.|none|ask_what_why|neutral|baba|none|none|steady
+-|"We won the match!" the boy shouted happily.|none|cheer|happy|boy|none|none|steady
+-|"Please don't tell anyone," she whispered.|none|whisper_aside|worried||none|none|steady
+-|দোকানদার বলল, "আজ সব জিনিসে দশ শতাংশ ছাড়।"|market_bazaar|talk_explain|happy||none|percentage_progress_ring|slow_push_in
+-|মা ফোনে বললেন, "ট্রেন ছাড়ার আগে আমাকে জানাবি।"|none|phone_call|neutral|mother|none|none|steady
+-|"ধন্যবাদ, তোমার উপকার কখনো ভুলব না," বুকে হাত রেখে বলল করিম।|none|hand_on_chest|happy||none|none|steady
+-|ডাক্তার হেসে বললেন, "ওষুধগুলো ঠিকমতো খেলে সাত দিনেই সেরে উঠবে।"|hospital_clinic|talk_explain|happy||none|number_badge_pop|steady
+-|"Stop right there!" the policeman yelled.|none|stop_palm|neutral||none|comic_emotion_fx|impact_shake
+-|"I think I have an idea," said Sara, snapping her fingers.|none|idle|happy||lightbulb_idea|comic_emotion_fx|steady
+-|সালাম দিয়ে ছেলেটি বলল, "চাচা, ভালো আছেন?"|none|salam_adab|happy|boy|none|none|steady
+-|"আর কত অপেক্ষা করব?" বিরক্ত হয়ে বলল সুমি।|none|check_watch|worried||hourglass_sand|none|steady
+-|খবরটা শুনে তার মাথায় আকাশ ভেঙে পড়ল।|none|facepalm|sad||none|comic_emotion_fx|impact_shake
+-|পরীক্ষায় পাস করে রিয়া খুশিতে আটখানা।|none|cheer|happy||exam_result_grade|none|steady
+-|চাকরি হারিয়ে করিম এখন চোখে সর্ষেফুল দেখছে।|none|scratch_head|worried||empty_wallet_fly|comic_emotion_fx|steady
+-|দুশ্চিন্তায় তার রাতের ঘুম হারাম হয়ে গেছে।|none|idle|worried||none|none|steady
+-|ভাইকে দেখে বোনের চোখে আনন্দের অশ্রু।|none|wipe_tears|happy||none|none|steady
+-|এত পরিশ্রম করেও ফল না পেয়ে সে ভেঙে পড়ল।|none|idle|sad||none|none|steady
+-|He was over the moon when he heard the news.|none|cheer|happy||none|none|steady
+-|She felt butterflies in her stomach before the speech.|none|idle|worried||none|comic_emotion_fx|steady
+-|The old man's heart sank when he saw the empty field.|farm_field|idle|sad|baba|none|none|steady
+-|রাগে বাবার মাথায় যেন আগুন জ্বলছে।|none|shake_fist|neutral|father|none|comic_emotion_fx|impact_shake
+-|মেয়ের সাফল্যে মায়ের বুক গর্বে ভরে গেল।|none|hand_on_chest|happy|mother|none|none|steady
+-|সময় যেন কিছুতেই কাটতে চাইছে না।|none|check_watch|worried||clock_ticking|none|steady
+-|ঘরের কোণে বসে ছেলেটি একা একা চোখের জল ফেলছে।|none|sit|sad|boy|none|none|steady
+-|It was raining cats and dogs all afternoon.|none|idle|neutral||heavy_rain_clouds|none|steady
+-|Money doesn't grow on trees, father reminded him.|none|finger_wag|neutral|father|money_coins_stacking|none|steady
+-|গত বছর একটা ডিমের দাম ছিল ১০ টাকা, এখন ১৫ টাকা।|none|idle|worried||market_price_up|dynamic_comparison_chart|slow_push_in
+-|দেশে এখন ৬০% মানুষের হাতে স্মার্টফোন আছে।|none|idle|neutral||none|percentage_progress_ring|slow_push_in
+-|২০১৫ সালে আমাদের গ্রামে বিদ্যুৎ ছিল মাত্র ২০% ঘরে, ২০২৫ সালে তা ৯৫%।|none|idle|happy||none|dynamic_comparison_chart|slow_push_in
+-|মাসে মাত্র ৫০০ টাকা জমালে বছরে ছয় হাজার টাকা হয়।|none|count_fingers|neutral||money_coins_stacking|dynamic_comparison_chart|slow_push_in
+-|বাড়িভাড়া এক লাফে আট হাজার থেকে বারো হাজার টাকা হয়ে গেল।|none|facepalm|worried||market_price_up|dynamic_comparison_chart|slow_push_in
+-|অর্ধেক মানুষই এখনো ব্যাংকে টাকা রাখে না।|none|idle|neutral||none|percentage_progress_ring|slow_push_in
+-|সে ব্যাংক থেকে দুই লাখ টাকা ঋণ নিয়েছে।|none|idle|worried||empty_wallet_fly|number_badge_pop|slow_push_in
+-|পেঁয়াজের দাম কমে এখন কেজিপ্রতি ৪০ টাকা।|none|idle|happy||none|number_badge_pop|slow_push_in
+-|The company's profit grew from 2 crore to 5 crore in three years.|none|idle|happy||money_coins_stacking|dynamic_comparison_chart|slow_push_in
+-|Only 30% of the students passed the math test this year.|none|idle|sad||exam_result_grade|percentage_progress_ring|slow_push_in
+-|Rice now costs 75 taka a kilo, up from 50 last year.|none|idle|worried||market_price_up|dynamic_comparison_chart|slow_push_in
+-|He saved 200 taka every week for a year.|none|idle|happy||money_coins_stacking|number_badge_pop|slow_push_in
+-|বেতন বাড়েনি, অথচ খরচ বেড়েছে দ্বিগুণ।|none|idle|worried||market_price_up|none|slow_push_in
+-|পরীক্ষায় রিয়া ১০০-তে ৯৫ পেয়েছে।|none|cheer|happy||exam_result_grade|number_badge_pop|slow_push_in
+-|বাজেটে শিক্ষাখাতে বরাদ্দ ১২% থেকে বেড়ে ১৫% হয়েছে।|none|idle|neutral||none|dynamic_comparison_chart|slow_push_in
+-|মোবাইল ডেটার দাম তিন মাসে দুইবার বাড়ল।|none|look_at_phone|worried||market_price_up|none|steady
+-|তার পকেটে এখন একটা টাকাও নেই।|none|idle|sad||empty_wallet_fly|none|steady
+-|Inflation hit 9 percent last month, the highest in a decade.|none|idle|worried||market_price_up|percentage_progress_ring|slow_push_in
+-|দশ বছর পর সে প্রবাস থেকে দেশে ফিরল।|none|walk|happy||calendar_pages_flying|number_badge_pop|steady
+-|কৃষকেরা মণপ্রতি ধানের দাম পাচ্ছে মাত্র ৯০০ টাকা।|farm_field|idle|sad||none|number_badge_pop|slow_push_in
+-|সারা রাত ঝুম বৃষ্টি হলো।|none|idle|neutral||heavy_rain_clouds|none|steady
+-|ভোর হতেই পাখিরা ডাকতে শুরু করল।|none|idle|happy||sunrise_to_sunset|none|gentle_pan
+-|দেখতে দেখতে তিনটা মাস কেটে গেল।|none|idle|neutral||calendar_pages_flying|none|steady
+-|কালবৈশাখী ঝড়ে উঠানের আমগাছটা ভেঙে পড়ল।|village_home|idle|surprised||thunder_lightning|none|impact_shake
+-|শীতের সকালে চারদিক কুয়াশায় ঢাকা।|none|rub_hands|neutral||none|none|gentle_pan
+-|দুপুরের কড়া রোদে রিকশাওয়ালা ঘাম মুছছে।|city_street|wipe_sweat|neutral||none|none|steady
+-|The next morning, the sun came out over the flooded village.|none|idle|happy||sunrise_to_sunset|none|gentle_pan
+-|Weeks passed, and still there was no letter from him.|none|idle|sad||calendar_pages_flying|none|steady
+-|Thunder rolled across the dark sky.|none|idle|worried||thunder_lightning|none|steady
+-|By evening, a cold wind had started to blow.|none|idle|neutral||wind_leaves_blowing|none|steady
+-|সন্ধ্যা নামতেই গ্রামটা নিস্তব্ধ হয়ে গেল।|village_road|idle|neutral||sunrise_to_sunset|none|gentle_pan
+-|ঘড়ির কাঁটা বারোটা ছুঁতেই সে লাফিয়ে উঠল।|none|idle|surprised||clock_ticking|none|steady
+-|বন্যার পানিতে পুরো এলাকা ডুবে গেছে।|none|idle|sad||heavy_rain_clouds|none|gentle_pan
+-|It was a hot, still afternoon in the village.|village_road|idle|neutral||none|none|gentle_pan
+-|রাত গভীর হলে আকাশে পূর্ণিমার চাঁদ উঠল।|none|idle|neutral||night_stars_moon|none|gentle_pan
+-|সুস্থ থাকার তিনটি নিয়ম: নিয়মিত ঘুম, পরিমিত খাবার আর ব্যায়াম।|none|count_fingers|neutral||none|step_list_card|slow_push_in
+-|প্রতিদিন অন্তত আট গ্লাস পানি পান করা উচিত।|none|drink_cup|neutral||none|number_badge_pop|slow_push_in
+-|Remember to wash your hands before every meal.|none|idle|neutral||none|none|slow_push_in
+-|To save money, follow three steps: track spending, cut waste and save first.|none|count_fingers|neutral||money_coins_stacking|step_list_card|slow_push_in
+-|রাস্তা পার হওয়ার আগে দুই দিকে ভালো করে দেখে নিতে হবে।|city_street|idle|neutral||none|none|slow_push_in
+-|মনে রাখবেন, সততাই সর্বোত্তম পন্থা।|none|hand_on_chest|neutral||none|none|slow_push_in
+-|You should sleep at least seven hours every night.|none|idle|neutral||none|number_badge_pop|slow_push_in
+-|রেজাল্ট শুনে নুসরাত অবাক হয়ে গেল।|none|hands_to_cheeks|surprised||exam_result_grade|comic_emotion_fx|impact_shake
+-|বাবা ভীষণ রেগে গিয়ে টেবিলে চাপড় মারলেন।|none|shake_fist|neutral|father|none|comic_emotion_fx|impact_shake
+-|অন্ধকার ঘরে একা থাকতে মেয়েটির খুব ভয় করছিল।|none|idle|worried|girl|none|comic_emotion_fx|steady
+-|সে বুঝতেই পারল না কেন সবাই হাসছে।|none|scratch_head|neutral||question_marks_float|comic_emotion_fx|steady
+-|হঠাৎ তার মাথায় একটা দারুণ বুদ্ধি এল।|none|idle|happy||lightbulb_idea|comic_emotion_fx|steady
+-|বন্ধুকে বিদায় দিতে গিয়ে তানিয়ার চোখ ভিজে উঠল।|none|wave_bye|sad||none|none|steady
+-|He gasped when he saw the broken window.|none|cover_mouth_shock|surprised||none|comic_emotion_fx|impact_shake
+-|She was so nervous that her hands were shaking.|none|idle|worried||none|comic_emotion_fx|steady
+-|The children giggled at the clown's funny face.|none|idle|happy||none|none|steady
+-|Why does nobody believe me, he wondered.|none|ask_what_why|sad||question_marks_float|comic_emotion_fx|steady
+-|দাদু নাতিকে জড়িয়ে ধরে আদর করলেন।|none|hug_open_arms|happy|baba|none|none|steady
+-|খেলায় হেরে দলের সবাই মন খারাপ করে বসে রইল।|none|sit|sad||none|none|steady
+-|জয়ের খবরে পুরো গ্রাম আনন্দে মেতে উঠল।|none|cheer|happy||none|none|steady
+-|মিথ্যা ধরা পড়ায় ছেলেটি লজ্জায় মুখ লুকাল।|none|facepalm|sad|boy|none|none|steady
+-|তার কথায় সবাই হো হো করে হেসে উঠল।|none|idle|happy||none|none|steady
+-|হঠাৎ জঙ্গল থেকে তিন মাথার এক নীল রাক্ষস বেরিয়ে এল।|forest_path|idle|surprised||none|comic_emotion_fx|impact_shake
+-|ডানাওয়ালা সাদা ঘোড়ায় চড়ে রাজকুমার আকাশে উড়ে গেল।|none|idle|happy||none|none|steady
+-|যোদ্ধার হাতে ঝলমল করছে আগুনের তলোয়ার।|none|idle|neutral||none|none|slow_push_in
+-|পুরনো গ্যারেজে পড়ে আছে একটা ভাঙা লাল গাড়ি।|none|idle|neutral||compose_custom_recipe|none|gentle_pan
+-|A giant green robot stomped through the market.|market_bazaar|walk|surprised||none|comic_emotion_fx|impact_shake
+-|A tiny dragon with golden wings landed on her shoulder.|none|idle|surprised||none|none|steady
+-|পুকুর থেকে উঠে এল এক বিশাল সোনালী মাছ।|none|idle|surprised||none|comic_emotion_fx|impact_shake
+-|দুই মাথার কুকুরটা গেটের সামনে পাহারা দিচ্ছে।|none|idle|neutral||none|none|steady
+-|সাদা ভূতটা জানালার পাশে ভেসে বেড়াচ্ছে।|none|idle|worried||none|comic_emotion_fx|steady
+-|রাজা লাঠি হাতে সিংহাসন থেকে উঠে দাঁড়ালেন।|none|idle|neutral||none|none|steady
+-|সকালে উঠে নাসরিন জানালা খুলে দিল।|bedroom|idle|neutral||none|none|steady
+-|ছেলেটি হাত তুলে প্রশ্নের উত্তর দিতে চাইল।|classroom|raise_hand|neutral|boy|none|none|steady
+-|দাদি তসবিহ হাতে বারান্দায় বসে আছেন।|village_home|count_tasbih|neutral||none|none|steady
+-|বাবা জুমার নামাজে দাঁড়িয়ে হাত বাঁধলেন।|none|hands_folded_qiyam|neutral|father|none|none|steady
+-|মা চুলায় তরকারি নাড়ছেন।|kitchen|stir_pot|neutral|mother|rice_bowl_steam|none|steady
+-|ছোট বোন টেবিলে বসে চিঠি লিখছে।|none|write_desk|neutral||none|none|steady
+-|রাস্তায় দেখা হতেই দুই বন্ধু হাত মেলাল।|city_street|handshake_offer|happy||none|none|steady
+-|গরমে অতিষ্ঠ হয়ে দাদু হাতপাখা দিয়ে বাতাস করছেন।|village_home|fan_with_pakha|worried|baba|none|none|steady
+-|সে মোবাইলে মেয়ের ছবি তুলল।|none|take_photo|happy||none|none|steady
+-|পাশের বাড়ির খালা ফিসফিস করে গোপন খবরটা বলল।|none|whisper_aside|neutral||none|none|steady
+-|Grandma knitted a sweater by the window.|none|sit|neutral||none|none|steady
+-|He checked his watch and hurried out of the house.|none|check_watch|worried||clock_ticking|none|steady
+-|The teacher pointed at the map on the wall.|classroom|point_at|neutral|teacher|map_route_travel|none|steady
+-|She tied her hair back and started cleaning the kitchen.|kitchen|tie_hair|neutral||none|none|steady
+-|The boy caught the ball with both hands.|none|catch_both_hands|happy|boy|none|none|steady
+-|Father read the newspaper over his morning tea.|none|read_book|neutral|father|teacup_steaming|none|steady
+-|মেয়েটি সবাইকে চুপ থাকতে ইশারা করল।|none|shh|neutral|girl|none|none|steady
+-|রহিম ব্যাগের ফিতা ধরে স্কুলের গেটে দাঁড়িয়ে রইল।|school_yard|carry_bag_strap|neutral||none|none|steady
+-|বৃষ্টি থেকে বাঁচতে সে ছাতা খুলে ধরল।|none|hold_umbrella|neutral||heavy_rain_clouds|none|steady
+-|তুমুল হট্টগোলে কান চেপে ধরল ছোট্ট রিফাত।|none|cover_ears|worried||none|comic_emotion_fx|steady

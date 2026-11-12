@@ -1,0 +1,118 @@
+{
+  "id": "ask_what_why",
+  "about": "right hand flips palm-up at chest height in the expressive South Asian 'what / why?' question gesture (hands kept within 18 units forward of the body so they never point at the camera: body gate A1)",
+  "group": "arms",
+  "seconds": 0.8,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            2.2
+          ],
+          "hand": [
+            1,
+            -72,
+            3.1
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    },
+    {
+      "u": 0.35,
+      "arms": {
+        "R": {
+          "elbow": [
+            19.4,
+            -25.7,
+            0.6
+          ],
+          "wrist": [
+            8,
+            -18,
+            11.6
+          ],
+          "hand": [
+            8,
+            -15.5,
+            16.8
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "relaxed"
+      ]
+    },
+    {
+      "u": 0.7,
+      "arms": {
+        "R": {
+          "elbow": [
+            19.7,
+            -25.1,
+            4.3
+          ],
+          "wrist": [
+            18,
+            -12,
+            13.3
+          ],
+          "hand": [
+            21.7,
+            -7,
+            18
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "cuppedPalm"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            19.7,
+            -25.3,
+            3
+          ],
+          "wrist": [
+            17,
+            -13,
+            12.9
+          ],
+          "hand": [
+            20.7,
+            -8,
+            17.6
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "cuppedPalm"
+      ]
+    }
+  ]
+}

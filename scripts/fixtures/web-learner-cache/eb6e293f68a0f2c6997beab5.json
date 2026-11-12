@@ -1,0 +1,53 @@
+{
+ "url": "https://bn.wikipedia.org/api/rest_v1/page/summary/%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE",
+ "at": "2026-11-08T17:03:35.818Z",
+ "body": {
+  "type": "standard",
+  "title": "শাপলা",
+  "displaytitle": "<span lang=\"bn\" dir=\"ltr\"><span class=\"mw-page-title-main\">শাপলা</span></span>",
+  "namespace": {
+   "id": 0,
+   "text": ""
+  },
+  "wikibase_item": "Q148650",
+  "titles": {
+   "canonical": "শাপলা",
+   "normalized": "শাপলা",
+   "display": "<span lang=\"bn\" dir=\"ltr\"><span class=\"mw-page-title-main\">শাপলা</span></span>"
+  },
+  "pageid": 2703,
+  "thumbnail": {
+   "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Nymphaea_nouchali5.JPG/330px-Nymphaea_nouchali5.JPG?utm_source=bn.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "width": 330,
+   "height": 248
+  },
+  "originalimage": {
+   "source": "https://upload.wikimedia.org/wikipedia/commons/1/11/Nymphaea_nouchali5.JPG?utm_source=bn.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "width": 1600,
+   "height": 1200
+  },
+  "lang": "bn",
+  "dir": "ltr",
+  "revision": "8943173",
+  "tid": "addb26e2-52a8-11f1-a487-acb2bf8e3a7c",
+  "timestamp": "2026-05-18T10:59:45Z",
+  "description": "উদ্ভিদের পরিবার",
+  "description_source": "central",
+  "content_urls": {
+   "desktop": {
+    "page": "https://bn.wikipedia.org/wiki/%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE",
+    "revisions": "https://bn.wikipedia.org/wiki/%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE?action=history",
+    "edit": "https://bn.wikipedia.org/wiki/%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE?action=edit",
+    "talk": "https://bn.wikipedia.org/wiki/%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%AA:%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE"
+   },
+   "mobile": {
+    "page": "https://bn.wikipedia.org/wiki/%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE",
+    "revisions": "https://bn.wikipedia.org/wiki/Special:History/%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE",
+    "edit": "https://bn.wikipedia.org/wiki/%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE?action=edit",
+    "talk": "https://bn.wikipedia.org/wiki/%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%AA:%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE"
+   }
+  },
+  "extract": "শাপলা সপুষ্পক উদ্ভিদ পরিবারের এক প্রকার জলজ উদ্ভিদ। এ পরিবারভূক্ত সকল উদ্ভিদই শাপলা নামে পরিচিত। সাদা শাপলা ফুল বাংলাদেশের জাতীয় ফুল। এই ফুল সাধারণত ভারত উপমহাদেশে দেখা যায়। হাওড়-বিল ও দিঘিতে এটি বেশি ফোটে। বাংলাদেশের দক্ষিণ-পশ্চিমের কিছু জেলায় একে নাইল বা নাল বলা হয়।",
+  "extract_html": "<p><b>শাপলা</b> সপুষ্পক উদ্ভিদ পরিবারের এক প্রকার জলজ উদ্ভিদ। এ পরিবারভূক্ত সকল উদ্ভিদই শাপলা নামে পরিচিত। সাদা শাপলা ফুল বাংলাদেশের জাতীয় ফুল। এই ফুল সাধারণত ভারত উপমহাদেশে দেখা যায়। হাওড়-বিল ও দিঘিতে এটি বেশি ফোটে। বাংলাদেশের দক্ষিণ-পশ্চিমের কিছু জেলায় একে <i>নাইল</i> বা <i>নাল</i> বলা হয়।</p>"
+ }
+}

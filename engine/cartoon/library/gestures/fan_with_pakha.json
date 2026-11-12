@@ -1,0 +1,81 @@
+{
+  "id": "fan_with_pakha",
+  "about": "the right hand waves a traditional Bangladeshi palm-leaf fan (haat pakha) back and forth near the chest",
+  "group": "arms",
+  "aliases": [
+    "wave hand fan",
+    "haat pakha fan",
+    "cool off fan loop",
+    "হাতপাখা ঘোরাতে থাকা",
+    "বাতাস করা"
+  ],
+  "seconds": 1.2,
+  "loop": true,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "contacts": [
+    {
+      "from": 0,
+      "to": 1,
+      "joint": "handR",
+      "on": "item.handle"
+    }
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            17.47,
+            -23.91,
+            12.66
+          ],
+          "wrist": [
+            -8,
+            -14,
+            22
+          ],
+          "hand": [
+            -16.12,
+            -8.63,
+            29.37
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "grip"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "R": {
+          "elbow": [
+            21.06,
+            -23.36,
+            6.91
+          ],
+          "wrist": [
+            2,
+            -10,
+            24
+          ],
+          "hand": [
+            -3.14,
+            -3.87,
+            33.22
+          ]
+        }
+      },
+      "hands": [
+        "relaxed",
+        "grip"
+      ]
+    }
+  ]
+}

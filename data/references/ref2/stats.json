@@ -1,0 +1,33 @@
+{
+ "id": "ref2",
+ "file": "YTDown.com_YouTube_Media_OOBN04TQUSs_Sonsari-Bou-Bangla-Cartoon-Rupkothar-Golpo-Bengali-Fa",
+ "seconds": 650,
+ "width": 1920,
+ "height": 1080,
+ "fps": "25/1",
+ "cuts": 139,
+ "cutsPerMinute": 12.8,
+ "shotSeconds": {
+  "median": 3.6,
+  "p25": 2,
+  "p75": 6.2,
+  "p90": 8.6
+ },
+ "stillShare": 0.07,
+ "silentShare": 0.02,
+ "loudnessLUFS": -9.7,
+ "palette": [
+  "#12100d",
+  "#2c2e37",
+  "#444457",
+  "#5f4522",
+  "#60798f",
+  "#6f7449",
+  "#a3a68a",
+  "#ab5b36",
+  "#cbd7d9",
+  "#da845d",
+  "#dbc587",
+  "#00ff00"
+ ]
+}

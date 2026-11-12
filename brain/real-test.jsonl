@@ -1,0 +1,34 @@
+{"text":"Rafi wakes up early in his bedroom.","place":"bedroom","action":"idle","face":"neutral","roles":[]}
+{"text":"He packs his bag and walks to school.","place":"school_yard","action":"walk","face":"neutral","roles":[]}
+{"text":"On the road, he helps an old man cross.","place":"village_road","action":"idle","face":"neutral","roles":["baba"]}
+{"text":"The old man smiles and says thank you.","place":"none","action":"idle","face":"happy","roles":["baba"]}
+{"text":"Mina sits in the classroom.","place":"classroom","action":"sit","face":"neutral","roles":[]}
+{"text":"The teacher points to the board.","place":"classroom","action":"point","face":"neutral","roles":["teacher"]}
+{"text":"Mina is worried because she forgot her homework.","place":"none","action":"idle","face":"worried","roles":[]}
+{"text":"After class she runs to the park and cheers with her friends.","place":"park","action":"run","face":"happy","roles":[]}
+{"text":"A mother stands in the village yard.","place":"village_home","action":"idle","face":"neutral","roles":["mother"]}
+{"text":"Her boy runs home from school.","place":"school_yard","action":"run","face":"neutral","roles":["boy"]}
+{"text":"She waves and smiles.","place":"none","action":"wave","face":"happy","roles":[]}
+{"text":"In the city, a man walks along the street.","place":"city_street","action":"walk","face":"neutral","roles":["father"]}
+{"text":"A bus stops and he looks surprised.","place":"city_street","action":"idle","face":"surprised","roles":[]}
+{"text":"Tuhin is sad because his kite is lost.","place":"none","action":"idle","face":"sad","roles":[]}
+{"text":"His father walks with him in the park.","place":"park","action":"walk","face":"neutral","roles":["father"]}
+{"text":"The girl wins the race and everyone claps.","place":"school_yard","action":"clap","face":"happy","roles":["girl"]}
+{"text":"সকালে ঘুম থেকে উঠে রাফি স্কুলের জন্য তৈরি হয়।","place":"bedroom","action":"idle","face":"neutral","roles":[]}
+{"text":"সে রাস্তা দিয়ে হেঁটে যায়।","place":"village_road","action":"walk","face":"neutral","roles":[]}
+{"text":"পথে এক বৃদ্ধ লোক বিপদে পড়ে।","place":"village_road","action":"idle","face":"worried","roles":["baba"]}
+{"text":"বৃদ্ধ খুশি হয়ে ধন্যবাদ বলে।","place":"none","action":"idle","face":"happy","roles":["baba"]}
+{"text":"মা বাড়ির উঠানে দাঁড়িয়ে আছেন।","place":"village_home","action":"idle","face":"neutral","roles":["mother"]}
+{"text":"ছেলে স্কুল থেকে দৌড়ে বাড়ি আসে।","place":"school_yard","action":"run","face":"neutral","roles":["boy"]}
+{"text":"মা হাত নাড়েন আর হাসেন।","place":"none","action":"wave","face":"happy","roles":["mother"]}
+{"text":"ক্লাসে শিক্ষক বোর্ডের দিকে দেখান।","place":"classroom","action":"point","face":"neutral","roles":["teacher"]}
+{"text":"মেয়েটি চিন্তায় পড়ে কারণ সে পড়া ভুলে গেছে।","place":"none","action":"idle","face":"worried","roles":["girl"]}
+{"text":"ছুটির পর সে পার্কে গিয়ে খুশি হয়।","place":"park","action":"walk","face":"happy","roles":[]}
+{"text":"শহরের রাস্তায় এক লোক হেঁটে যায়।","place":"city_street","action":"walk","face":"neutral","roles":["father"]}
+{"text":"হঠাৎ একটি বাস থামে, সে অবাক হয়।","place":"none","action":"idle","face":"surprised","roles":[]}
+{"text":"এক মেয়ে তাকে হাত নাড়ে।","place":"none","action":"wave","face":"neutral","roles":["girl"]}
+{"text":"ছেলেটি মন খারাপ করে বসে থাকে।","place":"none","action":"sit","face":"sad","roles":["boy"]}
+{"text":"Mother cooks rice in the kitchen.","place":"kitchen","action":"idle","face":"neutral","roles":["mother"]}
+{"text":"রান্নাঘরে মা ভাত রান্না করছেন।","place":"kitchen","action":"idle","face":"neutral","roles":["mother"]}
+{"text":"Father reads the newspaper in the living room.","place":"living_room","action":"idle","face":"neutral","roles":["father"]}
+{"text":"বাবা বসার ঘরে খবরের কাগজ পড়ছেন।","place":"living_room","action":"idle","face":"neutral","roles":["father"]}

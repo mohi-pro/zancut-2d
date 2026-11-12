@@ -1,0 +1,346 @@
+{
+  "version": 1,
+  "authorship": "Assistant-authored paraphrases and local editorial defaults; source-backed principles are distinguished from tunable policy choices.",
+  "editorialPolicy": {
+    "maxAutomaticInsertShare": 0.3,
+    "minimumShotsBetweenInserts": 2,
+    "sameAutomaticInsertUsesPerFilm": 1
+  },
+  "sources": [
+    {
+      "id": "adobe-animation",
+      "url": "https://www.adobe.com/creativecloud/animation/discover/principles-of-animation.html",
+      "reviewed": "2026-11-09",
+      "principles": [
+        "staging",
+        "anticipation",
+        "timing",
+        "secondary_action"
+      ]
+    },
+    {
+      "id": "adobe-broll",
+      "url": "https://www.adobe.com/creativecloud/video/discover/b-roll.html",
+      "reviewed": "2026-11-09",
+      "principles": [
+        "support_narrative",
+        "establish_context",
+        "bridge_edits"
+      ]
+    },
+    {
+      "id": "w3c-captions",
+      "url": "https://www.w3.org/WAI/media/av/captions/",
+      "reviewed": "2026-11-09",
+      "principles": [
+        "synchronize_captions",
+        "meaningful_audio_information"
+      ]
+    },
+    {
+      "id": "w3c-flashes",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html",
+      "reviewed": "2026-11-09",
+      "principles": [
+        "avoid_flashing"
+      ]
+    },
+    {
+      "id": "usgs-water",
+      "url": "https://www.usgs.gov/water-science-school/water-cycle",
+      "reviewed": "2026-11-09",
+      "principles": [
+        "water_states",
+        "rain_falls",
+        "surface_flow"
+      ]
+    },
+    {
+      "id": "w3c-contrast",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "reviewed": "2026-11-09",
+      "principles": [
+        "readable_text_contrast"
+      ]
+    },
+    {
+      "id": "columbia-establishing",
+      "url": "https://filmglossary.ccnmtl.columbia.edu/term/establishing-shot/",
+      "reviewed": "2026-11-09",
+      "principles": [
+        "orient_location_and_time"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "one-focus",
+      "source": "adobe-animation",
+      "rule": "Give each beat a readable main action; supporting motion must not compete with it.",
+      "implementedBy": "selectVisualTreatment: dialogue/action priority"
+    },
+    {
+      "id": "preparation",
+      "source": "adobe-animation",
+      "rule": "Prepare an important movement before its main pose and allow a readable finish.",
+      "implementedBy": "reference guidance; existing gesture entry/exit blending, not newly learned motion"
+    },
+    {
+      "id": "insert-purpose",
+      "source": "adobe-broll",
+      "rule": "Use supplemental imagery to clarify context or bridge time; preserve the important interaction.",
+      "implementedBy": "selectVisualTreatment"
+    },
+    {
+      "id": "caption-sync",
+      "source": "w3c-captions",
+      "rule": "Keep subtitles aligned with the narration and preserve meaning.",
+      "implementedBy": "existing captionTrack"
+    },
+    {
+      "id": "no-strobe",
+      "source": "w3c-flashes",
+      "rule": "Avoid strobe-like full-screen flashes; do not infer accessibility conformance from this knowledge entry alone.",
+      "implementedBy": "authoring guidance only"
+    },
+    {
+      "id": "variety",
+      "source": "local-editorial-default",
+      "rule": "Use an automatic insert at most once per film and separate inserts with scene shots. These limits are tunable defaults, not universal filmmaking laws.",
+      "implementedBy": "selectVisualTreatment"
+    },
+    {
+      "id": "uncertainty",
+      "source": "local-editorial-default",
+      "rule": "If a sentence is unclear, preserve the established world and a calm reaction. Use a relevant object insert only if supported; never insert random imagery.",
+      "implementedBy": "selectVisualTreatment + planner fallback"
+    },
+    {
+      "id": "facts-not-advice",
+      "source": "local-world-contract",
+      "rule": "Keep real dimensions, support surfaces, indoor/outdoor compatibility, object ownership and story time consistent. Do not invent scientific numbers or present fictional story statistics as world facts.",
+      "implementedBy": "existing sizes.json and physics-logic.js; curriculum uses explicitly fictional situations"
+    },
+    {
+      "id": "location-reference-scope",
+      "source": "columbia-establishing",
+      "rule": "An establishing view should orient the actual scene. Local interpretation: a remembered, pictured or planned destination does not by itself establish arrival.",
+      "implementedBy": "server/location-intent.mjs; conservative Bengali/English grammar",
+      "provenance": "The film principle is sourced; the reference/destination grammar is an assistant-authored local implementation choice, not a claim made by the source."
+    }
+  ],
+  "worldModel": {
+    "dimensions": "engine/cartoon/library/sizes.json",
+    "places": "engine/cartoon/library/words.json",
+    "identity": "server/entity-resolver.mjs",
+    "supportAndGravity": "engine/cartoon/physics-logic.js",
+    "unknownWords": "server/web-learner.mjs",
+    "note": "These existing structured sources are executable knowledge. Downloaded prose is not automatically learned by a classifier.",
+    "locationIntent": "server/location-intent.mjs"
+  },
+  "worldFacts": [
+    {
+      "id": "rain-direction",
+      "source": "usgs-water",
+      "fact": "Gravity brings precipitation downward and moves surface water toward lower ground.",
+      "visual": "Rain falls from clouds toward ground; inside scenes show it through a window.",
+      "runtime": "existing physics-logic rain and indoor/outdoor checks"
+    },
+    {
+      "id": "water-states",
+      "source": "usgs-water",
+      "fact": "Water occurs as liquid, solid and gas, and moves among storage locations.",
+      "visual": "Use supported cloud, rain, river or water icons when the words mention them; no invented scientific chart.",
+      "runtime": "brollFor + local-world recipe checks"
+    },
+    {
+      "id": "text-contrast",
+      "source": "w3c-contrast",
+      "fact": "Normal text needs a contrast ratio of at least 4.5:1 under the criterion; large text has a 3:1 threshold.",
+      "visual": "Use a readable backing for captions and data labels.",
+      "runtime": "existing QA R9; this is not a full accessibility certification"
+    }
+  ],
+  "semanticSignals": [
+    {
+      "id": "#CONCEPT_SADNESS",
+      "bn": [
+        "মন ভেঙে",
+        "মন ভারী",
+        "চোখ ভিজে",
+        "চোখে জল",
+        "চোখের জল",
+        "আশা ভেঙে",
+        "হতাশ",
+        "মারা গেছে",
+        "মৃত্যুর খবর",
+        "স্বজন হারিয়ে",
+        "একা হয়ে",
+        "মনটা ভারী",
+        "নিঃসঙ্গ",
+        "কাঁদছিল",
+        "কাঁদল"
+      ],
+      "en": [
+        "heartbroken",
+        "lonely",
+        "miserable",
+        "disappointed",
+        "grief",
+        "wept",
+        "tears",
+        "had died",
+        "friend died",
+        "felt alone",
+        "heart sank"
+      ]
+    },
+    {
+      "id": "#CONCEPT_WORRY",
+      "bn": [
+        "চিন্তিত",
+        "উদ্বিগ্ন",
+        "অস্থির",
+        "কপালে ভাঁজ",
+        "দুশ্চিন্তায়",
+        "চিন্তায়",
+        "কী করবেন",
+        "বিপদের খবর",
+        "ফ্যাকাশে",
+        "বুক কেঁপে",
+        "পথ হারিয়ে",
+        "টাকা নেই",
+        "টাকাও অবশিষ্ট"
+      ],
+      "en": [
+        "anxious",
+        "uneasy",
+        "anxiously",
+        "feared",
+        "rent was due",
+        "had no money",
+        "losing his job",
+        "in danger",
+        "would sink",
+        "frozen in fear"
+      ]
+    },
+    {
+      "id": "#CONCEPT_HAPPINESS",
+      "bn": [
+        "স্বস্তির হাসি",
+        "তৃপ্তি",
+        "গর্ব অনুভব",
+        "মুখ উজ্জ্বল",
+        "হাঁফ ছেড়ে",
+        "ভালো খবর",
+        "স্বীকৃতি পেল",
+        "আনন্দ পেল",
+        "হাসিমুখে",
+        "খুশি হল",
+        "হেসে উঠল"
+      ],
+      "en": [
+        "relieved",
+        "relief",
+        "delighted",
+        "pleased",
+        "proud",
+        "smiled",
+        "reunited",
+        "good news",
+        "felt grateful"
+      ]
+    },
+    {
+      "id": "#STAGING_SURPRISE",
+      "bn": [
+        "হতবাক",
+        "বিস্মিত",
+        "চমকে",
+        "অবাক",
+        "বিশ্বাস করতে পারল না",
+        "চোখ বড়",
+        "বিস্ময়ে",
+        "আঁতকে"
+      ],
+      "en": [
+        "astonished",
+        "amazed",
+        "startled",
+        "gasp",
+        "disbelief",
+        "unexpected visitor",
+        "could not believe",
+        "speechless with surprise"
+      ]
+    },
+    {
+      "id": "#STAGING_PASSING_TIME",
+      "bn": [
+        "দিন পেরিয়ে",
+        "সপ্তাহ পেরিয়ে",
+        "ক্যালেন্ডারের পাতা",
+        "সময় কেটে",
+        "সময় ফুরিয়ে",
+        "অনেকক্ষণ অপেক্ষা",
+        "ঘড়ি দেখ",
+        "ঘড়ির দিকে"
+      ],
+      "en": [
+        "time passed",
+        "weeks passed",
+        "days later",
+        "weeks later",
+        "checked his watch",
+        "long wait",
+        "time running out"
+      ]
+    },
+    {
+      "id": "#STAGING_DIALOGUE",
+      "bn": [
+        "শান্ত গলায়",
+        "বুঝিয়ে বল",
+        "ব্যাখ্যা কর",
+        "মত ব্যাখ্যা",
+        "বলতে লাগ",
+        "পরিকল্পনা নিয়ে কথা",
+        "মতামত জানাল"
+      ],
+      "en": [
+        "calmly explained",
+        "explained how",
+        "told them",
+        "said that",
+        "discussed the plan",
+        "spoke calmly",
+        "gave an explanation"
+      ]
+    },
+    {
+      "id": "#STAGING_NEGATION",
+      "bn": [
+        "দৌড়ায়নি",
+        "দৌড়াল না",
+        "হাঁটেনি",
+        "কাঁদছে না",
+        "ভয় পায়নি",
+        "অবাক হয়নি",
+        "হাততালি দেয়নি",
+        "বসেনি"
+      ],
+      "en": [
+        "did not run",
+        "was not walking",
+        "nobody clapped",
+        "did not sit",
+        "was not afraid",
+        "was not crying",
+        "not surprised"
+      ]
+    }
+  ],
+  "semanticSignalProvenance": "Assistant-curated language equivalences, not scientific facts or independently human-verified labels. Used as hashed concept features, not hardcoded output labels.",
+  "semanticSignalsStatus": "NOT ACTIVE: this experimental dictionary reduced the development-set macro score, so it was not integrated into classifier features. Kept as research evidence only."
+}

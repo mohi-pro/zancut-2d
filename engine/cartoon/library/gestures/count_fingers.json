@@ -1,0 +1,186 @@
+{
+  "id": "count_fingers",
+  "about": "counting items on the fingers of the left hand with the right index finger (hands kept within 30 units forward of the body so they never point at the camera: body gate A1)",
+  "group": "arms",
+  "seconds": 1.6,
+  "loop": true,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "L": {
+          "elbow": [
+            -15.8,
+            -25.1,
+            12.6
+          ],
+          "wrist": [
+            6,
+            -14,
+            20.9
+          ],
+          "hand": [
+            10.8,
+            -6.9,
+            27.5
+          ]
+        },
+        "R": {
+          "elbow": [
+            13.1,
+            -23,
+            18.4
+          ],
+          "wrist": [
+            -10,
+            -10,
+            22.4
+          ],
+          "hand": [
+            -16.2,
+            -4.8,
+            29.3
+          ]
+        }
+      },
+      "hands": [
+        "countTwo",
+        "point"
+      ]
+    },
+    {
+      "u": 0.25,
+      "arms": {
+        "L": {
+          "elbow": [
+            -16,
+            -25.1,
+            12.2
+          ],
+          "wrist": [
+            6,
+            -15,
+            20.9
+          ],
+          "hand": [
+            10.9,
+            -8.1,
+            27.5
+          ]
+        },
+        "R": {
+          "elbow": [
+            10.8,
+            -23.7,
+            18.9
+          ],
+          "wrist": [
+            -14,
+            -13,
+            21.7
+          ],
+          "hand": [
+            -21.4,
+            -9,
+            28.3
+          ]
+        }
+      },
+      "hands": [
+        "countThree",
+        "point"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "L": {
+          "elbow": [
+            -15.8,
+            -25.1,
+            12.6
+          ],
+          "wrist": [
+            6,
+            -14,
+            20.9
+          ],
+          "hand": [
+            10.8,
+            -6.9,
+            27.5
+          ]
+        },
+        "R": {
+          "elbow": [
+            14,
+            -22.6,
+            18.2
+          ],
+          "wrist": [
+            -8,
+            -9,
+            23.2
+          ],
+          "hand": [
+            -13.2,
+            -2.7,
+            30
+          ]
+        }
+      },
+      "hands": [
+        "countFour",
+        "point"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "L": {
+          "elbow": [
+            -16,
+            -25.1,
+            12.2
+          ],
+          "wrist": [
+            6,
+            -15,
+            20.9
+          ],
+          "hand": [
+            10.9,
+            -8.1,
+            27.5
+          ]
+        },
+        "R": {
+          "elbow": [
+            11.4,
+            -23.5,
+            18.8
+          ],
+          "wrist": [
+            -13,
+            -12,
+            21.7
+          ],
+          "hand": [
+            -20.3,
+            -7.9,
+            28.4
+          ]
+        }
+      },
+      "hands": [
+        "countFive",
+        "point"
+      ]
+    }
+  ]
+}

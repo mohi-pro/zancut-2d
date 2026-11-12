@@ -1,0 +1,167 @@
+[
+ {
+  "id": "ref1",
+  "file": "YTDown.com_YouTube_Media_BuWDY30bRuw_\u09a6\u09c1\u0987-\u09ac\u09cb\u09a8-Dui-Bon-Bangla-Cartoon-Thakurmar-Jhuli-Fairy-",
+  "seconds": 606,
+  "width": 1920,
+  "height": 1080,
+  "fps": "25/1",
+  "cuts": 125,
+  "cutsPerMinute": 12.4,
+  "shotSeconds": {
+   "median": 3.8,
+   "p25": 2.4,
+   "p75": 5.6,
+   "p90": 9.6
+  },
+  "stillShare": 0.02,
+  "silentShare": 0.01,
+  "loudnessLUFS": -9.8,
+  "palette": [
+   "#140d07",
+   "#31261e",
+   "#413227",
+   "#5a502e",
+   "#844141",
+   "#857d4d",
+   "#aa565f",
+   "#bea161",
+   "#bf9bb6",
+   "#dae1e3",
+   "#f4d37a",
+   "#00ff00"
+  ]
+ },
+ {
+  "id": "ref2",
+  "file": "YTDown.com_YouTube_Media_OOBN04TQUSs_Sonsari-Bou-Bangla-Cartoon-Rupkothar-Golpo-Bengali-Fa",
+  "seconds": 650,
+  "width": 1920,
+  "height": 1080,
+  "fps": "25/1",
+  "cuts": 139,
+  "cutsPerMinute": 12.8,
+  "shotSeconds": {
+   "median": 3.6,
+   "p25": 2,
+   "p75": 6.2,
+   "p90": 8.6
+  },
+  "stillShare": 0.07,
+  "silentShare": 0.02,
+  "loudnessLUFS": -9.7,
+  "palette": [
+   "#12100d",
+   "#2c2e37",
+   "#444457",
+   "#5f4522",
+   "#60798f",
+   "#6f7449",
+   "#a3a68a",
+   "#ab5b36",
+   "#cbd7d9",
+   "#da845d",
+   "#dbc587",
+   "#00ff00"
+  ]
+ },
+ {
+  "id": "ref3",
+  "file": "YTDown.com_YouTube_Media_Sg-XQj8HkWY_Bouer-Chakor-\u09ac\u0989\u09af\u09bc\u09c7\u09b0-\u099a\u09be\u0995\u09b0-Bangla-Golpo-Thakurmar-Jhuli",
+  "seconds": 779,
+  "width": 1920,
+  "height": 1080,
+  "fps": "25/1",
+  "cuts": 153,
+  "cutsPerMinute": 11.8,
+  "shotSeconds": {
+   "median": 4,
+   "p25": 2.4,
+   "p75": 6.2,
+   "p90": 9.2
+  },
+  "stillShare": 0.05,
+  "silentShare": 0.01,
+  "loudnessLUFS": -12.9,
+  "palette": [
+   "#000000",
+   "#141513",
+   "#272424",
+   "#4e3c3a",
+   "#6a6337",
+   "#765e70",
+   "#8e9077",
+   "#934e31",
+   "#b68074",
+   "#d1ab96",
+   "#d2dcc9",
+   "#00ff00"
+  ]
+ },
+ {
+  "id": "ref4",
+  "file": "YTDown.com_YouTube_Media_Zec3tFD9OrM_Iron-And-Gold-Stories-for-Teenagers-EnglishFairyTales",
+  "seconds": 951,
+  "width": 1920,
+  "height": 1080,
+  "fps": "25/1",
+  "cuts": 212,
+  "cutsPerMinute": 13.4,
+  "shotSeconds": {
+   "median": 3.2,
+   "p25": 1.8,
+   "p75": 5.6,
+   "p90": 10
+  },
+  "stillShare": 0.08,
+  "silentShare": 0.02,
+  "loudnessLUFS": -16.4,
+  "palette": [
+   "#0e0b0e",
+   "#241d1d",
+   "#403127",
+   "#475335",
+   "#6d7652",
+   "#723a31",
+   "#a15f4c",
+   "#a3a5a8",
+   "#c89a4e",
+   "#dec19c",
+   "#f2e8d3",
+   "#00ff00"
+  ]
+ },
+ {
+  "id": "ref5",
+  "file": "YTDown.com_YouTube_Media_cmrnUXxamWc_Plastic-Bottle-Recycle-\u09aa\u09cd\u09b2\u09be\u09b8\u09cd\u099f\u09bf\u0995\u09c7\u09b0-\u09ac\u09cb\u09a4\u09b2-\u09b0\u09bf\u09b8\u09be\u0987\u0995\u09c7\u09b2-Bang",
+  "seconds": 621,
+  "width": 1920,
+  "height": 1080,
+  "fps": "25/1",
+  "cuts": 135,
+  "cutsPerMinute": 13,
+  "shotSeconds": {
+   "median": 3,
+   "p25": 1.8,
+   "p75": 5.8,
+   "p90": 9.4
+  },
+  "stillShare": 0.02,
+  "silentShare": 0,
+  "loudnessLUFS": -9.9,
+  "palette": [
+   "#000000",
+   "#140f0b",
+   "#2e1c13",
+   "#4d382e",
+   "#675945",
+   "#7e7254",
+   "#97959f",
+   "#a2944c",
+   "#a3d6e4",
+   "#d0bf7f",
+   "#eddaab",
+   "#00ff00"
+  ]
+ }
+]

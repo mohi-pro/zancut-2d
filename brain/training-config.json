@@ -1,0 +1,10 @@
+{
+  "selection": "Development-only feature and scratch-neural experiments, 806-example curriculum; final benchmarks never select this configuration. The four-epoch face classifier matched the longer candidate on development while retaining the five-second training budget.",
+  "heads": {
+    "place": { "context": "full", "idfPower": 0.5 },
+    "action": { "context": "current", "idfPower": 1 },
+    "face": { "context": "full", "idfPower": 0, "classifier": { "algorithm": "neural", "dim": 32, "epochs": 4, "lr": 0.04, "seed": 7 } },
+    "graphic": { "context": "full", "idfPower": 1 },
+    "cameraMove": { "context": "current", "idfPower": 0.5 }
+  }
+}

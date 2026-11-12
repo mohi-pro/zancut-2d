@@ -1,0 +1,185 @@
+{
+  "id": "eat_with_hand",
+  "about": "right hand gathers food from a plate at belly height and brings it to the mouth, the Bangladeshi way of eating rice",
+  "group": "arms",
+  "seconds": 1.5,
+  "loop": true,
+  "on": [
+    "stand",
+    "sit"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "L": {
+          "elbow": [
+            -15.2,
+            -26.9,
+            9.1
+          ],
+          "wrist": [
+            8,
+            -24,
+            26
+          ],
+          "hand": [
+            13.6,
+            -21.8,
+            36.6
+          ]
+        },
+        "R": {
+          "elbow": [
+            15.1,
+            -26.3,
+            10.8
+          ],
+          "wrist": [
+            -8,
+            -24,
+            28
+          ],
+          "hand": [
+            -13.5,
+            -21.9,
+            38.7
+          ]
+        }
+      },
+      "hands": [
+        "cupped",
+        "eatBite"
+      ]
+    },
+    {
+      "u": 0.25,
+      "arms": {
+        "L": {
+          "elbow": [
+            -15.2,
+            -26.9,
+            9.1
+          ],
+          "wrist": [
+            8,
+            -24,
+            26
+          ],
+          "hand": [
+            13.6,
+            -21.8,
+            36.6
+          ]
+        },
+        "R": {
+          "elbow": [
+            17.2,
+            -20.9,
+            17.4
+          ],
+          "wrist": [
+            -6,
+            -6,
+            26
+          ],
+          "hand": [
+            -12,
+            1.5,
+            33.5
+          ]
+        }
+      },
+      "hands": [
+        "cupped",
+        "eatBite"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "L": {
+          "elbow": [
+            -15.2,
+            -26.9,
+            9.1
+          ],
+          "wrist": [
+            8,
+            -24,
+            26
+          ],
+          "hand": [
+            13.6,
+            -21.8,
+            36.6
+          ]
+        },
+        "R": {
+          "elbow": [
+            12.2,
+            -6,
+            29.2
+          ],
+          "wrist": [
+            -10,
+            10,
+            20
+          ],
+          "hand": [
+            -17.6,
+            19.5,
+            20.6
+          ]
+        }
+      },
+      "hands": [
+        "cupped",
+        "eatBite"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "L": {
+          "elbow": [
+            -15.2,
+            -26.9,
+            9.1
+          ],
+          "wrist": [
+            8,
+            -24,
+            26
+          ],
+          "hand": [
+            13.6,
+            -21.8,
+            36.6
+          ]
+        },
+        "R": {
+          "elbow": [
+            17.4,
+            -22.7,
+            14.8
+          ],
+          "wrist": [
+            -6,
+            -10,
+            26
+          ],
+          "hand": [
+            -12,
+            -3.6,
+            34.5
+          ]
+        }
+      },
+      "hands": [
+        "cupped",
+        "relaxed"
+      ]
+    }
+  ]
+}

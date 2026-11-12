@@ -1,0 +1,118 @@
+{
+  "id": "drink_cup",
+  "about": "right hand lifts a cup or glass from chest level to the lips, sips, and lowers it",
+  "group": "arms",
+  "seconds": 1.6,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            16.7,
+            -25.9,
+            9.2
+          ],
+          "wrist": [
+            -6,
+            -20,
+            26
+          ],
+          "hand": [
+            -11.3,
+            -15.7,
+            36.1
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "grip"
+      ]
+    },
+    {
+      "u": 0.3,
+      "arms": {
+        "R": {
+          "elbow": [
+            12,
+            -9.6,
+            28.3
+          ],
+          "wrist": [
+            -10,
+            8,
+            22
+          ],
+          "hand": [
+            -17,
+            17.9,
+            23.7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "grip"
+      ]
+    },
+    {
+      "u": 0.65,
+      "arms": {
+        "R": {
+          "elbow": [
+            12.4,
+            -6.3,
+            29
+          ],
+          "wrist": [
+            -10,
+            10,
+            21
+          ],
+          "hand": [
+            -17.1,
+            19.9,
+            21.5
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "grip"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            16.7,
+            -25.9,
+            9.2
+          ],
+          "wrist": [
+            -6,
+            -20,
+            26
+          ],
+          "hand": [
+            -11.3,
+            -15.7,
+            36.1
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "grip"
+      ]
+    }
+  ]
+}

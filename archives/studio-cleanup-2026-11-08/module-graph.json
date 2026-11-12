@@ -1,0 +1,126 @@
+{
+  "entry": "index.mjs",
+  "runtime": [
+    "agent.mjs",
+    "audio-analysis.mjs",
+    "autopilot.mjs",
+    "board.mjs",
+    "brain.mjs",
+    "brainplan.mjs",
+    "codefilm.mjs",
+    "colors.mjs",
+    "config.mjs",
+    "director.mjs",
+    "filmkit.mjs",
+    "index.mjs",
+    "local-owner.mjs",
+    "media.mjs",
+    "parts.mjs",
+    "preview.mjs",
+    "qa.mjs",
+    "scriptplan.mjs",
+    "store.mjs",
+    "studio.mjs",
+    "transcribe.mjs",
+    "videoqa.mjs"
+  ],
+  "imports": {
+    "agent.mjs": [
+      "codefilm.mjs",
+      "store.mjs",
+      "media.mjs",
+      "transcribe.mjs",
+      "studio.mjs",
+      "config.mjs",
+      "director.mjs",
+      "board.mjs"
+    ],
+    "animation-guidance.mjs": [
+      "config.mjs",
+      "studio.mjs",
+      "filmkit.mjs",
+      "director.mjs"
+    ],
+    "audio-analysis.mjs": [],
+    "autopilot.mjs": [
+      "config.mjs"
+    ],
+    "board.mjs": [
+      "director.mjs",
+      "config.mjs",
+      "audio-analysis.mjs",
+      "studio.mjs"
+    ],
+    "brain.mjs": [
+      "config.mjs"
+    ],
+    "brainplan.mjs": [
+      "brain.mjs",
+      "scriptplan.mjs",
+      "qa.mjs"
+    ],
+    "codefilm.mjs": [
+      "config.mjs",
+      "director.mjs"
+    ],
+    "colors.mjs": [],
+    "config.mjs": [],
+    "director.mjs": [
+      "config.mjs",
+      "studio.mjs"
+    ],
+    "filmkit.mjs": [
+      "config.mjs",
+      "parts.mjs"
+    ],
+    "index.mjs": [
+      "store.mjs",
+      "local-owner.mjs",
+      "agent.mjs",
+      "board.mjs",
+      "studio.mjs",
+      "media.mjs",
+      "config.mjs",
+      "codefilm.mjs",
+      "qa.mjs",
+      "videoqa.mjs",
+      "autopilot.mjs",
+      "preview.mjs",
+      "filmkit.mjs",
+      "brainplan.mjs",
+      "director.mjs"
+    ],
+    "joins.mjs": [],
+    "local-owner.mjs": [
+      "config.mjs"
+    ],
+    "media.mjs": [],
+    "no-ai.mjs": [],
+    "parts.mjs": [
+      "config.mjs"
+    ],
+    "preview.mjs": [
+      "config.mjs",
+      "codefilm.mjs"
+    ],
+    "qa.mjs": [
+      "codefilm.mjs"
+    ],
+    "scriptplan.mjs": [
+      "codefilm.mjs"
+    ],
+    "store.mjs": [
+      "config.mjs"
+    ],
+    "studio.mjs": [
+      "config.mjs",
+      "colors.mjs"
+    ],
+    "transcribe.mjs": [
+      "audio-analysis.mjs",
+      "config.mjs"
+    ],
+    "videoqa.mjs": []
+  },
+  "broken": []
+}

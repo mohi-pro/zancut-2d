@@ -1,0 +1,39 @@
+{
+  "name": "zancut-2d",
+  "version": "0.1.0",
+  "description": "Zancut 2D: voice + scenes in, finished 2D animation out",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "test": "node scripts/codefilm-syntax-test.mjs && node scripts/qa-test.mjs && node scripts/film-kit-test.mjs && node scripts/parts-test.mjs && node scripts/cartoon-test.mjs && node scripts/rig-motion-test.mjs && node scripts/procedural-creator-test.mjs && node scripts/physics-broll-test.mjs && node scripts/graphics-caption-test.mjs && node scripts/web-learner-test.mjs && node scripts/brain-v2-test.mjs && node scripts/brain-features-test.mjs && node scripts/location-intent-test.mjs && node scripts/teaching-test.mjs && node scripts/security-hub-test.mjs && node scripts/acting-lipsync-test.mjs && node scripts/ui-test.mjs",
+    "test:all": "npm test && node scripts/codefilm-test.mjs && node scripts/world-test.mjs && node scripts/cleanup-test.mjs",
+    "test:studio-sync": "npm run test:all",
+    "brain": "node scripts/brain-seed.mjs && node scripts/brain-train.mjs",
+    "study": "node scripts/study-references.mjs",
+    "vendor:cartoon": "node scripts/build-cartoon-vendor.mjs",
+    "learn": "node scripts/brain-learn.mjs",
+    "lock-brain": "node scripts/lock-brain.mjs",
+    "hub-owner": "node scripts/hub-owner.mjs",
+    "teach:build": "node scripts/build-teaching-curriculum.mjs",
+    "teach:train": "node scripts/brain-train.mjs",
+    "teach:demo": "node scripts/teaching-demo.mjs --build",
+    "teach:review": "node scripts/teaching-review-queue.mjs",
+    "teach:stories": "node scripts/build-teaching-curriculum.mjs --stories --out data/teaching/2026-11-09/narrative-round/candidate-curriculum.jsonl",
+    "teach:story-eval": "node scripts/brain-story-eval.mjs"
+  },
+  "dependencies": {
+    "animejs": "4.5.0",
+    "compromise": "14.19.0",
+    "d3-scale": "4.0.3",
+    "d3-shape": "3.2.1",
+    "express": "^5.3.0",
+    "lucide-static": "1.70.0",
+    "matter-js": "0.20.0",
+    "nanoid": "^6.0.2",
+    "natural": "8.2.6",
+    "openmoji": "17.0.0",
+    "puppeteer-core": "^23.11.1",
+    "roughjs": "4.6.6"
+  }
+}

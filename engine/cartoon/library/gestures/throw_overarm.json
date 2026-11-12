@@ -1,0 +1,143 @@
+{
+  "id": "throw_overarm",
+  "about": "right arm winds back high and whips forward in an overarm throw",
+  "group": "arms",
+  "seconds": 0.9,
+  "loop": false,
+  "on": [
+    "stand",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    },
+    {
+      "u": 0.3,
+      "arms": {
+        "R": {
+          "elbow": [
+            31.9,
+            -1.2,
+            3.9
+          ],
+          "wrist": [
+            22,
+            24,
+            -6
+          ],
+          "hand": [
+            23.1,
+            35.8,
+            -9
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    },
+    {
+      "u": 0.6,
+      "arms": {
+        "R": {
+          "elbow": [
+            27.1,
+            -2.9,
+            17.1
+          ],
+          "wrist": [
+            12,
+            18,
+            30
+          ],
+          "hand": [
+            8.2,
+            24.4,
+            39.7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 0.85,
+      "arms": {
+        "R": {
+          "elbow": [
+            18.8,
+            -21.4,
+            15
+          ],
+          "wrist": [
+            4,
+            -12,
+            38
+          ],
+          "hand": [
+            0,
+            -12.7,
+            49.5
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    }
+  ]
+}

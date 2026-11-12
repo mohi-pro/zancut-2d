@@ -1,0 +1,33 @@
+{
+ "id": "ref1",
+ "file": "YTDown.com_YouTube_Media_BuWDY30bRuw_দুই-বোন-Dui-Bon-Bangla-Cartoon-Thakurmar-Jhuli-Fairy-",
+ "seconds": 606,
+ "width": 1920,
+ "height": 1080,
+ "fps": "25/1",
+ "cuts": 125,
+ "cutsPerMinute": 12.4,
+ "shotSeconds": {
+  "median": 3.8,
+  "p25": 2.4,
+  "p75": 5.6,
+  "p90": 9.6
+ },
+ "stillShare": 0.02,
+ "silentShare": 0.01,
+ "loudnessLUFS": -9.8,
+ "palette": [
+  "#140d07",
+  "#31261e",
+  "#413227",
+  "#5a502e",
+  "#844141",
+  "#857d4d",
+  "#aa565f",
+  "#bea161",
+  "#bf9bb6",
+  "#dae1e3",
+  "#f4d37a",
+  "#00ff00"
+ ]
+}

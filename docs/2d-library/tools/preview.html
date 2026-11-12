@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Set Piece Preview</title>
+<style>
+  :root { --bg: #f4efe6; --ink: #2a2622; --line: #d8cfbf; }
+  body { margin: 0; font: 15px/1.4 system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+  header { padding: 14px 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
+  #out { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; padding: 16px; }
+  figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  figcaption { padding: 6px 10px; font-size: 13px; } .err { color: #b3261e; padding: 0 16px; white-space: pre-wrap; }
+  svg { display: block; width: 100%; height: auto; }
+</style></head>
+<body>
+<header><strong>Set piece preview</strong>
+  <label>your pieces, animals or props (.js, several at once) <input type="file" id="mine" accept=".js" multiple></label>
+  <label><input type="checkbox" id="night"> night colours</label></header>
+<div class="err" id="err"></div><div id="out"></div>
+<script>
+// The same helpers Zancut gives every piece as `k` (copied from Zancut's set.js), and ZS.define: no other file is needed.
+const NS = "http://www.w3.org/2000/svg";
+const el = (t, a = {}, p) => { const e = document.createElementNS(NS, t); for (const x in a) e.setAttribute(x, a[x]); if (p) p.appendChild(e); return e; };
+const rngOf = (seed = 1) => { let s = (Math.abs(Math.round(seed * 7919)) % 2147483646) + 1; return () => ((s = (s * 16807) % 2147483647) - 1) / 2147483646; };
+const hex = (c) => { const m = String(c).replace("#", ""); const f = m.length === 3 ? m.split("").map((x) => x + x).join("") : m; return [0, 2, 4].map((i) => parseInt(f.slice(i, i + 2), 16)); };
+const mix = (a, b, u) => { const A = hex(a), B = hex(b); return `#${A.map((v, i) => Math.round(v + (B[i] - v) * u).toString(16).padStart(2, "0")).join("")}`; };
+const dark = (c, u = 0.14) => mix(c, "#1c1420", u), light = (c, u = 0.14) => mix(c, "#fff6e6", u);
+const pick = (r, list) => list[Math.floor(r() * list.length) % list.length];
+const R = (p, x, y, w, h, fill, rx = 0) => el("rect", { x, y, width: Math.max(0, w), height: Math.max(0, h), fill, rx }, p);
+const C = (p, cx, cy, r, fill, o = 1) => el("circle", { cx, cy, r, fill, opacity: o }, p);
+const E = (p, cx, cy, rx, ry, fill, o = 1) => el("ellipse", { cx, cy, rx, ry, fill, opacity: o }, p);
+const P = (p, d, fill, o = 1) => el("path", { d, fill, opacity: o }, p);
+const group = (layer, x, y, flip) => el("g", { transform: `translate(${x} ${y})${flip ? " scale(-1 1)" : ""}` }, layer);
+const ground = (g, w, h = w * 0.07) => E(g, 0, 0, w * 0.55, h, "#1c1420", 0.16);
+const WALLS = ["#d98f6a", "#c9a27a", "#e0b98c", "#b98a78", "#a9b3a0", "#d6a95f", "#c97f5e", "#9fb2b8"];
+const CLOTHS = ["#d8452f", "#2d7f8c", "#e0a02c", "#5a8f3c", "#7a4fa3", "#2f6fb0"];
+const kit = { el, rngOf, hex, mix, dark, light, pick, R, C, E, P, group, ground, WALLS, CLOTHS };
+function makeZS() { const ZS = { info: {} }; ZS.define = (id, about, draw) => { ZS.info[id] = { kind: "set", ...(about || {}) }; ZS[id] = (layer, o = {}) => draw(layer, o, kit); return id; }; return ZS; }
+const read = (f) => new Promise((ok) => { const r = new FileReader(); r.onload = () => ok(r.result); r.readAsText(f); });
+let mineSrc = [];
+async function run() {
+  const err = document.getElementById("err"), out = document.getElementById("out"); err.textContent = ""; out.textContent = "";
+  const ZS = makeZS();
+  for (const m of mineSrc) try { new Function("ZS", m.src)(ZS); } catch (e) { err.textContent += `${m.name}: ${e.message}\n`; }
+  const ids = Object.keys(ZS.info), night = document.getElementById("night").checked;
+  for (const id of ids) {
+    const prop = ZS.info[id].kind === "prop", fig = document.createElement("figure"), svg = el("svg", { viewBox: "0 0 900 520" }, fig), movers = [];
+    el("rect", { width: 900, height: 520, fill: night ? "#1d2740" : "#eaf3f7" }, svg); el("rect", { y: 400, width: 900, height: 120, fill: night ? "#2b3346" : "#e3d6bf" }, svg);
+    [[1, 1, 180], [2, 0.7, 470], [3, 0.5, 720]].forEach(([seed, sc, x], n) => {
+      const h = (prop ? 220 : 340) * sc, layer = prop ? el("g", { transform: `translate(${x} 380)` }, svg) : svg;
+      if (prop) { el("line", { x1: x - 10, y1: 380, x2: x + 10, y2: 380, stroke: "#d33", "stroke-width": 2 }, svg); el("line", { x1: x, y1: 370, x2: x, y2: 390, stroke: "#d33", "stroke-width": 2 }, svg); }
+      try { const g = ZS[id](layer, prop ? { h, seed } : { x, y: 400, h, seed, flip: n === 2 }); if (g && g.tick) movers.push(g); }
+      catch (e) { err.textContent += `${id} seed ${seed}: ${e.message}\n`; }
+    });
+    const cap = document.createElement("figcaption"); cap.textContent = `${id} · ${ZS.info[id].kind}${movers.length ? " · moves" : ""} · ${ZS.info[id].about || ""}${prop ? " · red cross = grip point" : ""}`; fig.appendChild(cap); out.appendChild(fig);
+    if (movers.length) { const t0 = performance.now(); const loop = () => { const t = (performance.now() - t0) / 1000; movers.forEach((g) => g.tick(t)); requestAnimationFrame(loop); }; loop(); }
+  }
+  if (!ids.length && mineSrc.length) err.textContent += "No ZS.define(...) found in your files.";
+}
+document.getElementById("mine").onchange = async (e) => { mineSrc = await Promise.all([...e.target.files].map(async (f) => ({ name: f.name, src: await read(f) }))); run(); };
+document.getElementById("night").onchange = run;
+</script></body></html>

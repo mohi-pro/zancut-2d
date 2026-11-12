@@ -1,0 +1,394 @@
+{
+ "found": [
+  {
+   "rule": "R1",
+   "category": "missing-asset",
+   "severity": "error",
+   "shot": 0,
+   "t": 0,
+   "evidence": "\"তিন মাথার নীল রাক্ষস\" in shot 1 is not in the cast",
+   "key": "R1|cast:তিন মাথার নীল রাক্ষস"
+  },
+  {
+   "rule": "R1",
+   "category": "missing-asset",
+   "severity": "error",
+   "shot": 0,
+   "t": 0,
+   "evidence": "prop \"tea cup\" in shot 1 is not a library piece: it is the \"cup\"",
+   "key": "R1|prop:0.00@village_home:tea cup"
+  },
+  {
+   "rule": "R1",
+   "category": "missing-asset",
+   "severity": "error",
+   "shot": 0,
+   "t": 0,
+   "evidence": "prop \"spaceshipX\" in shot 1 is not a library piece (removed; teach it with POST /api/learn)",
+   "key": "R1|prop:0.00@village_home:spaceshipX"
+  },
+  {
+   "rule": "R2",
+   "category": "grounding",
+   "severity": "error",
+   "shot": 1,
+   "t": 3,
+   "evidence": "rain inside bedroom (indoors) is shown through a window; cloud cannot be inside bedroom (an outdoor-only thing): removed",
+   "key": "R2|P1:3.00@bedroom"
+  },
+  {
+   "rule": "R2",
+   "category": "grounding",
+   "severity": "error",
+   "shot": 1,
+   "t": 3,
+   "evidence": "rafi floats 1.5 m above the ground in shot 2",
+   "key": "R2|lift:3.00@bedroom:rafi"
+  },
+  {
+   "rule": "R3",
+   "category": "scale",
+   "severity": "error",
+   "shot": 2,
+   "t": 6,
+   "evidence": "cup asked for 3 m; drawn at 0.11 m, inside its real size (never bigger than a head)",
+   "key": "R3|P3:6.00@kitchen"
+  },
+  {
+   "rule": "R4",
+   "category": "facing",
+   "severity": "warn",
+   "shot": 2,
+   "t": 6,
+   "evidence": "baba turned their back on rafi: now faces them",
+   "key": "R4|P4:6.00@kitchen"
+  },
+  {
+   "rule": "R4",
+   "category": "overlap",
+   "severity": "warn",
+   "shot": 2,
+   "t": 6,
+   "evidence": "rafi and baba stand 0.20 m apart in shot 3",
+   "key": "R4|overlap:6.00@kitchen:rafi:baba"
+  },
+  {
+   "rule": "R5",
+   "category": "out-of-frame",
+   "severity": "error",
+   "shot": 3,
+   "t": 9,
+   "evidence": "rafi stands at x=2.65 m in shot 4; the frame shows ±2.8 m, a speaker stays within ±2.38 m",
+   "key": "R5|frame:9.00@village_road:rafi:x"
+  },
+  {
+   "rule": "R5",
+   "category": "safe-zone",
+   "severity": "warn",
+   "shot": 3,
+   "t": 9,
+   "evidence": "headline \"এই শিরোনামটি এত লম্বা যে কোনো ব্যানারে আঁটবে না কিছুতেই\" is 55 characters; a 16:9 banner fits 30",
+   "key": "R5|headline:9.00@village_road"
+  },
+  {
+   "rule": "R12",
+   "category": "audio",
+   "severity": "warn",
+   "shot": 3,
+   "t": 9,
+   "evidence": "shot 4 shows tx-pop pop-ups without their sound cues",
+   "key": "R12|sfx:9.00@village_road:tx-pop"
+  },
+  {
+   "rule": "R7",
+   "category": "static",
+   "severity": "warn",
+   "shot": 6,
+   "t": 21.5,
+   "evidence": "shot 7 has no locomotion, no gesture and no camera move",
+   "key": "R7|static:21.50@living_room"
+  },
+  {
+   "rule": "R9",
+   "category": "readability",
+   "severity": "warn",
+   "shot": 6,
+   "t": 21.5,
+   "evidence": "a data card in shot 7 would cover a face: people stand on both sides",
+   "key": "R9|card-faces:21.50@living_room"
+  },
+  {
+   "rule": "R9",
+   "category": "readability",
+   "severity": "warn",
+   "shot": 6,
+   "t": 21.5,
+   "evidence": "shot 7 has both a data card and a b-roll card",
+   "key": "R9|card-pip:21.50@living_room"
+  },
+  {
+   "rule": "R10",
+   "category": "lip-sync",
+   "severity": "warn",
+   "shot": 6,
+   "t": 21.5,
+   "evidence": "2 people speak at once in shot 7",
+   "key": "R10|speakers:21.50@living_room"
+  },
+  {
+   "rule": "R10",
+   "category": "focus",
+   "severity": "warn",
+   "shot": 6,
+   "t": 21.5,
+   "evidence": "rafi speaks in shot 7 but the camera frames baba",
+   "key": "R10|focus:21.50@living_room"
+  },
+  {
+   "rule": "R12",
+   "category": "audio",
+   "severity": "warn",
+   "shot": 6,
+   "t": 21.5,
+   "evidence": "shot 7 shows tx-ui, tx-pop pop-ups without their sound cues",
+   "key": "R12|sfx:21.50@living_room:tx-ui+tx-pop"
+  },
+  {
+   "rule": "R12",
+   "category": "audio",
+   "severity": "warn",
+   "shot": 7,
+   "t": 24,
+   "evidence": "shot 8 shows wh-short pop-ups without their sound cues",
+   "key": "R12|sfx:24.00@park:wh-short"
+  },
+  {
+   "rule": "R12",
+   "category": "audio",
+   "severity": "warn",
+   "shot": 8,
+   "t": 26,
+   "evidence": "shot 9 shows wh-short pop-ups without their sound cues",
+   "key": "R12|sfx:26.00@park:wh-short"
+  },
+  {
+   "rule": "R6",
+   "category": "pacing",
+   "severity": "warn",
+   "shot": 4,
+   "t": 12,
+   "evidence": "shot 5 lasts 9.00 s (over 6.5 s): a second camera angle at 16.5 s",
+   "key": "R6|long:12.00@park"
+  },
+  {
+   "rule": "R6",
+   "category": "timing",
+   "severity": "warn",
+   "shot": 5,
+   "t": 21,
+   "evidence": "shot 6 lasts 0.50 s (minimum 1.2 s): merged into the shot before it",
+   "key": "R6|short:21.00@park"
+  },
+  {
+   "rule": "R8",
+   "category": "b-roll",
+   "severity": "warn",
+   "shot": 7,
+   "t": 24,
+   "evidence": "cutaway in shot 8 would hide the story for 5.0 s",
+   "key": "R8|cut-long:24.00@park"
+  },
+  {
+   "rule": "R8",
+   "category": "b-roll",
+   "severity": "warn",
+   "shot": 8,
+   "t": 26,
+   "evidence": "shots 8 and 9 are both full-screen cutaways: the characters vanish for too long",
+   "key": "R8|cut-twice:26.00@park"
+  },
+  {
+   "rule": "R11",
+   "category": "pose-jump",
+   "severity": "warn",
+   "shot": 9,
+   "t": 28,
+   "evidence": "rafi goes from sit to idle at the cut into shot 10",
+   "key": "R11|blend:28.00@park:rafi"
+  },
+  {
+   "rule": "R12",
+   "category": "audio",
+   "severity": "warn",
+   "shot": null,
+   "t": 0,
+   "evidence": "music bed at 0.4 would cover the voice (≤ 0.16, ducked under speech)",
+   "key": "R12|music"
+  }
+ ],
+ "repairs": [
+  {
+   "rule": "R1",
+   "issue": "\"তিন মাথার নীল রাক্ষস\" in shot 1 is not in the cast",
+   "repair": "cast",
+   "result": "applied"
+  },
+  {
+   "rule": "R1",
+   "issue": "prop \"tea cup\" in shot 1 is not a library piece: it is the \"cup\"",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R1",
+   "issue": "prop \"spaceshipX\" in shot 1 is not a library piece (removed; teach it with POST /api/learn)",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R2",
+   "issue": "cup needs a surface: a teaCart was put under it",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R2",
+   "issue": "rain inside bedroom (indoors) is shown through a window; cloud cannot be inside bedroom (an outdoor-only thing): removed",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R2",
+   "issue": "rafi floats 1.5 m above the ground in shot 2",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R3",
+   "issue": "cup asked for 3 m; drawn at 0.11 m, inside its real size (never bigger than a head)",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R4",
+   "issue": "baba turned their back on rafi: now faces them",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R4",
+   "issue": "rafi and baba stand 0.20 m apart in shot 3",
+   "repair": "person-x",
+   "result": "applied"
+  },
+  {
+   "rule": "R5",
+   "issue": "rafi stands at x=2.65 m in shot 4; the frame shows ±2.8 m, a speaker stays within ±2.38 m",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R5",
+   "issue": "headline \"এই শিরোনামটি এত লম্বা যে কোনো ব্যানারে আঁটবে না কিছুতেই\" is 55 characters; a 16:9 banner fits 30",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R12",
+   "issue": "shot 4 shows tx-pop pop-ups without their sound cues",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R7",
+   "issue": "shot 7 has no locomotion, no gesture and no camera move",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R9",
+   "issue": "a data card in shot 7 would cover a face: people stand on both sides",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R9",
+   "issue": "shot 7 has both a data card and a b-roll card",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R10",
+   "issue": "2 people speak at once in shot 7",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R10",
+   "issue": "rafi speaks in shot 7 but the camera frames baba",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R12",
+   "issue": "shot 7 shows tx-ui pop-ups without their sound cues",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R12",
+   "issue": "shot 8 shows wh-short pop-ups without their sound cues",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R12",
+   "issue": "shot 9 shows wh-short pop-ups without their sound cues",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R6",
+   "issue": "shot 5 lasts 9.00 s (over 6.5 s): a second camera angle at 16.5 s",
+   "repair": "insert-shot",
+   "result": "applied"
+  },
+  {
+   "rule": "R6",
+   "issue": "shot 6 lasts 0.50 s (minimum 1.2 s): merged into the shot before it",
+   "repair": "remove-shot",
+   "result": "applied"
+  },
+  {
+   "rule": "R8",
+   "issue": "cutaway in shot 7 would hide the story for 5.0 s",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R8",
+   "issue": "shots 7 and 8 are both full-screen cutaways: the characters vanish for too long",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R12",
+   "issue": "shot 8 shows tx-pop pop-ups without their sound cues",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R11",
+   "issue": "rafi goes from sit to idle at the cut into shot 9",
+   "repair": "ops",
+   "result": "applied"
+  },
+  {
+   "rule": "R12",
+   "issue": "music bed at 0.4 would cover the voice (≤ 0.16, ducked under speech)",
+   "repair": "film-set",
+   "result": "applied"
+  }
+ ],
+ "remaining": []
+}

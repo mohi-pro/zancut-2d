@@ -1,0 +1,33 @@
+{
+ "id": "ref3",
+ "file": "YTDown.com_YouTube_Media_Sg-XQj8HkWY_Bouer-Chakor-বউয়ের-চাকর-Bangla-Golpo-Thakurmar-Jhuli",
+ "seconds": 779,
+ "width": 1920,
+ "height": 1080,
+ "fps": "25/1",
+ "cuts": 153,
+ "cutsPerMinute": 11.8,
+ "shotSeconds": {
+  "median": 4,
+  "p25": 2.4,
+  "p75": 6.2,
+  "p90": 9.2
+ },
+ "stillShare": 0.05,
+ "silentShare": 0.01,
+ "loudnessLUFS": -12.9,
+ "palette": [
+  "#000000",
+  "#141513",
+  "#272424",
+  "#4e3c3a",
+  "#6a6337",
+  "#765e70",
+  "#8e9077",
+  "#934e31",
+  "#b68074",
+  "#d1ab96",
+  "#d2dcc9",
+  "#00ff00"
+ ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "knock_door",
+  "about": "right fist raised at shoulder height knocking twice on a door ahead",
+  "group": "arms",
+  "seconds": 0.7,
+  "loop": true,
+  "on": [
+    "stand"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            21.6,
+            -17.3,
+            16.4
+          ],
+          "wrist": [
+            6,
+            4,
+            28
+          ],
+          "hand": [
+            4.6,
+            14.4,
+            34.3
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    },
+    {
+      "u": 0.25,
+      "arms": {
+        "R": {
+          "elbow": [
+            20.3,
+            -16.8,
+            18.4
+          ],
+          "wrist": [
+            6,
+            2,
+            35
+          ],
+          "hand": [
+            5.2,
+            10.7,
+            43.5
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "R": {
+          "elbow": [
+            21.6,
+            -17.3,
+            16.4
+          ],
+          "wrist": [
+            6,
+            4,
+            28
+          ],
+          "hand": [
+            4.6,
+            14.4,
+            34.3
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "R": {
+          "elbow": [
+            20.3,
+            -16.8,
+            18.4
+          ],
+          "wrist": [
+            6,
+            2,
+            35
+          ],
+          "hand": [
+            5.2,
+            10.7,
+            43.5
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "fist"
+      ]
+    }
+  ]
+}

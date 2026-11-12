@@ -1,0 +1,118 @@
+{
+  "id": "wave_bye",
+  "about": "gentle farewell wave with the hand held slightly forward and high",
+  "group": "arms",
+  "seconds": 1.1,
+  "loop": true,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            27.2,
+            -11.6,
+            12.7
+          ],
+          "wrist": [
+            20,
+            14,
+            24
+          ],
+          "hand": [
+            20,
+            25.7,
+            27.5
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 0.25,
+      "arms": {
+        "R": {
+          "elbow": [
+            27.7,
+            -11.3,
+            12
+          ],
+          "wrist": [
+            27,
+            15,
+            24
+          ],
+          "hand": [
+            30.4,
+            26.2,
+            27.4
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "R": {
+          "elbow": [
+            27.2,
+            -11.6,
+            12.7
+          ],
+          "wrist": [
+            20,
+            14,
+            24
+          ],
+          "hand": [
+            20,
+            25.7,
+            27.5
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "R": {
+          "elbow": [
+            26.4,
+            -9.7,
+            15.7
+          ],
+          "wrist": [
+            14,
+            15,
+            24
+          ],
+          "hand": [
+            10.6,
+            26.2,
+            27.4
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    }
+  ]
+}

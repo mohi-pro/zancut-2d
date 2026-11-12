@@ -1,0 +1,20 @@
+// Reproduce the quarantined story-curriculum experiment without changing active data or weights.
+import fs from 'node:fs';
+import * as B from '../server/brain.mjs';
+const dir = 'data/teaching/2026-11-09/narrative-round';
+const baseline = JSON.parse(fs.readFileSync(`${dir}/baseline-development.json`)).metrics;
+const criteria = JSON.parse(fs.readFileSync(`${dir}/protocol.json`)).promotion;
+const extra = B.readJsonl(`${dir}/candidate-curriculum.jsonl`).filter(e => e.storyId);
+if (extra.length !== 168) throw Error('Build the 168-story-example candidate with npm run teach:stories first');
+if (extra.some(e => [e.text, e.ctx?.prevText, e.ctx?.nextText].filter(Boolean).some(B.testOverlap))) throw Error('Reserved text in experimental lessons');
+const base = B.allExamples();
+if (base.some(e => e.storyId)) throw Error('Research stories are already in the active corpus; compare against the frozen baseline instead');
+const examples = [...base, ...extra], t = Date.now(), model = B.train(examples), trainingMs = Date.now() - t;
+B.calibrate(model, [...B.readJsonl(B.paths.seed).filter(e => e.held), ...B.readJsonl('brain/teaching-validation.jsonl')]);
+const file = `${dir}/candidate-model.json`; B.save(model, file);
+const metrics = B.evaluate(B.load(file), B.readJsonl('brain/holdout-dev.jsonl'));
+const heads = Object.keys(B.HEADS), delta = Object.fromEntries(heads.map(h => [h, metrics[h].acc - baseline[h].acc]));
+const macroGain = heads.reduce((s, h) => s + delta[h], 0) / heads.length;
+const eligibleForPromotion = macroGain >= criteria.minimumCategoricalMacroGain && heads.every(h => delta[h] >= -criteria.maximumSingleHeadDrop) && metrics.roles.f1 - baseline.roles.f1 >= -criteria.maximumRolesF1Drop;
+const result = { at: new Date().toISOString(), trainingMs, examples: examples.length, curriculum: B.readJsonl(B.curriculumFile).length + extra.length, metrics, delta, macroGain, promotionCriteria: criteria, eligibleForPromotion };
+fs.writeFileSync(`${dir}/candidate-development.json`, JSON.stringify(result, null, 2)); console.log(JSON.stringify(result));

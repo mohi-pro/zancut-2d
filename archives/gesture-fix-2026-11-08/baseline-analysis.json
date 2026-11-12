@@ -1,0 +1,196 @@
+{
+  "method": "original compiled schedule, original solver from before-fix archive; original child/female profiles; 4 seconds per gesture",
+  "results": [
+    {
+      "fps": 6,
+      "failed": 43,
+      "passed": 22,
+      "pelvisMax": 0,
+      "footMax": 0,
+      "centroidMax": 4.58642231798291,
+      "failures": [
+        {
+          "id": "beckon",
+          "maxUnitsPerSample": 52.51951200513836
+        },
+        {
+          "id": "both_hands_up",
+          "maxUnitsPerSample": 56.036148900417125
+        },
+        {
+          "id": "catch_both_hands",
+          "maxUnitsPerSample": 49.05478911230695
+        },
+        {
+          "id": "chin_think",
+          "maxUnitsPerSample": 40.28178586521655
+        },
+        {
+          "id": "clap",
+          "maxUnitsPerSample": 52.701302232289144
+        },
+        {
+          "id": "count_fingers",
+          "maxUnitsPerSample": 51.9348419700524
+        },
+        {
+          "id": "count_tasbih",
+          "maxUnitsPerSample": 41.987739014595384
+        },
+        {
+          "id": "cover_ears",
+          "maxUnitsPerSample": 53.103974037282384
+        },
+        {
+          "id": "cover_mouth_shock",
+          "maxUnitsPerSample": 42.75420854205907
+        },
+        {
+          "id": "dismiss_wave",
+          "maxUnitsPerSample": 50.414619943484226
+        },
+        {
+          "id": "drink_cup",
+          "maxUnitsPerSample": 43.18203681436353
+        },
+        {
+          "id": "drink_tea_tong",
+          "maxUnitsPerSample": 44.36574436274982
+        },
+        {
+          "id": "eat_with_hand",
+          "maxUnitsPerSample": 40.370940195247414
+        },
+        {
+          "id": "facepalm",
+          "maxUnitsPerSample": 52.42347253668319
+        },
+        {
+          "id": "fan_hand",
+          "maxUnitsPerSample": 63.736361849711415
+        },
+        {
+          "id": "fan_with_pakha",
+          "maxUnitsPerSample": 47.20506489730477
+        },
+        {
+          "id": "finger_wag",
+          "maxUnitsPerSample": 59.994144064236075
+        },
+        {
+          "id": "fist_pump",
+          "maxUnitsPerSample": 44.476526261099565
+        },
+        {
+          "id": "fix_glasses",
+          "maxUnitsPerSample": 57.3550344629091
+        },
+        {
+          "id": "hands_to_cheeks",
+          "maxUnitsPerSample": 50.201620855198485
+        },
+        {
+          "id": "hold_nose_smell",
+          "maxUnitsPerSample": 45.08776335682066
+        },
+        {
+          "id": "knock_door",
+          "maxUnitsPerSample": 63.38416313904343
+        },
+        {
+          "id": "phone_call",
+          "maxUnitsPerSample": 42.4448442276992
+        },
+        {
+          "id": "pour_tea",
+          "maxUnitsPerSample": 41.421060987953375
+        },
+        {
+          "id": "push_door",
+          "maxUnitsPerSample": 43.10300298320867
+        },
+        {
+          "id": "raise_hand",
+          "maxUnitsPerSample": 44.20759489211681
+        },
+        {
+          "id": "rub_hands",
+          "maxUnitsPerSample": 52.67626235333572
+        },
+        {
+          "id": "salam_adab",
+          "maxUnitsPerSample": 43.76422595816892
+        },
+        {
+          "id": "scratch_head",
+          "maxUnitsPerSample": 77.9997518345663
+        },
+        {
+          "id": "shake_fist",
+          "maxUnitsPerSample": 70.10911889207809
+        },
+        {
+          "id": "shh",
+          "maxUnitsPerSample": 48.123776300470425
+        },
+        {
+          "id": "stir_pot",
+          "maxUnitsPerSample": 42.51856481868933
+        },
+        {
+          "id": "stop_palm",
+          "maxUnitsPerSample": 41.83381598335857
+        },
+        {
+          "id": "take_photo",
+          "maxUnitsPerSample": 40.18903059751532
+        },
+        {
+          "id": "talk_argue",
+          "maxUnitsPerSample": 55.30686059109663
+        },
+        {
+          "id": "talk_explain",
+          "maxUnitsPerSample": 49.02189502967412
+        },
+        {
+          "id": "throw_overarm",
+          "maxUnitsPerSample": 69.50735363232042
+        },
+        {
+          "id": "tie_hair",
+          "maxUnitsPerSample": 72.39806786877443
+        },
+        {
+          "id": "wave_bye",
+          "maxUnitsPerSample": 72.51183295200921
+        },
+        {
+          "id": "wave_hello",
+          "maxUnitsPerSample": 75.66242350822664
+        },
+        {
+          "id": "whisper_aside",
+          "maxUnitsPerSample": 43.62879546887092
+        },
+        {
+          "id": "wipe_sweat",
+          "maxUnitsPerSample": 59.94933029361679
+        },
+        {
+          "id": "wipe_tears",
+          "maxUnitsPerSample": 70.14078444311767
+        }
+      ]
+    },
+    {
+      "fps": 30,
+      "failed": 0,
+      "passed": 65,
+      "pelvisMax": 0,
+      "footMax": 0,
+      "centroidMax": 1.1975267043018383,
+      "failures": []
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": "facepalm",
+  "about": "right hand rises to the forehead in exasperation or disbelief, keeping face silhouette clear",
+  "group": "arms",
+  "seconds": 0.9,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    },
+    {
+      "u": 0.4,
+      "arms": {
+        "R": {
+          "elbow": [
+            23.9,
+            -18.2,
+            11.8
+          ],
+          "wrist": [
+            12,
+            4,
+            26
+          ],
+          "hand": [
+            9.5,
+            15.3,
+            29.8
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "R": {
+          "elbow": [
+            19.5,
+            5.5,
+            25.1
+          ],
+          "wrist": [
+            -4,
+            22,
+            22
+          ],
+          "hand": [
+            -10.6,
+            32.1,
+            23.8
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            19,
+            5.6,
+            25.4
+          ],
+          "wrist": [
+            -5,
+            21,
+            21
+          ],
+          "hand": [
+            -12.1,
+            30.8,
+            22.4
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    }
+  ]
+}

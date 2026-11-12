@@ -1,0 +1,542 @@
+{
+  "at": "2026-11-08T13:41:31.895Z",
+  "fps": 30,
+  "secondsPerGesture": 6,
+  "rigs": [
+    "full-body",
+    "waist-up"
+  ],
+  "profiles": [
+    "child",
+    "man",
+    "woman",
+    "elder"
+  ],
+  "count": 65,
+  "frames": 23400,
+  "ok": [
+    "adjust_dupatta_sari",
+    "ask_what_why",
+    "beckon",
+    "both_hands_up",
+    "carry_bag_strap",
+    "catch_both_hands",
+    "check_watch",
+    "chin_think",
+    "clap",
+    "count_fingers",
+    "count_tasbih",
+    "cover_ears",
+    "cover_mouth_shock",
+    "dismiss_wave",
+    "drink_cup",
+    "drink_tea_tong",
+    "eat_with_hand",
+    "eid_salam_chest",
+    "facepalm",
+    "fan_hand",
+    "fan_with_pakha",
+    "finger_wag",
+    "fist_pump",
+    "fix_glasses",
+    "hand_on_chest",
+    "hand_on_trackpad",
+    "hands_folded_qiyam",
+    "hands_to_cheeks",
+    "handshake_offer",
+    "hold_nose_smell",
+    "hold_umbrella",
+    "hug_open_arms",
+    "knock_door",
+    "look_at_phone",
+    "munajat",
+    "offer_give",
+    "phone_call",
+    "point_at",
+    "point_sky_high",
+    "pour_tea",
+    "push_door",
+    "raise_hand",
+    "read_book",
+    "receive_take",
+    "rub_hands",
+    "salam_adab",
+    "scratch_head",
+    "shake_fist",
+    "shh",
+    "stir_pot",
+    "stop_palm",
+    "takbir",
+    "take_photo",
+    "talk_argue",
+    "talk_explain",
+    "throw_overarm",
+    "thumbs_up",
+    "tie_hair",
+    "type_laptop",
+    "wave_bye",
+    "wave_hello",
+    "whisper_aside",
+    "wipe_sweat",
+    "wipe_tears",
+    "write_desk"
+  ],
+  "jumps": {},
+  "cases": [
+    {
+      "id": "adjust_dupatta_sari",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "ask_what_why",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "beckon",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "both_hands_up",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "carry_bag_strap",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "catch_both_hands",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "check_watch",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "chin_think",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "clap",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "count_fingers",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "count_tasbih",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "cover_ears",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "cover_mouth_shock",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "dismiss_wave",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "drink_cup",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "drink_tea_tong",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "eat_with_hand",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "eid_salam_chest",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "facepalm",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "fan_hand",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "fan_with_pakha",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "finger_wag",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "fist_pump",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "fix_glasses",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "hand_on_chest",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "hand_on_trackpad",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "hands_folded_qiyam",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "hands_to_cheeks",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "handshake_offer",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "hold_nose_smell",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "hold_umbrella",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "hug_open_arms",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "knock_door",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "look_at_phone",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "munajat",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "offer_give",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "phone_call",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "point_at",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "point_sky_high",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "pour_tea",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "push_door",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "raise_hand",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "read_book",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "receive_take",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "rub_hands",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "salam_adab",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "scratch_head",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "shake_fist",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "shh",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "stir_pot",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "stop_palm",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "takbir",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "take_photo",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "talk_argue",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "talk_explain",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "throw_overarm",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "thumbs_up",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "tie_hair",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "type_laptop",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "wave_bye",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "wave_hello",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "whisper_aside",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "wipe_sweat",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "wipe_tears",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    },
+    {
+      "id": "write_desk",
+      "ok": true,
+      "frames": 360,
+      "people": 8,
+      "faults": []
+    }
+  ]
+}

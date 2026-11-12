@@ -1,0 +1,118 @@
+{
+  "id": "wipe_tears",
+  "about": "right hand gently dabs and wipes tears away below the eyes",
+  "group": "arms",
+  "seconds": 1,
+  "loop": true,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            18,
+            1.4,
+            26.7
+          ],
+          "wrist": [
+            -6,
+            16,
+            20
+          ],
+          "hand": [
+            -13.9,
+            25.3,
+            21.1
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "relaxed"
+      ]
+    },
+    {
+      "u": 0.25,
+      "arms": {
+        "R": {
+          "elbow": [
+            23.6,
+            -3.2,
+            21.7
+          ],
+          "wrist": [
+            2,
+            16,
+            21
+          ],
+          "hand": [
+            -3.3,
+            26.7,
+            23.8
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "relaxed"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "R": {
+          "elbow": [
+            18.1,
+            0.6,
+            26.6
+          ],
+          "wrist": [
+            -6,
+            15,
+            20
+          ],
+          "hand": [
+            -13.9,
+            24.2,
+            21.1
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "relaxed"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "R": {
+          "elbow": [
+            21.9,
+            -4.8,
+            23.1
+          ],
+          "wrist": [
+            0,
+            14,
+            22
+          ],
+          "hand": [
+            -5.7,
+            24.4,
+            24.9
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "relaxed"
+      ]
+    }
+  ]
+}

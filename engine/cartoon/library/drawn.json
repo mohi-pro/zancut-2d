@@ -1,0 +1,1755 @@
+{
+ "about": "How tall each piece draws per unit of its h (seeds 1-3, real Chrome): top = drawn height / h (a set piece above its ground point; a prop overall), width = drawn width / h. Made by scripts/measure-pieces.mjs; do not edit.",
+ "pieces": {
+  "airportFront": {
+   "top": 1.01,
+   "below": 0.032,
+   "width": 2.052
+  },
+  "almirah": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "ambulance": {
+   "top": 1.04,
+   "below": 0.032,
+   "width": 1.645
+  },
+  "apartmentRow": {
+   "top": 0.907,
+   "below": 0.032,
+   "width": 1.839
+  },
+  "aquarium": {
+   "top": 0.91,
+   "below": 0.032,
+   "width": 1.49
+  },
+  "armchair": {
+   "top": 0.96,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "babyBottle": {
+   "top": 1.12,
+   "up": 0.66,
+   "width": 0.48
+  },
+  "badmintonRacket": {
+   "top": 1.2,
+   "up": 1,
+   "width": 0.48
+  },
+  "bakeryShelf": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.254
+  },
+  "balcony": {
+   "top": 0.73,
+   "below": 0.032,
+   "width": 1.703
+  },
+  "balloon": {
+   "top": 0.976,
+   "up": 0.976,
+   "width": 0.497
+  },
+  "bambooBridge": {
+   "top": 0.65,
+   "below": 0.032,
+   "width": 2.052
+  },
+  "bambooClump": {
+   "top": 0.999,
+   "below": 0.037,
+   "width": 1.128
+  },
+  "bambooFence": {
+   "top": 0.706,
+   "below": 0.056,
+   "width": 2.091
+  },
+  "bambooFlute": {
+   "top": 0.535,
+   "up": 0.268,
+   "width": 0.893
+  },
+  "bananaPlant": {
+   "top": 1.087,
+   "below": 0.032,
+   "width": 0.939
+  },
+  "bankFront": {
+   "top": 0.98,
+   "below": 0.032,
+   "width": 1.282
+  },
+  "banyanTree": {
+   "top": 1.072,
+   "below": 0.032,
+   "width": 1.05
+  },
+  "basketOnHead": {
+   "top": 0.77,
+   "up": 0.77,
+   "width": 1.749
+  },
+  "bathroomTap": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.011
+  },
+  "bazaarShed": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.38
+  },
+  "bed": {
+   "top": 1.4,
+   "below": 0.224,
+   "width": 6.16
+  },
+  "bedsideTable": {
+   "top": 0.95,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "bee": {
+   "top": 0.992,
+   "below": 0.005,
+   "width": 0.664
+  },
+  "bench": {
+   "top": 1.1,
+   "below": 0.102,
+   "width": 3.74
+  },
+  "bicycle": {
+   "top": 0.72,
+   "below": 0.032,
+   "width": 1.481
+  },
+  "billboard": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.471
+  },
+  "blackboard": {
+   "top": 1,
+   "below": -0.09,
+   "width": 1.51
+  },
+  "boat": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.71
+  },
+  "boatOar": {
+   "top": 1.16,
+   "up": 0.28,
+   "width": 0.28
+  },
+  "book": {
+   "top": 0.792,
+   "below": 0,
+   "width": 1.1
+  },
+  "bookHeld": {
+   "top": 1.05,
+   "up": 0.9,
+   "width": 0.666
+  },
+  "bookshelf": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "bookshelfFull": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "boundaryWall": {
+   "top": 0.79,
+   "below": 0.032,
+   "width": 2.236
+  },
+  "breadOrRuti": {
+   "top": 0.66,
+   "up": 0.6,
+   "width": 1.13
+  },
+  "brickKiln": {
+   "top": 1.38,
+   "below": 0.032,
+   "width": 1.181
+  },
+  "bridge": {
+   "top": 0.988,
+   "below": 0.032,
+   "width": 2.342
+  },
+  "broom": {
+   "top": 1.06,
+   "up": 0.18,
+   "width": 0.48
+  },
+  "bucket": {
+   "top": 0.98,
+   "up": 0.04,
+   "width": 0.73
+  },
+  "buffalo": {
+   "top": 0.903,
+   "below": 0.093,
+   "width": 1.54
+  },
+  "building": {
+   "top": 1,
+   "below": 0.019,
+   "width": 0.515
+  },
+  "bullockCart": {
+   "top": 0.69,
+   "below": 0.032,
+   "width": 1.713
+  },
+  "busStop": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.38
+  },
+  "busTerminal": {
+   "top": 1,
+   "below": 0.032,
+   "width": 2.195
+  },
+  "bush": {
+   "top": 0.889,
+   "below": 0.119,
+   "width": 2.018
+  },
+  "bushRow": {
+   "top": 0.856,
+   "below": 0.227,
+   "width": 2.207
+  },
+  "butterfly": {
+   "top": 0.923,
+   "below": -0.196,
+   "width": 0.762
+  },
+  "cactus": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "camel": {
+   "top": 0.926,
+   "below": 0.071,
+   "width": 1.114
+  },
+  "camera": {
+   "top": 0.7,
+   "up": 0.42,
+   "width": 1.214
+  },
+  "car": {
+   "top": 1,
+   "below": 0.089,
+   "width": 3.252
+  },
+  "cartonStack": {
+   "top": 1,
+   "below": 0.03,
+   "width": 1.324
+  },
+  "cat": {
+   "top": 0.965,
+   "below": 0.074,
+   "width": 1.192
+  },
+  "ceilingFan": {
+   "top": 0.936,
+   "hang": true,
+   "width": 0.73
+  },
+  "ceilingLamp": {
+   "top": 0.95,
+   "hang": true,
+   "width": 0.755
+  },
+  "ceilingProjector": {
+   "top": 0.56,
+   "hang": true,
+   "width": 0.794
+  },
+  "certificate": {
+   "top": 1,
+   "up": 0.9,
+   "width": 1.32
+  },
+  "chair": {
+   "top": 2.255,
+   "below": 0.047,
+   "width": 1.041
+  },
+  "chick": {
+   "top": 0.967,
+   "below": 0.14,
+   "width": 3.802
+  },
+  "chula": {
+   "top": 1.14,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "church": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.084
+  },
+  "cinemaHall": {
+   "top": 0.94,
+   "below": 0.032,
+   "width": 1.282
+  },
+  "cityPark": {
+   "top": 0.74,
+   "below": 0.032,
+   "width": 1.316
+  },
+  "classroomShelf": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "clayBank": {
+   "top": 0.86,
+   "up": 0.46,
+   "width": 0.72
+  },
+  "clayPots": {
+   "top": 0.746,
+   "below": 0.032,
+   "width": 1.51
+  },
+  "clinicFront": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.282
+  },
+  "clipboard": {
+   "top": 1.095,
+   "up": 0.975,
+   "width": 0.72
+  },
+  "clothesLine": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.279
+  },
+  "cloud": {
+   "top": 0.804,
+   "below": 0.22,
+   "width": 2.819
+  },
+  "cngAuto": {
+   "top": 0.94,
+   "below": 0.032,
+   "width": 1.19
+  },
+  "cobra": {
+   "top": 0.898,
+   "below": 0.06,
+   "width": 0.935
+  },
+  "coconutPalm": {
+   "top": 1.086,
+   "below": 0.032,
+   "width": 1.083
+  },
+  "coin": {
+   "top": 0.92,
+   "up": 0.88,
+   "width": 0.92
+  },
+  "collegeFront": {
+   "top": 0.98,
+   "below": 0.032,
+   "width": 1.974
+  },
+  "computerScreen": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.336
+  },
+  "constructionSite": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.8
+  },
+  "courtFront": {
+   "top": 0.98,
+   "below": 0.032,
+   "width": 1.282
+  },
+  "courtyard": {
+   "top": 0.72,
+   "below": 0.032,
+   "width": 2.323
+  },
+  "cow": {
+   "top": 0.966,
+   "below": 0.085,
+   "width": 1.405
+  },
+  "crab": {
+   "top": 0.695,
+   "below": 0.084,
+   "width": 1.37
+  },
+  "cricketBall": {
+   "top": 0.84,
+   "up": 0.42,
+   "width": 0.84
+  },
+  "cricketBat": {
+   "top": 1.03,
+   "up": 0.16,
+   "width": 0.18
+  },
+  "crocodile": {
+   "top": 0.651,
+   "below": 0.2,
+   "width": 3.185
+  },
+  "crow": {
+   "top": 0.752,
+   "below": 0.046,
+   "width": 1.101
+  },
+  "crowFlock": {
+   "top": 0.802,
+   "below": -0.256,
+   "width": 1.971
+  },
+  "cuckoo": {
+   "top": 0.798,
+   "below": -0.114,
+   "width": 1.062
+  },
+  "cup": {
+   "top": 1.08,
+   "below": 0,
+   "width": 0.976
+  },
+  "curtains": {
+   "top": 1,
+   "below": 0,
+   "width": 1.219
+  },
+  "cycleRickshaw": {
+   "top": 0.938,
+   "below": 0.032,
+   "width": 1.481
+  },
+  "deer": {
+   "top": 0.998,
+   "below": 0.068,
+   "width": 1.075
+  },
+  "diningTable": {
+   "top": 0.8,
+   "below": 0.032,
+   "width": 1.365
+  },
+  "doel": {
+   "top": 0.921,
+   "below": 0.046,
+   "width": 1.015
+  },
+  "doll": {
+   "top": 0.99,
+   "up": 0.51,
+   "width": 0.64
+  },
+  "dolphin": {
+   "top": 0.843,
+   "below": 0.17,
+   "width": 1.619
+  },
+  "door": {
+   "top": 1,
+   "below": 0,
+   "width": 0.619
+  },
+  "dragonfly": {
+   "top": 1.177,
+   "below": 0,
+   "width": 0.666
+  },
+  "drain": {
+   "top": 0.44,
+   "below": 0.032,
+   "width": 2.129
+  },
+  "dripStand": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.523
+  },
+  "duck": {
+   "top": 0.858,
+   "below": 0.056,
+   "width": 0.984
+  },
+  "dumbbellRack": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.6
+  },
+  "dustbin": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "egret": {
+   "top": 0.959,
+   "below": 0.039,
+   "width": 0.863
+  },
+  "ektara": {
+   "top": 1.06,
+   "up": 0.42,
+   "width": 0.38
+  },
+  "elephant": {
+   "top": 0.954,
+   "below": 0.081,
+   "width": 1.34
+  },
+  "embankment": {
+   "top": 0.8,
+   "below": 0.032,
+   "width": 2.323
+  },
+  "examPaper": {
+   "top": 1.04,
+   "up": 0.94,
+   "width": 0.749
+  },
+  "fence": {
+   "top": 1.04,
+   "below": 0,
+   "width": 5
+  },
+  "fireTruck": {
+   "top": 0.96,
+   "below": 0.032,
+   "width": 2.226
+  },
+  "fireflies": {
+   "top": 0.985,
+   "below": -0.208,
+   "width": 1.115
+  },
+  "fishInPond": {
+   "top": 0.921,
+   "below": 0.1,
+   "width": 1.223
+  },
+  "fishTrap": {
+   "top": 1.01,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "fishTray": {
+   "top": 0.371,
+   "below": 0.032,
+   "width": 1.355
+  },
+  "fishingNet": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "fishingNetHeld": {
+   "top": 1.02,
+   "up": 0.14,
+   "width": 0.78
+  },
+  "fishingRod": {
+   "top": 0.97,
+   "up": 0.79,
+   "width": 0.613
+  },
+  "flag": {
+   "top": 1.075,
+   "up": 0.815,
+   "width": 0.715
+  },
+  "flockOfBirds": {
+   "top": 0.923,
+   "below": -0.054,
+   "width": 0.919
+  },
+  "flowerBed": {
+   "top": 0.789,
+   "below": 0.032,
+   "width": 1.51
+  },
+  "flowerBouquet": {
+   "top": 1.07,
+   "up": 0.75,
+   "width": 0.84
+  },
+  "fog": {
+   "top": 0.9,
+   "below": -0.02,
+   "width": 2.285
+  },
+  "footBridge": {
+   "top": 0.86,
+   "below": 0.032,
+   "width": 3.068
+  },
+  "football": {
+   "top": 0.88,
+   "up": 0.5,
+   "width": 0.88
+  },
+  "footpath": {
+   "top": 0.65,
+   "below": 0.032,
+   "width": 2.323
+  },
+  "fridge": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "frog": {
+   "top": 0.422,
+   "below": 0.15,
+   "width": 1.719
+  },
+  "fruit": {
+   "top": 0.983,
+   "up": 0.512,
+   "width": 0.593
+  },
+  "fruitPile": {
+   "top": 0.64,
+   "below": 0.032,
+   "width": 1.161
+  },
+  "garmentFactory": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.949
+  },
+  "gasStove": {
+   "top": 0.7,
+   "below": 0.032,
+   "width": 1.2
+  },
+  "gate": {
+   "top": 1.07,
+   "below": 0.032,
+   "width": 1.616
+  },
+  "giftBox": {
+   "top": 0.99,
+   "up": 0.63,
+   "width": 0.92
+  },
+  "glasses": {
+   "top": 0.68,
+   "up": 0.54,
+   "width": 1.748
+  },
+  "goat": {
+   "top": 0.948,
+   "below": 0.07,
+   "width": 1.146
+  },
+  "grassTuft": {
+   "top": 0.956,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "guitar": {
+   "top": 1.306,
+   "up": 0.459,
+   "width": 1.074
+  },
+  "hammer": {
+   "top": 1.01,
+   "up": 0.77,
+   "width": 0.62
+  },
+  "handFan": {
+   "top": 1.08,
+   "up": 0.82,
+   "width": 0.68
+  },
+  "harmonium": {
+   "top": 0.77,
+   "up": 0.44,
+   "width": 1.48
+  },
+  "helicopter": {
+   "top": 0.94,
+   "below": -0.07,
+   "width": 2.003
+  },
+  "hen": {
+   "top": 0.905,
+   "below": 0.046,
+   "width": 0.996
+  },
+  "hill": {
+   "top": 0.877,
+   "below": 0,
+   "width": 6
+  },
+  "hillRange": {
+   "top": 0.75,
+   "below": 0.032,
+   "width": 3.194
+  },
+  "hoe": {
+   "top": 1,
+   "up": 0.24,
+   "width": 0.485
+  },
+  "horse": {
+   "top": 1.031,
+   "below": 0.079,
+   "width": 1.256
+  },
+  "hospitalBed": {
+   "top": 0.79,
+   "below": 0.032,
+   "width": 1.549
+  },
+  "hospitalFront": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.282
+  },
+  "hotelFront": {
+   "top": 0.94,
+   "below": 0.032,
+   "width": 1.282
+  },
+  "house": {
+   "top": 0.96,
+   "below": 0.073,
+   "width": 1.197
+  },
+  "idCard": {
+   "top": 1.37,
+   "up": 0.95,
+   "width": 0.68
+  },
+  "jackal": {
+   "top": 0.908,
+   "below": 0.079,
+   "width": 1.445
+  },
+  "jackfruitTree": {
+   "top": 1.072,
+   "below": 0.032,
+   "width": 1.05
+  },
+  "jars": {
+   "top": 1.08,
+   "below": 0.29,
+   "width": 2.432
+  },
+  "jetty": {
+   "top": 0.75,
+   "below": 0.032,
+   "width": 1.742
+  },
+  "kettle": {
+   "top": 1.01,
+   "below": 0,
+   "width": 1.24
+  },
+  "kettleHeld": {
+   "top": 1.02,
+   "up": 0.16,
+   "width": 1.174
+  },
+  "key": {
+   "top": 1.08,
+   "up": 0.22,
+   "width": 0.37
+  },
+  "kingfisher": {
+   "top": 0.824,
+   "below": -0.1,
+   "width": 1.185
+  },
+  "kitchenShelf": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "kitchenSink": {
+   "top": 1.008,
+   "below": 0.032,
+   "width": 1.316
+  },
+  "kite": {
+   "top": 1.086,
+   "up": 0.906,
+   "width": 0.69
+  },
+  "kolshi": {
+   "top": 1.005,
+   "up": 0.445,
+   "width": 0.84
+  },
+  "krishnachura": {
+   "top": 1.072,
+   "below": 0.032,
+   "width": 1.05
+  },
+  "kutchaRoad": {
+   "top": 1,
+   "below": 0.032,
+   "width": 2.323
+  },
+  "labBench": {
+   "top": 0.96,
+   "below": 0.032,
+   "width": 1.219
+  },
+  "lamp": {
+   "top": 1.071,
+   "below": 0,
+   "width": 0.222
+  },
+  "lantern": {
+   "top": 0.927,
+   "up": -0.02,
+   "width": 0.806
+  },
+  "laptop": {
+   "top": 1,
+   "below": 0,
+   "width": 1.5
+  },
+  "laptopHeld": {
+   "top": 0.84,
+   "up": 0.76,
+   "width": 1.25
+  },
+  "laptopSide": {
+   "top": 1,
+   "below": 0.018,
+   "width": 1.392
+  },
+  "launch": {
+   "top": 0.931,
+   "below": 0.032,
+   "width": 2.136
+  },
+  "leguna": {
+   "top": 0.94,
+   "below": 0.032,
+   "width": 1.645
+  },
+  "letter": {
+   "top": 0.94,
+   "up": 0.92,
+   "width": 1.42
+  },
+  "lift": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "lightning": {
+   "top": 1,
+   "below": 0,
+   "width": 0.619
+  },
+  "lion": {
+   "top": 0.853,
+   "below": 0.087,
+   "width": 1.502
+  },
+  "localBus": {
+   "top": 0.94,
+   "below": 0.032,
+   "width": 2.226
+  },
+  "logPile": {
+   "top": 0.76,
+   "below": 0.032,
+   "width": 1.297
+  },
+  "mangoTree": {
+   "top": 1.072,
+   "below": 0.032,
+   "width": 1.05
+  },
+  "mangroveForest": {
+   "top": 0.947,
+   "below": 0.032,
+   "width": 2.207
+  },
+  "marbles": {
+   "top": 0.57,
+   "up": 0.54,
+   "width": 1.13
+  },
+  "marketStreet": {
+   "top": 0.75,
+   "below": 0.032,
+   "width": 2.062
+  },
+  "medal": {
+   "top": 0.898,
+   "up": 0.009,
+   "width": 0.44
+  },
+  "medicineStrip": {
+   "top": 1,
+   "up": 0.92,
+   "width": 0.68
+  },
+  "meetingTable": {
+   "top": 1,
+   "below": 0.04,
+   "width": 3.2
+  },
+  "megaphone": {
+   "top": 0.74,
+   "up": 0.62,
+   "width": 1.14
+  },
+  "metalRack": {
+   "top": 1,
+   "below": 0.03,
+   "width": 1.257
+  },
+  "metroCoach": {
+   "top": 0.9,
+   "below": 0.032,
+   "width": 2.584
+  },
+  "metroPillar": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "microbus": {
+   "top": 0.94,
+   "below": 0.032,
+   "width": 1.645
+  },
+  "microphone": {
+   "top": 0.96,
+   "up": 0.6,
+   "width": 0.32
+  },
+  "mirror": {
+   "top": 1,
+   "below": -0.04,
+   "width": 0.716
+  },
+  "mobilePhone": {
+   "top": 1,
+   "up": 0.5,
+   "width": 0.52
+  },
+  "monkey": {
+   "top": 0.826,
+   "below": 0.056,
+   "width": 0.88
+  },
+  "mosqueMinaret": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.31
+  },
+  "mosquitoNet": {
+   "top": 1.02,
+   "below": 0.032,
+   "width": 1.587
+  },
+  "motorbike": {
+   "top": 0.72,
+   "below": 0.032,
+   "width": 1.481
+  },
+  "mountainRange": {
+   "top": 0.79,
+   "below": 0.032,
+   "width": 3.146
+  },
+  "mudHouse": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.608
+  },
+  "mudPath": {
+   "top": 1,
+   "below": 0.032,
+   "width": 2.323
+  },
+  "mudirDokan": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.38
+  },
+  "mustardField": {
+   "top": 0.95,
+   "below": 0.032,
+   "width": 2.129
+  },
+  "myna": {
+   "top": 0.763,
+   "below": 0.046,
+   "width": 0.974
+  },
+  "newspaper": {
+   "top": 0.98,
+   "up": 0.9,
+   "width": 0.88
+  },
+  "notebook": {
+   "top": 1.02,
+   "up": 0.9,
+   "width": 0.774
+  },
+  "noticeBoard": {
+   "top": 1,
+   "below": 0,
+   "width": 1.5
+  },
+  "officeDesk": {
+   "top": 0.99,
+   "below": 0.032,
+   "width": 1.219
+  },
+  "officeTower": {
+   "top": 0.94,
+   "below": 0.032,
+   "width": 1.282
+  },
+  "owl": {
+   "top": 0.954,
+   "below": -0.115,
+   "width": 0.76
+  },
+  "paddyField": {
+   "top": 0.95,
+   "below": 0.032,
+   "width": 2.129
+  },
+  "paddyStack": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.026
+  },
+  "paintBrush": {
+   "top": 0.92,
+   "up": 0.66,
+   "width": 0.32
+  },
+  "palm": {
+   "top": 0.972,
+   "below": 0.021,
+   "width": 0.672
+  },
+  "paper": {
+   "top": 1,
+   "below": 0,
+   "width": 1.1
+  },
+  "parrot": {
+   "top": 0.843,
+   "below": -0.048,
+   "width": 0.951
+  },
+  "peacock": {
+   "top": 0.928,
+   "below": 0.06,
+   "width": 1.031
+  },
+  "pen": {
+   "top": 0.988,
+   "up": 0.704,
+   "width": 0.601
+  },
+  "pencil": {
+   "top": 0.981,
+   "up": 0.711,
+   "width": 0.582
+  },
+  "petrolPump": {
+   "top": 0.97,
+   "below": 0.032,
+   "width": 1.645
+  },
+  "pharmacyFront": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.282
+  },
+  "phone": {
+   "top": 1,
+   "below": 0,
+   "width": 0.5
+  },
+  "photoFrame": {
+   "top": 1,
+   "below": -0.13,
+   "width": 1.065
+  },
+  "pickupVan": {
+   "top": 0.86,
+   "below": 0.032,
+   "width": 1.645
+  },
+  "pigeon": {
+   "top": 0.762,
+   "below": 0.046,
+   "width": 0.981
+  },
+  "pineTree": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "placard": {
+   "top": 1.2,
+   "up": 0.88,
+   "width": 0.84
+  },
+  "plane": {
+   "top": 0.99,
+   "below": -0.03,
+   "width": 2.168
+  },
+  "plant": {
+   "top": 0.916,
+   "below": 0.04,
+   "width": 0.822
+  },
+  "plateOfRice": {
+   "top": 0.7,
+   "up": 0.68,
+   "width": 2.128
+  },
+  "playgroundSlide": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.181
+  },
+  "podium": {
+   "top": 1.003,
+   "below": 0.03,
+   "width": 0.836
+  },
+  "pole": {
+   "top": 1,
+   "below": 0,
+   "width": 16
+  },
+  "policeCar": {
+   "top": 0.86,
+   "below": 0.032,
+   "width": 1.752
+  },
+  "policeStation": {
+   "top": 0.94,
+   "below": 0.032,
+   "width": 1.282
+  },
+  "pond": {
+   "top": 0.64,
+   "below": 0.032,
+   "width": 1.955
+  },
+  "prayerCap": {
+   "top": 0.68,
+   "up": 0.66,
+   "width": 1.48
+  },
+  "prayerMat": {
+   "top": 1,
+   "below": 0.05,
+   "width": 0.958
+  },
+  "pressureCooker": {
+   "top": 1.37,
+   "below": 0.032,
+   "width": 1.045
+  },
+  "privateCar": {
+   "top": 0.77,
+   "below": 0.032,
+   "width": 1.752
+  },
+  "publicToilet": {
+   "top": 0.94,
+   "below": 0.032,
+   "width": 1.282
+  },
+  "rabbit": {
+   "top": 0.841,
+   "below": 0.056,
+   "width": 0.88
+  },
+  "rackOfClothes": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.355
+  },
+  "railStation": {
+   "top": 1,
+   "below": 0.032,
+   "width": 2.276
+  },
+  "railTrack": {
+   "top": 0.7,
+   "below": 0.032,
+   "width": 2.323
+  },
+  "rainbow": {
+   "top": 1,
+   "below": 0,
+   "width": 1.936
+  },
+  "rainfall": {
+   "top": 0.969,
+   "below": 0.071,
+   "width": 2.232
+  },
+  "remote": {
+   "top": 1,
+   "up": 0.58,
+   "width": 0.46
+  },
+  "reportCard": {
+   "top": 1,
+   "up": 1,
+   "width": 0.72
+  },
+  "restaurantFront": {
+   "top": 0.94,
+   "below": 0.032,
+   "width": 1.282
+  },
+  "restaurantTable": {
+   "top": 0.8,
+   "below": 0.032,
+   "width": 1.365
+  },
+  "riceMill": {
+   "top": 1,
+   "below": 0.04,
+   "width": 1.594
+  },
+  "riceSacks": {
+   "top": 0.838,
+   "below": 0.032,
+   "width": 1.421
+  },
+  "rickshaw": {
+   "top": 0.916,
+   "below": 0.044,
+   "width": 1.595
+  },
+  "rickshawVan": {
+   "top": 0.7,
+   "below": 0.032,
+   "width": 1.49
+  },
+  "river": {
+   "top": 0.85,
+   "below": 0.032,
+   "width": 2.516
+  },
+  "roadDivider": {
+   "top": 0.62,
+   "below": 0.032,
+   "width": 2.1
+  },
+  "rock": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "royalBengalTiger": {
+   "top": 0.834,
+   "below": 0.095,
+   "width": 1.702
+  },
+  "rug": {
+   "top": 0.5,
+   "below": 0.5,
+   "width": 5.2
+  },
+  "salonChair": {
+   "top": 1,
+   "below": 0.03,
+   "width": 1.064
+  },
+  "sandDune": {
+   "top": 0.911,
+   "below": 0.032,
+   "width": 2.323
+  },
+  "schoolBagHeld": {
+   "top": 0.975,
+   "up": 0.015,
+   "width": 0.799
+  },
+  "schoolDesk": {
+   "top": 0.61,
+   "below": 0.032,
+   "width": 1.219
+  },
+  "schoolFront": {
+   "top": 0.98,
+   "below": 0.032,
+   "width": 1.974
+  },
+  "schoolTin": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.594
+  },
+  "seaWaves": {
+   "top": 0.85,
+   "below": 0.032,
+   "width": 2.516
+  },
+  "sheep": {
+   "top": 0.846,
+   "below": 0.07,
+   "width": 1.138
+  },
+  "shelf": {
+   "top": 1.012,
+   "below": 0.144,
+   "width": 3.96
+  },
+  "ship": {
+   "top": 1.001,
+   "below": 0.032,
+   "width": 2.136
+  },
+  "shop": {
+   "top": 1,
+   "below": 0.042,
+   "width": 1.168
+  },
+  "shopCounter": {
+   "top": 0.96,
+   "below": 0.032,
+   "width": 1.2
+  },
+  "shoppingBag": {
+   "top": 0.93,
+   "up": -0.01,
+   "width": 0.72
+  },
+  "shoppingMall": {
+   "top": 0.94,
+   "below": 0.032,
+   "width": 1.282
+  },
+  "showcase": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "shower": {
+   "top": 1,
+   "below": 0,
+   "width": 0.677
+  },
+  "shrine": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.045
+  },
+  "shuttlecock": {
+   "top": 0.95,
+   "up": 0.82,
+   "width": 0.88
+  },
+  "sickle": {
+   "top": 0.876,
+   "up": 0.656,
+   "width": 0.495
+  },
+  "sign": {
+   "top": 1,
+   "below": 0,
+   "width": 3.4
+  },
+  "skyscraper": {
+   "top": 0.884,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "sofa": {
+   "top": 1,
+   "below": 0.208,
+   "width": 5.72
+  },
+  "sofaSet": {
+   "top": 0.82,
+   "below": 0.032,
+   "width": 1.51
+  },
+  "solarPanel": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.336
+  },
+  "spade": {
+   "top": 1.02,
+   "up": 0.1,
+   "width": 0.32
+  },
+  "sparrow": {
+   "top": 0.824,
+   "below": 0.046,
+   "width": 0.999
+  },
+  "splitAC": {
+   "top": 0.95,
+   "below": -0.01,
+   "width": 1.587
+  },
+  "squirrel": {
+   "top": 0.928,
+   "below": 0.053,
+   "width": 0.92
+  },
+  "stadium": {
+   "top": 1,
+   "below": 0.065,
+   "width": 2.168
+  },
+  "staircase": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.936
+  },
+  "stars": {
+   "top": 0.989,
+   "below": -0.062,
+   "width": 2.093
+  },
+  "stethoscope": {
+   "top": 0.88,
+   "up": 0,
+   "width": 0.49
+  },
+  "strawStack": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.026
+  },
+  "streetDog": {
+   "top": 0.955,
+   "below": 0.079,
+   "width": 1.318
+  },
+  "streetLamp": {
+   "top": 1.01,
+   "below": 0.032,
+   "width": 0.486
+  },
+  "streetVendor": {
+   "top": 0.7,
+   "below": 0.032,
+   "width": 1.49
+  },
+  "suitcase": {
+   "top": 0.85,
+   "up": 0.03,
+   "width": 1.18
+  },
+  "sweetBox": {
+   "top": 0.71,
+   "up": 0.71,
+   "width": 1.508
+  },
+  "swingSet": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.742
+  },
+  "syringe": {
+   "top": 1.206,
+   "up": 0.639,
+   "width": 0.761
+  },
+  "table": {
+   "top": 1.7,
+   "below": 0.184,
+   "width": 5.06
+  },
+  "takaNotes": {
+   "top": 0.898,
+   "up": 0.704,
+   "width": 1.157
+  },
+  "tasbih": {
+   "top": 0.931,
+   "up": 0.024,
+   "width": 0.429
+  },
+  "teaCart": {
+   "top": 1.16,
+   "below": 0.032,
+   "width": 1.2
+  },
+  "teaCup": {
+   "top": 1.3,
+   "up": 0.84,
+   "width": 1.355
+  },
+  "teaGardenRows": {
+   "top": 0.85,
+   "below": 0.032,
+   "width": 2.129
+  },
+  "teaGlass": {
+   "top": 1.42,
+   "up": 0.94,
+   "width": 0.6
+  },
+  "teaStall": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.38
+  },
+  "teacherTable": {
+   "top": 0.58,
+   "below": 0.032,
+   "width": 1.219
+  },
+  "temple": {
+   "top": 0.99,
+   "below": 0.032,
+   "width": 1.045
+  },
+  "thermometer": {
+   "top": 0.901,
+   "up": 0.52,
+   "width": 0.601
+  },
+  "ticket": {
+   "top": 0.9,
+   "up": 0.88,
+   "width": 1.85
+  },
+  "tiffinCarrier": {
+   "top": 0.97,
+   "up": 0.04,
+   "width": 0.67
+  },
+  "tinHouse": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.594
+  },
+  "toilet": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "toolBox": {
+   "top": 0.75,
+   "up": 0.03,
+   "width": 1.404
+  },
+  "torch": {
+   "top": 1.12,
+   "up": 0.56,
+   "width": 1.93
+  },
+  "tower": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "toyCar": {
+   "top": 0.75,
+   "up": 0.38,
+   "width": 1.488
+  },
+  "trafficLight": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.271
+  },
+  "trainCoach": {
+   "top": 0.9,
+   "below": 0.032,
+   "width": 2.584
+  },
+  "tree": {
+   "top": 1.084,
+   "below": 0.044,
+   "width": 0.797
+  },
+  "trophy": {
+   "top": 1,
+   "up": 0.68,
+   "width": 0.795
+  },
+  "truck": {
+   "top": 0.86,
+   "below": 0.032,
+   "width": 2.226
+  },
+  "tubeLight": {
+   "top": 0.61,
+   "below": -0.33,
+   "width": 1.742
+  },
+  "tubewell": {
+   "top": 0.95,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "turtle": {
+   "top": 0.565,
+   "below": 0.098,
+   "width": 1.731
+  },
+  "tvStand": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.258
+  },
+  "umbrella": {
+   "top": 1,
+   "up": 0.785,
+   "width": 1.08
+  },
+  "universityCampus": {
+   "top": 0.98,
+   "below": 0.032,
+   "width": 2.594
+  },
+  "utilityPole": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.936
+  },
+  "vegetableBasket": {
+   "top": 0.701,
+   "below": 0.032,
+   "width": 1.065
+  },
+  "villageMosque": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.045
+  },
+  "walkingStick": {
+   "top": 1.011,
+   "up": 0.131,
+   "width": 0.194
+  },
+  "wallCalendar": {
+   "top": 1.04,
+   "below": -0.01,
+   "width": 0.697
+  },
+  "wallClock": {
+   "top": 0.99,
+   "below": -0.01,
+   "width": 0.948
+  },
+  "wallSwitchboard": {
+   "top": 0.75,
+   "below": -0.22,
+   "width": 1.142
+  },
+  "walletHeld": {
+   "top": 0.92,
+   "up": 0.52,
+   "width": 1.2
+  },
+  "washBasin": {
+   "top": 1.009,
+   "below": 0.032,
+   "width": 0.968
+  },
+  "washingMachine": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "waterFilter": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "waterGlass": {
+   "top": 1.015,
+   "up": 0.535,
+   "width": 0.64
+  },
+  "waterJug": {
+   "top": 1,
+   "up": 0.5,
+   "width": 0.92
+  },
+  "waterTank": {
+   "top": 1,
+   "below": 0.032,
+   "width": 0.958
+  },
+  "waterfall": {
+   "top": 1,
+   "below": 0.032,
+   "width": 1.346
+  },
+  "weightBench": {
+   "top": 1.04,
+   "below": 0.034,
+   "width": 2.09
+  },
+  "wheelchairRamp": {
+   "top": 0.73,
+   "below": 0.04,
+   "width": 1.936
+  },
+  "whiteboard": {
+   "top": 1,
+   "below": -0.05,
+   "width": 1.7
+  },
+  "window": {
+   "top": 1,
+   "below": 0,
+   "width": 1.045
+  },
+  "zebraCrossing": {
+   "top": 0.85,
+   "below": 0.032,
+   "width": 2.323
+  }
+ }
+}

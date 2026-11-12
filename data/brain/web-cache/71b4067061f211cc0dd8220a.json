@@ -1,0 +1,16 @@
+{
+ "url": "https://api.iconify.design/search?query=dolphin%20in%20water&prefixes=fluent-emoji-flat,noto,twemoji,openmoji&limit=32",
+ "at": "2026-11-08T20:53:43.479Z",
+ "body": {
+  "icons": [],
+  "total": 0,
+  "limit": 32,
+  "start": 0,
+  "collections": {},
+  "request": {
+   "query": "dolphin in water",
+   "prefixes": "fluent-emoji-flat,noto,twemoji,openmoji",
+   "limit": "32"
+  }
+ }
+}

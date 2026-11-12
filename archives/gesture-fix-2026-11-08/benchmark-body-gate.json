@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "frames": 2838,
+  "people": 27,
+  "faults": [],
+  "lines": [],
+  "notes": [
+    "A1 actor8: both or one arm held straight out in front (\"stand\") from 10.17 to 14.17 s, the robot-arm look. Holding something: elbows at the sides, forearms in toward the belly (ZC.hold()); reaching or giving: use an action that reaches, then bring the arm back to rest.",
+    "A1 actor11: both or one arm held straight out in front (\"stand\") from 14.70 to 15.33 s, the robot-arm look. Holding something: elbows at the sides, forearms in toward the belly (ZC.hold()); reaching or giving: use an action that reaches, then bring the arm back to rest.",
+    "A1 actor10: both or one arm held straight out in front (\"stand\") from 14.80 to 16.13 s, the robot-arm look. Holding something: elbows at the sides, forearms in toward the belly (ZC.hold()); reaching or giving: use an action that reaches, then bring the arm back to rest.",
+    "A1 actor15: both or one arm held straight out in front (\"stand\") from 21.60 to 22.93 s, the robot-arm look. Holding something: elbows at the sides, forearms in toward the belly (ZC.hold()); reaching or giving: use an action that reaches, then bring the arm back to rest.",
+    "A1 actor17: both or one arm held straight out in front (\"stand\") from 26.67 to 27.97 s, the robot-arm look. Holding something: elbows at the sides, forearms in toward the belly (ZC.hold()); reaching or giving: use an action that reaches, then bring the arm back to rest.",
+    "A1 actor25: both or one arm held straight out in front (\"stand\") from 42.53 to 45.57 s, the robot-arm look. Holding something: elbows at the sides, forearms in toward the belly (ZC.hold()); reaching or giving: use an action that reaches, then bring the arm back to rest.",
+    "A1 actor26: both or one arm held straight out in front (\"stand\") from 43.77 to 45.10 s, the robot-arm look. Holding something: elbows at the sides, forearms in toward the belly (ZC.hold()); reaching or giving: use an action that reaches, then bring the arm back to rest.",
+    "A1 actor36: both or one arm held straight out in front (\"stand\") from 64.60 to 65.93 s, the robot-arm look. Holding something: elbows at the sides, forearms in toward the belly (ZC.hold()); reaching or giving: use an action that reaches, then bring the arm back to rest."
+  ]
+}

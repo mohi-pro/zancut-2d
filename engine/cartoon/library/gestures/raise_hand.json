@@ -1,0 +1,92 @@
+{
+  "id": "raise_hand",
+  "about": "the right hand comes up beside the head, palm open, as a pupil asks to speak",
+  "group": "arms",
+  "seconds": 0.7,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "R": {
+          "elbow": [
+            20.4,
+            -24.6,
+            -3.9
+          ],
+          "wrist": [
+            22,
+            -12,
+            22
+          ],
+          "hand": [
+            22.3,
+            -2.4,
+            29.5
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            29.4,
+            -7.5,
+            10.7
+          ],
+          "wrist": [
+            26,
+            21,
+            14
+          ],
+          "hand": [
+            27.2,
+            32.9,
+            16.4
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    }
+  ]
+}

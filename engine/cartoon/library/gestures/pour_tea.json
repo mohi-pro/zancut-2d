@@ -1,0 +1,117 @@
+{
+  "id": "pour_tea",
+  "about": "right hand lifts a kettle and tilts the wrist forward to pour tea down into a cup",
+  "group": "arms",
+  "seconds": 1.4,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            20.5,
+            -24.8,
+            1.5
+          ],
+          "wrist": [
+            10,
+            -20,
+            28
+          ],
+          "hand": [
+            10,
+            -18.8,
+            40.1
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "grip"
+      ]
+    },
+    {
+      "u": 0.35,
+      "arms": {
+        "R": {
+          "elbow": [
+            21.2,
+            -19.8,
+            14
+          ],
+          "wrist": [
+            4,
+            -8,
+            34
+          ],
+          "hand": [
+            -1.7,
+            -7.8,
+            44.8
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "grip"
+      ]
+    },
+    {
+      "u": 0.7,
+      "arms": {
+        "R": {
+          "elbow": [
+            20.9,
+            -18,
+            16.7
+          ],
+          "wrist": [
+            2,
+            -6,
+            35
+          ],
+          "hand": [
+            -5.3,
+            -6,
+            44.8
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "grip"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            20.5,
+            -24.8,
+            1.5
+          ],
+          "wrist": [
+            10,
+            -20,
+            28
+          ],
+          "hand": [
+            10,
+            -18.8,
+            40.1
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "grip"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+ "url": "https://api.iconify.design/search?query=flowering&prefixes=fluent-emoji-flat,noto,twemoji,openmoji&limit=32",
+ "at": "2026-11-08T17:03:35.738Z",
+ "body": {
+  "icons": [],
+  "total": 0,
+  "limit": 32,
+  "start": 0,
+  "collections": {},
+  "request": {
+   "query": "flowering",
+   "prefixes": "fluent-emoji-flat,noto,twemoji,openmoji",
+   "limit": "32"
+  }
+ }
+}

@@ -1,0 +1,67 @@
+{
+  "about": "One design context per video: palette + theme + type + motion + format + density. engine/library/design.mjs resolves it into the --zk-* CSS variables every template and ZK block reads. Scenes never pick their own colours or fonts.",
+  "default": { "palette": "zancut", "theme": "dark", "type": "clean", "motion": "standard", "format": "9:16", "density": "balanced" },
+
+  "palettes": {
+    "royal":    { "label": "Royal blue",     "accent": "#2563EB", "accent2": "#FACC15", "darkBg": "#090D16", "lightBg": "#EAF2FF", "hue": "cool" },
+    "cobalt":   { "label": "Cobalt",         "accent": "#0866FF", "accent2": "#6D28D9", "darkBg": "#0E0E11", "lightBg": "#ECECEC", "hue": "cool" },
+    "zancut":   { "label": "Zancut cyan",    "accent": "#1FB6F5", "accent2": "#7B4DFF", "darkBg": "#060A18", "lightBg": "#F5F8FC", "hue": "cool" },
+    "violet":   { "label": "Violet glow",    "accent": "#8B5CF6", "accent2": "#EC4899", "darkBg": "#0B0717", "lightBg": "#F7F5FF", "hue": "cool" },
+    "sunset":   { "label": "Sunset",         "accent": "#FF6B35", "accent2": "#FFC233", "darkBg": "#120A07", "lightBg": "#FFF8F1", "hue": "warm" },
+    "paper":    { "label": "Warm paper",     "accent": "#F5C518", "accent2": "#E8553D", "darkBg": "#1A1714", "lightBg": "#F4EEE3", "hue": "warm" },
+    "mint":     { "label": "Mint tech",      "accent": "#2EE6A6", "accent2": "#22C3FF", "darkBg": "#05110E", "lightBg": "#F2FBF7", "hue": "cool" },
+    "mono":     { "label": "Mono + red",     "accent": "#FF3B3B", "accent2": "#FFFFFF", "darkBg": "#0A0A0A", "lightBg": "#F6F6F4", "hue": "neutral" },
+    "electric": { "label": "Electric blue",  "accent": "#2F6BFF", "accent2": "#C6FF3D", "darkBg": "#050816", "lightBg": "#F3F6FF", "hue": "cool" }
+  },
+
+  "themes": {
+    "dark":  { "bg": "palette.darkBg", "surface": "rgba(255,255,255,.06)", "surfaceStrong": "rgba(18,26,52,.92)", "ink": "#F4F7FF", "mute": "#9FB0D6", "line": "rgba(150,190,255,.30)", "gridline": "rgba(140,175,255,.08)", "on": "#061026", "shadow": "0 24px 60px rgba(0,0,0,.45)" },
+    "light": { "bg": "palette.lightBg", "surface": "rgba(10,20,40,.04)", "surfaceStrong": "rgba(255,255,255,.96)", "ink": "#0B1220", "mute": "#4A5878", "line": "rgba(20,40,90,.18)", "gridline": "rgba(20,40,90,.06)", "on": "#FFFFFF", "shadow": "0 20px 50px rgba(20,30,60,.16)" }
+  },
+  "semantic": { "good": "#22C55E", "bad": "#FF4D5E", "warn": "#FFB020", "note": "Only for meaning (right/wrong/warning), never decoration. Always pair with an icon or word, not colour alone." },
+
+  "type": {
+    "clean":     { "label": "Clean",     "display": "Inter",            "body": "Inter",         "weightDisplay": 800, "tracking": "-0.02em" },
+    "bold":      { "label": "Bold hook", "display": "Anton",            "body": "Inter",         "weightDisplay": 400, "tracking": "0" },
+    "friendly":  { "label": "Friendly",  "display": "Poppins",          "body": "Poppins",       "weightDisplay": 700, "tracking": "-0.01em" },
+    "editorial": { "label": "Editorial", "display": "Playfair Display", "body": "DM Sans",       "weightDisplay": 400, "tracking": "0" },
+    "tech":      { "label": "Tech",      "display": "Space Grotesk",    "body": "Space Grotesk", "weightDisplay": 700, "tracking": "-0.02em" },
+    "condensed": { "label": "Condensed", "display": "Bebas Neue",       "body": "Montserrat",    "weightDisplay": 400, "tracking": "0.01em" }
+  },
+  "hand": "Permanent Marker",
+  "scripts": { "bengali": "Hind Siliguri", "rule": "Text in Bengali script always uses Hind Siliguri for display and body; keep the Latin profile for English words." },
+  "fontFiles": "engine/reel/engine/fonts (OFL, bundled)",
+
+  "motion": {
+    "calm":     { "enter": 0.5,  "exit": 0.3,  "stagger": 0.12, "ease": "power2.out", "punch": 1.04, "hold": 1.2 },
+    "standard": { "enter": 0.35, "exit": 0.22, "stagger": 0.08, "ease": "power3.out", "punch": 1.08, "hold": 0.9 },
+    "punchy":   { "enter": 0.22, "exit": 0.16, "stagger": 0.05, "ease": "back.out(1.8)", "punch": 1.14, "hold": 0.6 }
+  },
+
+  "formats": {
+    "9:16": { "w": 1080, "h": 1920, "safe": { "top": 220, "bottom": 360, "side": 72 }, "captionY": [0.70, 0.80], "note": "top band = platform UI; bottom band = captions + buttons" },
+    "16:9": { "w": 1920, "h": 1080, "safe": { "top": 64,  "bottom": 120, "side": 96 }, "captionY": [0.82, 0.90] },
+    "1:1":  { "w": 1080, "h": 1080, "safe": { "top": 80,  "bottom": 140, "side": 72 }, "captionY": [0.80, 0.88] },
+    "4:5":  { "w": 1080, "h": 1350, "safe": { "top": 100, "bottom": 200, "side": 72 }, "captionY": [0.76, 0.86] },
+    "2:3":  { "w": 1080, "h": 1620, "safe": { "top": 140, "bottom": 260, "side": 72 }, "captionY": [0.74, 0.84] },
+    "4:3":  { "w": 1440, "h": 1080, "safe": { "top": 64,  "bottom": 120, "side": 80 }, "captionY": [0.82, 0.90] },
+    "21:9": { "w": 2520, "h": 1080, "safe": { "top": 60,  "bottom": 110, "side": 160 }, "captionY": [0.84, 0.91] },
+    "1.91:1": { "w": 1200, "h": 628, "safe": { "top": 40, "bottom": 70, "side": 60 }, "captionY": [0.82, 0.90], "note": "link / ad card" }
+  },
+  "customFormats": "Any other size works: pass \"WxH\" (e.g. 1200x628) or \"a:b\" (e.g. 5:4). Safe areas and type sizes are derived from the frame's shape and short side (design.mjs → formatFor). Templates must size everything from --zk-* variables and percentages, never fixed pixels for one format.",
+  "scaleRule": "Type sizes are a share of the short side: h1 11%, h2 6.6%, body 4%, label 2.9%, caption 5.3% (tall frames) / 4.8% (wide frames).",
+  "radius": { "card": 28, "pill": 999, "chip": 18 },
+  "density": {
+    "minimal":  { "maxOverlays": 1, "refreshSec": [4, 8] },
+    "balanced": { "maxOverlays": 2, "refreshSec": [2.5, 5] },
+    "dense":    { "maxOverlays": 3, "refreshSec": [1.5, 3] }
+  },
+
+  "rules": [
+    "The whole video uses ONE resolved context. A scene may change layout and animation, never palette, fonts or theme.",
+    "Allowed exceptions: semantic colours (good/bad/warn) for meaning; a style-native texture (paper, film) tinted with the palette; a chapter change the brief asks for.",
+    "Accent covers at most ~15% of a frame. One highlighted keyword per line.",
+    "Text contrast at least 4.5:1 on its backing; add a surfaceStrong card behind text over footage.",
+    "Never place text or graphics over the speaker's eyes or mouth, or in the format's unsafe bands."
+  ]
+}

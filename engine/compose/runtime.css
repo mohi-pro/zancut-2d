@@ -1,0 +1,85 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: var(--W); height: var(--H); overflow: hidden; background: var(--zk-bg-deep, #0b0d16); }
+body { font-family: var(--zk-font); color: var(--zk-ink, #fff); -webkit-font-smoothing: antialiased; }
+#root { position: relative; width: var(--W); height: var(--H); overflow: hidden; background: var(--zk-bg-deep); }
+#root > * { position: absolute; }
+#ground { inset: 0; background: radial-gradient(circle at 50% 40%, var(--zk-bg-mid) 0%, var(--zk-bg-deep) 75%); z-index: 0; }
+video { display: block; }
+
+/* the speaker: clip (frame coordinates) > move (scale + position, origin top-left) > drift (slow push-in) > video */
+#spk-clip, #cut-clip { inset: 0; z-index: 10; }
+#spk-move, #cut-move { position: absolute; left: 0; top: 0; width: var(--W); height: var(--H); transform-origin: 0 0; }
+#spk-drift, #cut-drift { position: absolute; inset: 0; transform-origin: 50% 40%; }
+#spk-drift video, #cut-drift video { width: 100%; height: 100%; object-fit: cover; }
+#cut-clip { z-index: 30; opacity: 0; }
+#spk-box { z-index: 30; opacity: 0; pointer-events: none; border: 2.5px solid #fff; box-shadow: 0 24px 48px rgba(0, 0, 0, .35); }
+.theme-dark #spk-box { border: 1.5px solid transparent; background: linear-gradient(transparent, transparent) padding-box, linear-gradient(135deg, rgba(255, 255, 255, .7), rgba(255, 255, 255, .08) 45%, transparent 70%, var(--zk-a)) border-box;
+  -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+#torso-vig { inset: 0; z-index: 15; opacity: 0; background: linear-gradient(180deg, transparent 45%, color-mix(in srgb, var(--zk-bg-deep) 80%, transparent) 100%); pointer-events: none; }
+
+/* the screen recording in a glossy browser window or a phone */
+.scr { z-index: 15; opacity: 0; overflow: hidden; --chrome: 0px; box-shadow: 0 30px 60px rgba(0, 0, 0, .6), 0 0 0 1.5px rgba(255, 255, 255, .22); background: #0c0e16; }
+.theme-light .scr { box-shadow: 0 30px 60px rgba(30, 60, 140, .25), 0 0 0 1.5px rgba(10, 20, 60, .12); background: #fff; }
+.scr-chrome { position: absolute; left: 0; right: 0; top: 0; height: var(--chrome); display: flex; align-items: center; gap: calc(var(--u) * 1); padding: 0 calc(var(--u) * 2); background: color-mix(in srgb, var(--zk-glass-solid, #1b1f2e) 92%, transparent); border-bottom: 1px solid var(--zk-line); }
+.scr.phone .scr-chrome { display: none; }
+.scr-chrome i { width: calc(var(--u) * 1.4); height: calc(var(--u) * 1.4); border-radius: 50%; background: #ff5f57; }
+.scr-chrome i:nth-child(2) { background: #febc2e; } .scr-chrome i:nth-child(3) { background: #28c840; }
+.scr-url { flex: 1; height: 55%; margin-left: calc(var(--u) * 2); border-radius: 999px; background: color-mix(in srgb, var(--zk-a) 14%, transparent); border: 1px solid color-mix(in srgb, var(--zk-a) 35%, transparent); }
+.scr-view { position: absolute; left: 0; right: 0; top: var(--chrome); bottom: 0; overflow: hidden; }
+#scr-inner { position: absolute; inset: 0; transform-origin: 0 0; }
+#scr-inner video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+#scr-hl { position: absolute; opacity: 0; border: 2px solid var(--zk-a); border-radius: 8px; box-shadow: 0 0 0 9999px rgba(5, 6, 11, .55), 0 0 18px var(--zk-a); pointer-events: none; }
+#scr-tap { z-index: 16; width: calc(var(--u) * 8); height: calc(var(--u) * 8); margin: calc(var(--u) * -4) 0 0 calc(var(--u) * -4); border-radius: 50%; border: 3px solid var(--zk-a); box-shadow: 0 0 24px var(--zk-a); opacity: 0; }
+
+/* scene graphics: full = their own frame (ground included); over = transparent, on the speaker */
+.zc, .zm { inset: 0; z-index: 20; overflow: hidden; }
+.leak { position: absolute; inset: 0; pointer-events: none; z-index: 50; background: radial-gradient(60% 80% at 30% 40%, color-mix(in srgb, var(--zk-a-tint) 90%, transparent), color-mix(in srgb, var(--zk-b) 55%, transparent) 45%, transparent 75%); mix-blend-mode: screen; }
+.zm-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.zm-tint { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, color-mix(in srgb, var(--zk-bg-deep) 85%, transparent) 100%); }
+.zm-text { position: absolute; left: 7%; right: 7%; bottom: 20%; font: 800 calc(var(--u) * 8)/1.05 var(--zk-display); letter-spacing: -.03em; color: #fff; text-shadow: 0 4px 30px rgba(0, 0, 0, .5); }
+.zm-text small { display: block; margin-top: calc(var(--u) * 1.5); font: 500 calc(var(--u) * 3.6)/1.3 var(--zk-font); letter-spacing: 0; opacity: .85; }
+.zm-ground { position: absolute; inset: 0; background: radial-gradient(circle at 50% 40%, var(--zk-bg-mid) 0%, var(--zk-bg-deep) 75%); }
+.zm-card { position: absolute; left: 8%; right: 8%; top: 18%; display: flex; flex-direction: column; align-items: center; gap: calc(var(--u) * 2.5); }
+.zm-kicker { padding: calc(var(--u) * 1) calc(var(--u) * 2.6); border-radius: 999px; font: 700 calc(var(--u) * 2.8)/1 var(--zk-font); letter-spacing: .12em; text-transform: uppercase; color: var(--zk-ink); background: var(--zk-glass); border: 1.5px solid color-mix(in srgb, var(--zk-a) 60%, transparent); box-shadow: 0 0 22px color-mix(in srgb, var(--zk-a) 35%, transparent); }
+.zm-frame { position: relative; width: 100%; aspect-ratio: 4 / 3; border-radius: calc(var(--u) * 3.2); overflow: hidden; border: 1.5px solid rgba(255, 255, 255, .35); box-shadow: 0 30px 70px rgba(0, 0, 0, .55), 0 0 40px color-mix(in srgb, var(--zk-a) 30%, transparent); }
+.wide .zm-card { left: 22%; right: 22%; top: 12%; }
+.zm-cap { font: 700 calc(var(--u) * 5)/1.2 var(--zk-display); text-align: center; color: var(--zk-ink); }
+.zm-say { position: absolute; left: 8%; right: 8%; top: 38%; font: 800 calc(var(--u) * 7)/1.15 var(--zk-display); letter-spacing: -.02em; text-align: center; color: var(--zk-ink); }
+
+/* captions: bold, the spoken word lit in the accent tint */
+.cap { left: 0; right: 0; z-index: 40; display: flex; justify-content: center; pointer-events: none; }
+.cap.cap-mid { top: 70%; } .cap.cap-low { top: 80%; } .cap.cap-bridge { top: 45.4%; } .cap.cap-lane { top: 80.5%; }
+.wide .cap.cap-mid, .wide .cap.cap-low, .wide .cap.cap-lane { top: 82%; }
+.cap-inner { max-width: 86%; text-align: center; font: 800 calc(var(--u) * 6 * var(--cap, 1))/1.15 var(--zk-display); letter-spacing: -.02em; color: #fff; text-shadow: 0 3px 18px rgba(0, 0, 0, .55), 0 0 2px rgba(0, 0, 0, .6); }
+.wide .cap-inner { font-size: calc(var(--u) * 5.2 * var(--cap, 1)); }
+.cap .w { display: inline-block; opacity: .9; }
+.cap .w.on { color: var(--zk-a-tint); opacity: 1; text-shadow: 0 0 22px var(--zk-a), 0 3px 18px rgba(0, 0, 0, .5); transform: scale(1.06); }
+.cap .w.said { opacity: 1; }
+.theme-light .cap-inner { color: #0b1233; text-shadow: 0 0 1px #fff, 0 2px 14px rgba(255, 255, 255, .9); }
+.theme-light .cap .w.on { color: var(--zk-a); text-shadow: 0 2px 14px rgba(255, 255, 255, .9); }
+
+/* Bangla: never negative tracking, tall lines so matras and conjuncts never clip */
+.zk-bn, .zk-bn * { font-family: var(--zk-bangla) !important; letter-spacing: 0 !important; line-height: 1.38 !important; }
+
+/* the kit's background stages (ZK.stage) */
+.zk-stage { position: absolute; inset: 0; overflow: hidden; background: radial-gradient(circle at 50% 40%, var(--zk-bg-mid) 0%, var(--zk-bg-deep) 75%); }
+.zk-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--zk-grid) 1px, transparent 1px), linear-gradient(90deg, var(--zk-grid) 1px, transparent 1px); background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(circle 420px at var(--orb-x, 50%) var(--orb-y, 42%), #000 0%, rgba(0, 0, 0, .15) 60%, transparent 100%); mask-image: radial-gradient(circle 420px at var(--orb-x, 50%) var(--orb-y, 42%), #000 0%, rgba(0, 0, 0, .15) 60%, transparent 100%); }
+/* clear glass: no light orbs, at most one very faint accent tint in a corner (the second tint is kept off) */
+.zk-orb { position: absolute; width: 70%; height: 70%; border-radius: 50%; pointer-events: none; }
+.zk-orb.a { left: -22%; top: -20%; background: radial-gradient(circle, color-mix(in srgb, var(--zk-a) 7%, transparent) 0%, transparent 68%); }
+.zk-orb.b { right: -22%; bottom: -20%; display: none; }
+.zk-cone { position: absolute; left: 50%; top: -10%; width: 140%; height: 100%; transform-origin: 50% 0; margin-left: -70%; background: radial-gradient(ellipse 42% 55% at 50% 0%, rgba(255,255,255,.09), transparent 72%); } /* a soft sheen above the hero, no rays */
+.theme-light .zk-cone { background: radial-gradient(ellipse 42% 55% at 50% 0%, color-mix(in srgb, var(--zk-a) 8%, transparent), transparent 72%); }
+.zk-floorwrap { position: absolute; left: -30%; right: -30%; bottom: 0; height: 45%; perspective: 900px; overflow: hidden; }
+.zk-floor { position: absolute; inset: -40% 0 0 0; transform: rotateX(55deg); transform-origin: 50% 0; background-image: linear-gradient(color-mix(in srgb, var(--zk-a) 35%, transparent) 1.5px, transparent 1.5px), linear-gradient(90deg, color-mix(in srgb, var(--zk-a) 35%, transparent) 1.5px, transparent 1.5px); background-size: 72px 72px; -webkit-mask-image: linear-gradient(transparent, #000 40%); mask-image: linear-gradient(transparent, #000 40%); }
+.zk-horizon { position: absolute; left: 0; right: 0; bottom: 45%; height: 1px; background: var(--zk-a-tint); } /* crisp, no glow */
+.zk-eclipse { position: absolute; left: -20%; right: -20%; top: 52%; height: 120%; border-radius: 50% 50% 0 0 / 22% 22% 0 0; border-top: 1.5px solid rgba(255,255,255,.75); box-shadow: 0 -6px 12px color-mix(in srgb, var(--zk-a) 30%, transparent); background: var(--zk-bg-deep); } /* a crisp rim, ONE soft accent shadow */
+.theme-light .zk-eclipse { border-top-color: color-mix(in srgb, var(--zk-a) 60%, transparent); }
+.zk-wash { position: absolute; inset: 0; background: var(--zk-wash, color-mix(in srgb, var(--zk-a) 22%, #0b0d14)); }
+.theme-light .zk-wash { background: #fff; box-shadow: inset 0 0 0 2px var(--zk-a); }
+.zk-bokeh { position: absolute; width: calc(var(--u) * 16); height: calc(var(--u) * 16); border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--zk-a-tint) 70%, transparent), transparent 70%); filter: blur(18px); pointer-events: none; z-index: 30; }
+.zk-hl { font-style: normal; color: var(--zk-a-tint); } .zk-box { font-weight: inherit; background: var(--zk-a); color: #fff; padding: 0 .18em; border-radius: .12em; }
+/* a graphic's photo or clip ("media" on its row): full frame by default; the scene moves and frames it */
+.zc .gx-media { position: absolute; inset: 0; overflow: hidden; }
+.zc .gx-media img, .zc .gx-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }

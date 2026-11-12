@@ -1,0 +1,182 @@
+[
+  {
+    "path": "server/cto-windows.mjs",
+    "sha256": "d6e860d0efa7e4ac624f391adcc93a31d8b31e0f95fbeff63442d1e0be316d9a",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/users.mjs",
+    "sha256": "a61c6bb6df5c3fe99362886526f18d006dbec4ca5de6dcf91ba144b1b150783a",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/screensync.mjs",
+    "sha256": "13b44d5de16872f98e3941f8ecf6a2ad31793db94764c7086e3824fbf1dcc53d",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/learn.mjs",
+    "sha256": "e04fb3878cca31fe83815df2e7d17ef0613ae054361520d9896240f2b1dc6043",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/admin.mjs",
+    "sha256": "6ec177c938dc3898778b4d8c3378631a061b24f43da933859f310cf22ea64e5c",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/routes-desktop.mjs",
+    "sha256": "b0730226514e6452003896b30328a0e992a80cf357d5c74be131df36cb0c52d0",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/codex-query.mjs",
+    "sha256": "b7d6ceeafb68035155630e25ebdcbe580661782dbf9514e4ba92ee6e14c2980a",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/naming.mjs",
+    "sha256": "6cdbb55a2bd2f665e43d2eaa2731fdb3ca33a14a52c7aa5c30b3bbcd4fce8b9e",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/style.mjs",
+    "sha256": "876912cd4c90af771bf4c363151423db89e11e22b7a742e5333508d63d89ceda",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/claude-auth.mjs",
+    "sha256": "7a0888f29b0fddaee81f652853a5f00e9aa08d59c45c8606b72d3c9f61701557",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/animpipe.mjs",
+    "sha256": "0f5a2992a4cd4a44ec1b138c7d4065848682f2fc91d0a1f44a1ab2a598290623",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/voice-setup.mjs",
+    "sha256": "bb63f0359d900b431f705fdd68a480ca6d92d7470fcfb892629f05728175bffd",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/desktop-client.mjs",
+    "sha256": "64c1424ed2a26320a47730005eaa2900647f30177906d3b07790327286f29219",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/first-run.mjs",
+    "sha256": "31c93c85af826e00d088981af491a5b412eca65b1065d7a5be50e3e2fd64a223",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/pricing.mjs",
+    "sha256": "bb96848511dff32e77301eb9d2bbe454f2d6cfd1d6b12790c708297357275a18",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/reports.mjs",
+    "sha256": "e5bd6769686159cb58d71b55c44d17f61979f0c3653bf8ae5d92046141a60d20",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/library.mjs",
+    "sha256": "a3374e8c42503773477a57eb0a53a699e4f8043ff743f8931233ae679dfb5335",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/animation.mjs",
+    "sha256": "748f2a144b6dcca56ccd789657ec190cff0d56dec0d8571c3c390d843820057a",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/stock.mjs",
+    "sha256": "0459ec188d32754bc9116bb7273cdebaca04d13c1755e45f06129fbd8f8e5acb",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/prompts.mjs",
+    "sha256": "d71e1c0c7e39345ea1dfc4edfa6c10437b7119af669e7871807d5d880407c812",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/clipsync.mjs",
+    "sha256": "32b1a0be3fdfb2814bd29b5629ac0e23ed53845f3b345894d79bbdba3a0e66c7",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/editor.mjs",
+    "sha256": "f01134343cd25d8db1c726485abba8cdd38b393477177396cecdef03df0de646",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/claude.mjs",
+    "sha256": "902a97198a6ed342870ff7ea60ad5fdc16463595e2393ce06e62a2764d64f278",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/aftercheck.mjs",
+    "sha256": "4341eba0650e70cb46af87782ec4d151e0c045df15a7107881607dfc62460e16",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/gemini.mjs",
+    "sha256": "d485b80bf9a3392cb26763e755464768b0d502c81d77a575fa7a6072ffbe2d44",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/demo.mjs",
+    "sha256": "7fbce1264814290d02007fc4a602860ffc8b6edf49e2f9aa06c53dbf37f0fbc2",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "server/cto.mjs",
+    "sha256": "1419d6b3795a28cc022957b9b569b211046ca4206a597269ecb9a2da03e8648a",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "scripts/animation-direction-test.mjs",
+    "sha256": "01bd32dfa13163aa4d95f713bf882ce2b3843f162b99bcd8f6be780e6e947e65",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "scripts/check-prompts.mjs",
+    "sha256": "17d1375af35fa5cd282026f55d0275803e30982af362d2ac06ae51f757a0a4a0",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "scripts/continuity-test.mjs",
+    "sha256": "fac59e1dd80348bf13857b0f0140a597a5a9f080af69c754736b87396a5529df",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "scripts/voice-take-test.mjs",
+    "sha256": "3b036a1c4fc616b234117ac4cd742d255cefb38f1aee8522ecd301918cde264b",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "docs/2D-ANIMATION-PLAN.md",
+    "sha256": "29603e7a035e83c03fc17182c3429ff4194a9849e318d7e25009067ee4d38617",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "docs/2D-WORLD-PLAN.md",
+    "sha256": "abe0e40670a320662e20715a02c3422471aa01961c6d60f56af942e05896bd77",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "docs/ANIMATION-AUTHORED-SHOTS.md",
+    "sha256": "f54ac118befac8c380403561c9124209e04422ffe0700e2f12cd99382400d723",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "docs/STUDIO_SYNC.md",
+    "sha256": "c5cb8f7fd2de9ebef3aebf0875f199234eb178884f5977dde5475943c22b1bac",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  },
+  {
+    "path": "docs/studio-sync-manifest.json",
+    "sha256": "0ca4732794b9d4d6ff0325290565f6b8cd3f98bfed4461142059a49916a1f75c",
+    "reason": "Studio-only pipeline/test or historical Studio workflow document"
+  }
+]

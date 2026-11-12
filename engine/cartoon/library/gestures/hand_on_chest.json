@@ -1,0 +1,118 @@
+{
+  "id": "hand_on_chest",
+  "about": "right hand placed sincerely over the centre of the chest in gratitude or honesty (hands kept within 30 units forward of the body so they never point at the camera: body gate A1)",
+  "group": "arms",
+  "seconds": 0.9,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            4.4
+          ],
+          "hand": [
+            1,
+            -72,
+            6.1
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    },
+    {
+      "u": 0.45,
+      "arms": {
+        "R": {
+          "elbow": [
+            21.7,
+            -23.5,
+            3.9
+          ],
+          "wrist": [
+            4,
+            -18,
+            22.7
+          ],
+          "hand": [
+            -3,
+            -12.4,
+            30
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 0.8,
+      "arms": {
+        "R": {
+          "elbow": [
+            9.5,
+            -24.5,
+            18.7
+          ],
+          "wrist": [
+            -14,
+            -8,
+            19.2
+          ],
+          "hand": [
+            -23.5,
+            -2.6,
+            24
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "relaxed"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            8.9,
+            -25,
+            18.3
+          ],
+          "wrist": [
+            -15,
+            -9,
+            18.4
+          ],
+          "hand": [
+            -24.5,
+            -3.6,
+            23.1
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "relaxed"
+      ]
+    }
+  ]
+}

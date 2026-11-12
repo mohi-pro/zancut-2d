@@ -1,0 +1,152 @@
+{
+  "id": "finger_wag",
+  "about": "the right hand rises in front of the chest with the index finger up, wagging left and right to say no",
+  "group": "arms",
+  "aliases": [
+    "wag finger",
+    "say no",
+    "scold",
+    "না বলা",
+    "আঙুল নাড়া"
+  ],
+  "seconds": 1,
+  "loop": true,
+  "ease": "linear",
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            14.12,
+            -24.52,
+            15.37
+          ],
+          "wrist": [
+            6,
+            -4,
+            34
+          ],
+          "hand": [
+            6,
+            7.24,
+            38.76
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "point"
+      ]
+    },
+    {
+      "u": 0.25,
+      "arms": {
+        "R": {
+          "elbow": [
+            16.18,
+            -24.24,
+            13.7
+          ],
+          "wrist": [
+            13,
+            -3,
+            33
+          ],
+          "hand": [
+            15.68,
+            7.97,
+            37.63
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "point"
+      ]
+    },
+    {
+      "u": 0.5,
+      "arms": {
+        "R": {
+          "elbow": [
+            14.12,
+            -24.52,
+            15.37
+          ],
+          "wrist": [
+            6,
+            -4,
+            34
+          ],
+          "hand": [
+            6,
+            7.24,
+            38.76
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "point"
+      ]
+    },
+    {
+      "u": 0.75,
+      "arms": {
+        "R": {
+          "elbow": [
+            11.33,
+            -24.28,
+            17.86
+          ],
+          "wrist": [
+            -1,
+            -3,
+            33
+          ],
+          "hand": [
+            -3.68,
+            7.97,
+            37.63
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "point"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            14.12,
+            -24.52,
+            15.37
+          ],
+          "wrist": [
+            6,
+            -4,
+            34
+          ],
+          "hand": [
+            6,
+            7.24,
+            38.76
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "point"
+      ]
+    }
+  ]
+}

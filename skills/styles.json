@@ -1,0 +1,205 @@
+{
+  "_note": "The design systems. Each one is a skill folder skills/<id>/ with the same five files (core-director.md, core-graphic.md, talking-head.md, storytelling.md, interview-broll.md; the part of a type file after <!-- graphic --> goes to the motion designer). ready: false = shown as coming soon. sfx: which sound families the engine uses when a scene has no cues of its own.",
+  "default": "glossy",
+  "styles": {
+    "glossy": {
+      "name": "Glossy",
+      "tagline": "Premium clear and liquid glass, crisp depth, cinematic motion",
+      "purpose": "Continuous glossy motion graphics: clear and liquid glass cards, crisp splines, glass ribbons, node networks and horizon arcs, every move locked to the voice.",
+      "bestFor": "AI, apps, SaaS, money and growth, tech news, premium brands",
+      "ready": true,
+      "inspiration": "skills/glossy/inspiration.png",
+      "preview": {
+        "dark": "skills/glossy/preview-dark.mp4",
+        "light": "skills/glossy/preview-light.mp4"
+      },
+      "swatch": [
+        "#0A1519",
+        "#1FB4F4",
+        "#7C4DFF"
+      ],
+      "defaultTheme": "dark"
+    },
+    "minimal": {
+      "name": "Minimal",
+      "tagline": "Calm editorial keynote, tactile white cards, cutless flow",
+      "purpose": "Architectural light-grey or graphite grounds with dot/blueprint grids, drifting corner shapes, tactile ceramic & contrast cards, editorial cutouts with single-accent pops, and cutless word-locked motion.",
+      "bestFor": "Tips, how-to videos, education, SaaS explainers, finance, editorial storytelling",
+      "ready": true,
+      "swatch": [
+        "#ECECEC",
+        "#0B0B0F",
+        "#0866FF"
+      ],
+      "defaultTheme": "light",
+      "defaultPalette": "cobalt",
+      "music": false,
+      "tokens": {
+        "light": {
+          "--zk-bg-deep": "#ECECEC",
+          "--zk-bg-mid": "#F7F8FA",
+          "--zk-glass": "#FFFFFF",
+          "--zk-glass-solid": "#FFFFFF",
+          "--zk-ink": "#0B0B0F",
+          "--zk-mute": "#5E5E66",
+          "--zk-line": "rgba(11,11,15,0.10)",
+          "--zk-grid": "rgba(11,11,15,0.06)",
+          "--zk-wash": "#FFFFFF"
+        },
+        "dark": {
+          "--zk-bg-deep": "#0E0E11",
+          "--zk-bg-mid": "#16161B",
+          "--zk-glass": "linear-gradient(165deg, #2C2C34 0%, #151519 100%)",
+          "--zk-glass-solid": "#1C1C22",
+          "--zk-ink": "#F5F6FA",
+          "--zk-mute": "#9CA3AF",
+          "--zk-line": "rgba(255,255,255,0.12)",
+          "--zk-grid": "rgba(255,255,255,0.05)",
+          "--zk-wash": "#16161B"
+        }
+      },
+      "sound": {
+        "about": "The 4-pass system in Minimal timbre: a soft whoosh opens every scene, word-locked soft textures, a rare impact, a riser and hit only on the hook and the climax, a little under the others.",
+        "allow": [
+          "wh-short",
+          "wh-wind",
+          "wh-hollow",
+          "wh-trans",
+          "typing",
+          "tx-pop",
+          "tx-ui",
+          "tx-camera",
+          "tx-scan",
+          "tx-energy",
+          "tx-gears",
+          "tx-success",
+          "tx-impact",
+          "rs-metal",
+          "rs-suck",
+          "hit"
+        ],
+        "swap": {
+          "tx-reward": "tx-success",
+          "wh-soft": "wh-wind",
+          "wh-spacey": "wh-hollow",
+          "wh-scifi": "wh-hollow",
+          "tx-gizmo": "tx-ui",
+          "tx-scifi-click": "tx-ui",
+          "tx-choir": "tx-success",
+          "wh-deep": "wh-hollow",
+          "wh-future": "wh-short",
+          "wh-long": "wh-wind",
+          "rs-bass": "rs-metal",
+          "rs-suspense": "rs-metal"
+        },
+        "entrance": [
+          "wh-short",
+          "wh-wind",
+          "wh-hollow",
+          "wh-trans"
+        ],
+        "vary": [
+          "tx-camera",
+          "tx-scan",
+          "tx-energy"
+        ],
+        "once": [
+          "tx-pop",
+          "tx-ui",
+          "tx-camera",
+          "tx-scan",
+          "tx-energy"
+        ],
+        "risers": true,
+        "gainDb": -1.5
+      },
+      "inspiration": "skills/minimal/inspiration.png",
+      "preview": {
+        "dark": "skills/minimal/preview-dark.mp4",
+        "light": "skills/minimal/preview-light.mp4"
+      }
+    },
+    "standard": {
+      "name": "Standard",
+      "tagline": "Clean solid cards, soft gradients, modern creator & SaaS motion",
+      "purpose": "Context-driven metaphors rendered with clean solid cards, 3D device showcases, icon docks, split comparisons, bold colour-block switches and cutless word-locked motion over soft gradient grids.",
+      "bestFor": "Courses, masterclasses, AI & tech promos, everyday creators, agencies, SaaS",
+      "ready": true,
+      "swatch": [
+        "#EAF2FF",
+        "#0F172A",
+        "#2563EB"
+      ],
+      "defaultTheme": "light",
+      "defaultPalette": "royal",
+      "tokens": {
+        "light": {
+          "--zk-bg-deep": "#DCE8FF",
+          "--zk-bg-mid": "#F2F7FF",
+          "--zk-glass": "#FFFFFF",
+          "--zk-glass-solid": "#FFFFFF",
+          "--zk-ink": "#0F172A",
+          "--zk-mute": "#64748B",
+          "--zk-line": "#E2E8F0",
+          "--zk-grid": "rgba(15,23,42,0.055)",
+          "--zk-wash": "#FFFFFF",
+          "--zk-pos": "#22C55E",
+          "--zk-neg": "#EF4444"
+        },
+        "dark": {
+          "--zk-bg-deep": "#090D16",
+          "--zk-bg-mid": "#131C31",
+          "--zk-glass": "#151D2E",
+          "--zk-glass-solid": "#151D2E",
+          "--zk-ink": "#F8FAFC",
+          "--zk-mute": "#94A3B8",
+          "--zk-line": "rgba(255,255,255,0.10)",
+          "--zk-grid": "rgba(255,255,255,0.045)",
+          "--zk-wash": "#131C31",
+          "--zk-pos": "#22C55E",
+          "--zk-neg": "#FF4D5E"
+        }
+      },
+      "sound": {
+        "about": "The 4-pass system in Standard timbre: a whoosh opens every scene, word-locked textures, risers and hits on the hook and the climax.",
+        "swap": {
+          "tx-reward": "tx-success",
+          "wh-soft": "wh-wind",
+          "wh-spacey": "wh-future",
+          "wh-scifi": "wh-future",
+          "tx-gizmo": "tx-scifi-click"
+        },
+        "entrance": [
+          "wh-hollow",
+          "wh-short",
+          "wh-deep",
+          "wh-trans"
+        ],
+        "vary": [
+          "tx-camera",
+          "tx-scan",
+          "tx-energy"
+        ],
+        "once": [
+          "tx-pop",
+          "tx-ui"
+        ],
+        "risers": true,
+        "gainDb": 0
+      },
+      "inspiration": "skills/standard/inspiration.png",
+      "preview": {
+        "dark": "skills/standard/preview-dark.mp4",
+        "light": "skills/standard/preview-light.mp4"
+      }
+    },
+    "2d-animation": {
+      "ready": true,
+      "kind": "animation",
+      "name": "2D Animation",
+      "defaultTheme": "light",
+      "filmCuts": true,
+      "about": "Cartoon films: worlds drawn for each story, ZanHuman people acting with the cartoon kit (engine/cartoon/zc.js). Only for the 2D Animation video type."
+    }
+  }
+}

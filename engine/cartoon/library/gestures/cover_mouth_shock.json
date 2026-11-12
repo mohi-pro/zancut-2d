@@ -1,0 +1,118 @@
+{
+  "id": "cover_mouth_shock",
+  "about": "right hand gasps up toward the mouth in sudden shock",
+  "group": "arms",
+  "seconds": 0.7,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    },
+    {
+      "u": 0.35,
+      "arms": {
+        "R": {
+          "elbow": [
+            21.8,
+            -22.2,
+            8.3
+          ],
+          "wrist": [
+            8,
+            -4,
+            26
+          ],
+          "hand": [
+            4.1,
+            6.4,
+            31.2
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "open"
+      ]
+    },
+    {
+      "u": 0.7,
+      "arms": {
+        "R": {
+          "elbow": [
+            11.4,
+            -4.8,
+            29.7
+          ],
+          "wrist": [
+            -10,
+            13,
+            22
+          ],
+          "hand": [
+            -17,
+            22.9,
+            23.3
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "cupped"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            11.5,
+            -5.7,
+            29.5
+          ],
+          "wrist": [
+            -10,
+            12,
+            22
+          ],
+          "hand": [
+            -17,
+            21.9,
+            23.4
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "cupped"
+      ]
+    }
+  ]
+}

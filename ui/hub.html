@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zancut Hub</title>
+<style>
+  :root { --bg: #f6f4ef; --card: #ffffff; --ink: #1f2630; --muted: #5b6573; --line: #e2ddd2; --ok: #2f8f5b; --bad: #c0392b; --accent: #2f6fb0; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #15181d; --card: #1e232a; --ink: #e9edf2; --muted: #9aa5b3; --line: #2e353f; --ok: #4fbf82; --bad: #e0685a; --accent: #6aa5e6; } }
+  * { box-sizing: border-box; } body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, "Hind Siliguri", sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 24px 16px 60px; } h1 { font-size: 22px; margin: 0 0 4px; } h2 { font-size: 17px; margin: 28px 0 10px; }
+  .muted { color: var(--muted); } .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 10px 0; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; } input, select { font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--ink); }
+  button { font: inherit; padding: 7px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; } button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  button.ok { background: var(--ok); border-color: var(--ok); color: #fff; } button.bad { color: var(--bad); } .tag { font-size: 12px; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--line); }
+  .score { font-weight: 700; } .low { color: var(--bad); } .high { color: var(--ok); } code, pre { font: 13px ui-monospace, monospace; white-space: pre-wrap; word-break: break-word; } .hide { display: none; } #msg { min-height: 1.5em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Zancut Hub</h1>
+  <p class="muted">Customers' learnings wait here. Nothing reaches other users until you approve it.</p>
+  <p id="msg" class="muted" role="status"></p>
+  <section id="signin" class="card">
+    <div class="row"><input id="pw" type="password" placeholder="Owner password" autocomplete="current-password"><button class="primary" id="go">Sign in</button></div>
+    <p class="muted">First time? Set it in the terminal: <code>npm run hub-owner -- set-password "…"</code></p>
+  </section>
+  <section id="app" class="hide">
+    <h2>Quarantine queue</h2>
+    <div class="row"><select id="filter"><option value="pending">Pending</option><option value="">All</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select><button id="reload">Refresh</button></div>
+    <div id="queue"></div>
+    <h2>Users</h2>
+    <div class="card row"><input id="nu" placeholder="user id"><input id="np" type="password" placeholder="password (8+)"><input id="nd" type="number" min="1" max="10" value="2" style="width:80px" title="device limit"><input id="ne" type="date" title="expires"><button class="primary" id="add">Add user</button></div>
+    <div id="users"></div>
+  </section>
+</main>
+<script>
+  let token = null; // the owner session lives in this page's memory only
+  const $ = (id) => document.getElementById(id), say = (t, bad) => { $('msg').textContent = t; $('msg').style.color = bad ? 'var(--bad)' : ''; };
+  const api = async (url, body) => { const r = await fetch('/api/hub' + url, { method: body ? 'POST' : 'GET', headers: { 'content-type': 'application/json', ...(token ? { authorization: 'Bearer ' + token } : {}) }, body: body ? JSON.stringify(body) : undefined }); const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error || r.statusText); return j; };
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+  const what = (d) => d.type === 'rule' ? d.text : d.type === 'feedback' ? `${d.example?.text} → ${Object.entries(d.example || {}).filter(([k]) => k !== 'text').map(([k, v]) => `${k}=${v}`).join(', ')}` : d.type === 'word' ? `${d.concept?.term} (${d.concept?.category})` : d.type === 'prop' ? `${d.prop?.label} — ${d.prop?.source?.license}` : JSON.stringify(d);
+  async function loadQueue() {
+    const items = await api('/queue' + ($('filter').value ? '?status=' + $('filter').value : ''));
+    $('queue').innerHTML = items.length ? items.map((x) => `<div class="card"><div class="row"><span class="tag">${esc(x.delta.type)}</span><span class="score ${x.score >= 0.8 ? 'high' : 'low'}">score ${x.score}</span><span class="muted">from ${esc(x.from.join(', '))} · ${esc(x.status)}${x.version ? ' · v' + x.version : ''}</span></div>
+      <p>${esc(what(x.delta))}</p>${x.reasons.length ? `<p class="muted">${esc(x.reasons.join(' · '))}</p>` : ''}
+      ${x.status === 'pending' ? `<div class="row"><button class="ok" data-a="${x.id}">Approve to Global Brain</button><button class="bad" data-r="${x.id}">Reject</button></div>` : ''}</div>`).join('') : '<p class="muted">Nothing here.</p>';
+  }
+  async function loadUsers() {
+    const us = await api('/users');
+    $('users').innerHTML = us.map((u) => `<div class="card row"><b>${esc(u.id)}</b><span class="tag">${esc(u.status)}</span><span class="muted">${u.devices.length}/${u.deviceLimit} devices${u.expiresAt ? ' · expires ' + esc(u.expiresAt.slice(0, 10)) : ''}</span>
+      <button data-s="${esc(u.id)}" data-to="${u.status === 'active' ? 'suspended' : 'active'}" class="${u.status === 'active' ? 'bad' : 'ok'}">${u.status === 'active' ? 'Suspend' : 'Activate'}</button><button data-d="${esc(u.id)}">Reset devices</button></div>`).join('') || '<p class="muted">No users yet.</p>';
+  }
+  const refresh = () => Promise.all([loadQueue(), loadUsers()]).catch((e) => say(e.message, true));
+  $('go').onclick = async () => { try { token = (await api('/owner/login', { password: $('pw').value })).token; $('pw').value = ''; $('signin').classList.add('hide'); $('app').classList.remove('hide'); say('Signed in.'); refresh(); } catch (e) { say(e.message, true); } };
+  $('reload').onclick = refresh; $('filter').onchange = loadQueue;
+  $('add').onclick = async () => { try { await api('/users', { id: $('nu').value, password: $('np').value, deviceLimit: +$('nd').value, expiresAt: $('ne').value ? new Date($('ne').value).toISOString() : null }); $('np').value = ''; say('User added.'); loadUsers(); } catch (e) { say(e.message, true); } };
+  document.addEventListener('click', async (ev) => { const b = ev.target.closest('button'); if (!b) return; try {
+    if (b.dataset.a) { const r = await api('/approve', { id: b.dataset.a }); say(`Approved: the global brain is now v${r.version}.`); }
+    else if (b.dataset.r) { await api('/reject', { id: b.dataset.r }); say('Rejected.'); }
+    else if (b.dataset.s) { await api('/users/' + encodeURIComponent(b.dataset.s), { status: b.dataset.to }); say(b.dataset.to === 'suspended' ? 'Suspended: their sessions stopped working now.' : 'Activated.'); }
+    else if (b.dataset.d) { await api('/users/' + encodeURIComponent(b.dataset.d), { resetDevices: true }); say('Devices reset: they sign in again.'); }
+    else return; refresh(); } catch (e) { say(e.message, true); } });
+</script>
+</body>
+</html>

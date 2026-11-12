@@ -1,0 +1,177 @@
+{
+ "version": 1,
+ "concepts": {
+  "dragon": {
+   "term": "dragon",
+   "key": "dragon",
+   "known": true,
+   "notes": [],
+   "category": "person",
+   "english": "dragon",
+   "properties": {
+    "zone": "GROUNDED",
+    "indoor": "EITHER",
+    "grounded": true,
+    "flying": false,
+    "metres": {
+     "min": 0.9,
+     "usual": 1.43,
+     "max": 1.95,
+     "from": "class person"
+    },
+    "color": null
+   },
+   "synonyms": [
+    "firedrake"
+   ],
+   "concept": null,
+   "piece": null,
+   "prop": null,
+   "local": [
+    "WordNet"
+   ],
+   "sources": [],
+   "learnedAt": "2026-11-08T20:47:13.417Z",
+   "from": "local"
+  },
+  "dolphin": {
+   "term": "dolphin",
+   "key": "dolphin",
+   "known": true,
+   "notes": [],
+   "category": "animal",
+   "english": "dolphin",
+   "properties": {
+    "zone": "GROUNDED",
+    "indoor": "OUTDOOR",
+    "grounded": true,
+    "flying": false,
+    "metres": {
+     "min": 0.75,
+     "usual": 1.05,
+     "max": 1.35,
+     "from": "sizes.json"
+    },
+    "color": null
+   },
+   "synonyms": [
+    "river dolphin",
+    "shushuk",
+    "শুশুক",
+    "ডলফিন",
+    "dolphinfish",
+    "mahimahi"
+   ],
+   "concept": null,
+   "piece": "dolphin",
+   "prop": null,
+   "local": [
+    "library piece dolphin",
+    "WordNet"
+   ],
+   "sources": [],
+   "learnedAt": "2026-11-08T20:52:49.503Z",
+   "from": "local"
+  },
+  "dolphin in water": {
+   "term": "dolphin in water",
+   "key": "dolphininwater",
+   "known": true,
+   "notes": [],
+   "category": "nature",
+   "english": "dolphin in water",
+   "properties": {
+    "zone": "GROUNDED",
+    "indoor": "EITHER",
+    "grounded": true,
+    "flying": false,
+    "metres": {
+     "min": 0.1,
+     "usual": 0.2,
+     "max": 0.3,
+     "from": "class hand_prop"
+    },
+    "color": null
+   },
+   "synonyms": [],
+   "concept": "#CONCEPT_WATER",
+   "piece": null,
+   "prop": null,
+   "local": [
+    "concept #CONCEPT_WATER"
+   ],
+   "sources": [],
+   "learnedAt": "2026-11-08T20:53:43.480Z",
+   "from": "local"
+  },
+  "dolphininwater": {
+   "term": "dolphin in water",
+   "key": "dolphininwater",
+   "known": true,
+   "notes": [],
+   "category": "nature",
+   "english": "dolphin in water",
+   "properties": {
+    "zone": "GROUNDED",
+    "indoor": "EITHER",
+    "grounded": true,
+    "flying": false,
+    "metres": {
+     "min": 0.1,
+     "usual": 0.2,
+     "max": 0.3,
+     "from": "class hand_prop"
+    },
+    "color": null
+   },
+   "synonyms": [],
+   "concept": "#CONCEPT_WATER",
+   "piece": null,
+   "prop": null,
+   "local": [
+    "concept #CONCEPT_WATER"
+   ],
+   "sources": [],
+   "learnedAt": "2026-11-08T20:53:43.480Z",
+   "from": "local"
+  },
+  "ocean": {
+   "term": "ocean",
+   "key": "ocean",
+   "known": true,
+   "notes": [],
+   "category": "nature",
+   "english": "ocean",
+   "properties": {
+    "zone": "GROUNDED",
+    "indoor": "EITHER",
+    "grounded": true,
+    "flying": false,
+    "metres": {
+     "min": 0.35,
+     "usual": 0.75,
+     "max": 1.4,
+     "from": "sizes.json"
+    },
+    "color": null
+   },
+   "synonyms": [
+    "sea",
+    "beach",
+    "cox's bazar",
+    "সমুদ্র",
+    "সাগর"
+   ],
+   "concept": null,
+   "piece": "seaWaves",
+   "prop": null,
+   "local": [
+    "library piece seaWaves",
+    "WordNet"
+   ],
+   "sources": [],
+   "learnedAt": "2026-11-08T20:54:41.525Z",
+   "from": "local"
+  }
+ }
+}

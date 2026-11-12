@@ -1,0 +1,33 @@
+{
+ "id": "ref5",
+ "file": "YTDown.com_YouTube_Media_cmrnUXxamWc_Plastic-Bottle-Recycle-প্লাস্টিকের-বোতল-রিসাইকেল-Bang",
+ "seconds": 621,
+ "width": 1920,
+ "height": 1080,
+ "fps": "25/1",
+ "cuts": 135,
+ "cutsPerMinute": 13,
+ "shotSeconds": {
+  "median": 3,
+  "p25": 1.8,
+  "p75": 5.8,
+  "p90": 9.4
+ },
+ "stillShare": 0.02,
+ "silentShare": 0,
+ "loudnessLUFS": -9.9,
+ "palette": [
+  "#000000",
+  "#140f0b",
+  "#2e1c13",
+  "#4d382e",
+  "#675945",
+  "#7e7254",
+  "#97959f",
+  "#a2944c",
+  "#a3d6e4",
+  "#d0bf7f",
+  "#eddaab",
+  "#00ff00"
+ ]
+}

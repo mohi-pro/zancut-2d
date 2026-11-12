@@ -1,0 +1,49 @@
+{
+ "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q16521|Q3314483|Q11992872|Q188840&props=labels&languages=en&format=json",
+ "at": "2026-11-08T17:03:35.466Z",
+ "body": {
+  "entities": {
+   "Q16521": {
+    "type": "item",
+    "id": "Q16521",
+    "labels": {
+     "en": {
+      "language": "en",
+      "value": "taxon"
+     }
+    }
+   },
+   "Q3314483": {
+    "type": "item",
+    "id": "Q3314483",
+    "labels": {
+     "en": {
+      "language": "en",
+      "value": "fruit"
+     }
+    }
+   },
+   "Q11992872": {
+    "type": "item",
+    "id": "Q11992872",
+    "labels": {
+     "en": {
+      "language": "en",
+      "value": "useful plant"
+     }
+    }
+   },
+   "Q188840": {
+    "type": "item",
+    "id": "Q188840",
+    "labels": {
+     "en": {
+      "language": "en",
+      "value": "medicinal plant"
+     }
+    }
+   }
+  },
+  "success": 1
+ }
+}

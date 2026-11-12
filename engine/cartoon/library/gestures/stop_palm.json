@@ -1,0 +1,118 @@
+{
+  "id": "stop_palm",
+  "about": "right arm extends forward with flat palm upright to signal 'stop'",
+  "group": "arms",
+  "seconds": 0.7,
+  "loop": false,
+  "on": [
+    "stand",
+    "sit",
+    "walk"
+  ],
+  "keys": [
+    {
+      "u": 0,
+      "arms": {
+        "R": {
+          "elbow": [
+            3,
+            -32,
+            -2
+          ],
+          "wrist": [
+            2,
+            -60,
+            5
+          ],
+          "hand": [
+            1,
+            -72,
+            7
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "rest"
+      ]
+    },
+    {
+      "u": 0.4,
+      "arms": {
+        "R": {
+          "elbow": [
+            21.6,
+            -23.5,
+            4.2
+          ],
+          "wrist": [
+            10,
+            -12,
+            28
+          ],
+          "hand": [
+            10,
+            -4.7,
+            37.8
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "flatPalmOut"
+      ]
+    },
+    {
+      "u": 0.8,
+      "arms": {
+        "R": {
+          "elbow": [
+            19.3,
+            -18.9,
+            17.5
+          ],
+          "wrist": [
+            8,
+            -2,
+            38
+          ],
+          "hand": [
+            8,
+            6,
+            47.2
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "flatPalmOut"
+      ]
+    },
+    {
+      "u": 1,
+      "arms": {
+        "R": {
+          "elbow": [
+            19.7,
+            -19.5,
+            16.4
+          ],
+          "wrist": [
+            8,
+            -3,
+            37
+          ],
+          "hand": [
+            8,
+            5,
+            46.2
+          ]
+        }
+      },
+      "hands": [
+        "rest",
+        "flatPalmOut"
+      ]
+    }
+  ]
+}

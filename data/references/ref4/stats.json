@@ -1,0 +1,33 @@
+{
+ "id": "ref4",
+ "file": "YTDown.com_YouTube_Media_Zec3tFD9OrM_Iron-And-Gold-Stories-for-Teenagers-EnglishFairyTales",
+ "seconds": 951,
+ "width": 1920,
+ "height": 1080,
+ "fps": "25/1",
+ "cuts": 212,
+ "cutsPerMinute": 13.4,
+ "shotSeconds": {
+  "median": 3.2,
+  "p25": 1.8,
+  "p75": 5.6,
+  "p90": 10
+ },
+ "stillShare": 0.08,
+ "silentShare": 0.02,
+ "loudnessLUFS": -16.4,
+ "palette": [
+  "#0e0b0e",
+  "#241d1d",
+  "#403127",
+  "#475335",
+  "#6d7652",
+  "#723a31",
+  "#a15f4c",
+  "#a3a5a8",
+  "#c89a4e",
+  "#dec19c",
+  "#f2e8d3",
+  "#00ff00"
+ ]
+}

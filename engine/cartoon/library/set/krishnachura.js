@@ -1,0 +1,17 @@
+// krishnachura.
+ZS.define("krishnachura", {"about": "krishnachura", "kind": "set", "tags": ["nature"]}, (layer,o,k)=>{
+  const {x=0,y=0,h=200,seed=1,flip}=o;
+  const g=k.group(layer,x,y,flip),r=k.rngOf(seed),phase=r()*6.283185;
+  const c=o.color||k.mix("#607e49","#e8dcc1",r()*.10),sx=.88+r()*.24;
+  const root=k.el("g",{transform:`scale(${h/100})`},g),s=k.el("g",{transform:`scale(${sx} 1)`},root),anim=[];
+  const R=(x,y,w,h,c,rx=0,p=s)=>k.R(p,x,y,w,h,c,rx),C=(x,y,z,c,a=1,p=s)=>k.C(p,x,y,z,c,a);
+  const E=(x,y,rx,ry,c,a=1,p=s)=>k.E(p,x,y,rx,ry,c,a),P=(d,c,a=1,p=s)=>k.P(p,d,c,a);
+  const G=()=>k.el("g",{},s),dark=k.dark,light=k.light;
+  k.ground(s,90,3.2);
+  const crown=G(); R(-5,-76,10,76,"#91633f",3); P("M-4 -42 L-27 -68 L-23 -72 L2 -51 L23 -76 L27 -71 L5 -39Z","#91633f");
+for(let i=0;i<7;i++){const a=i*2.4,px=Math.cos(a)*(24+r()*9),py=-72+Math.sin(a)*13; E(px,py,23+r()*5,20+r()*5,i%3===0?light(c,.12):i%3===1?dark(c,.12):c,1,crown);}
+for(let i=0;i<22;i++)C(-44+r()*88,-95+r()*43,3+r()*3,k.pick(r,["#da6541","#ee8955","#c75339"]),1,crown);
+anim.push(t=>crown.setAttribute("transform",`rotate(${Math.sin(t*.7+phase)*.7} 0 -43)`));
+  if(anim.length){g.tick=t=>anim.forEach(fn=>fn(t));g.tick(0);}
+  return g;
+});

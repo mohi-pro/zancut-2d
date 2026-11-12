@@ -1,0 +1,333 @@
+{
+  "version": 1,
+  "creations": {
+    "creation_a406d1692be19e511a10": {
+      "id": "creation_a406d1692be19e511a10",
+      "label": "তিন মাথার নীল রাক্ষস",
+      "aliases": [
+        "তিন মাথার নীল রাক্ষস",
+        "three-headed blue monster",
+        "তিন মাথার নীল রাক্ষস বানাও” · “যখনই দাম বাড়ার কথা থাকবে তখন চার্ট দেখাবা” · “শেখো ইলিশ”"
+      ],
+      "dna": {
+        "version": 1,
+        "kind": "creature",
+        "archetype": "monster",
+        "headCount": 3,
+        "armCount": 2,
+        "headAngles": [
+          -25,
+          0,
+          25
+        ],
+        "palette": {
+          "primary": "#367fe0",
+          "secondary": "#453966",
+          "accent": "#ffcc68"
+        },
+        "scale": 1.5,
+        "traits": {
+          "horns": true,
+          "fangs": true,
+          "glowingEyes": true
+        },
+        "effects": [],
+        "attachments": [],
+        "floating": false,
+        "held": []
+      }
+    },
+    "creation_cbeb577610ed60c4b364": {
+      "id": "creation_cbeb577610ed60c4b364",
+      "label": "চার হাতের সবুজ দৈত্য",
+      "aliases": [
+        "চার হাতের সবুজ দৈত্য"
+      ],
+      "dna": {
+        "version": 1,
+        "kind": "creature",
+        "archetype": "monster",
+        "headCount": 1,
+        "armCount": 4,
+        "headAngles": [
+          0
+        ],
+        "palette": {
+          "primary": "#4eaa68",
+          "secondary": "#453966",
+          "accent": "#ffcc68"
+        },
+        "scale": 1.5,
+        "traits": {
+          "horns": true,
+          "fangs": true,
+          "glowingEyes": true
+        },
+        "effects": [],
+        "attachments": [],
+        "floating": false,
+        "held": []
+      }
+    },
+    "creation_3d2ee47cb0ef2d01ac4a": {
+      "id": "creation_3d2ee47cb0ef2d01ac4a",
+      "label": "আগুনের তলোয়ার হাতে যোদ্ধা",
+      "aliases": [
+        "আগুনের তলোয়ার হাতে যোদ্ধা",
+        "warrior holding a fire sword"
+      ],
+      "dna": {
+        "version": 1,
+        "kind": "character",
+        "archetype": "warrior",
+        "headCount": 1,
+        "armCount": 2,
+        "headAngles": [
+          0
+        ],
+        "palette": {
+          "primary": "#6b9a68",
+          "secondary": "#453966",
+          "accent": "#ffcc68"
+        },
+        "scale": 1,
+        "traits": {
+          "horns": false,
+          "fangs": false,
+          "glowingEyes": false
+        },
+        "effects": [],
+        "attachments": [],
+        "floating": false,
+        "held": [
+          {
+            "hand": "R",
+            "dna": {
+              "version": 1,
+              "kind": "prop",
+              "archetype": "sword",
+              "headCount": 0,
+              "armCount": 0,
+              "headAngles": [],
+              "palette": {
+                "primary": "#bac9da",
+                "secondary": "#705348",
+                "accent": "#edc66b"
+              },
+              "scale": 1,
+              "traits": {
+                "horns": false,
+                "fangs": false,
+                "glowingEyes": false
+              },
+              "effects": [
+                "fire_aura"
+              ],
+              "attachments": [],
+              "floating": false,
+              "held": []
+            }
+          }
+        ]
+      }
+    },
+    "creation_bbd1d813ea7aa74cac35": {
+      "id": "creation_bbd1d813ea7aa74cac35",
+      "label": "ডানাওয়ালা সাদা ঘোড়া",
+      "aliases": [
+        "ডানাওয়ালা সাদা ঘোড়া"
+      ],
+      "dna": {
+        "version": 1,
+        "kind": "creature",
+        "archetype": "horse",
+        "headCount": 1,
+        "armCount": 0,
+        "headAngles": [
+          0
+        ],
+        "palette": {
+          "primary": "#f3f1e9",
+          "secondary": "#5b4033",
+          "accent": "#edd6b2"
+        },
+        "scale": 1,
+        "traits": {
+          "horns": false,
+          "fangs": false,
+          "glowingEyes": false
+        },
+        "effects": [],
+        "attachments": [
+          "wings_attachment"
+        ],
+        "floating": false,
+        "held": []
+      }
+    },
+    "creation_3f899b8856f92da9d0fd": {
+      "id": "creation_3f899b8856f92da9d0fd",
+      "label": "উড়ন্ত সাদা ঘোড়া",
+      "aliases": [
+        "উড়ন্ত সাদা ঘোড়া"
+      ],
+      "dna": {
+        "version": 1,
+        "kind": "creature",
+        "archetype": "horse",
+        "headCount": 1,
+        "armCount": 0,
+        "headAngles": [
+          0
+        ],
+        "palette": {
+          "primary": "#f3f1e9",
+          "secondary": "#5b4033",
+          "accent": "#edd6b2"
+        },
+        "scale": 1,
+        "traits": {
+          "horns": false,
+          "fangs": false,
+          "glowingEyes": false
+        },
+        "effects": [],
+        "attachments": [
+          "wings_attachment"
+        ],
+        "floating": true,
+        "held": []
+      }
+    },
+    "creation_2b6b9dbca9eaecd0a780": {
+      "id": "creation_2b6b9dbca9eaecd0a780",
+      "label": "ভাঙা লাল গাড়ি",
+      "aliases": [
+        "ভাঙা লাল গাড়ি"
+      ],
+      "dna": {
+        "version": 1,
+        "kind": "prop",
+        "archetype": "car",
+        "headCount": 0,
+        "armCount": 0,
+        "headAngles": [],
+        "palette": {
+          "primary": "#de4941",
+          "secondary": "#283347",
+          "accent": "#f3ce76"
+        },
+        "scale": 1,
+        "traits": {
+          "horns": false,
+          "fangs": false,
+          "glowingEyes": false
+        },
+        "effects": [
+          "cracked_overlay"
+        ],
+        "attachments": [],
+        "floating": false,
+        "held": []
+      }
+    },
+    "creation_1bc1021d2baffeebdf17": {
+      "id": "creation_1bc1021d2baffeebdf17",
+      "label": "বরফের ঢাল",
+      "aliases": [
+        "বরফের ঢাল"
+      ],
+      "dna": {
+        "version": 1,
+        "kind": "prop",
+        "archetype": "shield",
+        "headCount": 0,
+        "armCount": 0,
+        "headAngles": [],
+        "palette": {
+          "primary": "#bac9da",
+          "secondary": "#705348",
+          "accent": "#edc66b"
+        },
+        "scale": 1,
+        "traits": {
+          "horns": false,
+          "fangs": false,
+          "glowingEyes": false
+        },
+        "effects": [
+          "ice_tint"
+        ],
+        "attachments": [],
+        "floating": false,
+        "held": []
+      }
+    },
+    "creation_beb3a795ae75ac115939": {
+      "id": "creation_beb3a795ae75ac115939",
+      "label": "আগুনের তলোয়ার",
+      "aliases": [
+        "আগুনের তলোয়ার"
+      ],
+      "dna": {
+        "version": 1,
+        "kind": "prop",
+        "archetype": "sword",
+        "headCount": 0,
+        "armCount": 0,
+        "headAngles": [],
+        "palette": {
+          "primary": "#bac9da",
+          "secondary": "#705348",
+          "accent": "#edc66b"
+        },
+        "scale": 1,
+        "traits": {
+          "horns": false,
+          "fangs": false,
+          "glowingEyes": false
+        },
+        "effects": [
+          "fire_aura"
+        ],
+        "attachments": [],
+        "floating": false,
+        "held": []
+      }
+    },
+    "creation_98253613b03efdc0912d": {
+      "id": "creation_98253613b03efdc0912d",
+      "label": "Dragon flying",
+      "aliases": [
+        "Dragon flying"
+      ],
+      "dna": {
+        "version": 1,
+        "kind": "creature",
+        "archetype": "dragon",
+        "headCount": 1,
+        "armCount": 2,
+        "headAngles": [
+          0
+        ],
+        "palette": {
+          "primary": "#6b9a68",
+          "secondary": "#453966",
+          "accent": "#ffcc68"
+        },
+        "scale": 1.5,
+        "traits": {
+          "horns": true,
+          "fangs": true,
+          "glowingEyes": true
+        },
+        "effects": [],
+        "attachments": [
+          "wings_attachment"
+        ],
+        "floating": true,
+        "held": []
+      }
+    }
+  }
+}

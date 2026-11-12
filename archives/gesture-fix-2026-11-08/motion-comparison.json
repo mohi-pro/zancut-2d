@@ -1,0 +1,93 @@
+{
+  "project": "zq4p3f38id",
+  "beforeFile": "/Users/ahnafmohi/Zancut-2D/examples/out/owner-voice-bn-94s.mp4",
+  "afterFile": "/tmp/z2d-motion-step2-r2/after.mp4",
+  "before": {
+    "seconds": 94.6,
+    "stillSeconds": 42.80000000000002,
+    "stillShare": 0.4524312896405922,
+    "intervals": [
+      [
+        1.6,
+        7
+      ],
+      [
+        11.8,
+        14
+      ],
+      [
+        15.6,
+        18
+      ],
+      [
+        22.8,
+        24.8
+      ],
+      [
+        26,
+        31
+      ],
+      [
+        38,
+        40.8
+      ],
+      [
+        42.8,
+        45.4
+      ],
+      [
+        45.6,
+        47.4
+      ],
+      [
+        49.4,
+        51.2
+      ],
+      [
+        51.8,
+        56.2
+      ],
+      [
+        61.4,
+        64
+      ],
+      [
+        64,
+        67.4
+      ],
+      [
+        74.4,
+        77.2
+      ],
+      [
+        84.6,
+        88.2
+      ]
+    ],
+    "filter": "fps=5,scale=320:-2,freezedetect=n=-55dB:d=1.5"
+  },
+  "after": {
+    "seconds": 94.6,
+    "stillSeconds": 5,
+    "stillShare": 0.052854122621564484,
+    "intervals": [
+      [
+        26.4,
+        28
+      ],
+      [
+        38.4,
+        40.2
+      ],
+      [
+        64.4,
+        66
+      ]
+    ],
+    "filter": "fps=5,scale=320:-2,freezedetect=n=-55dB:d=1.5"
+  },
+  "target": 0.08,
+  "passed": true,
+  "artifactFile": "/Users/ahnafmohi/Zancut-2D/data/qa/gesture-step2/owner-voice-bn-94s.mp4",
+  "artifactSha256": "fa59a2406eff20413a578e748e95179d9e90148db3cb75fe0bc35b060976df0e"
+}
